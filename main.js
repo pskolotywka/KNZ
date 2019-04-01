@@ -1,7 +1,7 @@
 function represent() {
-	let represent = document.querySelector(".tabs__li-represent");
-
-	represent.addEventListener("click", function() {
+	const represent = document.querySelectorAll(".tabs__li-represent");
+		for ()
+		represent.addEventListener("click", function() {
 		represent.classList.add("selected-tab");
 	});
 }
