@@ -17,22 +17,144 @@
 				<li class="tabs__li tabs__li-dialing-fail">Ошибка телефонии</li>
 			</ul>
 		</div>
-		<div class="client-actions">
-			<div class="client-actions__header-name">
-				<span class="client-actions__header-span">Заполнить ФИО</span>
-				<div class="client-actions__header-body">
-					<input type="text" class="input__client-name">
-					<button class="button">Сохранить</button>
+		<div class="represent">
+			<div class="represent-wrap">
+				<div class="dialod-script">
+					<p class="dialod-script-text">Произошла ошибка настройки диалоговых скриптов, после завершения обработки задания обратитесь к Руководителю группы.</p>
+				</div>
+				<div class="client-actions">
+					<div class="client-actions__header">
+						<div class="client-actions__header-name">
+							<span class="client-actions__header-span">Заполнить ФИО</span>
+						</div>
+						<div class="client-actions__header-body">
+							<input type="text" class="input__client-name">	
+							<button class="save-button button">Сохранить</button>					
+						</div>
+					</div>
 				</div>
 			</div>
+			<button class="button">Сохранить</button>
 		</div>
 		<div class="application-forming">
 			<h3 class="title">Залоговое предложение</h3>
 			<p class="text">Хотели бы вы оформить кредит под залог квартиры? С кредитованием под залог ставка по кредиту значительно ниже, а решение Банка принимается легче.</p>
 			<div class="application-forming__script-header">
-				<input type="radio" id="">
+				<div class="application-forming__script-header wrap-fail">
+					<input type="radio" name="script" id="script-fail" class="application-forming__script application-forming__script-fail">
+					<label for="not-ready">Не готов</label>
+					<p class="application-forming__script-score">Баллы: 1</p>		
+				</div>			
+				<div class="application-forming__script-header wrap-flat">
+					<input type="radio" name="script" id="script-flat" class="application-forming__script application-forming__script-flat">
+					<label for="script-flat">Готов предоставить квартиру под залог</label>
+					<p class="application-forming__script-score">Баллы: 7</p>
+				</div>
+				<div class="application-forming__script-header wrap-car">
+					<input type="radio" name="script" id="script-car" class="application-forming__script application-forming__script-car">
+					<label for="script-car">Готов предоставить автомобиль под залог</label>
+					<p class="application-forming__script-score">Баллы: 2</p>
+				</div>
 			</div>
 		</div>
+		<div class="no-answer">
+			<div class="no-answer-options">			
+				<input type="radio" name="no-answer-input" id="no-answer-input-no-answer" class="no-answer-options__input-no-answer">	
+				<label for="no-answer-input-no-answer">Клиент не отвечает</label>
+				<input type="radio" name="no-answer-input" id="no-answer-input-number-not-exist" class="no-answer-options__input-number-not-exist">	
+				<label for="no-answer-input-number-not-exist">Телефон не существует</label>
+				<input type="radio" name="no-answer-input" id="no-answer-input-busy" class="no-answer-options__input-busy">	
+				<label for="no-answer-input-busy">Занято</label>
+				<input type="radio" name="no-answer-input" id="no-answer-input-off" class="no-answer-options__input-off">	
+				<label for="no-answer-input-off">Телефон абонента выключен</label>
+			</div>
+			<div class="no-answer-comments">
+				<label for="no-answer-comments-textarea">Комментарий:</label>
+				<textarea id="no-answer-comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+			</div>
+			<button class="no-answer-button button">Завершить работу с заданием</button>
+		</div>
+
+
+		<div class="negative">
+			<div class="negative-options">			
+				<input type="radio" name="negative-input" id="negative-input-no-need" class="negative-options__input-no-need">	
+				<label for="negative-input-no-need">Нет потребности в кредите</label>
+				<input type="radio" name="negative-input" id="negative-input-dont-call" class="negative-options__input-dont-call">	
+				<label for="negative-input-dont-call">Не звонить</label>
+				<input type="radio" name="negative-input" id="negative-input-not-now" class="negative-options__input-not-now">	
+				<label for="negative-input-not-now">Не требуется сейчас</label>
+				<input type="radio" name="negative-input" id="negative-input-another-bank" class="negative-options__another-bank">	
+				<label for="negative-input-another-bank">Кредит / КК в другом банке </label>				
+				<input type="radio" name="negative-input" id="negative-input-cancel" class="negative-options__input-cancel">	
+				<label for="negative-input-cancel">Отказ прослушать предложение</label>				
+				<input type="radio" name="negative-input" id="negative-input-no-home" class="negative-options__input-no-home">	
+				<label for="negative-input-no-home">Нет собственного жилья</label>				
+				<input type="radio" name="negative-input" id="negative-input-wrong-person" class="negative-options__input-wrong-person">	
+				<label for="negative-input-wrong-person">Левый контакт</label>				
+				<input type="radio" name="negative-input" id="negative-input-conditions" class="negative-options__conditions">	
+				<label for="negative-conditions">Не устраивают условия</label>				
+				<input type="radio" name="negative-input" id="negative-input-transfer" class="negative-options__input-transfer">	
+				<label for="negative-input-transfer">Переведен в банк</label>				
+				<input type="radio" name="negative-input" id="negative-input-got-application" class="negative-options__input-got-application">	
+				<label for="negative-input-got-application">Уже оставил заявку</label>				
+				<input type="radio" name="negative-input" id="negative-input-recall-self" class="negative-options__input-recall-self">	
+				<label for="negative-input-recall-self">Перезвонит самостоятельно</label>				
+				<input type="radio" name="negative-input" id="negative-input-bad-age" class="negative-options__input-bad-age">	
+				<label for="negative-input-bad-age">Не соответствует по возрасту</label>				
+				<input type="radio" name="negative-input" id="negative-input-citizen" class="negative-options__input-citizen">	
+				<label for="negative-input-citizen">Не гражданин РФ</label>				
+				<input type="radio" name="negative-input" id="negative-input-died" class="negative-options__input-died">	
+				<label for="negative-input-died">Клиент умер</label>				
+				<input type="radio" name="negative-input" id="negative-input-blacklist" class="negative-options__input-blacklist">	
+				<label for="negative-input-blacklist">Черный список</label>				
+				<input type="radio" name="negative-input" id="negative-input-dont-say-work" class="negative-options__input-dont-say-work">	
+				<label for="negative-input-dont-say-work">Отказ предоставления данных о работе</label>				
+				<input type="radio" name="negative-input" id="negative-input-canceled-before" class="negative-options__input-canceled-before">	
+				<label for="negative-input-canceled-before">Клиент ранее отказался</label>
+				<input type="radio" name="negative-input" id="negative-input-another" class="negative-options__input-another">	
+				<label for="negative-input-another">Другое (нестандартная ситуация)</label>
+			</div>
+			<div class="negative-comments">
+				<label for="negative-comments-textarea">Комментарий:</label>
+				<textarea id="negative-comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+			</div>
+			<button class="negative-button button">Завершить работу с заданием</button>
+		</div>
+
+
+		<div class="recall">
+			<div class="recall-options">			
+				<input type="radio" name="recall-input" id="recall-input-no-answer" class="recall-options__input-no-answer">	
+				<label for="recall-input-no-answer">Клиент не отвечает</label>
+				<input type="radio" name="recall-input" id="recall-input-number-not-exist" class="recall-options__input-number-not-exist">	
+				<label for="recall-input-number-not-exist">Телефон не существует</label>
+				<input type="radio" name="recall-input" id="recall-input-busy" class="recall-options__input-busy">	
+				<label for="recall-input-busy">Занято</label>
+				<input type="radio" name="recall-input" id="recall-input-off" class="recall-options__input-off">	
+				<label for="recall-input-off">Телефон абонента выключен</label>
+			</div>
+			<div class="recall-comments">
+				<label for="recall-comments-textarea">Комментарий:</label>
+				<textarea id="recall-comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+			</div>
+			<label for="recall-options__datetime-input"><b>Дата и время перезвона</b></label>
+			<input type="datetime" id="recall-options__datetime-input" class="recall-options__datetime-input">
+			<p class="recall-options__datetime-options">Перезвонить через:</p>
+			<input type="checkbox" id="recall-options__checkbox" class="recall-options__checkbox">
+			<label for="recall-options__checkbox">Отложить себе</label>
+			<button class="recall-button button">Завершить работу с заданием</button>
+		</div>
+
+		<div class="dialing-fail">
+			<div class="dialing-fail-comments">
+				<label for="dialing-fail-comments-textarea">Комментарий:</label>
+				<textarea id="dialing-fail-comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+			</div>
+			<button class="dialing-fail-button button">Завершить работу с заданием</button>
+		</div>
+
+
 	</main>
 	<script src="main.js"></script>
 </body>
