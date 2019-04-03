@@ -1,9 +1,10 @@
-function represent() {
-	const represent = document.querySelectorAll(".tabs__li-represent");
-		for ()
-		represent.addEventListener("click", function() {
-		represent.classList.add("selected-tab");
-	});
-}
-
-represent();
+function activeTab() {
+	const tabs = document.querySelectorAll(".tabs__li");
+		for (let i = 0; i < tabs.length; i++) {
+			tabs[i].addEventListener("click", function() {
+				if (tabs[i] )
+				tabs[i].classList.add("selected-tab");
+		});
+	}
+}		
+		
