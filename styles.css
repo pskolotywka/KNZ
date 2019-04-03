@@ -147,3 +147,43 @@ input[type=radio],
 label {
 	vertical-align: middle;
 }
+
+.application-forming__script-score {
+	font-weight: bold;
+}
+
+.wrap-fail {
+	background-color: #fdeded; 
+}
+
+.wrap-flat {
+	background-color: #f0f9f1;
+}
+
+.wrap-car {
+	background-color: #edf2f7;
+}
+
+.tab-options__wrap {
+	display: flex;
+	justify-content: space-between;
+	margin: 30px 0 30px 0;
+}
+
+.no-answer-options {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-wrap {
+	margin: 4px;
+}
+
+.tab-options__comments {
+	display: flex;
+	flex-direction: column;
+}
+
+.tab-options__comments-textarea {
+	border-radius: 5px;
+}
