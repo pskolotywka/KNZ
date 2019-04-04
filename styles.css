@@ -172,13 +172,13 @@ label {
 	margin: 30px 0 30px 0;
 }
 
-.no-answer-options {
-	display: flex;
-	flex-direction: column;
+.input-wrap {
+	margin: 7px;
+	margin-left: 0px;
 }
 
-.input-wrap {
-	margin: 4px;
+.input-wrap__checkbox {
+	margin-left: 0px;
 }
 
 .tab-options__comments {
@@ -226,4 +226,49 @@ label {
 	margin-left: 0;
 }
 
+.recall-button,
+.dialing-fail-button {
+	margin-top: 20px;
+}
 
+.dialing-fail-comments {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+ }
+
+.recall-options__table {
+	border: 1px solid grey;
+	border-collapse: collapse;
+}
+
+.recall-options__table td, th {
+	padding: 8px;
+	border: 1px solid grey;
+	width: 200px;
+}
+
+.recall-options__table-task-row {
+	background-color: #dff0d8;
+}
+
+.recall-options__table-head-row {
+	text-align: left;
+}
+
+.recall-options__task-keep {
+	margin-top: 30px;
+}
+
+.input-button {
+	margin-left: 0px;
+}
+
+.section {
+	display: none;
+}
+
+.section--active {
+	display: block;
+}
