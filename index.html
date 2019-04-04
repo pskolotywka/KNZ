@@ -180,32 +180,56 @@
 				<div class="recall-options">	
 					<div class="input-wrap">						
 						<input type="radio" name="recall-input" id="recall-input-no-answer" class="recall-options__input-no-answer">	
-						<label for="recall-input-no-answer">Клиент не отвечает</label>
+						<label for="recall-input-no-answer">По просьбе клиента / 3-го лица</label>
 					</div>	
 					<div class="input-wrap">	
 						<input type="radio" name="recall-input" id="recall-input-number-not-exist" class="recall-options__input-number-not-exist">	
-						<label for="recall-input-number-not-exist">Телефон не существует</label>
+						<label for="recall-input-number-not-exist">Звонок сорвался</label>
 					</div>	
 					<div class="input-wrap">	
 						<input type="radio" name="recall-input" id="recall-input-busy" class="recall-options__input-busy">	
-						<label for="recall-input-busy">Занято</label>
+						<label for="recall-input-busy">Клиент сбрасывает вызов</label>
 					</div>	
 					<div class="input-wrap">
 						<input type="radio" name="recall-input" id="recall-input-off" class="recall-options__input-off">	
-						<label for="recall-input-off">Телефон абонента выключен</label>
-					</div>		
+						<label for="recall-input-off">Нет требуемых данных</label>
+					</div>	
+					<div class="input-wrap">
+						<input type="checkbox" name="recall-input" id="recall-time" class="recall-options__recall-checkbox">
+						<label for="recall-time">Время перезвона выбрано</label>
+					</div>	
 				</div>
 				<div class="tab-options__comments">
 					<label for="recall-comments-textarea">Комментарий:</label>
 					<textarea id="recall-comments-textarea" class="tab-options__comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
-			</div>			
-				</div>
+				</div>			
+			</div>
+			<div class="recall-options__datetime">
 				<label for="recall-options__datetime-input"><b>Дата и время перезвона</b></label>
 				<input type="datetime" id="recall-options__datetime-input" class="recall-options__datetime-input">
 				<p class="recall-options__datetime-options">Перезвонить через:</p>
+				<div class="recall-options__datetime-quickset">
+					<p class="recall-options__datetime-interval">10минут, </p>
+					<p class="recall-options__datetime-interval"> 30 минут</p>
+				</div>
+				<div class="recall-options__datetime-quickset">
+					<p class="recall-options__datetime-interval">1 час, </p>
+					<p class="recall-options__datetime-interval"> 2 часа, </p>
+					<p class="recall-options__datetime-interval"> 3 часа</p>
+				</div>
+				<div class="recall-options__datetime-quickset">
+					<p class="recall-options__datetime-interval">1 день, </p>
+					<p class="recall-options__datetime-interval"> 2 дня, </p>
+					<p class="recall-options__datetime-interval"> 3 дня</p>
+				</div>
+				<div class="recall-options__datetime-quickset">
+					<p class="recall-options__datetime-interval">1 неделя</p>
+				</div>
+			</div>
+			<div class="input-wrap">
 				<input type="checkbox" id="recall-options__checkbox" class="recall-options__checkbox">
-				<label for="recall-options__checkbox">Отложить себе</label>
-
+				<label for="recall-options__checkbox">Отложить себе</label>	
+			</div>
 			<button class="recall-button button">Завершить работу с заданием</button>
 		</div>
 

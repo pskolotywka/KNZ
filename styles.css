@@ -98,7 +98,8 @@
 
 }
 
-.input__client-name {
+.input__client-name,
+.recall-options__datetime-input {
 	padding: 6px 12px 6px 12px;
 	border-radius: 4px;
 	border: 1px solid #ccc;
@@ -144,6 +145,7 @@
 }
 
 input[type=radio],
+input[type=checkbox],
 label {
 	vertical-align: middle;
 }
@@ -187,3 +189,41 @@ label {
 .tab-options__comments-textarea {
 	border-radius: 5px;
 }
+
+.negative-options__recall-checkbox {
+	margin-left: 5px;
+}
+
+.recall-options__datetime {
+	display: flex;
+	flex-direction: column;
+}
+
+.recall-options__datetime-input {
+	width: 180px;
+	margin-top: 10px;
+}
+
+.recall-options__datetime-options {
+	color: grey;
+	font-size: 13px;
+}
+
+.recall-options__datetime-quickset {
+	color: #337ab7;	
+	font-size: 13px;
+	display: flex;
+	flex-direction: row;
+}
+
+.recall-options__datetime-interval {
+	border-bottom: 1px dashed;	
+	margin: 0 10px 5px 0;
+	cursor: pointer;
+}
+
+.recall-options__checkbox {
+	margin-left: 0;
+}
+
+
