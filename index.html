@@ -9,30 +9,259 @@
 	<main class="main">
 		<div class="tabs">
 			<ul class="tabs__ul">
-				<li class="tabs__li tabs__li-represent">Представление</li>
-				<li class="tabs__li tabs__li-application">Оформление заявки</li>
-				<li class="tabs__li tabs__li-no-answer">Недозвон</li>
-				<li class="tabs__li tabs__li-negative">Отказ</li>
-				<li class="tabs__li tabs__li-recall">Перезвон</li>
-				<li class="tabs__li tabs__li-dialing-fail">Ошибка телефонии</li>
+				<li class="tabs__li tabs__li-represent selected-tab" data-tab="represent">Представление</li>  <!-- поправить названия классов с тегов li на item -->
+				<li class="tabs__li tabs__li-application" data-tab="application-forming">Оформление заявки</li>
+				<li class="tabs__li tabs__li-no-answer" data-tab="no-answer">Недозвон</li>
+				<li class="tabs__li tabs__li-negative" data-tab="negative">Отказ</li>
+				<li class="tabs__li tabs__li-recall" data-tab="recall">Перезвон</li>
+				<li class="tabs__li tabs__li-dialing-fail" data-tab="dialing-fail">Ошибка телефонии</li>
 			</ul>
 		</div>
-		<div class="client-actions">
-			<div class="client-actions__header-name">
-				<span class="client-actions__header-span">Заполнить ФИО</span>
-				<div class="client-actions__header-body">
-					<input type="text" class="input__client-name">
-					<button class="button">Сохранить</button>
+		<div class="represent section section--active" data-section="represent">
+			<div class="represent-wrap">
+				<div class="dialod-script">
+					<p class="dialod-script-text">Произошла ошибка настройки диалоговых скриптов, после завершения обработки задания обратитесь к Руководителю группы.</p>
+				</div>
+				<div class="client-actions">
+					<div class="client-actions__header">
+						<div class="client-actions__header-name">
+							<span class="client-actions__header-span">Заполнить ФИО</span>
+						</div>
+						<div class="client-actions__header-body-panel">
+							<div class="client-actions__header-body">
+								<input type="text" class="input__client-name">													
+							</div>
+							<button class="save-button button">Сохранить</button>
+						</div>
+						
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="application-forming section" data-section="application-forming">
+			<h3 class="application-forming__title">Залоговое предложение</h3>
+			<p class="text">Хотели бы вы оформить кредит под залог квартиры? С кредитованием под залог ставка по кредиту значительно ниже, а решение Банка принимается легче.</p>
+			<div class="application-forming__script-titles">
+				<div class="application-forming__script-header wrap-fail">
+					<div class="application-forming__script-wrap">
+						<input type="radio" name="script" id="script-fail" class="application-forming__script application-forming__script-fail">
+						<label for="not-ready">Не готов</label>
+					</div>
+					<p class="application-forming__script-score">Баллы: 1</p>		
+				</div>			
+				<div class="application-forming__script-header wrap-flat">
+					<div class="application-forming__script-wrap">
+						<input type="radio" name="script" id="script-flat" class="application-forming__script application-forming__script-flat">
+						<label for="script-flat">Готов предоставить квартиру под залог</label>
+					</div>	
+					<p class="application-forming__script-score">Баллы: 7</p>
+				</div>
+				<div class="application-forming__script-header wrap-car">
+					<div class="application-forming__script-wrap">
+						<input type="radio" name="script" id="script-car" class="application-forming__script application-forming__script-car">
+						<label for="script-car">Готов предоставить автомобиль под залог</label>
+					</div>	
+					<p class="application-forming__script-score">Баллы: 2</p>
 				</div>
 			</div>
 		</div>
-		<div class="application-forming">
-			<h3 class="title">Залоговое предложение</h3>
-			<p class="text">Хотели бы вы оформить кредит под залог квартиры? С кредитованием под залог ставка по кредиту значительно ниже, а решение Банка принимается легче.</p>
-			<div class="application-forming__script-header">
-				<input type="radio" id="">
+		<div class="no-answer section" data-section="no-answer">
+			<div class="tab-options__wrap">
+				<div class="no-answer-options">							
+					<div class="input-wrap">		
+						<input type="radio" name="no-answer-input" id="no-answer-input-no-answer" class="no-answer-options__input-no-answer input-button">	
+						<label for="no-answer-input-no-answer">Клиент не отвечает</label>
+					</div>	
+					<div class="input-wrap">
+						<input type="radio" name="no-answer-input" id="no-answer-input-number-not-exist" class="no-answer-options__input-number-not-exist input-button">	
+						<label for="no-answer-input-number-not-exist">Телефон не существует</label>
+					</div>	
+					<div class="input-wrap">
+						<input type="radio" name="no-answer-input" id="no-answer-input-busy" class="no-answer-options__input-busy input-button">	
+						<label for="no-answer-input-busy">Занято</label>
+					</div>	
+					<div class="input-wrap">	
+						<input type="radio" name="no-answer-input" id="no-answer-input-off" class="no-answer-options__input-off input-button">	
+						<label for="no-answer-input-off">Телефон абонента выключен</label>
+					</div>
+				</div>
+				<div class="tab-options__comments">
+					<label for="no-answer-comments-textarea">Комментарий:</label>
+					<textarea id="no-answer-comments-textarea" class="tab-options__comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+				</div>
 			</div>
+			<button class="no-answer-button button">Завершить работу с заданием</button>
 		</div>
+		<div class="negative section" data-section="negative">
+			<div class="tab-options__wrap">
+				<div class="negative-options">					
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-no-need" class="negative-options__input-no-need input-button">	
+						<label for="negative-input-no-need">Нет потребности в кредите</label>
+					</div>
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-dont-call" class="negative-options__input-dont-call input-button">	
+						<label for="negative-input-dont-call">Не звонить</label>
+					</div>
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-not-now" class="negative-options__input-not-now input-button">	
+						<label for="negative-input-not-now">Не требуется сейчас</label>
+					</div>
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-another-bank" class="negative-options__another-bank input-button">	
+						<label for="negative-input-another-bank">Кредит / КК в другом банке </label>	
+					</div>		
+					<div class="input-wrap">	
+						<input type="radio" name="negative-input" id="negative-input-cancel" class="negative-options__input-cancel input-button">	
+						<label for="negative-input-cancel">Отказ прослушать предложение</label>	
+					</div>	
+					<div class="input-wrap">		
+						<input type="radio" name="negative-input" id="negative-input-no-home" class="negative-options__input-no-home input-button">	
+						<label for="negative-input-no-home">Нет собственного жилья</label>	
+					</div>	
+					<div class="input-wrap">		
+						<input type="radio" name="negative-input" id="negative-input-wrong-person" class="negative-options__input-wrong-person input-button">	
+						<label for="negative-input-wrong-person">Левый контакт</label>		
+					</div>	
+					<div class="input-wrap">	
+						<input type="radio" name="negative-input" id="negative-input-conditions" class="negative-options__conditions input-button">	
+						<label for="negative-conditions">Не устраивают условия</label>	
+					</div>	
+					<div class="input-wrap">		
+						<input type="radio" name="negative-input" id="negative-input-transfer" class="negative-options__input-transfer input-button">	
+						<label for="negative-input-transfer">Переведен в банк</label>		
+					</div>	
+					<div class="input-wrap">	
+						<input type="radio" name="negative-input" id="negative-input-got-application" class="negative-options__input-got-application input-button">	
+						<label for="negative-input-got-application">Уже оставил заявку</label>	
+					</div>	
+					<div class="input-wrap">		
+						<input type="radio" name="negative-input" id="negative-input-recall-self" class="negative-options__input-recall-self input-button">	
+						<label for="negative-input-recall-self">Перезвонит самостоятельно</label>	
+					</div>		
+					<div class="input-wrap">	
+						<input type="radio" name="negative-input" id="negative-input-bad-age" class="negative-options__input-bad-age input-button">	
+						<label for="negative-input-bad-age">Не соответствует по возрасту</label>	
+					</div>	
+					<div class="input-wrap">		
+						<input type="radio" name="negative-input" id="negative-input-citizen" class="negative-options__input-citizen input-button">	
+						<label for="negative-input-citizen">Не гражданин РФ</label>		
+					</div>		
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-died" class="negative-options__input-died input-button">	
+						<label for="negative-input-died">Клиент умер</label>	
+					</div>		
+					<div class="input-wrap">	
+						<input type="radio" name="negative-input" id="negative-input-blacklist" class="negative-options__input-blacklist input-button">	
+						<label for="negative-input-blacklist">Черный список</label>		
+					</div>		
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-dont-say-work" class="negative-options__input-dont-say-work input-button">	
+						<label for="negative-input-dont-say-work">Отказ предоставления данных о работе</label>		
+					</div>		
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-canceled-before" class="negative-options__input-canceled-before input-button">	
+						<label for="negative-input-canceled-before">Клиент ранее отказался</label>
+					</div>
+					<div class="input-wrap">
+						<input type="radio" name="negative-input" id="negative-input-another" class="negative-options__input-another input-button">	
+						<label for="negative-input-another">Другое (нестандартная ситуация)</label>
+					</div>
+				</div>
+				<div class="tab-options__comments">
+					<label for="negative-comments-textarea">Комментарий:</label>
+					<textarea id="negative-comments-textarea" class="tab-options__comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+				</div>
+			</div>	
+			<button class="negative-button button">Завершить работу с заданием</button>
+		</div>
+		<div class="recall section" data-section="recall">
+			<div class="tab-options__wrap">
+				<div class="recall-options">	
+					<div class="input-wrap">						
+						<input type="radio" name="recall-input" id="recall-input-no-answer" class="recall-options__input-no-answer input-button">	
+						<label for="recall-input-no-answer">По просьбе клиента / 3-го лица</label>
+					</div>	
+					<div class="input-wrap">	
+						<input type="radio" name="recall-input" id="recall-input-number-not-exist" class="recall-options__input-number-not-exist input-button">	
+						<label for="recall-input-number-not-exist">Звонок сорвался</label>
+					</div>	
+					<div class="input-wrap">	
+						<input type="radio" name="recall-input" id="recall-input-busy" class="recall-options__input-busy input-button">	
+						<label for="recall-input-busy">Клиент сбрасывает вызов</label>
+					</div>	
+					<div class="input-wrap">
+						<input type="radio" name="recall-input" id="recall-input-off" class="recall-options__input-off input-button">	
+						<label for="recall-input-off">Нет требуемых данных</label>
+					</div>	
+					<div class="input-wrap">
+						<input type="checkbox" name="recall-input" id="recall-time" class="recall-options__recall-checkbox input-button">
+						<label for="recall-time">Время перезвона выбрано</label>
+					</div>	
+				</div>
+				<div class="tab-options__comments">
+					<label for="recall-comments-textarea">Комментарий:</label>
+					<textarea id="recall-comments-textarea" class="tab-options__comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+				</div>	
+			</div>
+			<div class="recall__task-keep section">
+				<div class="recall-options__datetime">
+					<label for="recall-options__datetime-input"><b>Дата и время перезвона</b></label>
+					<input type="datetime" id="recall-options__datetime-input" class="recall-options__datetime-input">
+					<p class="recall-options__datetime-options">Перезвонить через:</p>
+					<div class="recall-options__datetime-quickset">
+						<p class="recall-options__datetime-interval">10минут, </p>
+						<p class="recall-options__datetime-interval"> 30 минут</p>
+					</div>
+					<div class="recall-options__datetime-quickset">
+						<p class="recall-options__datetime-interval">1 час, </p>
+						<p class="recall-options__datetime-interval"> 2 часа, </p>
+						<p class="recall-options__datetime-interval"> 3 часа</p>
+					</div>
+					<div class="recall-options__datetime-quickset">
+						<p class="recall-options__datetime-interval">1 день, </p>
+						<p class="recall-options__datetime-interval"> 2 дня, </p>
+						<p class="recall-options__datetime-interval"> 3 дня</p>
+					</div>
+					<div class="recall-options__datetime-quickset">
+						<p class="recall-options__datetime-interval">1 неделя</p>
+					</div>
+				</div>
+				<div class="input-wrap input-wrap__checkbox">
+					<input type="checkbox" id="recall-options__checkbox" class="recall-options__checkbox">
+					<label for="recall-options__checkbox">Отложить себе</label>	
+				</div>
+				<div class="recall-options__task-keep">
+					<p class="text">Мои отложенные задания:</p>
+					<table class="recall-options__table">
+						<tr class="recall-options__table-head-row">
+							<th class="recall-options__table-head">Время звонка (моё)</th>
+							<th class="recall-options__table-head">Дата/время клиента</th>
+							<th class="recall-options__table-head">Группа очередей</th>
+							<th class="recall-options__table-head">Макс. балл</th>
+							<th class="recall-options__table-head">Последний комментарий</th>						
+						</tr>
+						<tr class="recall-options__table-task-row">
+							<td class="recall-options__table-data">новое 06.04.2019 19:24</td>
+							<td class="recall-options__table-data">07.04.2019 01:24</td>
+							<td class="recall-options__table-data">КНЗ</td>
+							<td class="recall-options__table-data">1.3</td>
+							<td class="recall-options__table-data"></td>
+						</tr>
+					</table>
+				</div>
+			</div>		
+			<button class="recall-button button">Завершить работу с заданием</button>
+		</div>
+		<div class="dialing-fail section" data-section="dialing-fail">
+			<div class="dialing-fail-comments">
+				<label for="dialing-fail-comments-textarea">Комментарий:</label>
+				<textarea id="dialing-fail-comments-textarea" class="tab-options__comments-textarea" cols="70" rows="6" maxlength="500"></textarea>
+			</div>
+			<button class="dialing-fail-button button">Завершить работу с заданием</button>
+		</div>
+
+
 	</main>
 	<script src="main.js"></script>
 </body>
