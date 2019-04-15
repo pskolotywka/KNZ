@@ -43,4 +43,35 @@ function showRecallOptions() {
 
 showRecallOptions();
 
-		
+
+function setRecall() {
+	const inputDate = document.querySelector(".js-date");
+	const inputTime = document.querySelector(".js-time");
+	const buttons = document.querySelectorAll(".js-datetime-btn");
+	let currentDate;
+	let currentTime;
+
+	for (const button of buttons) {
+		button.addEventListener("click", function() {
+			const date = new Date();
+			const intervalAttr = button.dataset.interval;
+			const timeAttr = button.dataset.time;
+
+			if (intervalAttr == "minutes") {
+				currentDate = date.toISOString().slice(0, 10);
+				currentTime = date.getHours() + ":" + date.setMinutes(date.getMinutes() + timeAttr);
+			} else if (intervalAttr == "hours") {
+				currentDate = date.toISOString().slice(0, 10);
+				currentTime = date.setHours(date.getHours() + timeAttr) + ":" + date.getMinutes();
+			} else if (intervalAttr == "days") {
+				currentDate = date.setDate(date.getDay() + timeAttr) + "." + date.getMonth() + "." + date.getYear();
+				currentTime = date.getHours() + ":" + date.getMinutes();
+			}
+
+			inputDate.value = currentDate;
+			inputTime.value = currentTime;
+		});
+	}
+}
+
+setRecall();
