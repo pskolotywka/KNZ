@@ -2,20 +2,21 @@
 	margin: 30px 50px 30px 50px;
 	font-family: helvetica;
 	font-size: 14px;
+	max-width: 1400px;
 }
 
-.tabs__ul {
+.tabs__list {
 	display: flex;
 	margin: 0px;
 }
 
-.tabs__li {
+.tabs__item {
 	padding: 10px 15px 10px 15px;
 	list-style-type: none;	
 	color: #337ab7;
 }
 
-.tabs__li:hover {
+.tabs__item:hover {
 	background: #e2e1e1;
 	border-radius: 5px 5px 0 0;
 	color: #23527c;
@@ -31,4 +32,262 @@
 	color: #555;
 	border-radius: 5px 5px 0 0;
 	box-shadow: 0 0 0 1px #dbd9d9;
+}
+
+.button {
+	background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+	color: white;
+	background-repeat: repeat-x;
+    border-color: #245580;
+    padding: 6px 12px 6px 12px;
+    border-radius: 4px;
+    outline: none;	
+    border-width: 1px;
+}
+
+.button:hover {
+	background-color: #265a88;
+	   background-position: 0 -15px;
+}
+
+.button:active {
+	background-color: #122b40;
+	border-color: #245580;
+	
+}
+
+.represent-wrap {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.dialod-script-text {
+	padding: 15px;
+	background-image: linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);
+    background-repeat: repeat-x;    
+    border-radius: 4px;
+    color: #8a6d3b;
+    border: 1px solid #f5e79e;
+    margin-top: 0;
+}
+
+.dialod-script {
+	max-width: 700px;
+	padding-right: 15px;
+}
+
+.client-actions__header-name {
+	padding: 10px 15px 15px 10px;
+	color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    background-image: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);
+    background-repeat: repeat-x;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+.client-actions__header-span {
+	font-weight: bold;
+}
+
+.client-actions {
+	max-width: 540px;
+	padding-left: 15px;
+}
+
+.client-actions__panel {
+	padding: 15px;
+	border: 1px solid #ccc;
+
+}
+
+.input__client-name,
+.recall-options__datetime-input {
+	padding: 6px 12px 6px 12px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	font-size: 14px;
+    line-height: 1.42857143;
+}
+
+.save-button {
+	margin-top: 15px;
+}
+
+.button {
+	cursor: pointer;
+}
+
+.application-forming {
+	max-width: 1024px;
+}
+
+.application-forming__title {
+	font-size: 21px;
+	font-weight: 300;
+	color: #333;
+	border-bottom: 1px solid #dcdcdc;
+	margin-bottom: 30px;
+}
+
+.application-forming__script-header {
+	padding: 10px 15px 10px 15px;
+	border: 1px solid #dcdcdc;	
+	display: flex;
+    justify-content: space-between;
+}
+
+.application-forming__script-score {
+	margin: 0px;
+}
+
+.application-forming__script {
+	margin: 0;
+	margin-right: 3px;
+	
+}
+
+input[type=radio],
+input[type=checkbox],
+label {
+	vertical-align: middle;
+}
+
+.application-forming__script-score {
+	font-weight: bold;
+}
+
+.wrap-fail {
+	background-color: #fdeded; 
+}
+
+.wrap-flat {
+	background-color: #f0f9f1;
+}
+
+.wrap-car {
+	background-color: #edf2f7;
+}
+
+.tab-options__wrap {
+	display: flex;
+	justify-content: space-between;
+	margin: 30px 0 30px 0;
+}
+
+.input-wrap {
+	margin: 7px;
+	margin-left: 0px;
+}
+
+.input-wrap__checkbox {
+	margin-left: 0px;
+}
+
+.tab-options__comments {
+	display: flex;
+	flex-direction: column;
+}
+
+.tab-options__comments-textarea {
+	border-radius: 5px;
+}
+
+.negative-options__recall-checkbox {
+	margin-left: 5px;
+}
+
+.recall-options__datetime {
+	display: flex;
+	flex-direction: column;
+}
+
+.recall-options__datetime-input {
+	width: 180px;
+	margin-top: 10px;
+}
+
+.recall-options__datetime-options {
+	color: grey;
+	font-size: 13px;
+}
+
+.recall-options__datetime-quickset {
+	color: #337ab7;	
+	font-size: 13px;
+	display: flex;
+	flex-direction: row;
+}
+
+.recall-options__datetime-interval {
+	border-bottom: 1px dashed;	
+	margin: 0 10px 5px 0;
+	cursor: pointer;
+}
+
+.recall-options__checkbox {
+	margin-left: 0;
+}
+
+.recall-button,
+.dialing-fail-button {
+	margin-top: 20px;
+}
+
+.dialing-fail-comments {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+ }
+
+.recall-options__table {
+	border: 1px solid grey;
+	border-collapse: collapse;
+}
+
+.recall-options__table td, th {
+	padding: 8px;
+	border: 1px solid grey;
+	width: 200px;
+}
+
+.recall-options__table-task-row {
+	background-color: #dff0d8;
+}
+
+.recall-options__table-head-row {
+	text-align: left;
+}
+
+.recall-options__task-keep {
+	margin-top: 30px;
+}
+
+.input-button {
+	margin-left: 0px;
+}
+
+.section {
+	display: none;
+}
+
+.section--active {
+	display: block;
+}
+
+.form__tip {
+	color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 22px;
+    background: lightblue;
+    margin: 1em;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
 }
