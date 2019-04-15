@@ -278,3 +278,16 @@ label {
 .section--active {
 	display: block;
 }
+
+.form__tip {
+	color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 22px;
+    background: lightblue;
+    margin: 1em;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
