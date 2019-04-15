@@ -207,24 +207,25 @@
 			<div class="recall__task-keep section">
 				<div class="recall-options__datetime">
 					<label for="recall-options__datetime-input"><b>Дата и время перезвона</b></label>
-					<input type="datetime" id="recall-options__datetime-input" class="recall-options__datetime-input">
+					<input type="text" id="recall-options__datetime-input" class="recall-options__datetime-input js-date">
+					<input type="text" class="recall-options__datetime-input js-time">
 					<p class="recall-options__datetime-options">Перезвонить через:</p>
 					<div class="recall-options__datetime-quickset">
-						<p class="recall-options__datetime-interval">10минут, </p>
-						<p class="recall-options__datetime-interval"> 30 минут</p>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="minutes" data-time="10">10 минут, </button>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="minutes" data-time="30"> 30 минут</button>
 					</div>
 					<div class="recall-options__datetime-quickset">
-						<p class="recall-options__datetime-interval">1 час, </p>
-						<p class="recall-options__datetime-interval"> 2 часа, </p>
-						<p class="recall-options__datetime-interval"> 3 часа</p>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="hours" data-time="1">1 час, </button>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="hours" data-time="2"> 2 часа, </button>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="hours" data-time="3"> 3 часа</button>
 					</div>
 					<div class="recall-options__datetime-quickset">
-						<p class="recall-options__datetime-interval">1 день, </p>
-						<p class="recall-options__datetime-interval"> 2 дня, </p>
-						<p class="recall-options__datetime-interval"> 3 дня</p>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="days" data-time="1">1 день, </button>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="days" data-time="2"> 2 дня, </button>
+						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="days" data-time="3"> 3 дня</button>
 					</div>
 					<div class="recall-options__datetime-quickset">
-						<p class="recall-options__datetime-interval">1 неделя</p>
+						<button class="recall-options__datetime-interval js-datetime-btn"data-interval="days" data-time="7">1 неделя</button>
 					</div>
 				</div>
 				<div class="input-wrap input-wrap__checkbox">
@@ -272,7 +273,6 @@
 			<div class="form__birth">
 				<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
 				<input type="text" id="birth" class="form__birth-input" name="name">
-				<span class="form__tip">?</span>
 			</div>
 			<div class="form__phone">
 				<label for="phone" class="form__label">Мобильный телефон<span class="span-red">*</span></label>
@@ -285,6 +285,108 @@
 				<span class="form__tip">?</span>
 			</div>
 		</div>
+		<h3 class="form__titles">Информация о кредите наличными</h3>
+		<div class="form__block form__block-cashloan-info">
+			<div class="form__loan-amount">
+				<label for="loan-amount" class="form__label">Сумма кредита<span class="span-red">*</span></label>
+				<input type="text" id="loan-amount" class="form__loan-amount-input" name="name">
+				<span class="form__tip">?</span>
+			</div>
+			<div class="form__loan-period">
+				<label for="loan-period" class="form__label">Срок кредита (кол-во месяцев)<span class="span-red">*</span></label>
+				<input type="text" id="loan-period" class="form__loan-period-input" name="name">
+				<span class="form__tip">?</span>
+			</div>
+			<div class="form__loan-purpose">
+				<label for="loan-purpose" class="form__label">Цель кредита<span class="span-red">*</span></label>
+				<select name="name" id="loan-purpose" class="form__loan-purpose-input">
+					<option value="Не указано" selected>Не указано</option>
+					<option value="Ремонт">Ремонт</option>
+					<option value="Учеба">Учеба</option>
+					<option value="Покупка автомобиля">Покупка автомобиля</option>
+					<option value="Лечение">Лечение</option>
+					<option value="Погашение долгов (не кредиты)">Погашение долгов (не кредиты)</option>
+					<option value="Шоппинг">Шоппинг</option>
+					<option value="Путешествие">Путешествие</option>
+					<option value="Торжество">Торжество</option>
+					<option value="Помощь близким">Помощь близким</option>
+					<option value="Пока не определился">Пока не определился</option>
+					<option value="Иное">Иное</option>
+				</select>
+			</div>
+		</div>
+		<h3 class="form__titles">Паспортные данные</h3>
+		<div class="form__block form__block-passport">
+			<div class="form__passport-number">
+				<label for="passport-number" class="form__label">Серия - номер<span class="span-red">*</span></label>
+				<input type="text" id="passport-number" class="form__passport-number-input" name="name">
+			</div>
+			<div class="form__passport-date">
+				<label for="passport-passport-date" class="form__label">Дата выдачи<span class="span-red">*</span></label>
+				<input type="text" id="passport-passport-date" class="form__passport-date-input" name="name">
+				<span class="form__tip">?</span>
+			</div>
+			<div class="form__passport-code">
+				<label for="passport-code" class="form__label">Код подразделения<span class="span-red">*</span></label>
+				<input type="text" id="passport-code" class="form__passport-code-input" name="name">
+			</div>
+			<div class="form__passport-issue">
+				<label for="passport-issue" class="form__label">Кем выдан<span class="span-red">*</span></label>
+				<input type="text" id="passport-issue" class="form__passport-issue-input" name="name">
+				<span class="form__tip">?</span>
+			</div>
+			<div class="form__passport-birth-place">
+				<label for="passport-birth-place" class="form__label">Место рождения<span class="span-red">*</span></label>
+				<input type="text" id="passport-birth-place" class="form__passport-birth-place-input" name="name">
+				<span class="form__tip">?</span>
+			</div>
+			<div class="form__passport-snils">
+				<label for="passport-snils" class="form__label">СНИЛС<span class="span-red">*</span></label>
+				<input type="text" id="passport-snils" class="form__passport-snils-input" name="name">
+				<span class="form__tip">?</span>
+			</div>	
+			<div class="form__passport-snils_checkbox">
+				<input type="checkbox" class="passport-snils-checkbox" id="passport-snils">
+				<label for="passport-snils">Не может предоставить</label>
+			</div>						
+		</div>	
+		<h3 class="form__titles">Дополнительные документы, которые клиент готов предоставить</h3>
+		<div class="form__block form__block-additional-documents">
+			<div class="form__additional-documents">
+				<label for="additional-documents" class="form__label">Заграничный паспорт<span class="span-red">*</span></label>
+				<select id="additional-documents" class="form__additional-documents-input" name="name">
+					<option value="Не выбрано">Не выбрано</option>
+					<option value="Да">Да</option>
+					<option value="Нет">Нет</option>
+					<option value="Не уверен">Не уверен</option>
+				</select>				
+			</div>
+		</div>	
+		<h3 class="form__titles">Адрес по месту постоянной регистрации</h3>
+		<div class="form__block form__block-address">
+			<div class="form__address-swicher">
+				<input type="checkbox" class="address-filling-type-switch-checkbox" id="address-filling-type-switch">
+				<label for="address-filling-type-switch">Перейти к ручному заполнению адреса</label>				
+			</div>
+			<div class="form__address-manual-filling">
+				<div class="form__address">
+					<label for="address" class="form__label">Адрес<span class="span-red">*</span></label>
+					<input type="text" id="address" class="form__address-input" name="name">
+				</div>	
+				<div class="form__flat">
+					<label for="flat" class="form__label">Квартира<span class="span-red">*</span></label>
+					<input type="text" id="flat" class="form__flat-input" name="name">
+					<span class="form__tip">?</span>
+					<input type="checkbox" class="flat-house-swicher-checkbox" id="flat-house-swicher">
+					<label for="flat-house-swicher">Нет квартиры(частный дом)</label>
+				</div>	
+				<div class="form__home-phone">
+					<label for="home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
+					<input type="text" id="home-phone" class="form__home-phone-input" name="name">
+					<span class="form__tip">?</span>
+				</div>		
+			</div>								
+		</div>	
 	</form>
 	<script src="main.js"></script>
 </body>
