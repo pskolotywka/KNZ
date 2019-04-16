@@ -571,15 +571,68 @@
 			</div>
 		</div>
 		<h3 class="form__titles">Место работы</h3>	
-			<div class="form__employment-type">
-				<label for="employment-type" class="form__label">Тип занятости</label>		
-				<select name="name" id="employment-type" class="form__employment-type-select">
-					<option value="Работаю в организации" selected>Работаю в организации</option>
-					<option value="Собственный бизнес">Собственный бизнес</option>
-					<option value="Не работаю">Не работаю</option>
+		<div class="form__employment-type">
+			<label for="employment-type" class="form__label">Тип занятости</label>		
+			<select name="name" id="employment-type" class="form__employment-type-select">
+				<option value="Работаю в организации" selected>Работаю в организации</option>
+				<option value="Собственный бизнес">Собственный бизнес</option>
+				<option value="Не работаю">Не работаю</option>
+			</select>
+			<span class="form__tip">?</span>	
+		</div>
+		<div class="form__block form__block-organization">	
+			<div class="form__organization">
+				<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
+				<input type="text" id="organization" class="form__organization-input" name="name">
+				<span class="form__tip">?</span>
+			</div>	
+			<div class="form__work-experience">
+				<label for="work-experience" class="form__label">Срок работы в организации</label>		
+				<select name="name" id="work-experience" class="form__work-experience-select">
+					<option value="Не выбрано" selected>Не выбрано</option>
+					<option value="Меньше 1 года">Нет</option>
+					<option value="От 1 года, но меньше 2">От 1 года, но меньше 2</option>
+					<option value="От 2 лет, но меньше 3">От 2 лет, но меньше 3</option>
+					<option value="От 3 лет, но меньше 4">От 3 лет, но меньше 4</option>
+					<option value="От 4 лет, но меньше 5">От 4 лет, но меньше 5</option>
+					<option value="От 5 лет, но меньше 6">От 5 лет, но меньше 6</option>
+					<option value="От 6 лет, но меньше 7">От 6 лет, но меньше 7</option>
+					<option value="От 7 лет и более">От 7 лет и более</option>
 				</select>
-				<span class="form__tip">?</span>				
-			</div>
+			</div>	
+			<div class="form__own-business">
+				<div class="form__own-business-official">
+					<input type="checkbox" class="form__own-business-official-checkbox" id="own-business-official">
+					<label for="own-business-official">Неофициальный</label>	
+					<span class="form__tip">?</span>			
+				</div>	
+				<div class="form__organization">
+					<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
+					<input type="text" id="organization" class="form__organization-input" name="name">
+					<span class="form__tip">?</span>
+				</div>		
+			</div>	
+			<div class="form__workless">
+				<label for="form__workless-reasons" class="form__label">Причина<span class="span-red">*</span></label>
+				<div class="form__workless-reasons-radio" id="form__workless-reasons">
+					<input type="radio" name="name" id="reason__pensioner-age" class="workless-reasons workless-reasons__pensioner-age">
+					<label for="reason__pensioner-age" class="form__label form__label_workless-reasons">Пенсионер по возрасту/стажу работы</label>	
+					<input type="radio" name="name" id="reason__pensioner-invalid" class="workless-reasons workless-reason__pensioner-invalid">
+					<label for="reason__pensioner-invalid" class="form__label form__label_workless-reasons">Пенсионер по инвалидности</label>	
+					<input type="radio" name="name" id="reason__finding-job" class="workless-reasons workless-reason__finding-job">
+					<label for="reason__finding-job" class="form__label form__label_workless-reasons">Ищу работу</label>	
+					<input type="radio" name="name" id="reason__marital-care" class="workless-reasons workless-reasons__marital-care">
+					<label for="reason__marital-care" class="form__label form__label_workless-reasons">Содержит муж/жена</label>	
+					<input type="radio" name="name" id="reason__other" class="workless-reasons workless-reason__other">
+					<label for="reason__other" class="form__label form__label_workless-reasons">Другое</label>		
+				</div>
+				<div class="form__reason-for-other">
+					<label for="reason-for-other" class="form__label"><span class="span-red">*</span></label>
+					<input type="text" id="reason-for-other" class="form__reason-for-other-input" name="name">
+				</div>	
+			</div>	
+		</div>
+		<button class="additionat-info-button button">Перейти к оформлению дополнительных данных</button>
 	</form>
 	<script src="main.js"></script>
 </body>
