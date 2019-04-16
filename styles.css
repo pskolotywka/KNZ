@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 .main {
 	margin: 30px 50px 30px 50px;
 	font-family: helvetica;
@@ -59,7 +63,6 @@
 .represent-wrap {
 	margin-top: 30px;
 	display: flex;
-	justify-content: space-between;
 }
 
 .dialod-script-text {
@@ -96,6 +99,7 @@
 .client-actions {
 	max-width: 540px;
 	padding-left: 15px;
+	flex-grow: 1;
 }
 
 .client-actions__panel {
@@ -111,6 +115,7 @@
 	border: 1px solid #ccc;
 	font-size: 14px;
     line-height: 1.42857143;
+    width: 100%;
 }
 
 .save-button {
