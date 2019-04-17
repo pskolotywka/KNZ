@@ -296,3 +296,12 @@ label {
     text-align: center;
     cursor: pointer;
 }
+
+.form input {
+	width: 385px;
+}
+
+.form {
+	width: 800px;
+  display: grid;
+}

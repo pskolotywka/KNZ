@@ -55,17 +55,22 @@ function setRecall() {
 		button.addEventListener("click", function() {
 			const date = new Date();
 			const intervalAttr = button.dataset.interval;
-			const timeAttr = button.dataset.time;
+			const timeAttr = +button.dataset.time;
+      
+      date.setMonth(date.getMonth() + 1);
 
 			if (intervalAttr == "minutes") {
-				currentDate = date.toISOString().slice(0, 10);
-				currentTime = date.getHours() + ":" + date.setMinutes(date.getMinutes() + timeAttr);
+				currentDate = date.getDate().toString().replace( /^([0-9])$/, '0$1') + "." + (date.getMonth().toString().replace( /^([00])$/, '12')).toString().replace( /^([0-9])$/, '0$1') + "." + date.getFullYear();
+        date.setMinutes(date.getMinutes() + timeAttr);
+				currentTime = date.getHours().toString().replace( /^([0-9])$/, '0$1') + ":" + date.getMinutes().toString().replace( /^([0-9])$/, '0$1');
 			} else if (intervalAttr == "hours") {
-				currentDate = date.toISOString().slice(0, 10);
-				currentTime = date.setHours(date.getHours() + timeAttr) + ":" + date.getMinutes();
+				currentDate = date.getDate().toString().replace( /^([0-9])$/, '0$1') + "." +(date.getMonth().toString().replace( /^([00])$/, '12')).toString().replace( /^([0-9])$/, '0$1') + "." + date.getFullYear();
+        date.setHours(date.getHours() + timeAttr);
+				currentTime = date.getHours().toString().replace( /^([0-9])$/, '0$1') + ":" + date.getMinutes().toString().replace( /^([0-9])$/, '0$1');
 			} else if (intervalAttr == "days") {
-				currentDate = date.setDate(date.getDay() + timeAttr) + "." + date.getMonth() + "." + date.getYear();
-				currentTime = date.getHours() + ":" + date.getMinutes();
+        date.setDate(date.getDate() + timeAttr);
+				currentDate = date.getDate().toString().replace( /^([0-9])$/, '0$1') + "." + (date.getMonth().toString().replace( /^([00])$/, '12')).toString().replace( /^([0-9])$/, '0$1') + "." + date.getFullYear();
+				currentTime = date.getHours().toString().replace( /^([0-9])$/, '0$1') + ":" + date.getMinutes().toString().replace( /^([0-9])$/, '0$1');
 			}
 
 			inputDate.value = currentDate;
@@ -75,3 +80,37 @@ function setRecall() {
 }
 
 setRecall();
+
+
+
+// function setRecall() {
+// 	const inputDate = document.querySelector(".js-date");
+// 	const inputTime = document.querySelector(".js-time");
+// 	const buttons = document.querySelectorAll(".js-datetime-btn");
+// 	let currentDate;
+// 	let currentTime;
+
+// 	for (const button of buttons) {
+// 		button.addEventListener("click", function() {
+// 			const date = new Date();
+// 			const intervalAttr = button.dataset.interval;
+// 			const timeAttr = button.dataset.time;
+
+// 			if (intervalAttr == "minutes") {
+// 				currentDate = date.toISOString().slice(0, 10);
+// 				currentTime = date.getHours() + ":" + date.setMinutes(date.getMinutes() + timeAttr);
+// 			} else if (intervalAttr == "hours") {
+// 				currentDate = date.toISOString().slice(0, 10);
+// 				currentTime = date.setHours(date.getHours() + timeAttr) + ":" + date.getMinutes();
+// 			} else if (intervalAttr == "days") {
+// 				currentDate = date.setDate(date.getDay() + timeAttr) + "." + date.getMonth() + "." + date.getYear();
+// 				currentTime = date.getHours() + ":" + date.getMinutes();
+// 			}
+
+// 			inputDate.value = currentDate;
+// 			inputTime.value = currentTime;
+// 		});
+// 	}
+// }
+
+// setRecall();
