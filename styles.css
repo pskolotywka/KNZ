@@ -305,3 +305,10 @@ label {
 	width: 800px;
   display: grid;
 }
+
+.info-button {
+    background-color: white;
+    border-style: none;
+    color: #74a3c7;
+    cursor: pointer;
+}

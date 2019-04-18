@@ -264,6 +264,101 @@
 			<button class="dialing-fail-button button">Завершить работу с заданием</button>
 		</div>
 	</main>
+	<div class="loan-offer">
+		<div class="loan-offer__not-ready">
+			<h4>Причина отказа от КНЗ:</h4>
+			<div class="refuse-reason">
+				<div class="refuse-reason__not-choosen">
+					<input type="radio" name="name" id="not-choosen" class="refuse-reason__not-choosen-radio">
+					<label for="not-choosen" class="form__label">Не выбрано</label>
+				</div>
+				<div class="refuse-reason__no-own-housing">
+					<input type="radio" name="name" id="no-own-housing" class="refuse-reason__no-own-housing-radio">
+					<label for="no-own-housing" class="form__label">Нет собственного жилья</label>
+				</div>
+				<div class="refuse-reason__afraid">
+					<input type="radio" name="name" id="afraid" class="refuse-reason__afraid-radio">
+					<label for="afraid" class="form__label">Боится закладывать квартиру</label>
+				</div>
+				<div class="refuse-reason__private-house">
+					<input type="radio" name="name" id="" class="refuse-reason__private-house-radio">
+					<label for="private-house" class="form__label">Частный дом</label>
+				</div>
+				<div class="refuse-reason__burden">
+					<input type="radio" name="name" id="burden" class="refuse-reason__burden-radio">
+					<label for="burden" class="form__label">Жилье под обременением</label>
+				</div>
+				<div class="refuse-reason__not-an-owner">
+					<input type="radio" name="name" id="not-an-owner" class="refuse-reason__not-an-owner-radio">
+					<label for="not-an-owner" class="form__label">Собственники дети</label>
+				</div>
+				<div class="refuse-reason__housing-condition">
+					<input type="radio" name="name" id="housing-condition" class="refuse-reason__-radio">
+					<label for="housing-condition" class="form__label">Жилье не подходит по другим условиям</label>
+				</div>
+				<div class="refuse-reason__big-summ">
+					<input type="radio" name="name" id="big-summ" class="refuse-reason__big-summ-radio">
+					<label for="big-summ" class="form__label">Нужна сумма меньше</label>
+				</div>
+				<div class="refuse-reason__other">
+					<input type="radio" name="name" id="other" class="refuse-reason__other-radio">
+					<label for="other" class="form__label">Другое</label>
+				</div>																	
+			</div>
+			<button class="next-button button">Далее</button>
+		</div>
+		<div class="loan-offer__car-bail">
+			<h4 class="form__subtitles">Причина отказа от КНЗ:</h4>
+			<div class="car-bail__refuse-reason">
+				<div class="car-bail__refuse-reason_not-choosen">
+					<input type="radio" name="name" id="car-bail__not-choosen" class="car-bail__refuse-reason_not-choosen-radio">
+					<label for="car-bail__not-choosen" class="form__label">Не выбрано</label>
+				</div>
+				<div class="car-bail__refuse-reason_no-own-housing">
+					<input type="radio" name="name" id="car-bail__no-own-housing" class="car-bail__refuse-reason_no-own-housing-radio">
+					<label for="car-bail__no-own-housing" class="form__label">Нет собственного жилья</label>
+				</div>
+				<div class="car-bail__refuse-reason_afraid">
+					<input type="radio" name="name" id="car-bail__afraid" class="car-bail__refuse-reason_afraid-radio">
+					<label for="car-bail__afraid" class="form__label">Боится закладывать квартиру</label>
+				</div>
+				<div class="car-bail__refuse-reason_private-house">
+					<input type="radio" name="name" id="car-bail__private-house" class="car-bail__refuse-reason_private-house-radio">
+					<label for="car-bail__private-house" class="form__label">Частный дом</label>
+				</div>
+				<div class="car-bail__refuse-reason_burden">
+					<input type="radio" name="name" id="car-bail__burden" class="car-bail__refuse-reason_burden-radio">
+					<label for="car-bail__burden" class="form__label">Жилье под обременением</label>
+				</div>
+				<div class="car-bail__refuse-reason_not-an-owner">
+					<input type="radio" name="name" id="car-bail__not-an-owner" class="car-bail__refuse-reason_not-an-owner-radio">
+					<label for="car-bail__not-an-owner" class="form__label">Собственники дети</label>
+				</div>
+				<div class="car-bail__refuse-reason_housing-condition">
+					<input type="radio" name="name" id="car-bail__housing-condition" class="car-bail__refuse-reason_housing-condition-radio">
+					<label for="car-bail__housing-condition" class="form__label">Жилье не подходит по другим условиям</label>
+				</div>
+				<div class="car-bail__refuse-reason_big-summ">
+					<input type="radio" name="name" id="car-bail__big-summ" class="car-bail__refuse-reason_big-summ-radio">
+					<label for="car-bail__big-summ" class="form__label">Нужна сумма меньше</label>
+				</div>
+				<div class="car-bail__refuse-reason_other">
+					<input type="radio" name="name" id="car-bail__other" class="car-bail__refuse-reason_other-radio">
+					<label for="car-bail__other" class="form__label">Другое</label>
+				</div>
+				<h4 class="form__subtitles">Является ли клиент собственником автомобиля?</h4>
+				<div class="car-bail__refuse-reason_owner">
+					<input type="radio" name="name" id="car-bail__owner" class="car-bail__refuse-reason_owner-radio">
+					<label for="car-bail__owner" class="form__label">Собственник</label>
+				</div>			
+				<div class="car-bail__refuse-reason_not-owner">
+					<input type="radio" name="name" id="car-bail__not-owner" class="car-bail__refuse-reason_not-owner-radio">
+					<label for="car-bail__not-owner" class="form__label">Не является собственником</label>
+				</div>															
+			</div>
+			<button class="next-button button">Далее</button>
+		</div>
+	</div>
 	<form action="post" class="form">
 		<h3 class="form__titles">Контактные данные</h3>
 		<div class="form__block form__block-contact-info">
@@ -635,7 +730,72 @@
 			</div>	
 		</div>
 		<button class="additionat-info-button button">Перейти к оформлению дополнительных данных</button>
+		<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
+		<div class="form__block form__block-additional-info">
+			<div class="form__family-phone">
+				<label for="family-phone" class="form__label">Стационарный телефон родственников или знакомых<span class="span-red">*</span></label>
+				<input type="phone" id="family-phone" class="form__family-phone-input" name="name">
+				<span class="form__tip">?</span>
+			</div>	
+			<div class="form__family-phone_comment">
+				<label for="family-phone_comment" class="form__label">Комментарий<span class="span-red">*</span></label>
+				<input type="text" id="family-phone_comment" class="form__family-phone_comment-input" name="name">
+				<span class="form__tip">?</span>
+			</div>	
+			<div class="form__income">
+				<label for="family-income" class="form__label">Персональный доход<span class="span-red">*</span></label>
+				<input type="number" id="income" class="form__income-input" name="name">				
+				<p class="form__text">руб./месяц</p>
+				<span class="form__tip">?</span>
+			</div>	
+			<div class="form__flat-rent">
+				<label for="flat-rent" class="form__label">Сумма аренды квартиры<span class="span-red">*</span></label>
+				<input type="number" id="flat-rent" class="form__flat-rent-input" name="name">				
+				<p class="form__text">руб./месяц</p>
+				<span class="form__tip">?</span>
+			</div>	
+		</div>
+		<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
+		<div class="form__block form__password">
+			<div class="form__password">
+				<label for="password" class="form__label">Кодовое слово<span class="span-red">*</span></label>
+				<input type="text" id="password" class="form__password-input" name="name">
+				<span class="form__tip">?</span>
+			</div>
+			<div class="form__got-debit-card">
+				<input type="checkbox" class="form__got-debit-card-checkbox" id="got-debit-card">
+				<label for="got-debit-card">Есть дебетовая карта Тинькофф банка</label>	
+			</div>				
+			<div class="form__data-agreement">
+				<input type="checkbox" class="form__data-agreement-checkbox" id="data-agreement">
+				<label for="data-agreement"> Согласен с передачей данных (<button class="info-button">подробная информация</button>)</label>
+			</div>						
+		</div>
+		<button class="end-task-button button">Оформить заявку</button>		
 	</form>
+	<div class="popup">
+		<div class="popup__close-btn"></div>
+		<div class="popup__body">
+			<p class="popup__body-text">
+				Я даю согласие Банку на обработку всех моих персональных данных, указанных в заявке, любыми способами, в том числе третьими лицами, в том числе воспроизведение, электронное копирование, обезличивание, блокирование, уничтожение, а также вышеуказанную обработку иных моих персональных данных, полученных в результате их обработки, с целью:
+			</p>
+			<ul class="popup__body-list">
+				<li class="popup__body-item">выпуска, обслуживания кредитных карт;</li>
+				<li class="popup__body-item">создания информационных систем персональных данных Банка;</li>
+				<li class="popup__body-item">
+					страхования моей жизни/ здоровья/ имущества и иного страхования, осуществляемого при содействии Банка или в пользу Банка и/или в связи с заключением договора, 
+					а также в любых других целях, прямо или косвенно связанных с выпуском и обслуживанием кредитных карт и предложением иных продуктов Банка, и направления мне 
+					информации о новых продуктах и услугах Банка и/или его контрагентов.
+				</li>
+			</ul>
+			<p class="popup__body-text">
+				Указанное согласие дано на срок 15 лет, а в случае его отзыва обработка моих персональных данных должна быть прекращена Банком и/или третьими лицами и данные уничтожены при условии расторжения Договора и полного погашения задолженности по Договору в срок не позднее 1 (одного) года с даты прекращения действия Договора.
+			</p>
+			<p class="popup__body-text">
+				Я даю согласие на предоставление Банком всей имеющейся обо мне информации в объеме, в порядке и на условиях, определенных Федеральным законом «О кредитных историях» № 218-ФЗ от 30 декабря 2004 года, во все бюро кредитных историй, включенные в государственный реестр бюро кредитных историй, а также на получение кредитного отчета из вышеозначенных бюро для заключения Договора и в течение срока действия Договора.
+			</p>
+		</div>
+	</div>
 	<script src="main.js"></script>
 <!-- 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

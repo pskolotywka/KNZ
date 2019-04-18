@@ -1,3 +1,6 @@
+
+
+
 function activeTab() {
 	const tabs = document.querySelectorAll(".tabs__item");
 	const sections = document.querySelectorAll(".section");
