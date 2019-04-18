@@ -268,44 +268,95 @@
 		<div class="loan-offer__not-ready">
 			<h4>Причина отказа от КНЗ:</h4>
 			<div class="refuse-reason">
-				<div class="refuse-reason__not-choosen">
-					<input type="radio" name="name" id="not-choosen" class="refuse-reason__not-choosen-radio">
-					<label for="not-choosen" class="form__label">Не выбрано</label>
+				<div class="not-ready__refuse-reason_not-choosen">
+					<input type="radio" name="name" id="not-ready__not-choosen" class="not-ready__refuse-reason_not-choosen-radio">
+					<label for="not-ready__not-choosen" class="form__label">Не выбрано</label>
 				</div>
-				<div class="refuse-reason__no-own-housing">
-					<input type="radio" name="name" id="no-own-housing" class="refuse-reason__no-own-housing-radio">
-					<label for="no-own-housing" class="form__label">Нет собственного жилья</label>
+				<div class="not-ready__refuse-reason_no-own-housing">
+					<input type="radio" name="name" id="not-ready__no-own-housing" class="not-ready__refuse-reason_no-own-housing-radio">
+					<label for="not-ready__no-own-housing" class="form__label">Нет собственного жилья</label>
 				</div>
-				<div class="refuse-reason__afraid">
-					<input type="radio" name="name" id="afraid" class="refuse-reason__afraid-radio">
-					<label for="afraid" class="form__label">Боится закладывать квартиру</label>
+				<div class="not-ready__refuse-reason_afraid">
+					<input type="radio" name="name" id="not-ready__afraid" class="not-ready__refuse-reason_afraid-radio">
+					<label for="not-ready__afraid" class="form__label">Боится закладывать квартиру</label>
 				</div>
-				<div class="refuse-reason__private-house">
-					<input type="radio" name="name" id="" class="refuse-reason__private-house-radio">
-					<label for="private-house" class="form__label">Частный дом</label>
+				<div class="not-ready__refuse-reason_private-house">
+					<input type="radio" name="name" id="not-ready__private-house" class="not-ready__refuse-reason_private-house-radio">
+					<label for="not-ready__private-house" class="form__label">Частный дом</label>
 				</div>
-				<div class="refuse-reason__burden">
-					<input type="radio" name="name" id="burden" class="refuse-reason__burden-radio">
-					<label for="burden" class="form__label">Жилье под обременением</label>
+				<div class="not-ready__refuse-reason_burden">
+					<input type="radio" name="name" id="not-ready__burden" class="not-ready__refuse-reason_burden-radio">
+					<label for="not-ready__burden" class="form__label">Жилье под обременением</label>
 				</div>
-				<div class="refuse-reason__not-an-owner">
-					<input type="radio" name="name" id="not-an-owner" class="refuse-reason__not-an-owner-radio">
-					<label for="not-an-owner" class="form__label">Собственники дети</label>
+				<div class="not-ready__refuse-reason_not-an-owner">
+					<input type="radio" name="name" id="not-ready__not-an-owner" class="not-ready__refuse-reason_not-an-owner-radio">
+					<label for="not-ready__not-an-owner" class="form__label">Собственники дети</label>
 				</div>
-				<div class="refuse-reason__housing-condition">
-					<input type="radio" name="name" id="housing-condition" class="refuse-reason__-radio">
-					<label for="housing-condition" class="form__label">Жилье не подходит по другим условиям</label>
+				<div class="not-ready__refuse-reason_housing-condition">
+					<input type="radio" name="name" id="not-ready__housing-condition" class="not-ready__refuse-reason_housing-condition-radio">
+					<label for="not-ready__housing-condition" class="form__label">Жилье не подходит по другим условиям</label>
 				</div>
-				<div class="refuse-reason__big-summ">
-					<input type="radio" name="name" id="big-summ" class="refuse-reason__big-summ-radio">
-					<label for="big-summ" class="form__label">Нужна сумма меньше</label>
+				<div class="rnot-ready__refuse-reason_big-summ">
+					<input type="radio" name="name" id="not-ready__big-summ" class="not-ready__refuse-reason_big-summ-radio">
+					<label for="not-ready__big-summ" class="form__label">Нужна сумма меньше</label>
 				</div>
-				<div class="refuse-reason__other">
-					<input type="radio" name="name" id="other" class="refuse-reason__other-radio">
-					<label for="other" class="form__label">Другое</label>
+				<div class="not-ready__refuse-reason_other">
+					<input type="radio" name="name" id="not-ready__other" class="not-ready__refuse-reason_other-radio">
+					<label for="not-ready__other" class="form__label">Другое</label>
 				</div>																	
 			</div>
 			<button class="next-button button">Далее</button>
+		</div>
+		<div class="loan-offer__flat-bail">
+			<h4 class="form__subtitles">Является ли клиент собственником квартиры?</h4>
+			<div class="flat-bail__ownership">				
+				<input type="radio" name="name" id="flat-bail__owner" class="flat-bail__owner-radio">
+				<label for="flat-bail__owner" class="form__label">Собственник</label>	
+				<input type="radio" name="name" id="flat-bail__not-owner" class="flat-bail__not-owner-radio">
+				<label for="flat-bail__not-owner" class="form__label">Не является собственником</label>				
+			</div>
+			<h4 class="form__subtitles">Клиент является единственным владельцем?</h4>
+			<div class="flat-bail__only-ownership">				
+				<input type="radio" name="name" id="flat-bail__only-owner" class="flat-bail__only-owner-radio">
+				<label for="flat-bail__only-owner" class="form__label">Единственный владелец</label>	
+				<input type="radio" name="name" id="flat-bail__not-only-owner" class="flat-bail__not-only-owner-radio">
+				<label for="flat-bail__not-only-owner" class="form__label">Долевая собственность</label>				
+			</div>
+			<h4 class="form__subtitles">Для подачи заявки будут использоваться созаемщики?</h4>
+			<div class="flat-bail__co-borrowers">				
+				<input type="radio" name="name" id="flat-bail__co-borrowers-yes" class="flat-bail__co-borrowers-yes-radio">
+				<label for="flat-bail__co-borrowers-yes" class="form__label">Будут</label>	
+				<input type="radio" name="name" id="flat-bail__co-borrowers-no" class="flat-bail__co-borrowers-no-radio">
+				<label for="flat-bail__co-borrowers-no" class="form__label">Созаемщиков не будет</label>				
+			</div>
+			<h4 class="form__subtitles">Клиент готов встретиться по адресу залога для подписания документов?</h4>
+			<div class="flat-bail__meeting">				
+				<input type="radio" name="name" id="flat-bail__meeting-yes" class="flat-bail__meeting-yes-radio">
+				<label for="flat-bail__meeting-yes" class="form__label">Готов встретиться по адресу</label>	
+				<input type="radio" name="name" id="flat-bail__meeting-no" class="flat-bail__meeting-no-radio">
+				<label for="flat-bail__meeting-no" class="form__label">Не готов</label>				
+			</div>
+			<h4 class="form__subtitles">Клиент готов встретиться по адресу залога для подписания документов?</h4>
+			<div class="flat-bail__party-co-borrowers">				
+				<input type="radio" name="name" id="flat-bail__party-co-borrowers-yes" class="flat-bail__party-co-borrowers-yes-radio">
+				<label for="flat-bail__party-co-borrowers-yes" class="form__label">Да, сможет</label>	
+				<input type="radio" name="name" id="flat-bail__party-co-borrowers-no" class="flat-bail__party-co-borrowers-no-radio">
+				<label for="flat-bail__party-co-borrowers-no" class="form__label">Не готов</label>				
+			</div>
+		</div>
+		<div class="object-address">
+			<h3 class="form__titles">Адрес объекта</h3>
+			<div class="object-address__address">
+				<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
+				<input type="text" id="object-address" class="object-address__address-input" name="name">
+			</div>
+			<div class="object-address__flat">
+				<label for="address__flat" class="form__label">Квартира<span class="span-red">*</span></label>
+				<input type="text" id="address__flat" class="object-address__flat-input" name="name">
+				<input type="checkbox" class="object-address__flat-checkbox" id="object-address__flat">
+				<label for="object-address__flat">Нет квартиры(частный дом)</label>	
+				<button class="info-button">Назад к предложению</button>
+			</div>			
 		</div>
 		<div class="loan-offer__car-bail">
 			<h4 class="form__subtitles">Причина отказа от КНЗ:</h4>

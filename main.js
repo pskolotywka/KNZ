@@ -1,4 +1,14 @@
+function disableInput() {
+	const checkbox = document.querySelector(".passport-snils-checkbox");
+	const input = document.querySelector(".form__passport-snils-input");
 
+	checkbox.addEventListener("click", function() {
+		checkbox.checked
+			input.disabled = !input.disabled;		 
+	});
+}	
+
+disableInput();
 
 
 function activeTab() {
