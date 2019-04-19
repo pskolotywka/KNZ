@@ -2,6 +2,12 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-family: helvetica;
+	font-weight: 100;
+	font-size: 14px;
+}
+
 .main {
 	margin: 30px 50px 30px 50px;
 	font-family: helvetica;
@@ -299,11 +305,60 @@ label {
 
 .form input {
 	width: 385px;
+	border: 1px solid;
+	padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;    
+}
+
+.form select {
+	width: 385px;
+	border: 1px solid;
+	padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;	
+}
+
+.form input:focus {
+	border-color: rgba(82,168,236,.8);
+}
+
+.form input[type='checkbox'] {
+	width: 13px;
+	height: 13px;
+	margin: 0px;
+}
+
+.form input[type='radio'] {
+	width: 13px;
+	height: 13px;
 }
 
 .form {
 	width: 800px;
-  display: grid;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	box-sizing: content-box;
+}
+
+.form__block > div {
+	display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 15px;
 }
 
 .info-button {
@@ -312,3 +367,51 @@ label {
     color: #74a3c7;
     cursor: pointer;
 }
+
+.form__label {
+	font-weight: 700;
+	margin-right: 20px;
+}
+
+.span-red {
+	color: red;
+}
+
+.form__titles {
+	display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.radio-margin {
+	margin: 30px;
+	line-height: 1.5;
+}
+
+.form-wrap__tip {
+	margin: 0 20px;
+	position: relative;
+
+}
+
+.form__tip {
+	margin: 0;
+	position: absolute;
+	bottom: -10px;
+}
+
+.form__house input {
+	width: 108px;
+}
+
+
+
+
+
+
