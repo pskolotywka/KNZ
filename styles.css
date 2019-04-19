@@ -352,6 +352,7 @@ label {
 	flex-direction: column;
 	align-items: flex-end;
 	box-sizing: content-box;
+	margin-left: 50px;
 }
 
 .form__block > div {
@@ -375,6 +376,7 @@ label {
 
 .span-red {
 	color: red;
+	margin-left: 5px;
 }
 
 .form__titles {
@@ -387,6 +389,7 @@ label {
     color: #333;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
+    margin-left: 50px;
 }
 
 .radio-margin {
@@ -410,7 +413,49 @@ label {
 	width: 108px;
 }
 
+.object-address {
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	box-sizing: content-box;	
+}
 
+.object-address input[type="text"]{
+	width: 385px;
+	border: 1px solid;
+	padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;   	
+}
+
+.object-address__flat input[type="text"]{
+	width: 85px;
+}
+
+.object-address__inputs {
+	width: 460px;
+}
+
+.object-address__flat {
+	margin-left: -22px;
+	margin-top: 15px;
+}
+
+.object-address__wrap-buttons {
+	width: 388px;
+	margin-top: 30px;
+}
+
+.form__line-checkbox {
+	width: 337px;
+}
 
 
 
