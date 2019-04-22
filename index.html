@@ -546,7 +546,7 @@
 		<div class="form__block form__block-address">
 			<div class="form__address-swicher form__line-checkbox">
 				<input type="checkbox" class="form__address-filling-type-switch-checkbox" id="address-filling-type-switch">
-				<label for="address-filling-type-switch" name="name">Перейти к ручному заполнению адреса</label>	
+				<label for="address-filling-type-switch">Перейти к ручному заполнению адреса</label>	
 				<div class="form-wrap__tip"></div>			
 			</div>
 			<div class="form__address-auto-filling">
@@ -576,7 +576,7 @@
 			<div class="form__address-manual-filling">
 				<div class="form__index">
 					<label for="address" class="form__label">Индекс<span class="span-red">*</span></label>
-					<input type="text" id="address" class="form__address-input" name="name">					
+					<input type="text" id="address-index" class="form__address-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
 				<div class="form__index-swicher">
@@ -585,7 +585,7 @@
 				</div>
 				<div class="form__region">
 					<label for="address" class="form__label">Адрес<span class="span-red">*</span></label>
-					<input type="text" id="address" class="form__address-input" name="name">					
+					<input type="text" id="region-address" class="form__address-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>		
 				<div class="form__district">
@@ -604,27 +604,27 @@
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>		
 				<div class="form__house">
-					<label for="house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
-					<input type="text" id="house" class="form__street-input form__house-input" name="name" placeholder="Дом">					
-					<input type="text" id="house" class="form__street-input form__block-input" name="name" placeholder="Корпус">					
-					<input type="text" id="house" class="form__street-input form__building-input" name="name" placeholder="Строение">					
+					<label for="house-manual-filling" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
+					<input type="text" id="house-manual-filling" class="form__street-input form__house-input" name="name" placeholder="Дом">					
+					<input type="text" id="house-building" class="form__street-input form__block-input" name="name" placeholder="Корпус">					
+					<input type="text" id="house-block" class="form__street-input form__building-input" name="name" placeholder="Строение">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
 				<div class="form__flat">
-					<label for="flat" class="form__label">Квартира<span class="span-red">*</span></label>
-					<input type="text" id="flat" class="form__flat-input" name="name">					
+					<label for="flat-manual-filling" class="form__label">Квартира<span class="span-red">*</span></label>
+					<input type="text" id="flat-manual-filling" class="form__flat-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-					<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher">
-					<label for="flat-house-swicher">Нет квартиры(частный дом)</label>
+					<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher-manual-filling">
+					<label for="flat-house-swicher-manual-filling">Нет квартиры(частный дом)</label>
 				</div>	
 				<div class="form__home-phone">
-					<label for="home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-					<input type="text" id="home-phone" class="form__home-phone-input" name="name">					
+					<label for="home-phone-manual-filling" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
+					<input type="text" id="home-phone-manual-filling" class="form__home-phone-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
 				<div class="form__phone-swicher">
-					<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch">
-					<label for="form-phone-exist-switch">Нет стационарного телефона</label>				
+					<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch-manual-filling">
+					<label for="form-phone-exist-switch-manual-filling">Нет стационарного телефона</label>				
 				</div>																					
 			</div>
 		</div>	
@@ -665,8 +665,8 @@
 			</div>	
 			<div class="form__current-address-manual-filling">
 				<div class="form__current-index">
-					<label for="current-address" class="form__label">Индекс<span class="span-red">*</span></label>
-					<input type="text" id="current-address" class="form__current-address-input" name="name">					
+					<label for="current-index" class="form__label">Индекс<span class="span-red">*</span></label>
+					<input type="text" id="current-index" class="form__current-address-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
 				<div class="form__current-index-swicher">
@@ -674,8 +674,8 @@
 					<label for="form-current-index-remember-switch">Не помню</label>				
 				</div>
 				<div class="form__current-region">
-					<label for="current-address" class="form__label">Адрес<span class="span-red">*</span></label>
-					<input type="text" id="current-address" class="form__current-address-input" name="name">					
+					<label for="current-region" class="form__label">Регион<span class="span-red">*</span></label>
+					<input type="text" id="current-region" class="form__current-region-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>		
 				<div class="form__current-district">
@@ -696,20 +696,20 @@
 				<div class="form__current-house">
 					<label for="current-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
 					<input type="text" id="current-house" class="form__current-street-input form__house-input" name="name" placeholder="Дом">					
-					<input type="text" id="current-house" class="form__current-street-input form__block-input" name="name" placeholder="Корпус">					
-					<input type="text" id="current-house" class="form__current-street-input form__building-input" name="name" placeholder="Строение">					
+					<input type="text" id="current-block" class="form__current-street-input form__block-input" name="name" placeholder="Корпус">					
+					<input type="text" id="current-building" class="form__current-street-input form__building-input" name="name" placeholder="Строение">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
-				<div class="form__current-flat">
+				<div class="form__current-flat-manual-filling">
 					<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
-					<input type="text" id="current-flat" class="form__current-flat-input" name="name">					
+					<input type="text" id="current-flat-manual-filling" class="form__current-flat-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-					<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher">
+					<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher-manual-filling">
 					<label for="current-flat-house-swicher" class="form__label">Нет квартиры(частный дом)</label>
 				</div>	
 				<div class="form__current-home-phone">
 					<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-					<input type="text" id="current-home-phone" class="form__current-home-phone-input" name="name">					
+					<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input" name="name">					
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
 				<div class="form__current-phone-swicher">
