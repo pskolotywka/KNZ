@@ -1,10 +1,40 @@
+
+
+function closePopup() {
+	const popup = document.querySelector(".popup");
+	const closeBtn = document.querySelector(".popup__close-btn");
+
+	closeBtn.addEventListener("click", function() {
+		popup.style.display = "none";
+	});
+}
+
+closePopup();
+
+
+function popup() {
+	const popup = document.querySelector(".popup");
+	const button = document.querySelector(".info-button_conditions");
+	
+
+	button.addEventListener("click", function() {
+		popup.style.display = "block";
+	});
+
+}
+
+popup();
+
+
 function disableInput() {
 	const checkbox = document.querySelector(".passport-snils-checkbox");
 	const input = document.querySelector(".form__passport-snils-input");
 
 	checkbox.addEventListener("click", function() {
 		checkbox.checked
-			input.disabled = !input.disabled;		 
+			input.style.background = "#eee";
+			input.disabled = !input.disabled;
+
 	});
 }	
 
