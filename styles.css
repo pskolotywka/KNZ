@@ -315,6 +315,7 @@ label {
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;    
+    position: relative;
 }
 
 .form select {
@@ -361,6 +362,15 @@ label {
     justify-content: flex-end;
     margin-bottom: 15px;
 }
+
+/*.form__block-address > div {
+	display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    flex-direction: column;	
+    width: 800px;
+}*/
 
 .info-button {
     background-color: white;
