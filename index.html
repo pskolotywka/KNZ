@@ -765,68 +765,67 @@
 				</select>			
 				<div class="form-wrap__tip"><span class="form__tip">?</span></div>	
 			</div>
-			<div class="form__block form__block-organization">	
+			<div class="form__block form__block-organization">
 				<div class="form__organization">
-					<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
-					<input type="text" id="organization" class="form__organization-input" name="name">				
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__work-experience">
-					<label for="work-experience" class="form__label">Срок работы в организации</label>		
-					<select name="name" id="work-experience" class="form__work-experience-select">
-						<option value="Не выбрано" selected>Не выбрано</option>
-						<option value="Меньше 1 года">Нет</option>
-						<option value="От 1 года, но меньше 2">От 1 года, но меньше 2</option>
-						<option value="От 2 лет, но меньше 3">От 2 лет, но меньше 3</option>
-						<option value="От 3 лет, но меньше 4">От 3 лет, но меньше 4</option>
-						<option value="От 4 лет, но меньше 5">От 4 лет, но меньше 5</option>
-						<option value="От 5 лет, но меньше 6">От 5 лет, но меньше 6</option>
-						<option value="От 6 лет, но меньше 7">От 6 лет, но меньше 7</option>
-						<option value="От 7 лет и более">От 7 лет и более</option>
-					</select>
-					<div class="form-wrap__tip"></div>
-				</div>	
+					<div class="form__organization-name">
+						<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
+						<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
+						<div class="form-wrap__tip"></div>
+					</div>	
+					<div class="form__work-experience">
+						<label for="work-experience" class="form__label">Срок работы в организации</label>		
+						<select name="name" id="work-experience" class="form__work-experience-select">
+							<option value="Не выбрано" selected>Не выбрано</option>
+							<option value="Меньше 1 года">Нет</option>
+							<option value="От 1 года, но меньше 2">От 1 года, но меньше 2</option>
+							<option value="От 2 лет, но меньше 3">От 2 лет, но меньше 3</option>
+							<option value="От 3 лет, но меньше 4">От 3 лет, но меньше 4</option>
+							<option value="От 4 лет, но меньше 5">От 4 лет, но меньше 5</option>
+							<option value="От 5 лет, но меньше 6">От 5 лет, но меньше 6</option>
+							<option value="От 6 лет, но меньше 7">От 6 лет, но меньше 7</option>
+							<option value="От 7 лет и более">От 7 лет и более</option>
+						</select>
+						<div class="form-wrap__tip"></div>
+					</div>	
+				</div>		
 				<div class="form__own-business">
 					<div class="form__own-business-official">
 						<input type="checkbox" class="form__own-business-official-checkbox" id="own-business-official">
 						<label for="own-business-official">Неофициальный</label>	
 						<div class="form-wrap__tip"><span class="form__tip">?</span></div>	
 					</div>	
-					<div class="form__organization">
-						<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
-						<input type="text" id="organization" class="form__organization-input" name="name">					
-						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					<div class="form__own-business-organization">
+						<label for="own-organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
+						<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>	
+						<div class="form-wrap__tip"></div>
 					</div>		
 				</div>	
 				<div class="form__workless">
-					<label for="form__workless-reasons" class="form__label">Причина<span class="span-red">*</span></label>
-					<div class="form__workless-reasons-radio" id="form__workless-reasons">
-						<div class="input-wrap">
-							<input type="radio" name="name" id="reason__pensioner-age" class="workless-reasons workless-reasons__pensioner-age">
-							<label for="reason__pensioner-age" class="radio__label form__label_workless-reasons">Пенсионер по возрасту/стажу работы</label>	
-							<div class="form-wrap__tip"></div>
+					<div class="form-wrap__workless-reasons">
+						<label for="form__workless-reasons" class="form__label">Причина<span class="span-red">*</span></label>
+						<div class="form__workless-reasons-radio" id="form__workless-reasons">
+							<div class="input-wrap">
+								<input type="radio" name="name" id="reason__pensioner-age" class="workless-reasons workless-reasons__pensioner-age">
+								<label for="reason__pensioner-age" class="radio__label form__label_workless-reasons">Пенсионер по возрасту/стажу работы</label>	
+															</div>
+							<div class="input-wrap">
+								<input type="radio" name="name" id="reason__pensioner-invalid" class="workless-reasons workless-reason__pensioner-invalid">
+								<label for="reason__pensioner-invalid" class="radio__label form__label_workless-reasons">Пенсионер по инвалидности</label>									
+							</div>
+							<div class="input-wrap">
+								<input type="radio" name="name" id="reason__finding-job" class="workless-reasons workless-reason__finding-job">
+								<label for="reason__finding-job" class="radio__label form__label_workless-reasons">Ищу работу</label>									
+							</div>
+							<div class="input-wrap">
+								<input type="radio" name="name" id="reason__marital-care" class="workless-reasons workless-reasons__marital-care">
+								<label for="reason__marital-care" class="radio__label form__label_workless-reasons">Содержит муж/жена</label>									
+							</div>
+							<div class="input-wrap">
+								<input type="radio" name="name" id="reason__other" class="workless-reasons workless-reason__other">
+								<label for="reason__other" class="radio__label radio__label_workless-reasons">Другое</label>										
+							</div>
 						</div>
-						<div class="input-wrap">
-							<input type="radio" name="name" id="reason__pensioner-invalid" class="workless-reasons workless-reason__pensioner-invalid">
-							<label for="reason__pensioner-invalid" class="radio__label form__label_workless-reasons">Пенсионер по инвалидности</label>	
-							<div class="form-wrap__tip"></div>
-						</div>
-						<div class="input-wrap">
-							<input type="radio" name="name" id="reason__finding-job" class="workless-reasons workless-reason__finding-job">
-							<label for="reason__finding-job" class="radio__label form__label_workless-reasons">Ищу работу</label>	
-							<div class="form-wrap__tip"></div>
-						</div>
-						<div class="input-wrap">
-							<input type="radio" name="name" id="reason__marital-care" class="workless-reasons workless-reasons__marital-care">
-							<label for="reason__marital-care" class="radio__label form__label_workless-reasons">Содержит муж/жена</label>	
-							<div class="form-wrap__tip"></div>
-						</div>
-						<div class="input-wrap">
-							<input type="radio" name="name" id="reason__other" class="workless-reasons workless-reason__other">
-							<label for="reason__other" class="radio__label radio__label_workless-reasons">Другое</label>		
-							<div class="form-wrap__tip"></div>
-						</div>
-					</div>
+					</div>	
 					<div class="form__reason-for-other">
 						<label for="reason-for-other" class="form__label"><span class="span-red">*</span></label>
 						<input type="text" id="reason-for-other" class="form__reason-for-other-input" name="name">
