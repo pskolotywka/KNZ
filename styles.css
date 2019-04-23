@@ -364,21 +364,107 @@ label {
     width: 800px;
 }
 
+.form__organization-input {
+	border-radius: 5px;
+	margin-bottom: 15px;
+	width: 385px;
+	padding: 6px 12px;
+}
 
 
 .form__employment-type {
 	display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
     margin-bottom: 15px;
 }
 
+.form__organization {
+	display: flex;
+    align-items: flex-end !important;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    flex-direction: column;	
+    width: 800px;
+    margin-right: 0;
+}
+
 .form__block-organization {
 	display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
-    margin-bottom: 15px;	
+    margin-bottom: 15px;
+    flex-direction: column;	
+    width: 800px;
+    margin-right: 0;
 }
+
+.form__own-business {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.form__own-business > div {
+	align-items: flex-end;
+}
+
+.form__own-business-official {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center !important;
+	margin-bottom: 15px;
+}
+
+.form__own-business-organization {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-start !important;
+}
+
+.form__block-organization > div {
+	display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    flex-direction: column;	
+    width: 800px;
+    margin-right: 0;
+}
+
+
+.form__reason-for-other {
+	margin-top: 20px;
+}
+
+.form-wrap__workless-reasons {
+	display: flex;
+	align-items: baseline;
+	margin-right: 150px;
+}
+
+
+
+.form__organization {
+	display: flex;
+	flex-direction: column;	
+}
+
+.form__work-experience {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.form__organization-name {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+
 
 .house-input {
 	margin-right: 15px;
