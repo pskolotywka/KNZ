@@ -1,3 +1,41 @@
+function loanOffer() {
+	const a = document.querySelector(".application-forming__script-fail");
+	const b = document.querySelector(".loan-offer__not-ready");
+	const c = document.querySelector(".loan-offer");
+
+		 a.addEventListener("click", function() {
+		b.classList.remove("section");
+		c.classList.remove("section");
+	});
+}
+
+
+// 	const tabs = document.querySelectorAll(".loan-reason"); 
+// 	const sections = document.querySelectorAll(".section");
+// 	const tabActiveClass = "selected-tab";
+// 	const sectionActiveClass = "section--active";
+
+// 	for (const tab of tabs) {
+// 		tab.addEventListener("click", function() {
+// 			if (!(this.classList.contains(tabActiveClass))) {
+// 				for (const iter of tabs) {
+// 					iter.classList.remove(tabActiveClass);
+// 				}
+// 				this.classList.add(tabActiveClass);
+// 			} 
+
+// 			const value = tab.dataset.tab;
+// 			const section = document.querySelector(`[data-section='${value}']`);
+// 			for (const item of sections) {
+// 				item.classList.remove(sectionActiveClass);
+// 			}
+// 			section.classList.add(sectionActiveClass);
+// 		});
+// 	}
+// }		
+
+loanOffer();
+
 
 
 function closePopup() {
