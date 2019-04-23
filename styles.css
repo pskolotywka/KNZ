@@ -234,10 +234,18 @@ label {
 }
 
 .recall-options__datetime-interval {
-	border-bottom: 1px dashed;	
 	margin: 0 10px 5px 0;
-	cursor: pointer;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-bottom: 1px dashed;
+    color: #74a3c7;
+    outline: none;
 }
+
+.recall-options__datetime-interval:hover {
+	color: #23527c;
+} 
 
 .recall-options__checkbox {
 	margin-left: 0;
@@ -650,6 +658,15 @@ label {
 	margin-right: 121px;		
 }
 
+.object-address__address {
+	display: flex;
+	align-items: center;
+}
+
+.object-address__address-input {
+	width: 1900px !important;
+}
+
 
 
 .object-address input[type="text"]{
@@ -746,4 +763,18 @@ label {
 .loan-offer {
 	max-width: 1400px;
 	margin: 30px 50px 30px 50px;
+}
+
+.table {
+	border-collapse: collapse; 
+	border: 1px solid black;
+	width: 685px;
+}
+
+.table td, th {
+	border: 1px solid black;	
+}
+
+.hidden-column {
+	display: none;
 }

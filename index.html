@@ -45,21 +45,21 @@
 			<div class="application-forming__script-titles">
 				<div class="application-forming__script-header wrap-fail">
 					<div class="application-forming__script-wrap">
-						<input type="radio" name="script-start" id="script-fail" class="application-forming__script application-forming__script-fail">
+						<input type="radio" name="script-start" id="script-fail" class="application-forming__script application-forming__script-fail loan-reason selected-tab" data-tab="script__not-ready">
 						<label for="script-fail">Не готов</label>
 					</div>
 					<div class="application-forming__script-score">Баллы: 1</div>		
 				</div>			
 				<div class="application-forming__script-header wrap-flat">
 					<div class="application-forming__script-wrap">
-						<input type="radio" name="script-start" id="script-flat" class="application-forming__script application-forming__script-flat">
+						<input type="radio" name="script-start" id="script-flat" class="application-forming__script application-forming__script-flat loan-reason" data-tab="script__flat">
 						<label for="script-flat">Готов предоставить квартиру под залог</label>
 					</div>	
 					<div class="application-forming__script-score">Баллы: 7</div>
 				</div>
 				<div class="application-forming__script-header wrap-car">
 					<div class="application-forming__script-wrap">
-						<input type="radio" name="script-start" id="script-car" class="application-forming__script application-forming__script-car">
+						<input type="radio" name="script-start" id="script-car" class="application-forming__script application-forming__script-car loan-reason" data-tab="script__car">
 						<label for="script-car">Готов предоставить автомобиль под залог</label>
 					</div>	
 					<div class="application-forming__script-score">Баллы: 2</div>
@@ -263,8 +263,8 @@
 			<button class="dialing-fail-button button">Завершить работу с заданием</button>
 		</div>
 	</main>
-	<div class="loan-offer">
-		<div class="loan-offer__not-ready radio-margin">
+	<div class="loan-offer section">
+		<div class="loan-offer__not-ready section radio-margin section--active" data-section="loan-reason__not-ready">
 			<h4>Причина отказа от КНЗ:</h4>
 			<div class="refuse-reason">
 				<div class="not-ready__refuse-reason_not-choosen">
@@ -304,9 +304,9 @@
 					<label for="not-ready__other" class="radio__label">Другое</label>
 				</div>																	
 			</div>
-			<button class="loan-offer__next-button button">Далее</button>
+			<button class="loan-offer__next-button button" disabled>Далее</button>
 		</div>
-		<div class="loan-offer__flat-bail radio-margin">
+		<div class="loan-offer__flat-bail radio-margin section" data-section="loan-reason__flat-bail">
 			<h4 class="form__subtitles">Является ли клиент собственником квартиры?</h4>
 			<div class="flat-bail__ownership">		
 				<div class="flat-bail__wrap">
@@ -363,7 +363,7 @@
 				</div>				
 			</div>
 		</div>
-		<div class="object-address__wrap">
+		<div class="object-address__wrap section"  data-section="">
 			<div class="object-address">
 				<h3 class="form__titles">Адрес объекта</h3>
 				<div class="object-address__inputs">
@@ -379,13 +379,12 @@
 					</div>		
 				</div>	
 				<div class="object-address__wrap-buttons">	
-				<button class="next-button button">Далее</button>
-				<button class="info-button">Назад к предложению</button>
+					<button class="next-button button">Далее</button>
+					<button class="info-button">Назад к предложению</button>
+				</div>	
 			</div>	
-			</div>	
-
 		</div>
-		<div class="loan-offer__car-bail">
+		<div class="loan-offer__car-bail section" data-section="loan-reason__car-bail">
 			<h4 class="form__subtitles">Причина отказа от КНЗ:</h4>
 			<div class="car-bail__refuse-reason">
 				<div class="car-bail__refuse-reason_not-choosen">
@@ -437,447 +436,449 @@
 			<button class="loan-offer__next-button button">Далее</button>
 		</div>
 	</div>
-	<form action="post" class="form">
-		<h3 class="form__titles">Контактные данные</h3>
-		<div class="form__block form__block-contact-info">
-			<div class="form__name">
-				<label for="name" class="form__label">ФИО<span class="span-red">*</span></label>
-				<input type="text" id="name" class="form__name-input" name="name">
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
+	<div class="form__wrap section" data-section="application-forming">
+		<form action="post" class="form">
+			<h3 class="form__titles">Контактные данные</h3>
+			<div class="form__block form__block-contact-info">
+				<div class="form__name">
+					<label for="name" class="form__label">ФИО<span class="span-red">*</span></label>
+					<input type="text" id="name" class="form__name-input" name="name">
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
+				</div>
+				<div class="form__birth">
+					<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
+					<input type="text" id="birth" class="form__birth-input" name="name">
+					<div class="form-wrap__tip"></div>	
+				</div>
+				<div class="form__phone">
+					<label for="phone" class="form__label">Мобильный телефон<span class="span-red">*</span></label>
+					<input type="text" id="phone" class="form__phone-input" name="name">
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>					
+				</div>
+				<div class="form__email">
+					<label for="email" class="form__label">Электронная почта</label>
+					<input type="text" id="email" class="form__email-input" name="name">
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
+				</div>
 			</div>
-			<div class="form__birth">
-				<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
-				<input type="text" id="birth" class="form__birth-input" name="name">
-				<div class="form-wrap__tip"></div>	
-			</div>
-			<div class="form__phone">
-				<label for="phone" class="form__label">Мобильный телефон<span class="span-red">*</span></label>
-				<input type="text" id="phone" class="form__phone-input" name="name">
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>					
-			</div>
-			<div class="form__email">
-				<label for="email" class="form__label">Электронная почта</label>
-				<input type="text" id="email" class="form__email-input" name="name">
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
-			</div>
-		</div>
-		<h3 class="form__titles">Информация о кредите наличными</h3>
-		<div class="form__block form__block-cashloan-info">
-			<div class="form__loan-amount">
-				<label for="loan-amount" class="form__label">Сумма кредита<span class="span-red">*</span></label>
-				<input type="text" id="loan-amount" class="form__loan-amount-input" name="name">
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
-			</div>
-			<div class="form__loan-period">
-				<label for="loan-period" class="form__label">Срок кредита (кол-во месяцев)<span class="span-red">*</span></label>
-				<input type="text" id="loan-period" class="form__loan-period-input" name="name">
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
-			</div>
-			<div class="form__loan-purpose">
-				<label for="loan-purpose" class="form__label">Цель кредита<span class="span-red">*</span></label>
-				<select name="name" id="loan-purpose" class="form__loan-purpose-input">
-					<option value="Не указано" selected>Не указано</option>
-					<option value="Ремонт">Ремонт</option>
-					<option value="Учеба">Учеба</option>
-					<option value="Покупка автомобиля">Покупка автомобиля</option>
-					<option value="Лечение">Лечение</option>
-					<option value="Погашение долгов (не кредиты)">Погашение долгов (не кредиты)</option>
-					<option value="Шоппинг">Шоппинг</option>
-					<option value="Путешествие">Путешествие</option>
-					<option value="Торжество">Торжество</option>
-					<option value="Помощь близким">Помощь близким</option>
-					<option value="Пока не определился">Пока не определился</option>
-					<option value="Иное">Иное</option>
-				</select>
-				<div class="form-wrap__tip"></div>
-			</div>
-		</div>
-		<h3 class="form__titles">Паспортные данные</h3>
-		<div class="form__block form__block-passport">
-			<div class="form__passport-number">
-				<label for="passport-number" class="form__label">Серия - номер<span class="span-red">*</span></label>
-				<input type="text" id="passport-number" class="form__passport-number-input" name="name">
-				<div class="form-wrap__tip"></div>
-			</div>
-			<div class="form__passport-date">
-				<label for="passport-passport-date" class="form__label">Дата выдачи<span class="span-red">*</span></label>
-				<input type="text" id="passport-passport-date" class="form__passport-date-input" name="name">				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>
-			<div class="form__passport-code">
-				<label for="passport-code" class="form__label">Код подразделения<span class="span-red">*</span></label>
-				<input type="text" id="passport-code" class="form__passport-code-input" name="name">
-				<div class="form-wrap__tip"></div>
-			</div>
-			<div class="form__passport-issue">
-				<label for="passport-issue" class="form__label">Кем выдан<span class="span-red">*</span></label>
-				<input type="text" id="passport-issue" class="form__passport-issue-input" name="name">				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>
-			<div class="form__passport-birth-place">
-				<label for="passport-birth-place" class="form__label">Место рождения<span class="span-red">*</span></label>
-				<input type="text" id="passport-birth-place" class="form__passport-birth-place-input" name="name">				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>
-			<div class="form__passport-snils">
-				<label for="passport-snils" class="form__label">СНИЛС<span class="span-red">*</span></label>
-				<input type="text" id="passport-snils" class="form__passport-snils-input" name="name">				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>	
-			<div class="form__passport-snils_checkbox form__line-checkbox">
-				<input type="checkbox" class="passport-snils-checkbox" id="passport-snils">
-				<label for="passport-snils">Не может предоставить</label>
-			</div>						
-		</div>	
-		<h3 class="form__titles">Дополнительные документы, которые клиент готов предоставить</h3>
-		<div class="form__block form__block-additional-documents">
-			<div class="form__additional-documents">
-				<label for="additional-documents" class="form__label">Заграничный паспорт<span class="span-red">*</span></label>
-				<select id="additional-documents" class="form__additional-documents-select" name="name">
-					<option value="Не выбрано" selected="">Не выбрано</option>
-					<option value="Да">Да</option>
-					<option value="Нет">Нет</option>
-					<option value="Не уверен">Не уверен</option>
-				</select>
-				<div class="form-wrap__tip"></div>				
-			</div>
-		</div>	
-		<h3 class="form__titles">Адрес по месту постоянной регистрации</h3>
-		<div class="form__block form__block-address">
-			<div class="form__address-swicher">
-				<input type="checkbox" class="form__address-filling-type-switch-checkbox" id="address-filling-type-switch">
-				<label for="address-filling-type-switch">Перейти к ручному заполнению адреса</label>					
-			</div>
-			<div class="form__address-auto-filling">
-				<div class="form__address">
-					<label for="address" class="form__label">Адрес<span class="span-red">*</span></label>
-					<input type="text" id="address" class="form__address-input" name="name">
+			<h3 class="form__titles">Информация о кредите наличными</h3>
+			<div class="form__block form__block-cashloan-info">
+				<div class="form__loan-amount">
+					<label for="loan-amount" class="form__label">Сумма кредита<span class="span-red">*</span></label>
+					<input type="text" id="loan-amount" class="form__loan-amount-input" name="name">
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
+				</div>
+				<div class="form__loan-period">
+					<label for="loan-period" class="form__label">Срок кредита (кол-во месяцев)<span class="span-red">*</span></label>
+					<input type="text" id="loan-period" class="form__loan-period-input" name="name">
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>				
+				</div>
+				<div class="form__loan-purpose">
+					<label for="loan-purpose" class="form__label">Цель кредита<span class="span-red">*</span></label>
+					<select name="name" id="loan-purpose" class="form__loan-purpose-input">
+						<option value="Не указано" selected>Не указано</option>
+						<option value="Ремонт">Ремонт</option>
+						<option value="Учеба">Учеба</option>
+						<option value="Покупка автомобиля">Покупка автомобиля</option>
+						<option value="Лечение">Лечение</option>
+						<option value="Погашение долгов (не кредиты)">Погашение долгов (не кредиты)</option>
+						<option value="Шоппинг">Шоппинг</option>
+						<option value="Путешествие">Путешествие</option>
+						<option value="Торжество">Торжество</option>
+						<option value="Помощь близким">Помощь близким</option>
+						<option value="Пока не определился">Пока не определился</option>
+						<option value="Иное">Иное</option>
+					</select>
 					<div class="form-wrap__tip"></div>
-				</div>	
-				<div class="form__flat">
-					<label for="flat" class="form__label">Квартира<span class="span-red">*</span></label>
-					<input type="text" id="flat" class="form__flat-input" name="name">
+				</div>
+			</div>
+			<h3 class="form__titles">Паспортные данные</h3>
+			<div class="form__block form__block-passport">
+				<div class="form__passport-number">
+					<label for="passport-number" class="form__label">Серия - номер<span class="span-red">*</span></label>
+					<input type="text" id="passport-number" class="form__passport-number-input" name="name">
 					<div class="form-wrap__tip"></div>
-					<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher">
-					<label for="flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
-				</div>	
-				<div class="form__home-phone">
-					<label for="home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-					<input type="text" id="home-phone" class="form__home-phone-input" name="name">					
+				</div>
+				<div class="form__passport-date">
+					<label for="passport-passport-date" class="form__label">Дата выдачи<span class="span-red">*</span></label>
+					<input type="text" id="passport-passport-date" class="form__passport-date-input" name="name">				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+				</div>
+				<div class="form__passport-code">
+					<label for="passport-code" class="form__label">Код подразделения<span class="span-red">*</span></label>
+					<input type="text" id="passport-code" class="form__passport-code-input" name="name">
+					<div class="form-wrap__tip"></div>
+				</div>
+				<div class="form__passport-issue">
+					<label for="passport-issue" class="form__label">Кем выдан<span class="span-red">*</span></label>
+					<input type="text" id="passport-issue" class="form__passport-issue-input" name="name">				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+				</div>
+				<div class="form__passport-birth-place">
+					<label for="passport-birth-place" class="form__label">Место рождения<span class="span-red">*</span></label>
+					<input type="text" id="passport-birth-place" class="form__passport-birth-place-input" name="name">				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+				</div>
+				<div class="form__passport-snils">
+					<label for="passport-snils" class="form__label">СНИЛС<span class="span-red">*</span></label>
+					<input type="text" id="passport-snils" class="form__passport-snils-input" name="name">				
 					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
-				<div class="form__phone-swicher">
-					<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch">
-					<label for="form-phone-exist-switch">Нет стационарного телефона</label>				
+				<div class="form__passport-snils_checkbox form__line-checkbox">
+					<input type="checkbox" class="passport-snils-checkbox" id="passport-snils">
+					<label for="passport-snils">Не может предоставить</label>
+				</div>						
+			</div>	
+			<h3 class="form__titles">Дополнительные документы, которые клиент готов предоставить</h3>
+			<div class="form__block form__block-additional-documents">
+				<div class="form__additional-documents">
+					<label for="additional-documents" class="form__label">Заграничный паспорт<span class="span-red">*</span></label>
+					<select id="additional-documents" class="form__additional-documents-select" name="name">
+						<option value="Не выбрано" selected="">Не выбрано</option>
+						<option value="Да">Да</option>
+						<option value="Нет">Нет</option>
+						<option value="Не уверен">Не уверен</option>
+					</select>
+					<div class="form-wrap__tip"></div>				
 				</div>
 			</div>	
-			<div class="form__address-manual-filling">
-				<div class="form__index">
-					<label for="address" class="form__label">Индекс<span class="span-red">*</span></label>
-					<input type="text" id="address-index" class="form__address-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__index-swicher">
-					<input type="checkbox" class="form__index-remember-switch-checkbox" id="form-index-remember-switch">
-					<label for="form-index-remember-switch">Не помню</label>				
+			<h3 class="form__titles">Адрес по месту постоянной регистрации</h3>
+			<div class="form__block form__block-address">
+				<div class="form__address-swicher">
+					<input type="checkbox" class="form__address-filling-type-switch-checkbox" id="address-filling-type-switch">
+					<label for="address-filling-type-switch">Перейти к ручному заполнению адреса</label>					
 				</div>
-				<div class="form__region">
-					<label for="address" class="form__label">Регион<span class="span-red">*</span></label>
-					<input type="text" id="region-address" class="form__address-input" name="name">					
-					<div class="form-wrap__tip"></div>
-				</div>		
-				<div class="form__district">
-					<label for="district" class="form__label">Район или город<span class="span-red">*</span></label>
-					<input type="text" id="district" class="form__district-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>					
-				<div class="form__settlement">
-					<label for="settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
-					<input type="text" id="settlement" class="form__settlement-input" name="name">					
-					<div class="form-wrap__tip"></div>
-				</div>		
-				<div class="form__street">
-					<label for="street" class="form__label">Улица<span class="span-red">*</span></label>
-					<input type="text" id="street" class="form__street-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>		
-				<div class="form__house">
-					<label for="house-manual-filling" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
-					<input type="text" id="house-manual-filling" class="house-input form__house-input" name="name" placeholder="Дом">					
-					<input type="text" id="house-building" class="house-input form__block-input" name="name" placeholder="Корпус">					
-					<input type="text" id="house-block" class="house-input form__building-input" name="name" placeholder="Строение">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__flat">
-					<label for="flat-manual-filling" class="form__label">Квартира<span class="span-red">*</span></label>
-					<input type="text" id="flat-manual-filling" class="form__flat-input-manual-filling" name="name">					
-					<div class="form-wrap__tip"></div>
-					<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher-manual-filling">
-					<label for="flat-house-swicher-manual-filling" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
-				</div>	
-				<div class="form__home-phone">
-					<label for="home-phone-manual-filling" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-					<input type="text" id="home-phone-manual-filling" class="form__home-phone-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__phone-swicher">
-					<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch-manual-filling">
-					<label for="form-phone-exist-switch-manual-filling">Нет стационарного телефона</label>				
-				</div>																					
-			</div>
-		</div>	
-		<h3 class="form__titles">Адрес фактического проживания</h3>
-		<div class="form__block form__block-current-address">
-			<div class="form__same-address-swicher">
-				<input type="checkbox" class="form__form-address-swicher-checkbox" id="form-address-swicher-switch">
-				<label for="form-address-swicher-switch">Совпадает с адресом регистрации</label>				
-			</div>
-			<div class="form__current-address">
-				<div class="form__current-address-swicher">
-					<input type="checkbox" class="form__current-address-filling-type-switch-checkbox" id="current-address-filling-type-switch">
-					<label for="current-address-filling-type-switch">Перейти к ручному заполнению адреса</label>				
-				</div>			
-			</div>
-			<div class="form__current-address-auto-filling">
-				<div class="form__current-address">
-					<label for="current-address" class="form__label">Адрес<span class="span-red">*</span></label>
-					<input type="text" id="current-address" class="form__current-address-input" name="name">
-					<div class="form-wrap__tip"></div>
-				</div>	
-				<div class="form__current-flat">
-					<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
-					<input type="text" id="current-flat" class="form__current-flat-input" name="name">					
-					<div class="form-wrap__tip"></div>
-					<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher">
-					<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
-				</div>	
-				<div class="form__current-home-phone">
-					<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-					<input type="text" id="current-home-phone" class="form__current-home-phone-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__current-phone-swicher">
-					<input type="checkbox" class="form__current-phone-exist-switch-checkbox" id="form-current-phone-exist-switch">
-					<label for="form-current-phone-exist-switch">Нет стационарного телефона</label>				
-				</div>
-			</div>	
-			<div class="form__current-address-manual-filling">
-				<div class="form__current-index">
-					<label for="current-index" class="form__label">Индекс<span class="span-red">*</span></label>
-					<input type="text" id="current-index" class="form__current-address-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__current-index-swicher">
-					<input type="checkbox" class="form__current-index-remember-switch-checkbox" id="form-current-index-remember-switch">
-					<label for="form-current-index-remember-switch">Не помню</label>				
-				</div>
-				<div class="form__current-region">
-					<label for="current-region" class="form__label">Регион<span class="span-red">*</span></label>
-					<input type="text" id="current-region" class="form__current-region-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>		
-				<div class="form__current-district">
-					<label for="current-district" class="form__label">Район или город<span class="span-red">*</span></label>
-					<input type="text" id="current-district" class="form__current-district-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>					
-				<div class="form__current-settlement">
-					<label for="current-settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
-					<input type="text" id="current-settlement" class="form__current-settlement-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>		
-				<div class="form__current-street">
-					<label for="current-street" class="form__label">Улица<span class="span-red">*</span></label>
-					<input type="text" id="current-street" class="form__current-street-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>		
-				<div class="form__current-house">
-					<label for="current-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
-					<input type="text" id="current-house" class="form__current-house-input form__house-input" name="name" placeholder="Дом">					
-					<input type="text" id="current-block" class="form__current-house-input form__block-input" name="name" placeholder="Корпус">					
-					<input type="text" id="current-building" class="form__current-house-input form__building-input" name="name" placeholder="Строение">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__current-flat-manual-filling">
-					<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
-					<input type="text" id="current-flat-manual-filling" class="form__current-flat-input" name="name">					
-					<div class="form-wrap__tip"></div>
-					<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher-manual-filling">
-					<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
-				</div>	
-				<div class="form__current-home-phone">
-					<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-					<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input" name="name">					
-					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-				</div>	
-				<div class="form__current-phone-swicher">
-					<input type="checkbox" class="form__current-phone-exist-switch-checkbox" id="current-form-phone-exist-switch">
-					<label for="current-form-phone-exist-switch">Нет стационарного телефона</label>				
-				</div>																					
-			</div>
-		</div>
-		<h3 class="form__titles">Личная информация</h3>	
-		<div class="form__block form__block-personal-info">
-			<div class="form__education">
-				<label for="education" class="form__label">Образование</label>		
-				<select name="name" id="education" class="form__education-select">
-					<option value="Не выбрано" selected>Не выбрано</option>
-					<option value="Начальное, среднее">Начальное, среднее</option>
-					<option value="Неполное высшее">Неполное высшее</option>
-					<option value="Высшее">Высшее</option>
-					<option value="Второе высшее">Второе высшее</option>
-					<option value="Ученая степень">Ученая степень</option>
-				</select>					
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>			
-			</div>
-			<div class="form__marital">
-				<label for="marital" class="form__label">Семейное положение</label>		
-				<select name="name" id="marital" class="form__marital-select">
-					<option value="Не выбрано" selected>Не выбрано</option>
-					<option value="Холост/не замужем">Холост/не замужем</option>
-					<option value="Разведен(а)">Разведен(а)</option>
-					<option value="Гражданский брак">Гражданский брак</option>
-					<option value="Женат/замужем">Женат/замужем</option>
-					<option value="Вдовец, вдова">Вдовец, вдова</option>
-				</select>
-				<div class="form-wrap__tip"></div>			
-			</div>
-			<div class="form__car">
-				<label for="car" class="form__label">Автомобиль</label>		
-				<select name="name" id="car" class="form__car-select">
-					<option value="Не выбрано" selected>Не выбрано</option>
-					<option value="Нет">Нет</option>
-					<option value="Отечественный">Отечественный</option>
-					<option value="Иномарка">Иномарка</option>
-				</select>				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>			
-			</div>
-		</div>
-		<h3 class="form__titles">Место работы</h3>	
-		<div class="form__block form__block-employment">
-			<div class="form__employment-type">
-				<label for="employment-type" class="form__label">Тип занятости</label>		
-				<select name="name" id="employment-type" class="form__employment-type-select">
-					<option value="Работаю в организации" selected>Работаю в организации</option>
-					<option value="Собственный бизнес">Собственный бизнес</option>
-					<option value="Не работаю">Не работаю</option>
-				</select>			
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>	
-			</div>
-			<div class="form__block form__block-organization">
-				<div class="form__organization">
-					<div class="form__organization-name">
-						<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
-						<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
+				<div class="form__address-auto-filling">
+					<div class="form__address">
+						<label for="address" class="form__label">Адрес<span class="span-red">*</span></label>
+						<input type="text" id="address" class="form__address-input" name="name">
 						<div class="form-wrap__tip"></div>
 					</div>	
-					<div class="form__work-experience">
-						<label for="work-experience" class="form__label">Срок работы в организации</label>		
-						<select name="name" id="work-experience" class="form__work-experience-select">
-							<option value="Не выбрано" selected>Не выбрано</option>
-							<option value="Меньше 1 года">Нет</option>
-							<option value="От 1 года, но меньше 2">От 1 года, но меньше 2</option>
-							<option value="От 2 лет, но меньше 3">От 2 лет, но меньше 3</option>
-							<option value="От 3 лет, но меньше 4">От 3 лет, но меньше 4</option>
-							<option value="От 4 лет, но меньше 5">От 4 лет, но меньше 5</option>
-							<option value="От 5 лет, но меньше 6">От 5 лет, но меньше 6</option>
-							<option value="От 6 лет, но меньше 7">От 6 лет, но меньше 7</option>
-							<option value="От 7 лет и более">От 7 лет и более</option>
-						</select>
+					<div class="form__flat">
+						<label for="flat" class="form__label">Квартира<span class="span-red">*</span></label>
+						<input type="text" id="flat" class="form__flat-input" name="name">
 						<div class="form-wrap__tip"></div>
+						<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher">
+						<label for="flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
 					</div>	
-				</div>		
-				<div class="form__own-business">
-					<div class="form__own-business-official">
-						<input type="checkbox" class="form__own-business-official-checkbox" id="own-business-official">
-						<label for="own-business-official">Неофициальный</label>	
-						<div class="form-wrap__tip"><span class="form__tip">?</span></div>	
+					<div class="form__home-phone">
+						<label for="home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
+						<input type="text" id="home-phone" class="form__home-phone-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 					</div>	
-					<div class="form__own-business-organization">
-						<label for="own-organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
-						<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>	
+					<div class="form__phone-swicher">
+						<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch">
+						<label for="form-phone-exist-switch">Нет стационарного телефона</label>				
+					</div>
+				</div>	
+				<div class="form__address-manual-filling">
+					<div class="form__index">
+						<label for="address" class="form__label">Индекс<span class="span-red">*</span></label>
+						<input type="text" id="address-index" class="form__address-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>	
+					<div class="form__index-swicher">
+						<input type="checkbox" class="form__index-remember-switch-checkbox" id="form-index-remember-switch">
+						<label for="form-index-remember-switch">Не помню</label>				
+					</div>
+					<div class="form__region">
+						<label for="address" class="form__label">Регион<span class="span-red">*</span></label>
+						<input type="text" id="region-address" class="form__address-input" name="name">					
 						<div class="form-wrap__tip"></div>
 					</div>		
-				</div>	
-				<div class="form__workless">
-					<div class="form-wrap__workless-reasons">
-						<label for="form__workless-reasons" class="form__label">Причина<span class="span-red">*</span></label>
-						<div class="form__workless-reasons-radio" id="form__workless-reasons">
-							<div class="input-wrap">
-								<input type="radio" name="name" id="reason__pensioner-age" class="workless-reasons workless-reasons__pensioner-age">
-								<label for="reason__pensioner-age" class="radio__label form__label_workless-reasons">Пенсионер по возрасту/стажу работы</label>	
-															</div>
-							<div class="input-wrap">
-								<input type="radio" name="name" id="reason__pensioner-invalid" class="workless-reasons workless-reason__pensioner-invalid">
-								<label for="reason__pensioner-invalid" class="radio__label form__label_workless-reasons">Пенсионер по инвалидности</label>									
-							</div>
-							<div class="input-wrap">
-								<input type="radio" name="name" id="reason__finding-job" class="workless-reasons workless-reason__finding-job">
-								<label for="reason__finding-job" class="radio__label form__label_workless-reasons">Ищу работу</label>									
-							</div>
-							<div class="input-wrap">
-								<input type="radio" name="name" id="reason__marital-care" class="workless-reasons workless-reasons__marital-care">
-								<label for="reason__marital-care" class="radio__label form__label_workless-reasons">Содержит муж/жена</label>									
-							</div>
-							<div class="input-wrap">
-								<input type="radio" name="name" id="reason__other" class="workless-reasons workless-reason__other">
-								<label for="reason__other" class="radio__label radio__label_workless-reasons">Другое</label>										
-							</div>
-						</div>
+					<div class="form__district">
+						<label for="district" class="form__label">Район или город<span class="span-red">*</span></label>
+						<input type="text" id="district" class="form__district-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>					
+					<div class="form__settlement">
+						<label for="settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
+						<input type="text" id="settlement" class="form__settlement-input" name="name">					
+						<div class="form-wrap__tip"></div>
+					</div>		
+					<div class="form__street">
+						<label for="street" class="form__label">Улица<span class="span-red">*</span></label>
+						<input type="text" id="street" class="form__street-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>		
+					<div class="form__house">
+						<label for="house-manual-filling" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
+						<input type="text" id="house-manual-filling" class="house-input form__house-input" name="name" placeholder="Дом">					
+						<input type="text" id="house-building" class="house-input form__block-input" name="name" placeholder="Корпус">					
+						<input type="text" id="house-block" class="house-input form__building-input" name="name" placeholder="Строение">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 					</div>	
-					<div class="form__reason-for-other">
-						<label for="reason-for-other" class="form__label"><span class="span-red">*</span></label>
-						<input type="text" id="reason-for-other" class="form__reason-for-other-input" name="name">
+					<div class="form__flat">
+						<label for="flat-manual-filling" class="form__label">Квартира<span class="span-red">*</span></label>
+						<input type="text" id="flat-manual-filling" class="form__flat-input-manual-filling" name="name">					
+						<div class="form-wrap__tip"></div>
+						<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher-manual-filling">
+						<label for="flat-house-swicher-manual-filling" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
+					</div>	
+					<div class="form__home-phone">
+						<label for="home-phone-manual-filling" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
+						<input type="text" id="home-phone-manual-filling" class="form__home-phone-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>	
+					<div class="form__phone-swicher">
+						<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch-manual-filling">
+						<label for="form-phone-exist-switch-manual-filling">Нет стационарного телефона</label>				
+					</div>																					
+				</div>
+			</div>	
+			<h3 class="form__titles">Адрес фактического проживания</h3>
+			<div class="form__block form__block-current-address">
+				<div class="form__same-address-swicher">
+					<input type="checkbox" class="form__form-address-swicher-checkbox" id="form-address-swicher-switch">
+					<label for="form-address-swicher-switch">Совпадает с адресом регистрации</label>				
+				</div>
+				<div class="form__current-address">
+					<div class="form__current-address-swicher">
+						<input type="checkbox" class="form__current-address-filling-type-switch-checkbox" id="current-address-filling-type-switch">
+						<label for="current-address-filling-type-switch">Перейти к ручному заполнению адреса</label>				
+					</div>			
+				</div>
+				<div class="form__current-address-auto-filling">
+					<div class="form__current-address">
+						<label for="current-address" class="form__label">Адрес<span class="span-red">*</span></label>
+						<input type="text" id="current-address" class="form__current-address-input" name="name">
 						<div class="form-wrap__tip"></div>
 					</div>	
+					<div class="form__current-flat">
+						<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
+						<input type="text" id="current-flat" class="form__current-flat-input" name="name">					
+						<div class="form-wrap__tip"></div>
+						<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher">
+						<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
+					</div>	
+					<div class="form__current-home-phone">
+						<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
+						<input type="text" id="current-home-phone" class="form__current-home-phone-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>	
+					<div class="form__current-phone-swicher">
+						<input type="checkbox" class="form__current-phone-exist-switch-checkbox" id="form-current-phone-exist-switch">
+						<label for="form-current-phone-exist-switch">Нет стационарного телефона</label>				
+					</div>
+				</div>	
+				<div class="form__current-address-manual-filling">
+					<div class="form__current-index">
+						<label for="current-index" class="form__label">Индекс<span class="span-red">*</span></label>
+						<input type="text" id="current-index" class="form__current-address-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>	
+					<div class="form__current-index-swicher">
+						<input type="checkbox" class="form__current-index-remember-switch-checkbox" id="form-current-index-remember-switch">
+						<label for="form-current-index-remember-switch">Не помню</label>				
+					</div>
+					<div class="form__current-region">
+						<label for="current-region" class="form__label">Регион<span class="span-red">*</span></label>
+						<input type="text" id="current-region" class="form__current-region-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>		
+					<div class="form__current-district">
+						<label for="current-district" class="form__label">Район или город<span class="span-red">*</span></label>
+						<input type="text" id="current-district" class="form__current-district-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>					
+					<div class="form__current-settlement">
+						<label for="current-settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
+						<input type="text" id="current-settlement" class="form__current-settlement-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>		
+					<div class="form__current-street">
+						<label for="current-street" class="form__label">Улица<span class="span-red">*</span></label>
+						<input type="text" id="current-street" class="form__current-street-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>		
+					<div class="form__current-house">
+						<label for="current-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
+						<input type="text" id="current-house" class="form__current-house-input form__house-input" name="name" placeholder="Дом">					
+						<input type="text" id="current-block" class="form__current-house-input form__block-input" name="name" placeholder="Корпус">					
+						<input type="text" id="current-building" class="form__current-house-input form__building-input" name="name" placeholder="Строение">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>	
+					<div class="form__current-flat-manual-filling">
+						<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
+						<input type="text" id="current-flat-manual-filling" class="form__current-flat-input" name="name">					
+						<div class="form-wrap__tip"></div>
+						<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher-manual-filling">
+						<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
+					</div>	
+					<div class="form__current-home-phone">
+						<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
+						<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input" name="name">					
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+					</div>	
+					<div class="form__current-phone-swicher">
+						<input type="checkbox" class="form__current-phone-exist-switch-checkbox" id="current-form-phone-exist-switch">
+						<label for="current-form-phone-exist-switch">Нет стационарного телефона</label>				
+					</div>																					
+				</div>
+			</div>
+			<h3 class="form__titles">Личная информация</h3>	
+			<div class="form__block form__block-personal-info">
+				<div class="form__education">
+					<label for="education" class="form__label">Образование</label>		
+					<select name="name" id="education" class="form__education-select">
+						<option value="Не выбрано" selected>Не выбрано</option>
+						<option value="Начальное, среднее">Начальное, среднее</option>
+						<option value="Неполное высшее">Неполное высшее</option>
+						<option value="Высшее">Высшее</option>
+						<option value="Второе высшее">Второе высшее</option>
+						<option value="Ученая степень">Ученая степень</option>
+					</select>					
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>			
+				</div>
+				<div class="form__marital">
+					<label for="marital" class="form__label">Семейное положение</label>		
+					<select name="name" id="marital" class="form__marital-select">
+						<option value="Не выбрано" selected>Не выбрано</option>
+						<option value="Холост/не замужем">Холост/не замужем</option>
+						<option value="Разведен(а)">Разведен(а)</option>
+						<option value="Гражданский брак">Гражданский брак</option>
+						<option value="Женат/замужем">Женат/замужем</option>
+						<option value="Вдовец, вдова">Вдовец, вдова</option>
+					</select>
+					<div class="form-wrap__tip"></div>			
+				</div>
+				<div class="form__car">
+					<label for="car" class="form__label">Автомобиль</label>		
+					<select name="name" id="car" class="form__car-select">
+						<option value="Не выбрано" selected>Не выбрано</option>
+						<option value="Нет">Нет</option>
+						<option value="Отечественный">Отечественный</option>
+						<option value="Иномарка">Иномарка</option>
+					</select>				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>			
+				</div>
+			</div>
+			<h3 class="form__titles">Место работы</h3>	
+			<div class="form__block form__block-employment">
+				<div class="form__employment-type">
+					<label for="employment-type" class="form__label">Тип занятости</label>		
+					<select name="name" id="employment-type" class="form__employment-type-select">
+						<option value="Работаю в организации" selected>Работаю в организации</option>
+						<option value="Собственный бизнес">Собственный бизнес</option>
+						<option value="Не работаю">Не работаю</option>
+					</select>			
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>	
+				</div>
+				<div class="form__block form__block-organization">
+					<div class="form__organization">
+						<div class="form__organization-name">
+							<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
+							<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
+							<div class="form-wrap__tip"></div>
+						</div>	
+						<div class="form__work-experience">
+							<label for="work-experience" class="form__label">Срок работы в организации</label>		
+							<select name="name" id="work-experience" class="form__work-experience-select">
+								<option value="Не выбрано" selected>Не выбрано</option>
+								<option value="Меньше 1 года">Нет</option>
+								<option value="От 1 года, но меньше 2">От 1 года, но меньше 2</option>
+								<option value="От 2 лет, но меньше 3">От 2 лет, но меньше 3</option>
+								<option value="От 3 лет, но меньше 4">От 3 лет, но меньше 4</option>
+								<option value="От 4 лет, но меньше 5">От 4 лет, но меньше 5</option>
+								<option value="От 5 лет, но меньше 6">От 5 лет, но меньше 6</option>
+								<option value="От 6 лет, но меньше 7">От 6 лет, но меньше 7</option>
+								<option value="От 7 лет и более">От 7 лет и более</option>
+							</select>
+							<div class="form-wrap__tip"></div>
+						</div>	
+					</div>		
+					<div class="form__own-business">
+						<div class="form__own-business-official">
+							<input type="checkbox" class="form__own-business-official-checkbox" id="own-business-official">
+							<label for="own-business-official">Неофициальный</label>	
+							<div class="form-wrap__tip"><span class="form__tip">?</span></div>	
+						</div>	
+						<div class="form__own-business-organization">
+							<label for="own-organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
+							<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>	
+							<div class="form-wrap__tip"></div>
+						</div>		
+					</div>	
+					<div class="form__workless">
+						<div class="form-wrap__workless-reasons">
+							<label for="form__workless-reasons" class="form__label">Причина<span class="span-red">*</span></label>
+							<div class="form__workless-reasons-radio" id="form__workless-reasons">
+								<div class="input-wrap">
+									<input type="radio" name="name" id="reason__pensioner-age" class="workless-reasons workless-reasons__pensioner-age">
+									<label for="reason__pensioner-age" class="radio__label form__label_workless-reasons">Пенсионер по возрасту/стажу работы</label>	
+																</div>
+								<div class="input-wrap">
+									<input type="radio" name="name" id="reason__pensioner-invalid" class="workless-reasons workless-reason__pensioner-invalid">
+									<label for="reason__pensioner-invalid" class="radio__label form__label_workless-reasons">Пенсионер по инвалидности</label>									
+								</div>
+								<div class="input-wrap">
+									<input type="radio" name="name" id="reason__finding-job" class="workless-reasons workless-reason__finding-job">
+									<label for="reason__finding-job" class="radio__label form__label_workless-reasons">Ищу работу</label>									
+								</div>
+								<div class="input-wrap">
+									<input type="radio" name="name" id="reason__marital-care" class="workless-reasons workless-reasons__marital-care">
+									<label for="reason__marital-care" class="radio__label form__label_workless-reasons">Содержит муж/жена</label>									
+								</div>
+								<div class="input-wrap">
+									<input type="radio" name="name" id="reason__other" class="workless-reasons workless-reason__other">
+									<label for="reason__other" class="radio__label radio__label_workless-reasons">Другое</label>										
+								</div>
+							</div>
+						</div>	
+						<div class="form__reason-for-other">
+							<label for="reason-for-other" class="form__label"><span class="span-red">*</span></label>
+							<input type="text" id="reason-for-other" class="form__reason-for-other-input" name="name">
+							<div class="form-wrap__tip"></div>
+						</div>	
+					</div>	
+				</div>
+			</div>	
+			<button class="additional-info-button button">Перейти к оформлению дополнительных данных</button>
+			<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
+			<div class="form__block form__block-additional-info">
+				<div class="form__family-phone">
+					<label for="family-phone" class="form__label">Стационарный телефон родственников или знакомых<span class="span-red">*</span></label>
+					<input type="phone" id="family-phone" class="form__family-phone-input" name="name">				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+				</div>	
+				<div class="form__family-phone_comment">
+					<label for="family-phone_comment" class="form__label">Комментарий<span class="span-red">*</span></label>
+					<input type="text" id="family-phone_comment" class="form__family-phone_comment-input" name="name">				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+				</div>	
+				<div class="form__income">
+					<label for="family-income" class="form__label">Персональный доход<span class="span-red">*</span></label>
+					<input type="number" id="income" class="form__income-input additional-input" name="name">				
+					<p class="form__text">руб./месяц</p>				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+				</div>	
+				<div class="form__flat-rent">
+					<label for="flat-rent" class="form__label">Сумма аренды квартиры<span class="span-red">*</span></label>
+					<input type="number" id="flat-rent" class="form__flat-rent-input additional-input" name="name">				
+					<p class="form__text">руб./месяц</p>				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 				</div>	
 			</div>
-		</div>	
-		<button class="additional-info-button button">Перейти к оформлению дополнительных данных</button>
-		<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
-		<div class="form__block form__block-additional-info">
-			<div class="form__family-phone">
-				<label for="family-phone" class="form__label">Стационарный телефон родственников или знакомых<span class="span-red">*</span></label>
-				<input type="phone" id="family-phone" class="form__family-phone-input" name="name">				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>	
-			<div class="form__family-phone_comment">
-				<label for="family-phone_comment" class="form__label">Комментарий<span class="span-red">*</span></label>
-				<input type="text" id="family-phone_comment" class="form__family-phone_comment-input" name="name">				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>	
-			<div class="form__income">
-				<label for="family-income" class="form__label">Персональный доход<span class="span-red">*</span></label>
-				<input type="number" id="income" class="form__income-input additional-input" name="name">				
-				<p class="form__text">руб./месяц</p>				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>	
-			<div class="form__flat-rent">
-				<label for="flat-rent" class="form__label">Сумма аренды квартиры<span class="span-red">*</span></label>
-				<input type="number" id="flat-rent" class="form__flat-rent-input additional-input" name="name">				
-				<p class="form__text">руб./месяц</p>				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
-			</div>	
-		</div>
-		<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
-		<div class="form__block form__password">
-			<div class="form__password">
-				<label for="password" class="form__label">Кодовое слово<span class="span-red">*</span></label>
-				<input type="text" id="password" class="form__password-input" name="name">				
-				<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+			<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
+			<div class="form__block form__password">
+				<div class="form__password">
+					<label for="password" class="form__label">Кодовое слово<span class="span-red">*</span></label>
+					<input type="text" id="password" class="form__password-input" name="name">				
+					<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+				</div>
+				<div class="form__got-debit-card form__line-checkbox">
+					<input type="checkbox" class="form__got-debit-card-checkbox" id="got-debit-card">
+					<label for="got-debit-card">Есть дебетовая карта Тинькофф банка</label>	
+				</div>				
+				<div class="form__data-agreement form__line-checkbox">
+					<input type="checkbox" class="form__data-agreement-checkbox" id="data-agreement">
+					<label for="data-agreement">Согласен с передачей данных</label>(<p class="info-button info-button_conditions">подробная информация</p>)
+				</div>						
 			</div>
-			<div class="form__got-debit-card form__line-checkbox">
-				<input type="checkbox" class="form__got-debit-card-checkbox" id="got-debit-card">
-				<label for="got-debit-card">Есть дебетовая карта Тинькофф банка</label>	
-			</div>				
-			<div class="form__data-agreement form__line-checkbox">
-				<input type="checkbox" class="form__data-agreement-checkbox" id="data-agreement">
-				<label for="data-agreement">Согласен с передачей данных</label>(<p class="info-button info-button_conditions">подробная информация</p>)
-			</div>						
-		</div>
-		<button class="end-task-button button">Оформить заявку</button>		
-	</form>
-	<div class="popup">		
+			<button class="end-task-button button">Оформить заявку</button>		
+		</form>
+	</div>	
+	<div class="popup section"  data-section="application-forming">		
 		<div class="popup__body">
 			<div class="popup__close-btn"></div>
 			<p class="popup__body-text">
@@ -899,6 +900,28 @@
 				Я даю согласие на предоставление Банком всей имеющейся обо мне информации в объеме, в порядке и на условиях, определенных Федеральным законом «О кредитных историях» № 218-ФЗ от 30 декабря 2004 года, во все бюро кредитных историй, включенные в государственный реестр бюро кредитных историй, а также на получение кредитного отчета из вышеозначенных бюро для заключения Договора и в течение срока действия Договора.
 			</p>
 		</div>
+	</div>
+	<div class="script-table">
+		<table class="table">
+			<tr class="table-header">
+				<th class="table-head">№</th>
+				<th class="table-head">Тема</th>
+				<th class="table-head">Фраза</th>
+				<th class="table-head">Ответ</th>
+			</tr>
+			<tr class="713918">
+				<td>713918</td>
+				<td>Звонок клиенту</td>
+				<td>Удалось дозвониться? ! ! При продаже КНЗ не задавайте наводящие вопросы, которые могут привести к уточнению о других кредитных продуктах банка со стороны клиента. В приоритете требуется оформить заявку на КНЗ.
+
+В случаях, если клиент отказывается оформить КНЗ, действуйте следующим образом:
+Проведите полноценную работу с возражениями, расскажите о преимуществах кредита наличными под залог недвижимости, произведите расчеты на калькуляторе, покажите выгоду клиенту. Только после проведенной работы, если клиент отказался от КНЗ, предложи оформить заявку на КНА.</td>
+				<td>
+					<input type="radio" name="ts1" id="r1-n" class="r1-n"><label for="ts1" class="table-red-label">Нет</label>
+					<input type="radio" name="ts1" id="r2-y" class="r2-y"><label for="ts1" class="table-green-label">Да</label>
+				</td>
+			</tr>
+		</table>
 	</div>
 	<script src="main.js"></script>
 <!-- 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
