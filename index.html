@@ -38,28 +38,303 @@
 					</div>
 				</div>
 			</div>	
-				<div class="script-table">
-		<table class="table">
-			<tr class="table-header">
-				<th class="table-head">№</th>
-				<th class="table-head">Тема</th>
-				<th class="table-head">Фраза</th>
-				<th class="table-head">Ответ</th>
-			</tr>
-			<tr class="713918">
-				<td class="hidden-column">713918</td>
-				<td>Звонок клиенту</td>
-				<td>Удалось дозвониться? ! ! При продаже КНЗ не задавайте наводящие вопросы, которые могут привести к уточнению о других кредитных продуктах банка со стороны клиента. В приоритете требуется оформить заявку на КНЗ.
+			<div class="script-table">
+				<table class="table">
+					<tr class="table-header">
+						<th class="table-head">№</th>
+						<th class="table-head">Тема</th>
+						<th class="table-head">Фраза</th>
+						<th class="table-head">Ответ</th>
+					</tr>
+					<tr class="713918">
+						<td class="hidden-column">713918</td>
+						<td>Звонок клиенту</td>
+						<td>Удалось дозвониться? ! ! При продаже КНЗ не задавайте наводящие вопросы, которые могут привести к уточнению о других кредитных продуктах банка со стороны клиента. В приоритете требуется оформить заявку на КНЗ.
+							В случаях, если клиент отказывается оформить КНЗ, действуйте следующим образом: Проведите полноценную работу с возражениями, расскажите о преимуществах кредита наличными под залог недвижимости, произведите расчеты на калькуляторе, покажите выгоду клиенту. Только после проведенной работы, если клиент отказался от КНЗ, предложи оформить заявку на КНА.</td>
+						<td>
+							<input type="radio" name="ts1" id="r1-n" class=""><label class="table-red-label">Нет</label>
+							<input type="radio" name="ts1" id="r1-y" class=""><label class="table-green-label">Да</label>
+						</td>
+					</tr>
+					<tr>
+						<td>713919</td>
+						<td>Недозвон</td>
+						<td>Завершите задание с подходящим статусом в апплете Недозвон.</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>713920</td>
+						<td>Указано ФИО</td>
+						<td>В заявке указано <ФИО>?</td>
+						<td>
+							<input type="radio" name="ts2" id="r2-n" class=""><label class="table-red-label">Нет</label>
+							<input type="radio" name="ts2" id="r2-y" class=""><label class="table-green-label">Да</label>
+						</td>
+					</tr>
+					<tr>
+						<td>713921</td>
+						<td>Диалог с клиентом без ФИО</td>
+						<td>Здравствуйте, меня зовут {OperatorName}, звоню Вам по банковскому предложению. Удобно сейчас его прослушать? (1)
+							(1)  Если клиент сообщает, что не хочет выслушивать предложение – проведите работу с возражениями.
+							Например, сообщите: «Наш разговор займет немного времени. При этом информация может быть полезной Вам сейчас или в дальнейшем. Уделите несколько минут?».
+							Клиент согласился прослушать- Сообщите клиенту, что представляете АО Тинькофф банк и начните озвучивать предложение.
+						   	Клиент отказался прослушать- Завершите задание с подходящим статусом в апплете Отказ.
+						</td>
+						<td>
+							<input type="radio" name="ts3" id="r3-y" class=""><label class="table-green-label">Да</label>
+							<input type="radio" name="ts3" id="r3-n" class=""><label class="table-red-label">Нет</label>
+						</td>
+					</tr>
+					<tr>
+						<td>713922</td>
+						<td>Перезвон</td>
+						<td>Договоритесь о перезвоне
+						</td>
+						<td>
+							<input type="radio" name="ts4" id="r3-y" class=""><label class="table-green-label">Да</label>
+							<input type="radio" name="ts4" id="r3-n" class=""><label class="table-red-label">Нет</label>							
+						</td>
+					</tr>	
+					<tr>
+						<td>713923</td>
+						<td>Знакомство с клиентом без ФИО</td>
+						<td>Скажите, пожалуйста, как к Вам можно обращаться? Получите ответ. Внесите данные клиента в задание.
+						</td>
+						<td>
+							<input type="radio" name="ts5" id="r4-next" class=""><label class="table-next-label">Далее</label>							
+						</td>
+					</tr>			
+					<tr>
+						<td>713924</td>
+						<td>Приветствие</td>
+						<td>{ClientName}, здравствуйте! Меня зовут {OperatorName}.
+						</td>
+						<td>
+							<input type="radio" name="ts6" id="r5-y" class=""><label class="table-green-label">Да</label>
+							<input type="radio" name="ts6" id="r5-3" class=""><label class="table-red-label">3-е лицо</label>							
+						</td>
+					</tr>		
+					<tr>
+						<td>713925</td>
+						<td>Диалог с 3 лицом</td>
+						<td>Скажите, пожалуйста, Вы знакомы с {ClientFullName}?
+						</td>
+						<td>
+							<input type="radio" name="ts7" id="r6-y" class=""><label class="table-green-label">Да</label>	
+							<input type="radio" name="ts7" id="r6-n" class=""><label class="table-red-label">Нет</label>				
+						</td>
+					</tr>	
+					<tr>
+						<td>713926</td>
+						<td>Продолжение диалога с 3 лицом</td>
+						<td>Прошу прощения. Для данного номера действует интересное предложение. Удобно сейчас его прослушать? (1)
+							(1)  Если клиент сообщает, что не хочет выслушивать предложение – проведите работу с возражениями.
+							Например, сообщите: «Наш разговор займет немного времени. При этом информация может быть полезной Вам сейчас или в дальнейшем. Уделите несколько минут?».
+							   Клиент согласился прослушать- Сообщите клиенту, что представляете АО Тинькофф банк и начните озвучивать предложение.
+							   Клиент отказался прослушать- Завершите задание с подходящим статусом в апплете Отказ.
+						</td>
+						<td>
+							<input type="radio" name="ts8" id="r7-y" class=""><label class="table-green-label">Да</label>	
+							<input type="radio" name="ts8" id="r7-n" class=""><label class="table-red-label">Нет</label>				
+						</td>
+					</tr>				
+					<tr>
+						<td>713927</td>
+						<td>Знакомство с 3 лицом</td>
+						<td>Скажите, пожалуйста, как к Вам можно обращаться? Получите ответ. Внесите данные 3 лица в задание.
+						</td>
+						<td>
+							<input type="radio" name="ts9" id="r9-next" class=""><label class="table-next-label">Далее</label>					
+						</td>
+					</tr>	
+					<tr>
+						<td>713928</td>
+						<td>Диалог с клиентом</td>
+						<td>Звоню Вам по банковскому предложению. Удобно сейчас его прослушать? (1)
+							(1)  Если клиент сообщает, что не хочет выслушивать предложение – проведите работу с возражениями.
+							Например, сообщите: «Наш разговор займет немного времени. При этом информация может быть полезной Вам сейчас или в дальнейшем. Уделите несколько минут?».
+							   Клиент согласился прослушать- Сообщите клиенту, что представляете АО Тинькофф банк и начните озвучивать предложение.
+							   Клиент отказался прослушать-Завершите задание с подходящим статусом в апплете Отказ.
+						</td>
+						<td>
+							<input type="radio" name="ts10" id="r10-y" class=""><label class="table-green-label">Да</label>	
+							<input type="radio" name="ts10" id="r10-n" class=""><label class="table-red-label">Нет</label>				
+						</td>
+					</tr>		
+					<tr>
+						<td>713929</td>
+						<td>Выявление потребностей</td>
+						<td>Я представляю АО Тинькофф банк
+							Для того, чтобы информация была максимально полезной, хочу уточнить пару вопросов:
+							- Какими пользуетесь кредитными продуктами в других банках? Получите ответ. Если пользуется, уточните, под какие проценты.
+							- Какие крупные покупки планируете сделать в ближайшее время? Например: покупка автомобиля, ремонт квартиры, оплата учебы. Получите ответ. Поблагодарите за ответы
+						</td>
+						<td>
+							<input type="radio" name="ts11" id="r11-cred" class=""><label class="table-next-label">Пользуется кредитным продуктом.</label>	
+							<input type="radio" name="ts11" id="r11-large" class=""><label class="table-next-label">Планирует делать крупные расходы.</label>				
+							<input type="radio" name="ts11" id="r11-not-defined" class=""><label class="table-next-label">Потребность не выявлена</label>				
+						</td>
+					</tr>	
+					<tr>
+						<td>713930</td>
+						<td>Есть кредит</td>
+						<td>{ClientName}, для рефинансирования Вашего <продукт клиента> предлагаю Вам оформить кредит под залог недвижимости с выгодной процентной ставкой от 9% годовых на крупную сумму - до 15 млн. рублей. Для оформления потребуется только паспорт. 
+						</td>
+						<td>
+							<input type="radio" name="ts12" id="r12-next" class=""><label class="table-next-label">Далее</label>				
+						</td>
+					</tr>			
+					<tr>
+						<td>713931</td>
+						<td>Предстоят крупные расходы</td>
+						<td>{ClientName}, для совершения Вашей  <цели/покупки> предлагаю Вам оформить кредит под залог недвижимости с выгодной процентной ставкой от 9% годовых на крупную сумму - до 15 млн. рублей. Для оформления потребуется только паспорт.
+						</td>
+						<td>
+							<input type="radio" name="ts12" id="r12-next" class=""><label class="table-next-label">Далее</label>				
+						</td>
+					</tr>			
+					<tr>
+						<td>713932</td>
+						<td>Потребность не выявлена</td>
+						<td>{ClientName}, предлагаю Вам оформить кредит под залог недвижимости с выгодной процентной ставкой от 9% годовых на сумму - до 15 млн. рублей. Для оформления потребуется только паспорт. Одобренные средства можете использовать на любые цели.
+						</td>
+						<td>
+							<input type="radio" name="ts13" id="r13-next" class=""><label class="table-next-label">Далее</label>				
+						</td>
+					</tr>		
+					<tr>
+						<td>713933</td>
+						<td>Готовность оформить заявку</td>
+						<td>Давайте заполним заявку, это займет всего несколько минут. Клиент согласен оформить заявку?
+						</td>
+						<td>
+							<input type="radio" name="ts14" id="r14-n" class=""><label class="table-red-label">Нет</label>
+							<input type="radio" name="ts14" id="r14-y" class=""><label class="table-green-label">Да</label>			
+						</td>
+					</tr>		
+					<tr>
+						<td>713934</td>
+						<td>Работа с возражениями</td>
+						<td>Проведите работу с возражениями. Расскажите о преимуществах кредита наличными под залог недвижимости исходя из потребностей (2). При необходимости произведите расчеты на калькуляторе. * Клиент согласен оформить заявку на КНЗ?
+							* Примеры фраз
+							Давайте заполним заявку, банк рассмотрит ее, предоставит ответ, узнаете точные условия, уверен(а), что все устроит, и Вы воспользуетесь таким выгодным продуктом.
+							Продукт действительно выгодный, уверен(а) он Вас устроит, давайте заполним заявку, это займет всего несколько минут, решение примете как узнаете условия. Хорошо?
+						</td>
+						<td>
+							<input type="radio" name="ts15" id="r15-n" class=""><label class="table-red-label">Нет</label>
+							<input type="radio" name="ts15" id="r15-next" class=""><label class="table-next-label">(2) Преимущества КНЗ</label>
+							<input type="radio" name="ts15" id="r15-y" class=""><label class="table-green-label">Да</label>			
+						</td>
+					</tr>		
+					<tr>
+						<td>713935</td>
+						<td>Отказ</td>
+						<td>Попрощайтесь с клиентом. Перейдите в закладку Отказ, выберите соответствующую причину отказа. Завершите работу с заданием.
+						</td>
+						<td>	
+						</td>
+					</tr>						
+					<tr>
+						<td>713936</td>
+						<td>Оформление заявки</td>
+						<td>Для перехода к оформлению заявки нажмите Оформление заявки. Далее следуйте рекомендациям по заполнению полей. Заявка оформлена! Срок рассмотрения – ориентировочно 2 дня. При необходимости с вами свяжутся. Всего доброго, до свидания.
+						</td>
+						<td>	
+						</td>
+					</tr>						
+					<tr>
+						<td>713937</td>
+						<td>Преимущества КНЗ</td>
+						<td>(2) Преимущества КНЗ
+							- Выгодная % ставка – Пользуясь низкой процентной ставкой от 9% годовых, вы не переплатите по %, и сэкономите приличную сумму денег.
+							- Крупная сумма – Деньги выдаются наличными на более крупную сумму от 200 тыс. до 15 млн. рублей, у вас будет
+							превосходная возможность сделать существенные приобретения.
+							- Срок кредитования – Позволит вам установить минимальный ежемесячный платеж, и определить комфортный период выплаты кредита от 3 мес. до 15 лет.
+							- Заявка рассматривается быстро, ориентировочно в течении двух дней узнаете решение банка.
+							- Кредит выдается на любые цели – Вам не надо объяснять, зачем нужны деньги.
+							- Квартира остается в собственности – Вы можете жить в квартире или сдавать ее, а прибыль с аренды направлять на
+							погашение кредита.
+							- Квартира необязательно должна быть вашей – залогодателем может являться любой Ваш родственник, друг или знакомый.
+						</td>
+						<td>
+							<input type="radio" name="ts16" id="r16-next" class=""><label class="table-next-label">Далее</label>		
+						</td>
+					</tr>	
+					<tr>
+						<td>713938</td>
+						<td>Презентация КНА</td>
+						<td>В таком случае предлагаю оставить заявку на кредит наличными под залог авто с процентной ставкой от 11% годовых, на сумму до 3 млн. рублей, и сроком кредитования до 5 лет. Давайте заполним заявку, это займет всего несколько минут.
+							Клиент согласен оформить заявку?
+						</td>
+						<td>	
+							<input type="radio" name="ts17" id="r17-n" class=""><label class="table-red-label">Нет</label>
+							<input type="radio" name="ts17" id="r17-y" class=""><label class="table-green-label">Да</label>	
+						</td>
+					</tr>						
+					<tr>
+						<td>713939</td>
+						<td>Оформление заявки КНА</td>
+						<td>Для перехода к оформлению заявки нажмите Оформление заявки.
+							Далее следуйте рекомендациям по заполнению полей. 
+							Заявка оформлена! Срок рассмотрения – ориентировочно 2 дня. При необходимости с вами вяжутся. Всего доброго, до свидания.
+						</td>
+						<td>
+						</td>
+					</tr>					
+					<tr>
+						<td>713940</td>
+						<td>Работа с возражениями</td>
+						<td>Уточните, что останавливает клиента оформить заявку. Проведите работу с возражениями.
+							Клиент согласен оформить заявку на КНА?
+						</td>
+						<td>
+							<input type="radio" name="ts17" id="r17-y" class=""><label class="table-green-label">Да</label>	
+							<input type="radio" name="ts17" id="r17-n" class=""><label class="table-red-label">Нет</label>							
+						</td>
+					</tr>			
+					<tr>
+						<td>713941</td>
+						<td>Диалог с клиентом</td>
+						<td>Вам подойдет обычный кредит наличными без залога?
+							Ответ ДА
+							Предложите оставить заявку на КН.
+							Ответ НЕТ
+							Проведите работу с возражениями.
+							Клиент согласен оформить заявку на КН?
+						</td>
+						<td>
+							<input type="radio" name="ts18" id="r18-y" class=""><label class="table-green-label">Да</label>	
+							<input type="radio" name="ts18" id="r18-n" class=""><label class="table-red-label">Нет</label>							
+						</td>
+					</tr>						
+					<tr>
+						<td>713942</td>
+						<td>Оформление заявки КН</td>
+						<td>Оформите заявку.
+							Попрощайтесь с клиентом.
+						</td>
+						<td>
+							<input type="radio" name="ts19" id="r19-y" class=""><label class="table-green-label">Да</label>	
+							<input type="radio" name="ts19" id="r19-n" class=""><label class="table-red-label">Нет</label>							
+						</td>
+					</tr>		
+					<tr>
+						<td>713943</td>
+						<td>Преимущества КНЗ</td>
+						<td>- Отсутствие бумажной волокиты – дополнительные документы на квартиру не нужны.
+							- Регистрация квартиры в РосРеестре - Банк самостоятельно оплатит гос. пошлину за регистрацию квартиры в Рос Реестре, соответственно с вашей стороны никаких расходов не будет.
+							- Выдача кредита частями – Вы сможете активировать часть средств на встрече с представителем банка, и сразу начать реализовывать свои планы, остальную сумму получить после регистрации квартиры в РосРеестре.
+							- Подключить созаёмщиков - К сделке можете привлечь одного или несколько созаемщиков, тем самым повысите вероятность одобрения желаемой суммы, и получите дополнительную финансовую поддержку при погашении кредита.
+							- По закону требуется обязательная защита имущества (ИФЛ-1), мы сразу можем за 1-й год включить стоимость страхового полиса в сумму кредита, при этом цена будет минимальной, а страховка соответствовать всем требованиям. За счет этого вы сэкономите личное время, и получите средства без лишних затрат.
 
-В случаях, если клиент отказывается оформить КНЗ, действуйте следующим образом:
-Проведите полноценную работу с возражениями, расскажите о преимуществах кредита наличными под залог недвижимости, произведите расчеты на калькуляторе, покажите выгоду клиенту. Только после проведенной работы, если клиент отказался от КНЗ, предложи оформить заявку на КНА.</td>
-				<td>
-					<input type="radio" name="ts1" id="r1-n" class="r1-n"><label for="ts1" class="table-red-label">Нет</label>
-					<input type="radio" name="ts1" id="r2-y" class="r2-y"><label for="ts1" class="table-green-label">Да</label>
-				</td>
-			</tr>
-		</table>
-	</div>		
+							- Бесплатный и удобный личный кабинет - позволит Вам просматривать финансовую информацию и управлять своими деньгами.
+						</td>
+						<td>
+							<input type="radio" name="ts20" id="r20-next" class=""><label class="table-next-label">Далее</label>							
+						</td>
+					</tr>																																																													
+				</table>
+			</div>		
 		</div>
 		<div class="application-forming section" data-section="application-forming">
 			<h3 class="application-forming__title">Залоговое предложение</h3>
@@ -461,66 +736,71 @@
 	<div class="form__wrap" data-section="application-forming">
 		<form action="post" class="form">
 			<h3 class="form__titles">Контактные данные</h3>
-			<div class="form__block form__block-contact-info">
-				<div class="form__name">
+			<div class="form__block">
+				<div class="form__block-input-block form__name">
 					<label for="name" class="form__label">ФИО<span class="span-red">*</span></label>
-					<input type="text" id="name" class="form__name-input" name="name">
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<input type="text" id="name" class="form__name-input normal-input" name="name">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Необходимо обязательно сверять ФИО со слов Заявителя. <br> Если данные в ФИО поменялись, внесите новые данные, убедившись, что их диктует именно Заявитель.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Необходимо обязательно сверять ФИО со слов Заявителя. <br> Если данные в ФИО поменялись, внесите новые данные, убедившись, что их диктует именно Заявитель.</div>
+						</div>	
 					</div>	
 				</div>
-				<div class="form__birth">
+				<div class="form__block-input-block form__birth">
 					<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
 					<input type="text" id="birth" class="form__birth-input" name="name">
-					<div class="form-wrap__tip js-form-wrap__tip"></div>	
+					<div class="form-wrap__tip"></div>	
 				</div>
-				<div class="form__phone">
+				<div class="form__block-input-block form__phone">
 					<label for="phone" class="form__label">Мобильный телефон<span class="span-red">*</span></label>
 					<input type="text" id="phone" class="form__phone-input" name="name">
 					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Необходимо обязательно сверять номер мобильного со слов Заявителя. <br> Вносите только личный контактный мобильный телефон Заявителя.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Необходимо обязательно сверять номер мобильного со слов Заявителя. <br> Вносите только личный контактный мобильный телефон Заявителя.</div>
+						</div>	
 					</div>
 				</div>				
-				<div class="form__email">
+				<div class="form__block-input-block form__email">
 					<label for="email" class="form__label">Электронная почта</label>
 					<input type="text" id="email" class="form__email-input" name="name">
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Адрес электронной почты необходимо сверять по буквам.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Адрес электронной почты необходимо сверять по буквам.</div>
+						</div>	
 					</div>				
 				</div>
 			</div>
 			<h3 class="form__titles">Информация о кредите наличными</h3>
-			<div class="form__block form__block-cashloan-info">
-				<div class="form__loan-amount">
+			<div class="form__block">
+				<div class="form__loan-amount form__block-input-block">
 					<label for="loan-amount" class="form__label">Сумма кредита<span class="span-red">*</span></label>
 					<input type="text" id="loan-amount" class="form__loan-amount-input" name="name">
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Mинимальная сумма: 50 000 р. <br> Максимальная сумма: 2 000 000 р. <br> Шаг: 1000 р.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Mинимальная сумма: 50 000 р. <br> Максимальная сумма: 2 000 000 р. <br> Шаг: 1000 р.</div>
+						</div>	
 					</div>					
 				</div>
-				<div class="form__loan-period">
+				<div class="form__loan-period form__block-input-block">
 					<label for="loan-period" class="form__label">Срок кредита (кол-во месяцев)<span class="span-red">*</span></label>
 					<input type="text" id="loan-period" class="form__loan-period-input" name="name">
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Mинимальный срок: 3 месяца. <br> Максимальный срок: 36 месяцев.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Mинимальный срок: 3 месяца. <br> Максимальный срок: 36 месяцев.</div>
+						</div>	
 					</div>				
 				</div>
-				<div class="form__loan-purpose">
+				<div class="form__loan-purpose form__block-input-block">
 					<label for="loan-purpose" class="form__label">Цель кредита<span class="span-red">*</span></label>
 					<select name="name" id="loan-purpose" class="form__loan-purpose-input">
 						<option value="Не указано" selected>Не указано</option>
@@ -536,69 +816,73 @@
 						<option value="Пока не определился">Пока не определился</option>
 						<option value="Иное">Иное</option>
 					</select>
-					<div class="form-wrap__tip js-form-wrap__tip"></div>
+					<div class="form-wrap__tip"></div>
 				</div>
 			</div>
 			<h3 class="form__titles">Паспортные данные</h3>
-			<div class="form__block form__block-passport">
-				<div class="form__passport-number">
+			<div class="form__block">
+				<div class="form__passport-number form__block-input-block">
 					<label for="passport-number" class="form__label">Серия - номер<span class="span-red">*</span></label>
 					<input type="text" id="passport-number" class="form__passport-number-input" name="name">
-					<div class="form-wrap__tip js-form-wrap__tip"></div>
+					<div class="form-wrap__tip"></div>
 				</div>
-				<div class="form__passport-date">
+				<div class="form__passport-date form__block-input-block">
 					<label for="passport-passport-date" class="form__label">Дата выдачи<span class="span-red">*</span></label>
 					<input type="text" id="passport-passport-date" class="form__passport-date-input" name="name">				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Дата выдачи паспорта должна быть не ранее 01.07.1997 согласно постановлению Правительства Российской Федерации от 8 июля 1997 г. № 828. Паспорт подлежит замене в течение месяца по достижении 14, 20, 45 лет.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Дата выдачи паспорта должна быть не ранее 01.07.1997 согласно постановлению Правительства Российской Федерации от 8 июля 1997 г. № 828. Паспорт подлежит замене в течение месяца по достижении 14, 20, 45 лет.</div>
+						</div>	
 					</div>	
 				</div>
-				<div class="form__passport-code">
+				<div class="form__passport-code form__block-input-block">
 					<label for="passport-code" class="form__label">Код подразделения<span class="span-red">*</span></label>
 					<input type="text" id="passport-code" class="form__passport-code-input" name="name">
-					<div class="form-wrap__tip js-form-wrap__tip"></div>
+					<div class="form-wrap__tip"></div>
 				</div>
-				<div class="form__passport-issue">
+				<div class="form__passport-issue form__block-input-block">
 					<label for="passport-issue" class="form__label">Кем выдан<span class="span-red">*</span></label>
 					<input type="text" id="passport-issue" class="form__passport-issue-input" name="name">				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Данные вносятся так же, как написано в паспорте. Необходимо соблюдать все сокращения в написании слов, подробно уточняя их у Заявителя.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Данные вносятся так же, как написано в паспорте. Необходимо соблюдать все сокращения в написании слов, подробно уточняя их у Заявителя.</div>
+						</div>	
 					</div>	
 				</div>
-				<div class="form__passport-birth-place">
+				<div class="form__passport-birth-place form__block-input-block">
 					<label for="passport-birth-place" class="form__label">Место рождения<span class="span-red">*</span></label>
 					<input type="text" id="passport-birth-place" class="form__passport-birth-place-input" name="name">				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Данные вносятся так же, как написано в паспорте. Необходимо соблюдать все сокращения в написании слов, подробно уточняя их у Заявителя.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Данные вносятся так же, как написано в паспорте. Необходимо соблюдать все сокращения в написании слов, подробно уточняя их у Заявителя.</div>
+						</div>	
 					</div>	
 				</div>
-				<div class="form__passport-snils">
+				<div class="form__passport-snils form__block-input-block">
 					<label for="passport-snils" class="form__label">СНИЛС<span class="span-red">*</span></label>
 					<input type="text" id="passport-snils" class="form__passport-snils-input" name="name">				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Страховой номер индивидуального лицевого счёта</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Страховой номер индивидуального лицевого счёта</div>
+						</div>	
 					</div>	
 				</div>	
-				<div class="form__passport-snils_checkbox form__line-checkbox">
+				<div class="form__passport-snils_checkbox form__line-checkbox form__block-input-block">
 					<input type="checkbox" class="passport-snils-checkbox" id="passport-snils">
 					<label for="passport-snils">Не может предоставить</label>
 				</div>						
 			</div>	
 			<h3 class="form__titles">Дополнительные документы, которые клиент готов предоставить</h3>
-			<div class="form__block form__block-additional-documents">
-				<div class="form__additional-documents">
+			<div class="form__block">
+				<div class="form__additional-documents form__block-input-block">
 					<label for="additional-documents" class="form__label">Заграничный паспорт<span class="span-red">*</span></label>
 					<select id="additional-documents" class="form__additional-documents-select" name="name">
 						<option value="Не выбрано" selected="">Не выбрано</option>
@@ -606,246 +890,278 @@
 						<option value="Нет">Нет</option>
 						<option value="Не уверен">Не уверен</option>
 					</select>
-					<div class="form-wrap__tip js-form-wrap__tip"></div>				
+					<div class="form-wrap__tip"></div>				
 				</div>
 			</div>	
 			<h3 class="form__titles">Адрес по месту постоянной регистрации</h3>
-			<div class="form__block form__block-address">
-				<div class="form__address-swicher">
+			<div class="form__block">
+				<div class="form__address-swicher form__block-input-block">
 					<input type="checkbox" class="form__address-filling-type-switch-checkbox" id="address-filling-type-switch">
 					<label for="address-filling-type-switch">Перейти к ручному заполнению адреса</label>					
 				</div>
-				<div class="form__address-auto-filling">
-					<div class="form__address">
+				<div class="form__address-auto-filling form__block">
+					<div class="form__address form__block-input-block">
 						<label for="address" class="form__label">Адрес<span class="span-red">*</span></label>
 						<input type="text" id="address" class="form__address-input" name="name">
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+						<div class="form-wrap__tip"></div>
 					</div>	
-					<div class="form__flat">
+					<div class="form__flat form__block-input-block">
 						<label for="flat" class="form__label">Квартира<span class="span-red">*</span></label>
-						<input type="text" id="flat" class="form__flat-input" name="name">
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+						<div class="small-input-wrap">
+							<input type="text" id="flat" class="form__flat-input" name="name">
+						</div>
+						<div class="form-wrap__tip"></div>
 						<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher">
 						<label for="flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
 					</div>	
-					<div class="form__home-phone">
+					<div class="form__home-phone form__block-input-block">
 						<label for="home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
 						<input type="text" id="home-phone" class="form__home-phone-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__phone-swicher">
+					<div class="form__phone-swicher form__block-input-block">
 						<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch">
 						<label for="form-phone-exist-switch">Нет стационарного телефона</label>				
 					</div>
 				</div>	
-				<div class="form__address-manual-filling">
-					<div class="form__index">
+				<div class="form__address-manual-filling form__block">
+					<div class="form__index form__block-input-block">
 						<label for="address" class="form__label">Индекс<span class="span-red">*</span></label>
 						<input type="text" id="address-index" class="form__address-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если Заявитель не помнит индекс, поставьте галку «Не помню». Самостоятельный поиск индекса НЕ допускается</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если Заявитель не помнит индекс, поставьте галку «Не помню». Самостоятельный поиск индекса НЕ допускается</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__index-swicher">
+					<div class="form__index-swicher form__block-input-block">
 						<input type="checkbox" class="form__index-remember-switch-checkbox" id="form-index-remember-switch">
 						<label for="form-index-remember-switch">Не помню</label>				
 					</div>
-					<div class="form__region">
+					<div class="form__region form__block-input-block">
 						<label for="address" class="form__label">Регион<span class="span-red">*</span></label>
 						<input type="text" id="region-address" class="form__address-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+						<div class="form-wrap__tip"></div>
 					</div>		
-					<div class="form__district">
+					<div class="form__district form__block-input-block">
 						<label for="district" class="form__label">Район или город<span class="span-red">*</span></label>
 						<input type="text" id="district" class="form__district-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская </div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская </div>
+							</div>	
 						</div>	
 					</div>					
-					<div class="form__settlement">
+					<div class="form__settlement form__block-input-block">
 						<label for="settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
 						<input type="text" id="settlement" class="form__settlement-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+						<div class="form-wrap__tip"></div>
 					</div>		
-					<div class="form__street">
+					<div class="form__street form__block-input-block">
 						<label for="street" class="form__label">Улица<span class="span-red">*</span></label>
 						<input type="text" id="street" class="form__street-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если в адресе нет улицы, поставьте «НЕТ»</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если в адресе нет улицы, поставьте «НЕТ»</div>
+							</div>
 						</div>	
 					</div>		
-					<div class="form__house">
+					<div class="form__house form__block-input-block">
 						<label for="house-manual-filling" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
-						<input type="text" id="house-manual-filling" class="house-input form__house-input" name="name" placeholder="Дом">					
-						<input type="text" id="house-building" class="house-input form__block-input" name="name" placeholder="Корпус">					
-						<input type="text" id="house-block" class="house-input form__building-input" name="name" placeholder="Строение">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="small-input-wrap">
+							<input type="text" id="house-manual-filling" class="form__house-input" name="name" placeholder="Дом">
+						</div>			
+						<div class="small-input-wrap">				
+							<input type="text" id="house-building" class="form__block-input " name="name" placeholder="Корпус">	
+						</div>		
+						<div class="small-input-wrap">				
+							<input type="text" id="house-block" class=" form__building-input" name="name" placeholder="Строение">	
+						</div>					
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если дом не имеет номера, поставьте «БН».</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если дом не имеет номера, поставьте «БН».</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__flat">
+					<div class="form__flat form__block-input-block">
 						<label for="flat-manual-filling" class="form__label">Квартира<span class="span-red">*</span></label>
-						<input type="text" id="flat-manual-filling" class="form__flat-input-manual-filling" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+						<div class="small-input-wrap">
+							<input type="text" id="flat-manual-filling" class="form__flat-input" name="name">	
+						</div>					
+						<div class="form-wrap__tip"></div>
 						<input type="checkbox" class="form__flat-house-swicher-checkbox" id="flat-house-swicher-manual-filling">
 						<label for="flat-house-swicher-manual-filling" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
 					</div>	
-					<div class="form__home-phone">
+					<div class="form__home-phone form__block-input-block">
 						<label for="home-phone-manual-filling" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
 						<input type="text" id="home-phone-manual-filling" class="form__home-phone-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__phone-swicher">
+					<div class="form__phone-swicher form__block-input-block">
 						<input type="checkbox" class="form__phone-exist-switch-checkbox" id="form-phone-exist-switch-manual-filling">
 						<label for="form-phone-exist-switch-manual-filling">Нет стационарного телефона</label>				
 					</div>																					
 				</div>
 			</div>	
 			<h3 class="form__titles">Адрес фактического проживания</h3>
-			<div class="form__block form__block-current-address">
-				<div class="form__same-address-swicher">
+			<div class="form__block">
+				<div class="form__same-address-swicher form__block-input-block">
 					<input type="checkbox" class="form__form-address-swicher-checkbox" id="form-address-swicher-switch">
 					<label for="form-address-swicher-switch">Совпадает с адресом регистрации</label>				
 				</div>
-				<div class="form__current-address">
+				<div class="form__current-address form__block-input-block">
 					<div class="form__current-address-swicher">
 						<input type="checkbox" class="form__current-address-filling-type-switch-checkbox" id="current-address-filling-type-switch">
 						<label for="current-address-filling-type-switch">Перейти к ручному заполнению адреса</label>				
 					</div>			
 				</div>
-				<div class="form__current-address-auto-filling">
-					<div class="form__current-address">
+				<div class="form__block form__current-address-auto-filling">
+					<div class="form__current-address form__block-input-block">
 						<label for="current-address" class="form__label">Адрес<span class="span-red">*</span></label>
 						<input type="text" id="current-address" class="form__current-address-input" name="name">
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+						<div class="form-wrap__tip"></div>
 					</div>	
-					<div class="form__current-flat">
-						<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
-						<input type="text" id="current-flat" class="form__current-flat-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+					<div class="form__current-flat form__block-input-block">						
+						<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>						
+						<div class="small-input-wrap">
+							<input type="text" id="current-flat" class="form__flat-input" name="name">		
+						</div>					
+						<div class="form-wrap__tip"></div>
 						<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher">
 						<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
 					</div>	
-					<div class="form__current-home-phone">
+					<div class="form__current-home-phone form__block-input-block">
 						<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
 						<input type="text" id="current-home-phone" class="form__current-home-phone-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__current-phone-swicher">
+					<div class="form__current-phone-swicher form__block-input-block">
 						<input type="checkbox" class="form__current-phone-exist-switch-checkbox" id="form-current-phone-exist-switch">
 						<label for="form-current-phone-exist-switch">Нет стационарного телефона</label>				
 					</div>
 				</div>	
-				<div class="form__current-address-manual-filling">
-					<div class="form__current-index">
+				<div class="form__block form__current-address-manual-filling">
+					<div class="form__current-index form__block-input-block">
 						<label for="current-index" class="form__label">Индекс<span class="span-red">*</span></label>
 						<input type="text" id="current-index" class="form__current-address-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если Заявитель не помнит индекс, поставьте галку «Не помню». Самостоятельный поиск индекса НЕ допускается</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если Заявитель не помнит индекс, поставьте галку «Не помню». Самостоятельный поиск индекса НЕ допускается</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__current-index-swicher">
+					<div class="form__current-index-swicher form__block-input-block">
 						<input type="checkbox" class="form__current-index-remember-switch-checkbox" id="form-current-index-remember-switch">
 						<label for="form-current-index-remember-switch">Не помню</label>				
 					</div>
-					<div class="form__current-region">
+					<div class="form__current-region form__block-input-block">
 						<label for="current-region" class="form__label">Регион<span class="span-red">*</span></label>
 						<input type="text" id="current-region" class="form__current-region-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip"><span class="form__tip">?</span></div>
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 					</div>		
-					<div class="form__current-district">
+					<div class="form__current-district form__block-input-block">
 						<label for="current-district" class="form__label">Район или город<span class="span-red">*</span></label>
 						<input type="text" id="current-district" class="form__current-district-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская</div>
+							</div>	
 						</div>	
 					</div>					
-					<div class="form__current-settlement">
+					<div class="form__current-settlement form__block-input-block">
 						<label for="current-settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
 						<input type="text" id="current-settlement" class="form__current-settlement-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip"><span class="form__tip">?</span></div>
+						<div class="form-wrap__tip"><span class="form__tip">?</span></div>
 					</div>		
-					<div class="form__current-street">
+					<div class="form__current-street form__block-input-block">
 						<label for="current-street" class="form__label">Улица<span class="span-red">*</span></label>
 						<input type="text" id="current-street" class="form__current-street-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если в адресе нет улицы, поставьте «НЕТ»</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если в адресе нет улицы, поставьте «НЕТ»</div>
+							</div>	
 						</div>	
 					</div>		
-					<div class="form__current-house">
+					<div class="form__current-house form__block-input-block">
 						<label for="current-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
-						<input type="text" id="current-house" class="form__current-house-input form__house-input" name="name" placeholder="Дом">					
-						<input type="text" id="current-block" class="form__current-house-input form__block-input" name="name" placeholder="Корпус">					
-						<input type="text" id="current-building" class="form__current-house-input form__building-input" name="name" placeholder="Строение">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="small-input-wrap">
+							<input type="text" id="current-house" class="form__current-house-input form__small" name="name" placeholder="Дом">
+						</div>		
+						<div class="small-input-wrap">					
+							<input type="text" id="current-block" class="form__current-house-input form__small" name="name" placeholder="Корпус">
+						</div>	
+						<div class="small-input-wrap">						
+							<input type="text" id="current-building" class="form__current-house-input form__small" name="name" placeholder="Строение">	
+						</div>					
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если дом не имеет номера, поставьте «БН».</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если дом не имеет номера, поставьте «БН».</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__current-flat-manual-filling">
+					<div class="form__current-flat-manual-filling form__block-input-block">
 						<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
-						<input type="text" id="current-flat-manual-filling" class="form__current-flat-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip"></div>
+						<div class="small-input-wrap">
+							<input type="text" id="current-flat-manual-filling" class="form__flat-input" name="name">	
+						</div>					
+						<div class="form-wrap__tip"></div>
 						<input type="checkbox" class="form__current-flat-house-swicher-checkbox" id="current-flat-house-swicher-manual-filling">
 						<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
 					</div>	
-					<div class="form__current-home-phone">
+					<div class="form__current-home-phone form__block-input-block">
 						<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
 						<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input" name="name">					
-						<div class="form-wrap__tip js-form-wrap__tip">
+						<div class="form-wrap__tip">
 							<span class="form__tip">?</span>
-							<div class="tooltip-wrap"></div>
-							<div class="triangle"></div>
-							<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							<div class="tooltip-wrap section">
+								<div class="triangle"></div>
+								<div class="tooltip">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+							</div>	
 						</div>	
 					</div>	
-					<div class="form__current-phone-swicher">
+					<div class="form__current-phone-swicher form__block-input-block">
 						<input type="checkbox" class="form__current-phone-exist-switch-checkbox" id="current-form-phone-exist-switch">
 						<label for="current-form-phone-exist-switch">Нет стационарного телефона</label>				
 					</div>																					
 				</div>
 			</div>
 			<h3 class="form__titles">Личная информация</h3>	
-			<div class="form__block form__block-personal-info">
-				<div class="form__education">
+			<div class="form__block">
+				<div class="form__education form__block-input-block">
 					<label for="education" class="form__label">Образование</label>		
 					<select name="name" id="education" class="form__education-select">
 						<option value="Не выбрано" selected>Не выбрано</option>
@@ -855,14 +1171,15 @@
 						<option value="Второе высшее">Второе высшее</option>
 						<option value="Ученая степень">Ученая степень</option>
 					</select>					
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Среднее специальное образование указывается как «Начальное, среднее».</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Среднее специальное образование указывается как «Начальное, среднее».</div>
+						</div>	
 					</div>				
 				</div>
-				<div class="form__marital">
+				<div class="form__marital form__block-input-block">
 					<label for="marital" class="form__label">Семейное положение</label>		
 					<select name="name" id="marital" class="form__marital-select">
 						<option value="Не выбрано" selected>Не выбрано</option>
@@ -872,9 +1189,9 @@
 						<option value="Женат/замужем">Женат/замужем</option>
 						<option value="Вдовец, вдова">Вдовец, вдова</option>
 					</select>
-					<div class="form-wrap__tip js-form-wrap__tip"></div>			
+					<div class="form-wrap__tip"></div>			
 				</div>
-				<div class="form__car">
+				<div class="form__car form__block-input-block">
 					<label for="car" class="form__label">Автомобиль</label>		
 					<select name="name" id="car" class="form__car-select">
 						<option value="Не выбрано" selected>Не выбрано</option>
@@ -882,38 +1199,40 @@
 						<option value="Отечественный">Отечественный</option>
 						<option value="Иномарка">Иномарка</option>
 					</select>				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Автомобиль должен быть оформлен только на Заявителя, иначе выберите НЕТ.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Автомобиль должен быть оформлен только на Заявителя, иначе выберите НЕТ.</div>
+						</div>	
 					</div>				
 				</div>
 			</div>
 			<h3 class="form__titles">Место работы</h3>	
-			<div class="form__block form__block-employment">
-				<div class="form__employment-type">
+			<div class="form__block">
+				<div class="form__employment-type form__block-input-block">
 					<label for="employment-type" class="form__label">Тип занятости</label>		
 					<select name="name" id="employment-type" class="form__employment-type-select">
 						<option value="Работаю в организации" selected>Работаю в организации</option>
 						<option value="Собственный бизнес">Собственный бизнес</option>
 						<option value="Не работаю">Не работаю</option>
 					</select>			
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Если Заявитель не работает, но у него есть другие источники дохода, выбрать «Собственный бизнес» и продолжить оформление заявки. <br> <span class="span-cian">Если пенсионер официально трудоустроен и может предоставить данные о месте работы, необходимо указать «Работаю в организации». Если пенсионер трудоустроен неофициально/не может предоставить данные о месте работы, необходимо указать «Не работаю», причина: «Пенсионер по возрасту/стажу работы»/ «Пенсионер по инвалидности».</span> </div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Если Заявитель не работает, но у него есть другие источники дохода, выбрать «Собственный бизнес» и продолжить оформление заявки. <br> <span class="span-cian">Если пенсионер официально трудоустроен и может предоставить данные о месте работы, необходимо указать «Работаю в организации». Если пенсионер трудоустроен неофициально/не может предоставить данные о месте работы, необходимо указать «Не работаю», причина: «Пенсионер по возрасту/стажу работы»/ «Пенсионер по инвалидности».</span></div>
+						</div>	
 					</div>	
 				</div>
-				<div class="form__block form__block-organization">
-					<div class="form__organization">
-						<div class="form__organization-name">
+				<div class="form__block">
+					<div class="form__organization form__block">
+						<div class="form__organization-name form__block-textarea-block">
 							<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
 							<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
-							<div class="form-wrap__tip js-form-wrap__tip"></div>
+							<div class="form-wrap__tip"></div>
 						</div>	
-						<div class="form__work-experience">
+						<div class="form__work-experience form__block-input-block">
 							<label for="work-experience" class="form__label">Срок работы в организации</label>		
 							<select name="name" id="work-experience" class="form__work-experience-select">
 								<option value="Не выбрано" selected>Не выбрано</option>
@@ -926,56 +1245,57 @@
 								<option value="От 6 лет, но меньше 7">От 6 лет, но меньше 7</option>
 								<option value="От 7 лет и более">От 7 лет и более</option>
 							</select>
-							<div class="form-wrap__tip js-form-wrap__tip"></div>
+							<div class="form-wrap__tip"></div>
 						</div>	
 					</div>		
-					<div class="form__own-business">
-						<div class="form__own-business-official">
+					<div class="form__own-business form__block">
+						<div class="form__own-business-official form__block-input-block">
 							<input type="checkbox" class="form__own-business-official-checkbox" id="own-business-official">
 							<label for="own-business-official">Неофициальный</label>	
-							<div class="form-wrap__tip js-form-wrap__tip">
+							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
-								<div class="tooltip-wrap"></div>
-								<div class="triangle"></div>
-								<div class="tooltip">Если бизнес не зарегистрирован юридически, поставьте галку «Неофициальный».</div>
+								<div class="tooltip-wrap section">
+									<div class="triangle"></div>
+									<div class="tooltip">Если бизнес не зарегистрирован юридически, поставьте галку «Неофициальный».</div>
+								</div>	
 							</div>	
 						</div>	
-						<div class="form__own-business-organization">
+						<div class="form__own-business-organization form__block-textarea-block">
 							<label for="own-organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
 							<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>	
-							<div class="form-wrap__tip js-form-wrap__tip"></div>
+							<div class="form-wrap__tip"></div>
 						</div>		
 					</div>	
-					<div class="form__workless">
-						<div class="form-wrap__workless-reasons">
+					<div class="form__workless form__block">
+						<div class="form-wrap__workless-reasons form__block-radio-block">
 							<label for="form__workless-reasons" class="form__label">Причина<span class="span-red">*</span></label>
 							<div class="form__workless-reasons-radio" id="form__workless-reasons">
-								<div class="input-wrap">
+								<div class="input-wrap form__block-input-block">
 									<input type="radio" name="name" id="reason__pensioner-age" class="workless-reasons workless-reasons__pensioner-age">
 									<label for="reason__pensioner-age" class="radio__label form__label_workless-reasons">Пенсионер по возрасту/стажу работы</label>	
-																</div>
-								<div class="input-wrap">
+								</div>
+								<div class="input-wrap form__block-input-block">
 									<input type="radio" name="name" id="reason__pensioner-invalid" class="workless-reasons workless-reason__pensioner-invalid">
 									<label for="reason__pensioner-invalid" class="radio__label form__label_workless-reasons">Пенсионер по инвалидности</label>									
 								</div>
-								<div class="input-wrap">
+								<div class="input-wrap form__block-input-block">
 									<input type="radio" name="name" id="reason__finding-job" class="workless-reasons workless-reason__finding-job">
 									<label for="reason__finding-job" class="radio__label form__label_workless-reasons">Ищу работу</label>									
 								</div>
-								<div class="input-wrap">
+								<div class="input-wrap form__block-input-block">
 									<input type="radio" name="name" id="reason__marital-care" class="workless-reasons workless-reasons__marital-care">
 									<label for="reason__marital-care" class="radio__label form__label_workless-reasons">Содержит муж/жена</label>									
 								</div>
-								<div class="input-wrap">
+								<div class="input-wrap form__block-input-block">
 									<input type="radio" name="name" id="reason__other" class="workless-reasons workless-reason__other">
 									<label for="reason__other" class="radio__label radio__label_workless-reasons">Другое</label>										
 								</div>
 							</div>
 						</div>	
-						<div class="form__reason-for-other">
+						<div class="form__reason-for-other form__block-input-block">
 							<label for="reason-for-other" class="form__label"><span class="span-red">*</span></label>
 							<input type="text" id="reason-for-other" class="form__reason-for-other-input" name="name">
-							<div class="form-wrap__tip js-form-wrap__tip"></div>
+							<div class="form-wrap__tip"></div>
 						</div>	
 					</div>	
 				</div>
@@ -983,66 +1303,71 @@
 			<button class="additional-info-button button">Перейти к оформлению дополнительных данных</button>
 			<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
 			<div class="form__block form__block-additional-info">
-				<div class="form__family-phone">
+				<div class="form__family-phone form__block-input-block">
 					<label for="family-phone" class="form__label">Стационарный телефон родственников или знакомых<span class="span-red">*</span></label>
 					<input type="phone" id="family-phone" class="form__family-phone-input" name="name">				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Если у родственников, друзей или знакомых нет стационарного телефона, укажите их мобильный телефон. <br> В поле «Комментарий» – кем приходится человек заявителю. <br> Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a></div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Если у родственников, друзей или знакомых нет стационарного телефона, укажите их мобильный телефон. <br> В поле «Комментарий» – кем приходится человек заявителю. <br> Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a></div>
+						</div>	
 					</div>	
 				</div>	
-				<div class="form__family-phone_comment">
+				<div class="form__family-phone_comment form__block-input-block">
 					<label for="family-phone_comment" class="form__label">Комментарий<span class="span-red">*</span></label>
 					<input type="text" id="family-phone_comment" class="form__family-phone_comment-input" name="name">				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Если у родственников, друзей или знакомых нет стационарного телефона, укажите их мобильный телефон. <br> В поле «Комментарий» – кем приходится человек заявителю. <br> Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a></div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Если у родственников, друзей или знакомых нет стационарного телефона, укажите их мобильный телефон. <br> В поле «Комментарий» – кем приходится человек заявителю. <br> Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a></div>
+						</div>	
 					</div>	
 				</div>	
-				<div class="form__income">
+				<div class="form__income form__block-input-block">
 					<label for="family-income" class="form__label">Персональный доход<span class="span-red">*</span></label>
 					<input type="number" id="income" class="form__income-input additional-input" name="name">				
 					<p class="form__text">руб./месяц</p>				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Совокупный ежемесячный доход самого Заявителя после вычета подоходного налога. Учитываются личные премии, подработки и т.п. Не учитывается зарплата членов семьи. <br> Если Заявитель называет диапазон сумм, то внесите среднюю (например, «25-30 тысяч» - внесите «27500»).></div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Совокупный ежемесячный доход самого Заявителя после вычета подоходного налога. Учитываются личные премии, подработки и т.п. Не учитывается зарплата членов семьи. <br> Если Заявитель называет диапазон сумм, то внесите среднюю (например, «25-30 тысяч» - внесите «27500»).></div>
+						</div>
 					</div>	
 				</div>	
-				<div class="form__flat-rent">
+				<div class="form__flat-rent form__block-input-block">
 					<label for="flat-rent" class="form__label">Сумма аренды квартиры<span class="span-red">*</span></label>
 					<input type="number" id="flat-rent" class="form__flat-rent-input additional-input" name="name">				
 					<p class="form__text">руб./месяц</p>				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Коммунальные платежи не учитываются.</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Коммунальные платежи не учитываются.</div>
+						</div>	
 					</div>	
 				</div>	
 			</div>
 			<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
 			<div class="form__block form__password">
-				<div class="form__password">
+				<div class="form__password form__block-input-block">
 					<label for="password" class="form__label">Кодовое слово<span class="span-red">*</span></label>
 					<input type="text" id="password" class="form__password-input" name="name">				
-					<div class="form-wrap__tip js-form-wrap__tip">
+					<div class="form-wrap__tip">
 						<span class="form__tip">?</span>
-						<div class="tooltip-wrap"></div>
-						<div class="triangle"></div>
-						<div class="tooltip">Кодовое слово может потребоваться для вашей идентификации при обращении в Банк</div>
+						<div class="tooltip-wrap section">
+							<div class="triangle"></div>
+							<div class="tooltip">Кодовое слово может потребоваться для вашей идентификации при обращении в Банк</div>
+						</div>	
 					</div>	
 				</div>
-				<div class="form__got-debit-card form__line-checkbox">
+				<div class="form__got-debit-card form__block-input-block">
 					<input type="checkbox" class="form__got-debit-card-checkbox" id="got-debit-card">
 					<label for="got-debit-card">Есть дебетовая карта Тинькофф банка</label>	
 				</div>				
-				<div class="form__data-agreement form__line-checkbox">
+				<div class="form__data-agreement form__block-input-block">
 					<input type="checkbox" class="form__data-agreement-checkbox" id="data-agreement">
 					<label for="data-agreement">Согласен с передачей данных</label>(<p class="info-button info-button_conditions">подробная информация</p>)
 				</div>						
