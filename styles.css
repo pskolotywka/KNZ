@@ -311,6 +311,8 @@ label {
     cursor: pointer;
 }
 
+
+
 .form input {
 	width: 385px;
 	border: 1px solid;
@@ -325,6 +327,12 @@ label {
     outline: none;    
     position: relative;
 }
+
+.small-input-wrap input{
+	width: 98px;
+	margin-right: 30px
+}
+
 
 .form select {
 	width: 385px;
@@ -364,12 +372,30 @@ label {
 	margin-left: 50px;
 }
 
-.form__block > div {
+.form__block {
 	display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-    width: 800px;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.form__block-input-block {
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.form__workless-reasons-radio {
+	width: 428px;
+}
+
+.form__block-radio-block {
+	margin-top: 15px;
+	display: flex;
+	align-items: baseline;	
+}
+
+.additional-info-button {
+	margin-top: 30px;
 }
 
 .form__organization-input {
@@ -397,6 +423,12 @@ label {
     margin-right: 0;
 }
 
+.form__block-textarea-block {
+    margin-top: 15px;
+    display: flex;
+    align-items: flex-start;	
+}
+
 .form__block-organization {
 	display: flex;
     align-items: flex-end;
@@ -413,10 +445,6 @@ label {
 	justify-content: flex-end;
 }
 
-.form__own-business > div {
-	align-items: flex-end;
-}
-
 .form__own-business-official {
 	display: flex;
 	justify-content: flex-end;
@@ -424,145 +452,9 @@ label {
 	margin-bottom: 15px;
 }
 
-.form__own-business-organization {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: flex-start !important;
-}
-
-.form__block-organization > div {
-	display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-    flex-direction: column;	
-    width: 800px;
-    margin-right: 0;
-}
-
-
-.form__reason-for-other {
-	margin-top: 20px;
-	display: flex;
-}
-
-.additional-info-button {
-	margin-right: 93px;
-}
-
-.form-wrap__workless-reasons {
-	display: flex;
-	align-items: baseline;
-	margin-right: 150px;
-}
-
-.form__address-swicher {
-	display: flex;
-    flex-direction: row !important;	
-}
-
-.form__family-phone-input {
-	width: 385px !important;
-}
-
-
-.form__organization {
-	display: flex;
-	flex-direction: column;	
-}
-
-.form__work-experience {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.form__organization-name {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: flex-start;
-}
-
-
-
 .house-input {
 	margin-right: 15px;
 }
-
-
-.form__address-manual-filling > div {
-	display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 15px;	
-}
-
-.form__flat-input {
-	width: 70px !important;
-	margin-right: 111px;
-}
-
-.form__flat-input-manual-filling {
-	width: 70px !important;
-	margin-right: 111px;	
-}
-
-.form__same-address-swicher {
-	display: flex;
-    flex-direction: row !important;
-}
-
-.form__address-auto-filling > div {
-	margin-bottom: 15px;
-	display: flex;
-	align-items: center;
-}
-
-.form__current-address-auto-filling > div {
-	margin-bottom: 15px;
-	display: flex;
-	align-items: center;
-}
-
-.form__current-address-manual-filling > div {
-	margin-bottom: 15px;
-	display: flex;
-	align-items: center;
-}
-
-.form__block-additional-info {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-}
-
-.form__block-address > div {
-	display: flex;
-    align-items:  flex-end;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-    flex-direction: column;	
-    width: 800px;
-    margin-right: 0;
-} 
-
-.form__block-additional-info input {
-	width: 385px;
-}
-
-
-
-.form__block-current-address > div {
-	display: flex;
-    align-items:  flex-end;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-    flex-direction: column;	
-    width: 800px;
-    margin-right: 0;
-} 
 
 .object-address {
 	width: 800px;
@@ -577,6 +469,10 @@ label {
     border-style: none;
     color: #74a3c7;
     cursor: pointer;
+}
+
+.end-task-button {
+	margin-top: 30px;
 }
 
 .form__label {
@@ -648,11 +544,7 @@ label {
 	bottom: -10px;
 }
 
-.form__house input {
-	width: 113px;
-}
-
-.form__current-house input {
+.form__small input {
 	width: 113px;
 }
 
@@ -660,9 +552,8 @@ label {
 	margin-right: 15px;
 }
 
-.form__current-flat-input {
-	width: 70px !important;
-	margin-right: 121px;		
+.form__flat-input {
+	width: 70px 	
 }
 
 .object-address__address {
@@ -706,10 +597,6 @@ label {
 .object-address__wrap-buttons {
 	width: 388px;
 	margin-top: 30px;
-}
-
-.form__line-checkbox {
-	width: 337px;
 }
 
 .popup {
@@ -814,3 +701,4 @@ label {
 .span-cian {
 	color: #31708f;
 }
+
