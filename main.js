@@ -1,3 +1,16 @@
+// function showTip() {
+// 	const tips = document.querySelectorAll(".form__tip");
+// 		for (const tip of tips) {
+// 			tip.addEventListener("click", function() {
+				
+
+// 			});
+// 		}
+// }
+
+// showTip();
+
+
 function loanOffer() {
 	const a = document.querySelector(".application-forming__script-fail");
 	const b = document.querySelector(".loan-offer__not-ready");
