@@ -1,60 +1,123 @@
-// function showTip() {
-// 	const tips = document.querySelectorAll(".form__tip");
-// 	const tooltips = document.querySelectorAll(".tooltip-wrap");
-// 	const section = document.querySelector(".section");
+function differentWorklessReason() {
+	const radioAll = document.querySelectorAll(".workless-reasons");
+	const other = document.querySelector(".workless-reason__other");	
+	const input = document.querySelector(".form__reason-for-other-input");
 
-// 		for (const tip of tips) {
-// 			tip.addEventListener("click", function() {
-// 				for (const tooltip of tooltips) {
-// 					tip.classList.add("section");
-// 				}
-// 			});
-// 		}
-// }
+	for (const radio of radioAll) {
+		radio.addEventListener("click", function() {
+			if (other.checked) {
+				input.style.display = "flex";
+			} else {
+				input.style.display = "none";
+			}	
+		});
+	}
+}
 
-// showTip();
+differentWorklessReason();
+
+
+function job() {
+	const sel = document.querySelector(".js-work-select");
+	const options = sel.options;
+	// console.log(options);
+	// const org = document.querySelector(".form__organization");
+	// const own = document.querySelector(".form__own-business");
+	const workless = document.querySelector("[data-set='workless']");
+	const org = document.querySelector("[data-set='org']");
+	const own = document.querySelector("[data-set='own']");	
+	const orgReason = document.querySelector(".form__organization");
+	const ownReason = document.querySelector(".form__own-business");
+	const worklessReason = document.querySelector(".form__workless");
+
+
+	
+	sel.addEventListener("click", function() {		
+		if (workless.selected) {
+			worklessReason.style.display = "flex";	
+			ownReason.style.display = "none";
+			orgReason.style.display = "none";
+		} else if (org.selected) {
+			worklessReason.style.display = "none";	
+			ownReason.style.display = "none";
+			orgReason.style.display = "flex";
+		}  else if (own.selected) {
+			worklessReason.style.display = "none";	
+			ownReason.style.display = "flex";
+			orgReason.style.display = "none";
+		}
+	});
+}
+
+job();
+
+
+function showTip() {
+	const tips = document.querySelectorAll(".form__tip");
+	const tooltips = document.querySelectorAll(".tooltip-wrap");
+	const section = document.querySelector(".section");
+
+		for (const tip of tips) {
+			tip.addEventListener("click", function() {
+				for (const tooltip of tooltips) {
+					this.classList.add("section");
+				}
+			});
+		}
+}
+
+showTip();
+
+function currentAddressHide(check, hide) {
+	const checkbox = document.querySelector(check);
+	const hideBlock = document.querySelector(hide);
+
+	checkbox.addEventListener("click", function() {		
+
+		if (checkbox.checked) {
+			hideBlock.style.display = "none";
+		} else {
+			hideBlock.style.display = "flex";
+		}
+	});	
+}
+
+currentAddressHide(".js-form-address-swicher-checkbox", ".js-current-address-wrap");
+
+
 
 function disableInput(check, inp) {
 	const checkbox = document.querySelector(check);
 	const input = document.querySelector(inp);
 
 	checkbox.addEventListener("click", function() {
-		checkbox.checked
-			input.disabled = !input.disabled;
+		if (!(checkbox.checked)) {
+			input.removeAttribute('disabled');
+		} else {
+			input.setAttribute('disabled', 'disabled');
+		}
 	});
 }	
 
 disableInput(".passport-snils-checkbox", ".form__passport-snils-input");
-
-function disableInput1() {
-	const checkbox = document.querySelector(".form__index-remember-switch-checkbox");
-	const input = document.querySelector(".form__reg-address-manual-input");
-
-	checkbox.addEventListener("click", function() {
-		checkbox.checked			
-			input.disabled = !input.disabled;			
-	});
-}
-
-disableInput1();
-
-function disableInput2() {
-	const checkbox = document.querySelector(".reg-flat-auto-checkbox");
-	const input = document.querySelector(".reg-flat-auto-input");
-
-	checkbox.addEventListener("click", function() {
-		checkbox.checked			
-			input.disabled = !input.disabled;
-	});
-}
-
-disableInput2();
+disableInput(".form__index-remember-switch-checkbox", ".form__reg-address-manual-input");
+disableInput(".reg-flat-auto-checkbox", ".reg-flat-auto-input");
+disableInput(".reg-phone-auto-checkbox", ".reg-phone-auto-input");
+disableInput(".form__current-flat-house-swicher-checkbox", ".form__flat-current-manual-input");
+disableInput(".js-flat-reg-manual-checkbox", ".js-flat-reg-manual-input");
+disableInput(".js-phone-reg-manual-checkbox", ".js-phone-reg-manual-input");
+disableInput(".js-form-address-swicher-checkbox", ".js-phone-reg-manual-input");
+disableInput(".js-current-auto-address-flat-checkbox", ".js-current-address-auto-flat-input");
+disableInput(".js-current-phone-auto-checkbox", ".js-current-address-auto-phone-input");
+disableInput(".js-current-index-manual-checkbox", ".js-current-address-manual-input");
+disableInput(".js-current-flat-house-swicher-checkbox", ".js-form__flat-current-manual-input");
+disableInput(".js-current-phone-exist-switch-checkbox", ".js-current-home-phone-input");
 
 
-function showRegAddress() {
-	const fillingCheckbox = document.querySelector(".form__address-filling-type-switch-checkbox");
-	const autoFilling = document.querySelector(".form__address-auto-filling");
-	const manualFilling = document.querySelector(".form__address-manual-filling");
+function showRegFactAddress(check, hidden, show) {
+	const fillingCheckbox = document.querySelector(check);
+	const autoFilling = document.querySelector(hidden);
+	const manualFilling = document.querySelector(show);
 
 		fillingCheckbox.addEventListener("click", function() {
 			if (fillingCheckbox.checked) {
@@ -67,7 +130,8 @@ function showRegAddress() {
 		});
 }
 
-showRegAddress();
+showRegFactAddress(".form__address-filling-type-switch-checkbox", ".form__address-auto-filling", ".form__address-manual-filling");
+showRegFactAddress(".js-current-address-filling-type-switch-checkbox", ".js-current-address-auto-filling", ".js-current-address-manual-filling");
 
 
 function activeTab() {

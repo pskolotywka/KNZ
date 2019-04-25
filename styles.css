@@ -408,7 +408,7 @@ label {
 
 .form__employment-type {
 	display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     margin-bottom: 15px;
 }
@@ -464,23 +464,17 @@ label {
 	box-sizing: content-box;	
 }
 
-.form__address-manual-filling {
+.form__address-manual-filling, 
+.js-current-address-manual-filling,  
+.form__own-business, 
+.form__workless, 
+.form__reason-for-other-input {
 	display: none;
 }
 
-.form__reg-address-manual-input:disabled {
-	cursor: not-allowed;
-	background: #eee;
-}
-
-.form__passport-snils-input:disabled {
+input:disabled {
 	cursor: not-allowed;
 	background: #eee;	
-}
-
-.reg-flat-auto-input:disabled {
-	cursor: not-allowed;
-	background: #eee;
 }
 
 .info-button {
