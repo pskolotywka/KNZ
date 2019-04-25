@@ -6,13 +6,50 @@
 // 		for (const tip of tips) {
 // 			tip.addEventListener("click", function() {
 // 				for (const tooltip of tooltips) {
-// 					this.classList.add("section");
+// 					tip.classList.add("section");
 // 				}
 // 			});
 // 		}
 // }
 
 // showTip();
+
+function disableInput(check, inp) {
+	const checkbox = document.querySelector(check);
+	const input = document.querySelector(inp);
+
+	checkbox.addEventListener("click", function() {
+		checkbox.checked
+			input.disabled = !input.disabled;
+	});
+}	
+
+disableInput(".passport-snils-checkbox", ".form__passport-snils-input");
+
+function disableInput1() {
+	const checkbox = document.querySelector(".form__index-remember-switch-checkbox");
+	const input = document.querySelector(".form__reg-address-manual-input");
+
+	checkbox.addEventListener("click", function() {
+		checkbox.checked			
+			input.disabled = !input.disabled;			
+	});
+}
+
+disableInput1();
+
+function disableInput2() {
+	const checkbox = document.querySelector(".reg-flat-auto-checkbox");
+	const input = document.querySelector(".reg-flat-auto-input");
+
+	checkbox.addEventListener("click", function() {
+		checkbox.checked			
+			input.disabled = !input.disabled;
+	});
+}
+
+disableInput2();
+
 
 function showRegAddress() {
 	const fillingCheckbox = document.querySelector(".form__address-filling-type-switch-checkbox");
@@ -21,30 +58,16 @@ function showRegAddress() {
 
 		fillingCheckbox.addEventListener("click", function() {
 			if (fillingCheckbox.checked) {
-				manualFilling.style.display = "block";
+				manualFilling.style.display = "flex";
 				autoFilling.style.display = "none";
 			} else {
 				manualFilling.style.display = "none";
-				autoFilling.style.display = "block";
+				autoFilling.style.display = "flex";
 			}
 		});
-
-// // 	const switching = document.querySelector(".recall-options__recall-checkbox");
-// // 	const sections = document.querySelector(".section");
-// // 	const keep = document.querySelector(".recall__task-keep");
-
-// // 	switching.addEventListener("click", function() {
-// // 		if (switching.checked) {
-// // 			keep.classList.remove("section");
-// // 		} else {
-// // 			keep.classList.add("section");
-// // 		}
-// // 	});
 }
 
 showRegAddress();
-
-
 
 
 function activeTab() {
@@ -142,19 +165,6 @@ function popup() {
 popup();
 
 
-function disableInput() {
-	const checkbox = document.querySelector(".passport-snils-checkbox");
-	const input = document.querySelector(".form__passport-snils-input");
-
-	checkbox.addEventListener("click", function() {
-		checkbox.checked
-			input.style.background = "#eee";
-			input.disabled = !input.disabled;
-
-	});
-}	
-
-disableInput();
 
 
 

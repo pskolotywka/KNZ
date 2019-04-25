@@ -464,6 +464,25 @@ label {
 	box-sizing: content-box;	
 }
 
+.form__address-manual-filling {
+	display: none;
+}
+
+.form__reg-address-manual-input:disabled {
+	cursor: not-allowed;
+	background: #eee;
+}
+
+.form__passport-snils-input:disabled {
+	cursor: not-allowed;
+	background: #eee;	
+}
+
+.reg-flat-auto-input:disabled {
+	cursor: not-allowed;
+	background: #eee;
+}
+
 .info-button {
     background-color: white;
     border-style: none;
