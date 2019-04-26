@@ -330,7 +330,17 @@ label {
 
 .small-input-wrap input{
 	width: 98px;
-	margin-right: 30px
+	margin-right: 84px;
+}
+
+.smallest-input-wrap input{
+	width: 98px;
+	margin-right: 30px;
+}
+
+.average-input-wrap input{
+	width: 150px;
+	margin-right: 30px;	
 }
 
 
@@ -468,7 +478,8 @@ label {
 .js-current-address-manual-filling,  
 .form__own-business, 
 .form__workless, 
-.form__reason-for-other-input {
+.form__reason-for-other-input,
+.js-manager-phone-wrap {
 	display: none;
 }
 
