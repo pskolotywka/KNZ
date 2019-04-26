@@ -1,3 +1,16 @@
+// function showTip() {
+// 	const buttons = document.querySelectorAll(".form__tip");
+
+// 	for (const button of buttons) {
+// 		button.addEventListener("click", function() {
+// 			button.nextSibling.classList.remove("section");
+// 		});
+// 	}
+// }
+// showTip();
+
+
+
 function differentWorklessReason() {
 	const radioAll = document.querySelectorAll(".workless-reasons");
 	const other = document.querySelector(".workless-reason__other");	
@@ -85,6 +98,22 @@ function currentAddressHide(check, hide) {
 currentAddressHide(".js-form-address-swicher-checkbox", ".js-current-address-wrap");
 
 
+function showManagerPhone() {
+	const checkbox = document.querySelector(".js-work-phone-exist-switch-checkbox");
+	const hideBlock = document.querySelector(".js-manager-phone-wrap");
+
+	checkbox.addEventListener("click", function() {		
+
+		if (checkbox.checked) {
+			hideBlock.style.display = "flex";
+		} else {
+			hideBlock.style.display = "none";
+		}
+	});	
+}
+
+showManagerPhone();
+
 
 function disableInput(check, inp) {
 	const checkbox = document.querySelector(check);
@@ -112,6 +141,26 @@ disableInput(".js-current-phone-auto-checkbox", ".js-current-address-auto-phone-
 disableInput(".js-current-index-manual-checkbox", ".js-current-address-manual-input");
 disableInput(".js-current-flat-house-swicher-checkbox", ".js-form__flat-current-manual-input");
 disableInput(".js-current-phone-exist-switch-checkbox", ".js-current-home-phone-input");
+disableInput(".js-work-phone-exist-switch-checkbox", ".form__work-phone-input");
+
+
+function disableWorkPhone() {
+	const checkbox = document.querySelector(".js-work-phone-exist-switch-checkbox");
+	const input1 = document.querySelector(".form__work-phone-input");
+	const input2 = document.querySelector(".form__work-phone-input-add");
+
+	checkbox.addEventListener("click", function() {
+		if (!(checkbox.checked)) {
+			input1.removeAttribute('disabled');
+			input2.removeAttribute('disabled');
+		} else {
+			input1.setAttribute('disabled', 'disabled');
+			input2.setAttribute('disabled', 'disabled');
+		}
+	});
+}	
+
+disableWorkPhone();
 
 
 function showRegFactAddress(check, hidden, show) {
@@ -174,30 +223,6 @@ function loanOffer() {
 	});
 }
 
-
-// 	const tabs = document.querySelectorAll(".loan-reason"); 
-// 	const sections = document.querySelectorAll(".section");
-// 	const tabActiveClass = "selected-tab";
-// 	const sectionActiveClass = "section--active";
-
-// 	for (const tab of tabs) {
-// 		tab.addEventListener("click", function() {
-// 			if (!(this.classList.contains(tabActiveClass))) {
-// 				for (const iter of tabs) {
-// 					iter.classList.remove(tabActiveClass);
-// 				}
-// 				this.classList.add(tabActiveClass);
-// 			} 
-
-// 			const value = tab.dataset.tab;
-// 			const section = document.querySelector(`[data-section='${value}']`);
-// 			for (const item of sections) {
-// 				item.classList.remove(sectionActiveClass);
-// 			}
-// 			section.classList.add(sectionActiveClass);
-// 		});
-// 	}
-// }		
 
 loanOffer();
 
@@ -290,34 +315,3 @@ setRecall();
 
 
 
-// function setRecall() {
-// 	const inputDate = document.querySelector(".js-date");
-// 	const inputTime = document.querySelector(".js-time");
-// 	const buttons = document.querySelectorAll(".js-datetime-btn");
-// 	let currentDate;
-// 	let currentTime;
-
-// 	for (const button of buttons) {
-// 		button.addEventListener("click", function() {
-// 			const date = new Date();
-// 			const intervalAttr = button.dataset.interval;
-// 			const timeAttr = button.dataset.time;
-
-// 			if (intervalAttr == "minutes") {
-// 				currentDate = date.toISOString().slice(0, 10);
-// 				currentTime = date.getHours() + ":" + date.setMinutes(date.getMinutes() + timeAttr);
-// 			} else if (intervalAttr == "hours") {
-// 				currentDate = date.toISOString().slice(0, 10);
-// 				currentTime = date.setHours(date.getHours() + timeAttr) + ":" + date.getMinutes();
-// 			} else if (intervalAttr == "days") {
-// 				currentDate = date.setDate(date.getDay() + timeAttr) + "." + date.getMonth() + "." + date.getYear();
-// 				currentTime = date.getHours() + ":" + date.getMinutes();
-// 			}
-
-// 			inputDate.value = currentDate;
-// 			inputTime.value = currentTime;
-// 		});
-// 	}
-// }
-
-// setRecall();
