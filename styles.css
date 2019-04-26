@@ -479,8 +479,14 @@ label {
 .form__own-business, 
 .form__workless, 
 .form__reason-for-other-input,
-.js-manager-phone-wrap {
+.js-manager-phone-wrap,
+.js-work-organization-address-manual-filling,
+.work-own-business-address-switcer {
 	display: none;
+}
+
+.work-organization input{
+	margin-right: 287px;
 }
 
 input:disabled {
@@ -518,7 +524,7 @@ input:disabled {
 
 .form__titles {
 	display: block;
-    width: 100%;
+    width: 745px;
     padding: 0;
     margin-bottom: 20px;
     font-size: 21px;

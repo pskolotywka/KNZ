@@ -1301,11 +1301,6 @@
 						</div>
 					</div>		
 					<div class="form__own-business form__block">
-						<div class="form__organization-name form__block-textarea-block">
-							<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
-							<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
-							<div class="form-wrap__tip"></div>
-						</div>	
 						<div class="form__own-business-official form__block-input-block">
 							<input type="checkbox" class="form__own-business-official-checkbox" id="own-business-official">
 							<label for="own-business-official">Неофициальный</label>	
@@ -1316,8 +1311,154 @@
 									<div class="tooltip section">Если бизнес не зарегистрирован юридически, поставьте галку «Неофициальный».</div>
 								</div>	
 							</div>	
-						</div>		
+						</div>							
+						<div class="form__organization-name form__block-textarea-block">
+							<label for="organization" class="form__label">Наименование организации<span class="span-red">*</span></label>
+							<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
+							<div class="form-wrap__tip"></div>
+						</div>	
+						<div class="form__own-business-work-phone form__block-input-block">
+							<label for="own-business-work-phone" class="form__label">Рабочий телефон</label>
+							<div class="average-input-wrap">
+								<input type="text" id="own-business-work-phone" class="form__own-business-work-phone-input form__average" name="work-phone" placeholder="+7(___)___-__-__">
+							</div>		
+							<div class="average-input-wrap">					
+								<input type="text" id="own-business-work-phone-add" class="form__own-business-work-phone-input-add form__average" name="work-phone" placeholder="Добавочный">
+							</div>					
+							<div class="form-wrap__tip">
+								<span class="form__tip">?</span>
+								<div class="tooltip-wrap section">
+									<div class="triangle section"></div>
+									<div class="tooltip section">Стационарный телефон отдела кадров, бухгалтерии, ресепшн или руководителя. Если нет стационарного телефона - мобильный номер руководителя. <br> Предоставление рабочего стационарного телефона очень важно и 	может повлиять на принятие кредитного решения. <br> Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a></div>
+								</div>	
+							</div>	
+						</div>							
+					</div>
+			<div class="job-place form__block form__block-input-block">		
+				<h3 class="form__titles">Рабочий адрес</h3>	
+				<div class="form__block">
+					<div class="form__block form__block-input-block work-own-business-address-switcer">
+						<div class="form__work-organization-own-business-address-swicher">
+							<input type="checkbox" class="form__work-organization-own-business-address-switch-checkbox js-work-organization-own-business-address-switch-checkbox" id="work-organization-own-business-address-switch-checkbox">
+							<label for="work-organization-own-business-address-switch-checkbox">Совпадает с адресом регистрации</label>				
+						</div>						
+					</div>
+					<div class="form__block js-work-organization-address-wrap">
+						<div class="form__work-organization-address form__block-input-block">
+							<div class="form__work-organization-address-swicher">
+								<input type="checkbox" class="form__work-organization-address-filling-type-switch-checkbox js-work-organization-address-filling-type-switch-checkbox" id="work-organization-address-filling-type-switch">
+								<label for="work-organization-address-filling-type-switch">Перейти к ручному заполнению адреса</label>				
+							</div>			
+						</div>
+						<div class="form__block form__work-organization-address-auto-filling js-work-organization-address-auto-filling">
+							<div class="form__work-organization-address form__block-input-block">
+								<label for="work-organization-address" class="form__label">Адрес<span class="span-red">*</span></label>
+								<input type="text" id="work-organization-address" class="form__work-organization-address-input" name="name">
+								<div class="form-wrap__tip"></div>
+							</div>	
+							<div class="form__work-organization-flat form__block-input-block">						
+								<label for="work-organization-flat" class="form__label">Номер офиса</label>						
+								<div class="small-input-wrap work-organization">
+									<input type="text" id="work-organization-flat" class="form__flat-input js-work-organization-address-auto-flat-input" name="name">		
+								</div>					
+								<div class="form-wrap__tip"></div>
+							</div>	
+						</div>	
+						<div class="form__block form__work-organization-address-manual-filling js-work-organization-address-manual-filling">
+							<div class="form__work-organization-index form__block-input-block">
+								<label for="work-organization-index" class="form__label">Индекс<span class="span-red">*</span></label>
+								<input type="text" id="work-organization-index" class="form__work-organization-address-manual-input js-work-organization-address-manual-input" name="name">					
+								<div class="form-wrap__tip">
+									<span class="form__tip">?</span>
+									<div class="tooltip-wrap section">
+										<div class="triangle section"></div>
+										<div class="tooltip section">Если Заявитель не помнит индекс, поставьте галку «Не помню». Самостоятельный поиск индекса НЕ допускается</div>
+									</div>	
+								</div>	
+							</div>	
+							<div class="form__work-organization-index-swicher form__block-input-block">
+								<input type="checkbox" class="form__work-organization-index-remember-switch-checkbox js-work-organization-index-manual-checkbox" id="form-work-organization-index-remember-switch">
+								<label for="form-work-organization-index-remember-switch">Не помню</label>				
+							</div>
+							<div class="form__work-organization-region form__block-input-block">
+								<label for="work-organization-region" class="form__label">Регион<span class="span-red">*</span></label>
+								<input type="text" id="work-organization-region" class="form__work-organization-region-input" name="name">					
+								<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+							</div>		
+							<div class="form__work-organization-district form__block-input-block">
+								<label for="work-organization-district" class="form__label">Район или город<span class="span-red">*</span></label>
+								<input type="text" id="work-organization-district" class="form__work-organization-district-input" name="name">					
+								<div class="form-wrap__tip">
+									<span class="form__tip">?</span>
+									<div class="tooltip-wrap section">
+										<div class="triangle section"></div>
+										<div class="tooltip section">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская</div>
+									</div>	
+								</div>	
+							</div>					
+							<div class="form__work-organization-settlement form__block-input-block">
+								<label for="work-organization-settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
+								<input type="text" id="work-organization-settlement" class="form__work-organization-settlement-input" name="name">					
+								<div class="form-wrap__tip"><span class="form__tip">?</span></div>
+							</div>		
+							<div class="form__work-organization-street form__block-input-block">
+								<label for="work-organization-street" class="form__label">Улица<span class="span-red">*</span></label>
+								<input type="text" id="work-organization-street" class="form__work-organization-street-input" name="name">					
+								<div class="form-wrap__tip">
+									<span class="form__tip">?</span>
+									<div class="tooltip-wrap section">
+										<div class="triangle section"></div>
+										<div class="tooltip section">Если в адресе нет улицы, поставьте «НЕТ»</div>
+									</div>	
+								</div>	
+							</div>		
+							<div class="form__work-organization-house form__block-input-block">
+								<label for="work-organization-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
+								<div class="smallest-input-wrap">
+									<input type="text" id="work-organization-house" class="form__work-organization-house-input form__small" name="name" placeholder="Дом">
+								</div>		
+								<div class="smallest-input-wrap">					
+									<input type="text" id="work-organization-block" class="form__work-organization-house-input form__small" name="name" placeholder="Корпус">
+								</div>	
+								<div class="smallest-input-wrap">						
+									<input type="text" id="work-organization-building" class="form__work-organization-house-input form__small" name="name" placeholder="Строение">	
+								</div>					
+								<div class="form-wrap__tip">
+									<span class="form__tip">?</span>
+									<div class="tooltip-wrap section">
+										<div class="triangle section"></div>
+										<div class="tooltip section">Если дом не имеет номера, поставьте «БН».</div>
+									</div>	
+								</div>	
+							</div>	
+							<div class="form__work-organization-flat-manual-filling form__block-input-block">
+								<label for="work-organization-flat" class="form__label">Квартира<span class="span-red">*</span></label>
+								<div class="small-input-wrap">
+									<input type="text" id="work-organization-flat-manual-filling" class="form__flat-input js-form__flat-work-organization-manual-input" name="name">	
+								</div>					
+								<div class="form-wrap__tip"></div>
+								<input type="checkbox" class="form__work-organization-flat-house-swicher-checkbox js-work-organization-flat-house-swicher-checkbox" id="work-organization-flat-house-swicher-manual-filling">
+								<label for="work-organization-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
+							</div>	
+							<div class="form__work-organization-home-phone form__block-input-block">
+								<label for="work-organization-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
+								<input type="text" id="work-organization-home-phone-manual-filling" class="form__work-organization-home-phone-input js-work-organization-home-phone-input" name="name">					
+								<div class="form-wrap__tip">
+									<span class="form__tip">?</span>
+									<div class="tooltip-wrap section">
+										<div class="triangle section"></div>
+										<div class="tooltip section">Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a> Предоставление стационарного телефона очень важно и может повлиять на принятие кредитного решения</div>
+									</div>	
+								</div>	
+							</div>	
+							<div class="form__work-organization-phone-swicher form__block-input-block">
+								<input type="checkbox" class="form__work-organization-phone-exist-switch-checkbox js-work-organization-phone-exist-switch-checkbox" id="work-organization-form-phone-exist-switch">
+								<label for="work-organization-form-phone-exist-switch">Нет стационарного телефона</label>				
+							</div>																					
+						</div>
 					</div>	
+				</div>
+			</div>
 					<div class="form__workless form__block">
 						<div class="form-wrap__workless-reasons form__block-radio-block">
 							<label for="form__workless-reasons" class="form__label">Причина<span class="span-red">*</span></label>
