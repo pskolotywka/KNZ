@@ -33,31 +33,34 @@ differentWorklessReason();
 function job() {
 	const sel = document.querySelector(".js-work-select");
 	const options = sel.options;
-	// console.log(options);
-	// const org = document.querySelector(".form__organization");
-	// const own = document.querySelector(".form__own-business");
 	const workless = document.querySelector("[data-set='workless']");
 	const org = document.querySelector("[data-set='org']");
 	const own = document.querySelector("[data-set='own']");	
 	const orgReason = document.querySelector(".form__organization");
 	const ownReason = document.querySelector(".form__own-business");
 	const worklessReason = document.querySelector(".form__workless");
-
-
+	const jobPlace = document.querySelector(".job-place");
+	const fillingTypeSwitcher = document.querySelector(".work-own-business-address-switcer");
 	
 	sel.addEventListener("click", function() {		
 		if (workless.selected) {
 			worklessReason.style.display = "flex";	
 			ownReason.style.display = "none";
 			orgReason.style.display = "none";
+			orgReason.style.display = "none";
+			jobPlace.style.display = "none";
 		} else if (org.selected) {
 			worklessReason.style.display = "none";	
-			ownReason.style.display = "none";
+			ownReason.style.display = "none";			
 			orgReason.style.display = "flex";
+			jobPlace.style.display = "flex";
+			fillingTypeSwitcher.style.display = "none";
 		}  else if (own.selected) {
 			worklessReason.style.display = "none";	
 			ownReason.style.display = "flex";
-			orgReason.style.display = "none";
+			orgReason.style.display = "none";			
+			jobPlace.style.display = "flex";
+			fillingTypeSwitcher.style.display = "flex";
 		}
 	});
 }
@@ -96,6 +99,7 @@ function currentAddressHide(check, hide) {
 }
 
 currentAddressHide(".js-form-address-swicher-checkbox", ".js-current-address-wrap");
+currentAddressHide(".js-work-organization-own-business-address-switch-checkbox", ".js-work-organization-address-wrap");
 
 
 function showManagerPhone() {
@@ -135,13 +139,15 @@ disableInput(".reg-phone-auto-checkbox", ".reg-phone-auto-input");
 disableInput(".form__current-flat-house-swicher-checkbox", ".form__flat-current-manual-input");
 disableInput(".js-flat-reg-manual-checkbox", ".js-flat-reg-manual-input");
 disableInput(".js-phone-reg-manual-checkbox", ".js-phone-reg-manual-input");
-disableInput(".js-form-address-swicher-checkbox", ".js-phone-reg-manual-input");
 disableInput(".js-current-auto-address-flat-checkbox", ".js-current-address-auto-flat-input");
 disableInput(".js-current-phone-auto-checkbox", ".js-current-address-auto-phone-input");
 disableInput(".js-current-index-manual-checkbox", ".js-current-address-manual-input");
 disableInput(".js-current-flat-house-swicher-checkbox", ".js-form__flat-current-manual-input");
 disableInput(".js-current-phone-exist-switch-checkbox", ".js-current-home-phone-input");
 disableInput(".js-work-phone-exist-switch-checkbox", ".form__work-phone-input");
+disableInput(".js-work-organization-index-manual-checkbox", ".js-work-organization-address-manual-input");
+disableInput(".js-work-organization-flat-house-swicher-checkbox", ".js-form__flat-work-organization-manual-input");
+disableInput(".js-work-organization-phone-exist-switch-checkbox", ".js-work-organization-home-phone-input");
 
 
 function disableWorkPhone() {
@@ -181,6 +187,7 @@ function showRegFactAddress(check, hidden, show) {
 
 showRegFactAddress(".form__address-filling-type-switch-checkbox", ".form__address-auto-filling", ".form__address-manual-filling");
 showRegFactAddress(".js-current-address-filling-type-switch-checkbox", ".js-current-address-auto-filling", ".js-current-address-manual-filling");
+showRegFactAddress(".js-work-organization-address-filling-type-switch-checkbox", ".js-work-organization-address-auto-filling", ".js-work-organization-address-manual-filling");
 
 
 function activeTab() {
