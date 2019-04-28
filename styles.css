@@ -52,7 +52,8 @@ body {
     padding: 6px 12px 6px 12px;
     border-radius: 4px;
     outline: none;	
-    border-width: 1px;
+	border-width: 1px;
+	margin-top: 30px;
 }
 
 .button:hover {
@@ -478,10 +479,11 @@ label {
 .js-current-address-manual-filling,  
 .form__own-business, 
 .form__workless, 
-.form__reason-for-other-input,
+.form__reason-for-other,
 .js-manager-phone-wrap,
 .js-work-organization-address-manual-filling,
-.work-own-business-address-switcer {
+.work-own-business-address-switcer,
+.additional-info-wrap {
 	display: none;
 }
 
@@ -492,6 +494,26 @@ label {
 input:disabled {
 	cursor: not-allowed;
 	background: #eee;	
+}
+
+.radio__label {
+	cursor: pointer;
+}
+
+.loan-offer__next-button_not-ready {
+	background-image: linear-gradient(to bottom,#337ab740 0,#265a88a1 100%);
+    color: white;
+    background-repeat: repeat-x;
+    border-color: #2455807a;
+    padding: 6px 12px 6px 12px;
+    border-radius: 4px;
+    outline: none;
+	border-width: 1px;
+	cursor: not-allowed;
+}
+
+.script-header-label {
+	cursor: pointer;
 }
 
 .info-button {
@@ -545,6 +567,10 @@ input:disabled {
 
 .data-agreement {
 	margin-right: 3px;
+}
+
+.loan-offer__next-button_not-ready {
+	margin-top: 30px;
 }
 
 .loan-offer__next-button {

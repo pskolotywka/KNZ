@@ -10,11 +10,39 @@
 // showTip();
 
 
+function showAdditionalFields() {
+	const btn = document.querySelector(".additional-info-button");
+	const field = document.querySelector(".additional-info-wrap");
+
+	btn.addEventListener("click", function() {
+		field.style.display = "block";
+	});
+}
+
+showAdditionalFields();
+
+
+function enableButton() {
+	const btn = document.querySelector(".loan-offer__next-button_not-ready");
+	const inputs = document.querySelectorAll(".js-not-ready-label-radio");
+
+	for (const input of inputs) {
+	
+		input.addEventListener("click", function() {
+			btn.removeAttribute('disabled');
+			btn.classList.add("button", "open-form");
+			btn.classList.remove("loan-offer__next-button_not-ready");
+		});
+	}
+}
+
+enableButton();
+
 
 function differentWorklessReason() {
 	const radioAll = document.querySelectorAll(".workless-reasons");
 	const other = document.querySelector(".workless-reason__other");	
-	const input = document.querySelector(".form__reason-for-other-input");
+	const input = document.querySelector(".form__reason-for-other");
 
 	for (const radio of radioAll) {
 		radio.addEventListener("click", function() {
@@ -68,21 +96,6 @@ function job() {
 job();
 
 
-function showTip() {
-	const tips = document.querySelectorAll(".form__tip");
-	const tooltips = document.querySelectorAll(".tooltip-wrap");
-	const section = document.querySelector(".section");
-
-		for (const tip of tips) {
-			tip.addEventListener("click", function() {
-				for (const tooltip of tooltips) {
-					this.classList.add("section");
-				}
-			});
-		}
-}
-
-showTip();
 
 function currentAddressHide(check, hide) {
 	const checkbox = document.querySelector(check);
