@@ -38,7 +38,7 @@ body {
 }
 
 .selected-tab {
-	background: white;
+	background: grey;
 	color: #555;
 	border-radius: 5px 5px 0 0;
 	box-shadow: 0 0 0 1px #dbd9d9;
@@ -586,9 +586,14 @@ input:disabled {
 }
 
 .tooltip-wrap {
-	display: flex;
     align-items: center;	
+    display: none;
 }
+
+.tooltip-wrap_active {
+	display: flex;
+}
+
 
 .car-bail__refuse-reason {
 	line-height: 1.5;

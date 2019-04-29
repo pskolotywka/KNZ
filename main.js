@@ -1,15 +1,26 @@
-// function showTip() {
-// 	const buttons = document.querySelectorAll(".form__tip");
+function showTip() {
+	const buttons = document.querySelectorAll(".form__tip");
+	const tooltips = document.querySelectorAll(".tooltip");
 
-// 	for (const button of buttons) {
-// 		button.addEventListener("click", function() {
-// 			button.nextSibling.classList.remove("section");
-// 		});
-// 	}
-// }
-// showTip();
+	for (const button of buttons) {
+		button.addEventListener("click", function() {
+			const tip = button.nextElementSibling;
+			tip.classList.toggle("tooltip-wrap_active");
+		});
+	}
 
+	document.body.addEventListener("click", function(event) {
+		console.log(event.target);
+		for (let i = 0, j = 0; i < buttons.length, j < tooltips.length; i++, j++) {
+			if (event.target !== tooltips[j] || event.target !== buttons[i]) {
+				const wrap = tooltips[j].closest(".tooltip-wrap");
+				wrap.classList.add("tooltip-wrap_active");
+			}
+		}
+	});	
+}
 
+showTip();
 
 
 function showForm() {
@@ -225,7 +236,6 @@ function activeTab() {
 	const tabActiveClass = "selected-tab";
 	const sectionActiveClass = "section--active";
 
-	// for (let i = 0; i < tabs.length; i++) 
 	for (const tab of tabs) {
 		tab.addEventListener("click", function() {
 			if (!(this.classList.contains(tabActiveClass))) {
@@ -248,20 +258,78 @@ function activeTab() {
 activeTab();
 
 
+// function loanOffer() {
+// 	const inputs = document.querySelectorAll(".loan-reason");
+// 	const sections = document.querySelectorAll(".section");
+// 	const inputActiveClass = "selected-input";
+// 	const sectionActiveClass = "section--active";
+
+// 	for (const input of inputs) {
+// 		input.addEventListener("click", function() {
+// 			if (!(this.classList.contains(inputActiveClass))) {
+// 				for (const iter of inputs) {
+// 					iter.classList.remove(inputActiveClass);
+// 				}
+// 				this.classList.add(inputActiveClass);
+// 			} 
+
+// 			const value = input.dataset.input;
+// 			const section = document.querySelector(`[data-section='${value}']`);
+// 			for (const item of sections) {
+// 				item.classList.remove(sectionActiveClass);
+// 			}
+// 			section.classList.add(sectionActiveClass);
+// 		});
+// 	}
+// }		
+
+// loanOffer();
+
+// // 
+
+
+
+
+
 function loanOffer() {
-	const a = document.querySelector(".application-forming__script-fail");
-	const b = document.querySelector(".loan-offer__not-ready");
-	const c = document.querySelector(".loan-offer");
+	const FailInput = document.querySelector(".application-forming__script-fail");
+	const carInput = document.querySelector(".application-forming__script-car");
+	const flatInput = document.querySelector(".application-forming__script-flat");
+	const failblock = document.querySelector(".loan-offer__not-ready");
+	const flatblock = document.querySelector(".loan-offer__car-bail");
+	const carblock = document.querySelector(".loan-offer__flat-bail");
 
-		a.addEventListener("click", function() {
-		b.classList.remove("section");
-		c.classList.remove("section");
-	});
-}
+	FailInput.addEventListener("click", function() {
+		if (FailInput.checked) {
 
+			failblock.classList.remove("section");
+			flatblock.classList.add("section");
+			carblock.classList.add("section");
+
+		}
+	});	
+
+	carInput.addEventListener("click", function() {
+		if (carInput.checked) {
+
+			failblock.classList.add("section");
+			flatblock.classList.add("section");
+			carblock.classList.remove("section");
+		}
+	});	
+
+	flatInput.addEventListener("click", function() {
+		if (flatInput.checked) {
+
+			failblock.classList.add("section");
+			flatblock.classList.remove("section");
+			carblock.classList.add("section");
+		}
+	});		
+
+}		
 
 loanOffer();
-
 
 
 function closePopup() {
