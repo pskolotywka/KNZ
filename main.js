@@ -10,6 +10,22 @@
 // showTip();
 
 
+
+
+function showForm() {
+	const btn = document.querySelector(".open-form");
+	const form = document.querySelector(".form__wrap");
+	const scriptBlock = document.querySelector(".application-scenario");
+
+	btn.addEventListener("click", function() {
+		form.classList.remove("section");
+		scriptBlock.classList.add("section");
+	});
+}
+
+showForm();
+
+
 function showAdditionalFields() {
 	const btn = document.querySelector(".additional-info-button");
 	const field = document.querySelector(".additional-info-wrap");
