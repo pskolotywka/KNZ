@@ -294,8 +294,8 @@ function loanOffer() {
 	const carInput = document.querySelector(".application-forming__script-car");
 	const flatInput = document.querySelector(".application-forming__script-flat");
 	const failblock = document.querySelector(".loan-offer__not-ready");
-	const flatblock = document.querySelector(".loan-offer__car-bail");
-	const carblock = document.querySelector(".loan-offer__flat-bail");
+	const flatblock = document.querySelector(".loan-offer__flat-bail");
+	const carblock = document.querySelector(".loan-offer__car-bail");
 
 	FailInput.addEventListener("click", function() {
 		if (FailInput.checked) {
