@@ -40,26 +40,69 @@ function enableButtonNotReady() {
 
 enableButtonNotReady();
 
-function enableButtonCarBail() {
-	const btn = document.querySelector(".loan-offer__next-button_car");
-	const inputsRefuse = document.querySelectorAll(".car-bail__refuse-reason_not-ready");
-	const inputsOwn = document.querySelectorAll(".car-bail__refuse-reason_own");
-	const carInput = document.querySelectorAll(".car-bail__input");
 
+function enableButtonCarBailNotReady() {
+	const inputs = document.querySelectorAll(".car-bail__refuse-reason_not-ready");
+	const block = document.querySelector(".loan-offer__car-bail-wrap");
 
-
-	for (let i = 0, j = 0; i < inputsRefuse.length, j < inputsOwn.length; i++, j++) {
-		carInput.addEventListener("click", function() {
-			if (inputsRefuse[i].checked && inputsOwn[j].checked) {
-				btn.removeAttribute('disabled');
-				btn.classList.add("button", "open-form");
-				btn.classList.remove("loan-offer__next-button_car");
-			}
-		});	
+	for (const input of inputs) {
+		input.addEventListener("click", function() {
+			block.classList.remove("loan-offer__car-bail-wrap");
+		});
 	}
 }
 
-enableButtonCarBail();
+enableButtonCarBailNotReady();
+
+// function enableButtonCarBail() {
+// 	const btn = document.querySelector(".loan-offer__next-button_car");
+// 	const inputsRefuse = document.querySelectorAll(".car-bail__refuse-reason_not-ready");
+// 	const inputsOwn = document.querySelectorAll(".car-bail__refuse-reason_own");
+// 	const carInputs = document.querySelectorAll(".car-bail__input");
+
+
+// 	for (const carInput of carInputs) {
+// 		carInput.addEventListener("click", function() {
+
+// 		for (let i = 0, j = 0; i < inputsRefuse.length, j < inputsOwn.length; i++, j++) {
+			
+// 			if (inputsRefuse[i].checked && inputsOwn[j].checked) {
+// 				btn.removeAttribute('disabled');
+// 				btn.classList.add("button", "open-form");
+// 				btn.classList.remove("loan-offer__next-button_car");
+// 				}
+// 			}
+// 		});	
+// 	}	
+// }
+
+// enableButtonCarBail();
+
+// function enableButtonflatBail() {
+// 	const btn = document.querySelector(".loan-offer__next-button_flat");
+
+
+// 	const  = document.querySelectorAll(".");
+// 	const  = document.querySelectorAll(".");
+// 	const  = document.querySelectorAll(".");
+
+
+// 	for (const carInput of carInputs) {
+// 		carInput.addEventListener("click", function() {
+
+// 		for (let i = 0, j = 0; i < inputsRefuse.length, j < inputsOwn.length; i++, j++) {
+			
+// 			if (inputsRefuse[i].checked && inputsOwn[j].checked) {
+// 				btn.removeAttribute('disabled');
+// 				btn.classList.add("button", "open-form");
+// 				btn.classList.remove("loan-offer__next-button_car");
+// 				}
+// 			}
+// 		});	
+// 	}	
+// }
+
+// enableButtonflatBail();
 
 
 function showTip() {
