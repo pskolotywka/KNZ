@@ -1,26 +1,3 @@
-function showTip() {
-	const buttons = document.querySelectorAll(".form__tip");
-	const tooltips = document.querySelectorAll(".tooltip-wrap");
-
-	for (const button of buttons) {
-		button.addEventListener("click", function() {
-			const tip = button.nextElementSibling;
-			tip.classList.toggle("tooltip-wrap_active");
-		});
-	}
-
-	document.body.addEventListener("click", function(event) {
-		for (let i = 0, j = 0; i < buttons.length, j < tooltips.length; i++, j++) {
-			if (event.target !== tooltips[j] && event.target !== buttons[i]) {
-				tooltips[j].classList.remove("tooltip-wrap_active");
-			}
-		}
-	});	
-}
-
-showTip();
-
-
 function showForm() {
 	const btn = document.querySelector(".open-form");
 	const form = document.querySelector(".form__wrap");
@@ -47,7 +24,7 @@ function showAdditionalFields() {
 showAdditionalFields();
 
 
-function enableButton() {
+function enableButtonNotReady() {
 	const btn = document.querySelector(".loan-offer__next-button_not-ready");
 	const inputs = document.querySelectorAll(".js-not-ready-label-radio");
 
@@ -61,7 +38,51 @@ function enableButton() {
 	}
 }
 
-enableButton();
+enableButtonNotReady();
+
+function enableButtonCarBail() {
+	const btn = document.querySelector(".loan-offer__next-button_car");
+	const inputsRefuse = document.querySelectorAll(".car-bail__refuse-reason_not-ready");
+	const inputsOwn = document.querySelectorAll(".car-bail__refuse-reason_own");
+	const carInput = document.querySelectorAll(".car-bail__input");
+
+
+
+	for (let i = 0, j = 0; i < inputsRefuse.length, j < inputsOwn.length; i++, j++) {
+		carInput.addEventListener("click", function() {
+			if (inputsRefuse[i].checked && inputsOwn[j].checked) {
+				btn.removeAttribute('disabled');
+				btn.classList.add("button", "open-form");
+				btn.classList.remove("loan-offer__next-button_car");
+			}
+		});	
+	}
+}
+
+enableButtonCarBail();
+
+
+function showTip() {
+	const buttons = document.querySelectorAll(".form__tip");
+	const tooltips = document.querySelectorAll(".tooltip-wrap");
+
+	for (const button of buttons) {
+		button.addEventListener("click", function() {
+			const tip = button.nextElementSibling;
+			tip.classList.toggle("tooltip-wrap_active");
+		});
+	}
+
+	document.body.addEventListener("click", function(event) {
+		for (let i = 0, j = 0; i < buttons.length, j < tooltips.length; i++, j++) {
+			if (event.target !== tooltips[j] && event.target !== buttons[i]) {
+				tooltips[j].classList.remove("tooltip-wrap_active");
+			}
+		}
+	});	
+}
+
+showTip();
 
 
 function differentWorklessReason() {
@@ -256,34 +277,6 @@ function activeTab() {
 activeTab();
 
 
-// function loanOffer() {
-// 	const inputs = document.querySelectorAll(".loan-reason");
-// 	const sections = document.querySelectorAll(".section");
-// 	const inputActiveClass = "selected-input";
-// 	const sectionActiveClass = "section--active";
-
-// 	for (const input of inputs) {
-// 		input.addEventListener("click", function() {
-// 			if (!(this.classList.contains(inputActiveClass))) {
-// 				for (const iter of inputs) {
-// 					iter.classList.remove(inputActiveClass);
-// 				}
-// 				this.classList.add(inputActiveClass);
-// 			} 
-
-// 			const value = input.dataset.input;
-// 			const section = document.querySelector(`[data-section='${value}']`);
-// 			for (const item of sections) {
-// 				item.classList.remove(sectionActiveClass);
-// 			}
-// 			section.classList.add(sectionActiveClass);
-// 		});
-// 	}
-// }		
-
-// loanOffer();
-
-// // 
 
 
 
@@ -294,8 +287,8 @@ function loanOffer() {
 	const carInput = document.querySelector(".application-forming__script-car");
 	const flatInput = document.querySelector(".application-forming__script-flat");
 	const failblock = document.querySelector(".loan-offer__not-ready");
-	const flatblock = document.querySelector(".loan-offer__car-bail");
-	const carblock = document.querySelector(".loan-offer__flat-bail");
+	const flatblock = document.querySelector(".loan-offer__flat-bail");
+	const carblock = document.querySelector(".loan-offer__car-bail");
 
 	FailInput.addEventListener("click", function() {
 		if (FailInput.checked) {
