@@ -1,6 +1,6 @@
 function showTip() {
 	const buttons = document.querySelectorAll(".form__tip");
-	const tooltips = document.querySelectorAll(".tooltip");
+	const tooltips = document.querySelectorAll(".tooltip-wrap");
 
 	for (const button of buttons) {
 		button.addEventListener("click", function() {
@@ -10,11 +10,9 @@ function showTip() {
 	}
 
 	document.body.addEventListener("click", function(event) {
-		console.log(event.target);
 		for (let i = 0, j = 0; i < buttons.length, j < tooltips.length; i++, j++) {
-			if (event.target !== tooltips[j] || event.target !== buttons[i]) {
-				const wrap = tooltips[j].closest(".tooltip-wrap");
-				wrap.classList.add("tooltip-wrap_active");
+			if (event.target !== tooltips[j] && event.target !== buttons[i]) {
+				tooltips[j].classList.remove("tooltip-wrap_active");
 			}
 		}
 	});	

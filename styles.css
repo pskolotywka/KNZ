@@ -38,7 +38,7 @@ body {
 }
 
 .selected-tab {
-	background: grey;
+	background: #e8e8e8;
 	color: #555;
 	border-radius: 5px 5px 0 0;
 	box-shadow: 0 0 0 1px #dbd9d9;
