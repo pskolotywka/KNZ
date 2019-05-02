@@ -22,14 +22,16 @@ showTip();
 
 
 function showForm() {
-	const btn = document.querySelector(".open-form");
+	const btns = document.querySelectorAll(".open-form");
 	const form = document.querySelector(".form__wrap");
 	const scriptBlock = document.querySelector(".application-scenario");
 
-	btn.addEventListener("click", function() {
-		form.classList.remove("section");
-		scriptBlock.classList.add("section");
-	});
+	for (const btn of btns) {
+		btn.addEventListener("click", function() {
+			form.classList.remove("section");
+			scriptBlock.classList.add("section");		
+		});
+	}
 }
 
 showForm();
