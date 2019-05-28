@@ -500,7 +500,7 @@ input:disabled {
 	cursor: pointer;
 }
 
-.loan-offer__next-button_not-ready {
+.loan-offer__next-button_disable {
 	background-image: linear-gradient(to bottom,#337ab740 0,#265a88a1 100%);
     color: white;
     background-repeat: repeat-x;

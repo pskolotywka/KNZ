@@ -404,65 +404,67 @@
 								<label for="not-ready__other" class="radio__label">Другое</label>
 							</div>																	
 						</div>
-						<button class="loan-offer__next-button_not-ready open-form" disabled>Далее</button>
+						<button class="loan-offer__next-button_disable open-form loan-offer__next-button" disabled>Далее</button>
 					</div>
 					<div class="loan-offer__flat-bail radio-margin js-loan-block section" data-section="script__flat">
 						<h4 class="form__subtitles">Является ли клиент собственником квартиры?</h4>
 						<div class="flat-bail__ownership">		
 							<div class="flat-bail__wrap">
-								<input type="radio" name="flat-bail__ownership" id="flat-bail__owner" class="flat-bail__owner-radio">
+								<input type="radio" name="flat-bail__ownership" id="flat-bail__owner" class="flat-bail__owner-radio js-flat-bail__owner-radio js-flat-bail-radio" checked>
 								<label for="flat-bail__owner" class="radio__label">Собственник</label>	
 							</div>	
 							<div class="flat-bail__wrap">	
-								<input type="radio" name="flat-bail__ownership" id="flat-bail__not-owner" class="flat-bail__not-owner-radio">
+								<input type="radio" name="flat-bail__ownership" id="flat-bail__not-owner" class="flat-bail__not-owner-radio js-flat-bail__owner-radio js-flat-bail-radio">
 								<label for="flat-bail__not-owner" class="radio__label">Не является собственником</label>		
 							</div>			
 						</div>
-						<h4 class="form__subtitles">Клиент является единственным владельцем?</h4>
-						<div class="flat-bail__only-ownership">	
-							<div class="flat-bail__wrap">			
-								<input type="radio" name="flat-bail__only-ownership" id="flat-bail__only-owner" class="flat-bail__only-owner-radio">
-								<label for="flat-bail__only-owner" class="radio__label">Единственный владелец</label>	
-							</div>		
-							<div class="flat-bail__wrap">	
-								<input type="radio" name="flat-bail__only-ownership" id="flat-bail__not-only-owner" class="flat-bail__not-only-owner-radio">
-								<label for="flat-bail__not-only-owner" class="radio__label">Долевая собственность</label>	
-							</div>					
-						</div>
+						<div class="flat-only-owner">
+							<h4 class="form__subtitles">Клиент является единственным владельцем?</h4>
+							<div class="flat-bail__only-ownership">	
+								<div class="flat-bail__wrap">			
+									<input type="radio" name="flat-bail__only-ownership" id="flat-bail__only-owner" class="flat-bail__only-owner-radio js-flat-bail-radio">
+									<label for="flat-bail__only-owner" class="radio__label">Единственный владелец</label>	
+								</div>		
+								<div class="flat-bail__wrap">	
+									<input type="radio" name="flat-bail__only-ownership" id="flat-bail__not-only-owner" class="flat-bail__not-only-owner-radio js-flat-bail-radio">
+									<label for="flat-bail__not-only-owner" class="radio__label">Долевая собственность</label>	
+								</div>					
+							</div>
+						</div>	
 						<h4 class="form__subtitles">Для подачи заявки будут использоваться созаемщики?</h4>
 						<div class="flat-bail__co-borrowers">				
 							<div class="flat-bail__wrap">		
-								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-yes" class="flat-bail__co-borrowers-yes-radio">
+								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-yes" class="flat-bail__co-borrowers-yes-radio js-flat-bail-radio">
 								<label for="flat-bail__co-borrowers-yes" class="radio__label">Будут</label>	
 							</div>	
 							<div class="flat-bail__wrap">	
-								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-no" class="flat-bail__co-borrowers-no-radio">
+								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-no" class="flat-bail__co-borrowers-no-radio js-flat-bail-radio">
 								<label for="flat-bail__co-borrowers-no" class="radio__label">Созаемщиков не будет</label>	
 							</div>					
 						</div>
 						<h4 class="form__subtitles">Клиент готов встретиться по адресу залога для подписания документов?</h4>
 						<div class="flat-bail__meeting">
 							<div class="flat-bail__wrap">					
-								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-yes" class="flat-bail__meeting-yes-radio">
+								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-yes" class="flat-bail__meeting-yes-radio js-flat-bail-radio">
 								<label for="flat-bail__meeting-yes" class="radio__label">Готов встретиться по адресу</label>	.
 							</div>		
 							<div class="flat-bail__wrap">		
-								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-no" class="flat-bail__meeting-no-radio">
+								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-no" class="flat-bail__meeting-no-radio js-flat-bail-radio">
 								<label for="flat-bail__meeting-no" class="radio__label">Не готов</label>	
 							</div>				
 						</div>
 						<h4 class="form__subtitles">Клиент готов встретиться по адресу залога для подписания документов?</h4>
 						<div class="flat-bail__party-co-borrowers">			
 							<div class="flat-bail__wrap">			
-								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-yes" class="flat-bail__party-co-borrowers-yes-radio">
+								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-yes" class="flat-bail__party-co-borrowers-yes-radio js-flat-bail-radio">
 								<label for="flat-bail__party-co-borrowers-yes" class="radio__label">Да, сможет</label>	
 							</div>	
 							<div class="flat-bail__wrap">		
-								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-no" class="flat-bail__party-co-borrowers-no-radio">
+								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-no" class="flat-bail__party-co-borrowers-no-radio js-flat-bail-radio">
 								<label for="flat-bail__party-co-borrowers-no" class="radio__label">Не готов</label>	
 							</div>				
 						</div>
-						<button class="button open-form">Далее</button>
+						<button class="loan-offer__next-button_disable open-form loan-offer__next-button" disabled>Далее</button>
 						<div class="object-address__wrap section">
 							<div class="object-address">
 								<h3 class="form__titles">Адрес объекта</h3>
@@ -533,7 +535,7 @@
 								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__not-owner" class="car-bail__refuse-reason_not-owner-radio">
 								<label for="car-bail__not-owner" class="radio__label">Не является собственником</label>
 							</div>	
-						<button class="open-form button">Далее</button>															
+						<button class="loan-offer__next-button_disable open-form loan-offer__next-button" disabled>Далее</button>															
 						</div>
 					</div>
 				</div>

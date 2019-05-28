@@ -1,3 +1,33 @@
+function enableFlatBailBitoon() {
+	const buttons = document.querySelectorAll(".js-flat-bail-radio");
+	const nextBtn = document.querySelector(".loan-offer__next-button_disable")
+
+	
+}
+
+enableFlatBailBitoon();
+
+
+function hideOnlyOwner() {
+	const notOnlyBtn = document.querySelector(".flat-bail__not-owner-radio");
+	const coBorrower = document.querySelector(".flat-only-owner");
+	const btnsAll = document.querySelectorAll(".js-flat-bail__owner-radio");
+
+	for (const btn of btnsAll) {
+		btn.addEventListener("click", function() {
+			if (notOnlyBtn.checked) {
+				coBorrower.style.display = "none";
+			} else {
+				coBorrower.style.display = "block";
+			}
+		});
+	}
+}	
+
+
+hideOnlyOwner();
+
+
 function showTip() {
 	const buttons = document.querySelectorAll(".form__tip");
 	const tooltips = document.querySelectorAll(".tooltip-wrap");
@@ -50,7 +80,7 @@ showAdditionalFields();
 
 
 function enableButton() {
-	const btn = document.querySelector(".loan-offer__next-button_not-ready");
+	const btn = document.querySelector(".loan-offer__next-button_disable");
 	const inputs = document.querySelectorAll(".js-not-ready-label-radio");
 
 	for (const input of inputs) {
@@ -58,7 +88,7 @@ function enableButton() {
 		input.addEventListener("click", function() {
 			btn.removeAttribute('disabled');
 			btn.classList.add("button", "open-form");
-			btn.classList.remove("loan-offer__next-button_not-ready");
+			btn.classList.remove("loan-offer__next-button_disable");
 		});
 	}
 }
