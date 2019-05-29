@@ -404,7 +404,7 @@
 								<label for="not-ready__other" class="radio__label">Другое</label>
 							</div>																	
 						</div>
-						<button class="loan-offer__next-button_disable open-form loan-offer__next-button" disabled>Далее</button>
+						<button class="loan-offer__next-button_disable js-nxtbtn-not-ready open-form loan-offer__next-button" disabled>Далее</button>
 					</div>
 					<div class="loan-offer__flat-bail radio-margin js-loan-block section" data-section="script__flat">
 						<h4 class="form__subtitles">Является ли клиент собственником квартиры?</h4>
@@ -422,11 +422,11 @@
 							<h4 class="form__subtitles">Клиент является единственным владельцем?</h4>
 							<div class="flat-bail__only-ownership">	
 								<div class="flat-bail__wrap">			
-									<input type="radio" name="flat-bail__only-ownership" id="flat-bail__only-owner" class="flat-bail__only-owner-radio js-flat-bail-radio">
+									<input type="radio" name="flat-bail__only-ownership" id="flat-bail__only-owner" class="flat-bail__only-owner-radio js-flat-bail-radio js-flat-bail__only-owner-radio" checked>
 									<label for="flat-bail__only-owner" class="radio__label">Единственный владелец</label>	
 								</div>		
 								<div class="flat-bail__wrap">	
-									<input type="radio" name="flat-bail__only-ownership" id="flat-bail__not-only-owner" class="flat-bail__not-only-owner-radio js-flat-bail-radio">
+									<input type="radio" name="flat-bail__only-ownership" id="flat-bail__not-only-owner" class="flat-bail__not-only-owner-radio js-flat-bail-radio js-flat-bail__only-owner-radio">
 									<label for="flat-bail__not-only-owner" class="radio__label">Долевая собственность</label>	
 								</div>					
 							</div>
@@ -434,58 +434,37 @@
 						<h4 class="form__subtitles">Для подачи заявки будут использоваться созаемщики?</h4>
 						<div class="flat-bail__co-borrowers">				
 							<div class="flat-bail__wrap">		
-								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-yes" class="flat-bail__co-borrowers-yes-radio js-flat-bail-radio">
+								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-yes" class="flat-bail__co-borrowers-yes-radio js-flat-bail-radio js-flat-bail__co-borrowers-radio">
 								<label for="flat-bail__co-borrowers-yes" class="radio__label">Будут</label>	
 							</div>	
 							<div class="flat-bail__wrap">	
-								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-no" class="flat-bail__co-borrowers-no-radio js-flat-bail-radio">
+								<input type="radio" name="flat-bail__co-borrowers" id="flat-bail__co-borrowers-no" class="flat-bail__co-borrowers-no-radio js-flat-bail-radio js-flat-bail__co-borrowers-radio">
 								<label for="flat-bail__co-borrowers-no" class="radio__label">Созаемщиков не будет</label>	
 							</div>					
 						</div>
 						<h4 class="form__subtitles">Клиент готов встретиться по адресу залога для подписания документов?</h4>
 						<div class="flat-bail__meeting">
 							<div class="flat-bail__wrap">					
-								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-yes" class="flat-bail__meeting-yes-radio js-flat-bail-radio">
+								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-yes" class="flat-bail__meeting-yes-radio js-flat-bail-radio js-flat-bail__meeting-radio">
 								<label for="flat-bail__meeting-yes" class="radio__label">Готов встретиться по адресу</label>	.
 							</div>		
 							<div class="flat-bail__wrap">		
-								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-no" class="flat-bail__meeting-no-radio js-flat-bail-radio">
+								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-no" class="flat-bail__meeting-no-radio js-flat-bail-radio js-flat-bail__meeting-radio">
 								<label for="flat-bail__meeting-no" class="radio__label">Не готов</label>	
 							</div>				
 						</div>
 						<h4 class="form__subtitles">Клиент готов встретиться по адресу залога для подписания документов?</h4>
 						<div class="flat-bail__party-co-borrowers">			
 							<div class="flat-bail__wrap">			
-								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-yes" class="flat-bail__party-co-borrowers-yes-radio js-flat-bail-radio">
+								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-yes" class="flat-bail__party-co-borrowers-yes-radio js-flat-bail-radio flat-bail__party-co-borrowers-radio">
 								<label for="flat-bail__party-co-borrowers-yes" class="radio__label">Да, сможет</label>	
 							</div>	
 							<div class="flat-bail__wrap">		
-								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-no" class="flat-bail__party-co-borrowers-no-radio js-flat-bail-radio">
+								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-no" class="flat-bail__party-co-borrowers-no-radio js-flat-bail-radio flat-bail__party-co-borrowers-radio">
 								<label for="flat-bail__party-co-borrowers-no" class="radio__label">Не готов</label>	
 							</div>				
 						</div>
-						<button class="loan-offer__next-button_disable open-form loan-offer__next-button" disabled>Далее</button>
-						<div class="object-address__wrap section">
-							<div class="object-address">
-								<h3 class="form__titles">Адрес объекта</h3>
-								<div class="object-address__inputs">
-									<div class="object-address__address">
-										<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
-										<input type="text" id="object-address" class="object-address__address-input" name="name">
-									</div>
-									<div class="object-address__flat">
-										<label for="address__flat" class="form__label">Квартира<span class="span-red">*</span></label>
-										<input type="text" id="address__flat" class="object-address__flat-input" name="name">
-										<input type="checkbox" class="object-address__flat-checkbox" id="object-address__flat">
-										<label for="object-address__flat">Нет квартиры(частный дом)</label>					
-									</div>		
-								</div>	
-								<div class="object-address__wrap-buttons">	
-									<button class="next-button button">Далее</button>
-									<button class="info-button">Назад к предложению</button>
-								</div>	
-							</div>	
-						</div>
+						<button class="loan-offer__next-button_disable js-nxtbtn-flat-bail loan-offer__next-button open-address" disabled>Далее</button>
 					</div>
 					<div class="loan-offer__car-bail radio-margin js-loan-block section" data-section="script__car">
 						<h4 class="form__subtitles">Причина отказа от КНЗ:</h4>
@@ -535,11 +514,32 @@
 								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__not-owner" class="car-bail__refuse-reason_not-owner-radio">
 								<label for="car-bail__not-owner" class="radio__label">Не является собственником</label>
 							</div>	
-						<button class="loan-offer__next-button_disable open-form loan-offer__next-button" disabled>Далее</button>															
+						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail open-form loan-offer__next-button" disabled>Далее</button>															
 						</div>
 					</div>
 				</div>
 			</div>	
+			<div class="object-address__wrap section">
+				<div class="object-address">
+					<h3 class="form__titles">Адрес объекта</h3>
+					<div class="object-address__inputs">
+						<div class="object-address__address">
+							<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
+							<input type="text" id="object-address" class="object-address__address-input" name="name">
+						</div>
+						<div class="object-address__flat">
+							<label for="address__flat" class="form__label">Квартира<span class="span-red">*</span></label>
+							<input type="text" id="address__flat" class="object-address__flat-input" name="name">
+							<input type="checkbox" class="object-address__flat-checkbox" id="object-address__flat">
+							<label for="object-address__flat">Нет квартиры(частный дом)</label>					
+						</div>		
+					</div>	
+					<div class="object-address__wrap-buttons">	
+						<button class="next-button button">Далее</button>
+						<button class="info-button">Назад к предложению</button>
+					</div>	
+				</div>	
+			</div>
 			<div class="form__wrap section" data-section="application-forming">
 				<form action="post" class="form">
 					<h3 class="form__titles">Контактные данные</h3>

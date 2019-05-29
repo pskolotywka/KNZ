@@ -1,8 +1,17 @@
 function enableFlatBailBitoon() {
-	const buttons = document.querySelectorAll(".js-flat-bail-radio");
-	const nextBtn = document.querySelector(".loan-offer__next-button_disable")
+	const buttonsParty = document.querySelectorAll(".flat-bail__party-co-borrowers-radio");
+	const nextBtn = document.querySelector(".js-nxtbtn-flat-bail");
 
-	
+
+	for (const buttonParty of buttonsParty) {
+		buttonParty.addEventListener("click", function() {
+			if (buttonParty.checked) {
+				nextBtn.removeAttribute('disabled');
+				nextBtn.classList.add("button", "open-address");
+				nextBtn.classList.remove("loan-offer__next-button_disable");
+			}
+		});
+	}
 }
 
 enableFlatBailBitoon();
@@ -66,6 +75,21 @@ function showForm() {
 
 showForm();
 
+function showAddress() {
+	const btns = document.querySelectorAll(".open-address");
+	const address = document.querySelector(".object-address__wrap");
+	const scriptBlock = document.querySelector(".application-scenario");
+
+	for (const btn of btns) {
+		btn.addEventListener("click", function() {
+			address.classList.remove("section");
+			scriptBlock.classList.add("section");		
+		});
+	}	
+}
+
+showAddress();
+
 
 function showAdditionalFields() {
 	const btn = document.querySelector(".additional-info-button");
@@ -80,7 +104,7 @@ showAdditionalFields();
 
 
 function enableButton() {
-	const btn = document.querySelector(".loan-offer__next-button_disable");
+	const btn = document.querySelector(".js-nxtbtn-not-ready");
 	const inputs = document.querySelectorAll(".js-not-ready-label-radio");
 
 	for (const input of inputs) {
