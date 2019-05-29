@@ -1,3 +1,42 @@
+function enableFlatBailBitoon() {
+	const buttonsParty = document.querySelectorAll(".flat-bail__party-co-borrowers-radio");
+	const nextBtn = document.querySelector(".js-nxtbtn-flat-bail");
+
+
+	for (const buttonParty of buttonsParty) {
+		buttonParty.addEventListener("click", function() {
+			if (buttonParty.checked) {
+				nextBtn.removeAttribute('disabled');
+				nextBtn.classList.add("button", "open-address");
+				nextBtn.classList.remove("loan-offer__next-button_disable");
+			}
+		});
+	}
+}
+
+enableFlatBailBitoon();
+
+
+function hideOnlyOwner() {
+	const notOnlyBtn = document.querySelector(".flat-bail__not-owner-radio");
+	const coBorrower = document.querySelector(".flat-only-owner");
+	const btnsAll = document.querySelectorAll(".js-flat-bail__owner-radio");
+
+	for (const btn of btnsAll) {
+		btn.addEventListener("click", function() {
+			if (notOnlyBtn.checked) {
+				coBorrower.style.display = "none";
+			} else {
+				coBorrower.style.display = "block";
+			}
+		});
+	}
+}	
+
+
+hideOnlyOwner();
+
+
 function showTip() {
 	const buttons = document.querySelectorAll(".form__tip");
 	const tooltips = document.querySelectorAll(".tooltip-wrap");
@@ -36,6 +75,21 @@ function showForm() {
 
 showForm();
 
+function showAddress() {
+	const btns = document.querySelectorAll(".open-address");
+	const address = document.querySelector(".object-address__wrap");
+	const scriptBlock = document.querySelector(".application-scenario");
+
+	for (const btn of btns) {
+		btn.addEventListener("click", function() {
+			address.classList.remove("section");
+			scriptBlock.classList.add("section");		
+		});
+	}	
+}
+
+showAddress();
+
 
 function showAdditionalFields() {
 	const btn = document.querySelector(".additional-info-button");
@@ -50,7 +104,7 @@ showAdditionalFields();
 
 
 function enableButton() {
-	const btn = document.querySelector(".loan-offer__next-button_not-ready");
+	const btn = document.querySelector(".js-nxtbtn-not-ready");
 	const inputs = document.querySelectorAll(".js-not-ready-label-radio");
 
 	for (const input of inputs) {
@@ -58,7 +112,7 @@ function enableButton() {
 		input.addEventListener("click", function() {
 			btn.removeAttribute('disabled');
 			btn.classList.add("button", "open-form");
-			btn.classList.remove("loan-offer__next-button_not-ready");
+			btn.classList.remove("loan-offer__next-button_disable");
 		});
 	}
 }
