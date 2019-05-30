@@ -1,3 +1,21 @@
+
+
+
+function backToOffer() {
+	const button = document.querySelector(".info-button");
+	const address = document.querySelector(".object-address__wrap");
+	const scriptBlock = document.querySelector(".application-scenario");
+	
+
+	button.addEventListener("click", function() {		
+		address.classList.add("section");
+		scriptBlock.classList.remove("section");	
+	});
+}
+
+backToOffer();
+
+
 function enableFlatBailBitoon() {
 	const buttonsParty = document.querySelectorAll(".flat-bail__party-co-borrowers-radio");
 	const nextBtn = document.querySelector(".js-nxtbtn-flat-bail");
@@ -60,10 +78,10 @@ function showTip() {
 showTip();
 
 
-function showForm() {
-	const btns = document.querySelectorAll(".open-form");
-	const form = document.querySelector(".form__wrap");
-	const scriptBlock = document.querySelector(".application-scenario");
+function showForm(btn, appear, hide) {
+	const btns = document.querySelectorAll(btn);
+	const form = document.querySelector(appear);
+	const scriptBlock = document.querySelector(hide);
 
 	for (const btn of btns) {
 		btn.addEventListener("click", function() {
@@ -73,17 +91,20 @@ function showForm() {
 	}
 }
 
-showForm();
+showForm(".next-button", ".form__wrap", ".object-address__wrap");
+showForm(".open-form", ".form__wrap", ".application-scenario");
 
 function showAddress() {
 	const btns = document.querySelectorAll(".open-address");
 	const address = document.querySelector(".object-address__wrap");
 	const scriptBlock = document.querySelector(".application-scenario");
+	const loanBlock = document.querySelector(".loan-offer__flat-bail");
 
 	for (const btn of btns) {
 		btn.addEventListener("click", function() {
 			address.classList.remove("section");
-			scriptBlock.classList.add("section");		
+			scriptBlock.classList.add("section");	
+			loanBlock.classList.add("section");	
 		});
 	}	
 }
@@ -242,6 +263,7 @@ disableInput(".js-work-phone-exist-switch-checkbox", ".form__work-phone-input");
 disableInput(".js-work-organization-index-manual-checkbox", ".js-work-organization-address-manual-input");
 disableInput(".js-work-organization-flat-house-swicher-checkbox", ".js-form__flat-work-organization-manual-input");
 disableInput(".js-work-organization-phone-exist-switch-checkbox", ".js-work-organization-home-phone-input");
+disableInput(".object-address__flat-checkbox", ".object-address__flat-input");
 
 
 function disableWorkPhone() {
