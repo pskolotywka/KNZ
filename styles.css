@@ -312,7 +312,31 @@ label {
     cursor: pointer;
 }
 
+.auto-info input {
+	width: 385px;
+	border: 1px solid;
+	padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;    
+    position: relative;
+    margin-bottom: 15px;
+}
 
+.auto-info__container {
+	width: 700px;
+}
+
+.auto-info__info__container-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 .form input {
 	width: 385px;

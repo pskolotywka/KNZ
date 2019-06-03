@@ -507,14 +507,14 @@
 							</div>
 							<h4 class="form__subtitles">Является ли клиент собственником автомобиля?</h4>
 							<div class="car-bail__refuse-reason_owner">
-								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__owner" class="car-bail__refuse-reason_owner-radio">
+								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__owner" class="car-bail__refuse-reason_owner-radio js-car-bail__refuse-reason_owner-radio">
 								<label for="car-bail__owner" class="radio__label">Собственник</label>
 							</div>			
 							<div class="car-bail__refuse-reason_not-owner">
-								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__not-owner" class="car-bail__refuse-reason_not-owner-radio">
+								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__not-owner" class="car-bail__refuse-reason_not-owner-radio js-car-bail__refuse-reason_owner-radio">
 								<label for="car-bail__not-owner" class="radio__label">Не является собственником</label>
 							</div>	
-						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail open-form loan-offer__next-button" disabled>Далее</button>															
+						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail auto-info loan-offer__next-button" disabled>Далее</button>															
 						</div>
 					</div>
 				</div>
@@ -542,6 +542,28 @@
 						<button class="info-button">Назад к предложению</button>
 					</div>	
 				</div>	
+			</div>
+			<div class="auto-info">
+				<div class="auto-info__container">
+					<h3 class="form__titles">Данные автомобиля</h3>
+					<div class="auto-info__info__container-inputs">
+						<div class="auto-info_model auto-info_inputs">
+							<label for="model-bail-info" class="form__label">Марка, модель, год выпуска <span class="span-red">*</span></label>
+							<input type="text" name="model-bail-info" id="model-bail-info" class="auto-info_model-input">
+							<div class="input-error js-error-model"></div>				
+						</div>	
+						<div class="auto-info_number auto-info_inputs">
+							<label for="number-bail-info" class="form__label">Гос. номер <span class="span-red">*</span></label>
+							<input type="text" name="number-bail-info" id="number-bail-info" class="auto-info_number-input">
+							<div class="input-error js-error-number"></div>				
+						</div>	
+						<div class="auto-info_vin auto-info_inputs">
+							<label for="vin-bail-info" class="form__label">VIN номер автомобиля <span class="span-red">*</span></label>
+							<input type="text" name="vin-bail-info" id="vin-bail-info" class="auto-info_vin-input">
+							<div class="input-error js-error-vin"></div>				
+						</div>	
+					</div>	
+				</div>									
 			</div>
 			<div class="form__wrap section" data-section="application-forming">
 				<form action="post" class="form">
