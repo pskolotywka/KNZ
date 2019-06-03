@@ -523,9 +523,12 @@
 				<div class="object-address">
 					<h3 class="form__titles">Адрес объекта</h3>
 					<div class="object-address__inputs">
-						<div class="object-address__address">
-							<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
-							<input type="text" id="object-address" class="object-address__address-input" name="name">
+						<div class="object-address__address-wrap">
+							<div class="object-address__address">
+								<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
+								<input type="text" id="object-address" class="object-address__address-input js-object-address__address-input" name="name">							
+							</div>
+							<p class="object-address__address-error js-object-address__address-error">Поле не может быть пустым</p>
 						</div>
 						<div class="object-address__flat">
 							<label for="address__flat" class="form__label">Квартира<span class="span-red">*</span></label>
@@ -535,7 +538,7 @@
 						</div>		
 					</div>	
 					<div class="object-address__wrap-buttons">	
-						<button class="next-button button">Далее</button>
+						<button class="next-button loan-offer__next-button_disable" disabled>Далее</button>
 						<button class="info-button">Назад к предложению</button>
 					</div>	
 				</div>	

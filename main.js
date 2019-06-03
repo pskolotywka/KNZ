@@ -1,4 +1,21 @@
+// Активация next button в блоке "адрес объекта", если input "адрес" не пустой. 
 
+function objectAddressNextBtn() {
+	const input = document.querySelector(".object-address__address-input");
+	const btn = document.querySelector(".next-button");
+	const errorText = document.querySelector(".js-object-address__address-error");
+	
+		input.addEventListener("blur", function() {
+			if (input.value.length == 0) {
+				errorText.style.display = "block";
+				input.classList.add("red-border-input");
+			}
+		});
+	}
+
+	
+
+objectAddressNextBtn();
 
 
 function backToOffer() {

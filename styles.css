@@ -623,6 +623,11 @@ label {
 	width: 1900px !important;
 }
 
+.object-address__address-error {
+	margin: 0 auto;
+    margin-left: 77px;
+    color: red;
+}
 
 
 .object-address input[type="text"]{
@@ -645,6 +650,10 @@ label {
 
 .object-address__inputs {
 	width: 460px;
+}
+
+.object-address__address-error {
+	display: none;
 }
 
 .object-address__flat {
@@ -763,4 +772,8 @@ label {
 input:disabled {
 	cursor: not-allowed;
 	background: #eee;	
+}
+
+.red-border-input {
+	border: red;
 }
