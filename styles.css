@@ -53,7 +53,6 @@ body {
     border-radius: 4px;
     outline: none;	
 	border-width: 1px;
-	margin-top: 30px;
 }
 
 .button:hover {
@@ -293,6 +292,16 @@ label {
 
 .section {
 	display: none;
+}
+
+.visibility {
+	visibility: visible;
+	height: inherit;
+}
+
+.hidden {
+	visibility: hidden;
+	height: 0;
 }
 
 .section--active {
@@ -539,6 +548,7 @@ label {
     border-radius: 4px;
     background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
     color: #333;
+    margin-left: 30px;
 }
 
 .loan-offer__next-button_disable, 
@@ -552,6 +562,11 @@ label {
     outline: none;
 	border-width: 1px;
 	cursor: not-allowed;
+	display: block;
+}
+
+.auto-info__next-btn_disable {
+	margin-left: 90px;
 }
 
 .script-header-label {
