@@ -521,7 +521,28 @@ label {
 	cursor: pointer;
 }
 
-.loan-offer__next-button_disable {
+.auto-info__container-buttons {
+	display: flex;
+	justify-content: center;
+}
+
+.auto-info__prev-btn {	
+    padding: 6px 12px;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+    color: #333;
+}
+
+.loan-offer__next-button_disable, 
+.auto-info__next-btn_disable {
 	background-image: linear-gradient(to bottom,#337ab740 0,#265a88a1 100%);
     color: white;
     background-repeat: repeat-x;
