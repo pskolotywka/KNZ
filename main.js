@@ -1,3 +1,79 @@
+// бтн енеблет при инпут больше 0. 
+
+// function() {  // объявляем функцию 
+// 			for (let i = 0; i < clearField.length; i++) {
+// 				clearField[i].addEventListener("click", function() {
+// 					inputs[i].value = "";
+// 					if (inputs[i].value.length > 0) {
+// 						inputs[i].classList.add("form__input-up");				
+// 					} else {
+// 						inputs[i].classList.remove("form__input-up");	
+// 					}
+
+
+
+// // После radio button "является ли клиент собственников автомобиля" вызов информации об автомобиле.
+
+function showCarInfo() {
+	const btn = document.querySelector(".js-nxtbtn-car-bail");
+	const autoInfo = document.querySelector(".auto-info");
+	const scenario = document.querySelector(".application-scenario");
+	const radioBlock = document.querySelector(".js-car-bail-radio-block");
+
+	btn.addEventListener("click", function() {
+		autoInfo.classList.remove("section");
+		radioBlock.classList.add("section");
+		scenario.classList.add("section");
+	});
+
+}
+
+
+showCarInfo();
+
+
+function showFlatBailNextBtn() {
+	const blocks = document.querySelectorAll(".js-flat-bail-block");
+	const container = document.querySelector(".js-flat-bail-container");
+	const radioInputs = container.querySelectorAll("[type=radio]");
+	const btn = document.querySelector(".js-nxtbtn-flat-bail");
+	const notOnlyBtn = document.querySelector(".js-flat-only-owner");
+
+	for (const radioInput of radioInputs) {
+		radioInput.addEventListener("click", function() {			
+		const checkedBtns = container.querySelectorAll(":checked").length;	
+
+		function disableBtn() {
+			btn.setAttribute('disabled', '');
+			btn.classList.remove("button", "open-address");
+			btn.classList.add("loan-offer__next-button_disable");
+		}
+
+		function enableBtn() {
+			btn.removeAttribute('disabled');
+			btn.classList.add("button", "open-address");
+			btn.classList.remove("loan-offer__next-button_disable");			
+		}
+
+		if (notOnlyBtn.style.display == "block") {
+			if (blocks.length == checkedBtns) {
+				enableBtn();
+			} else {
+				disableBtn();
+			}
+		} else if (notOnlyBtn.style.display == "none") {
+			if ((blocks.length - 1) == checkedBtns) {
+				enableBtn();
+			} else {
+				disableBtn();
+			}	
+		}
+		});	
+	}	
+}
+
+
+
 // Активация next button в блоке "готов оставить авто под залог".
 
 function carBailNextBtn() {
@@ -38,10 +114,10 @@ function objectAddressNextBtn() {
 objectAddressNextBtn();
 
 
-function backToOffer() {
-	const button = document.querySelector(".info-button");
-	const address = document.querySelector(".object-address__wrap");
-	const scriptBlock = document.querySelector(".application-scenario");
+function backToOffer(btn, thisStep, prevStep) {
+	const button = document.querySelector(btn);
+	const address = document.querySelector(thisStep);
+	const scriptBlock = document.querySelector(prevStep);
 	
 
 	button.addEventListener("click", function() {		
@@ -50,32 +126,35 @@ function backToOffer() {
 	});
 }
 
-backToOffer();
+backToOffer(".info-button", ".object-address__wrap", ".application-scenario");
+backToOffer(".auto-info__prev-btn", ".auto-info", ".application-scenario");
 
 
-function enableFlatBailBitoon() {
-	const buttonsParty = document.querySelectorAll(".flat-bail__party-co-borrowers-radio");
-	const nextBtn = document.querySelector(".js-nxtbtn-flat-bail");
+// function enableFlatBailBitoon() {
+// 	const buttonsParty = document.querySelectorAll(".flat-bail__party-co-borrowers-radio");
+// 	const nextBtn = document.querySelector(".js-nxtbtn-flat-bail");
 
 
-	for (const buttonParty of buttonsParty) {
-		buttonParty.addEventListener("click", function() {
-			if (buttonParty.checked) {
-				nextBtn.removeAttribute('disabled');
-				nextBtn.classList.add("button", "open-address");
-				nextBtn.classList.remove("loan-offer__next-button_disable");
-			}
-		});
-	}
-}
+// 	for (const buttonParty of buttonsParty) {
+// 		buttonParty.addEventListener("click", function() {
+// 			if (buttonParty.checked) {
+// 				nextBtn.removeAttribute('disabled');
+// 				nextBtn.classList.add("button", "open-address");
+// 				nextBtn.classList.remove("loan-offer__next-button_disable");
+// 			}
+// 		});
+// 	}
+// }
 
-enableFlatBailBitoon();
+// enableFlatBailBitoon();
 
 
 function hideOnlyOwner() {
 	const notOnlyBtn = document.querySelector(".flat-bail__not-owner-radio");
 	const coBorrower = document.querySelector(".flat-only-owner");
 	const btnsAll = document.querySelectorAll(".js-flat-bail__owner-radio");
+
+	coBorrower.style.display = "block";
 
 	for (const btn of btnsAll) {
 		btn.addEventListener("click", function() {
@@ -130,8 +209,7 @@ function showForm(btn, appear, hide) {
 
 showForm(".next-button", ".form__wrap", ".object-address__wrap");
 showForm(".open-form", ".form__wrap", ".application-scenario");
-showForm(".js-nxtbtn-car-bail", ".auto-info", ".application-scenario");
-
+showForm(".auto-info__next-btn", ".form__wrap", ".auto-info__container");
 
 
 function showAddress() {
@@ -408,26 +486,23 @@ activeTab();
 
 
 function loanOffer() {
-	const FailInput = document.querySelector(".application-forming__script-fail");
+	const failInput = document.querySelector(".application-forming__script-fail");
 	const carInput = document.querySelector(".application-forming__script-car");
 	const flatInput = document.querySelector(".application-forming__script-flat");
 	const failblock = document.querySelector(".loan-offer__not-ready");
 	const flatblock = document.querySelector(".loan-offer__flat-bail");
 	const carblock = document.querySelector(".loan-offer__car-bail");
 
-	FailInput.addEventListener("click", function() {
-		if (FailInput.checked) {
-
+	failInput.addEventListener("click", function() {
+		if (failInput.checked) {
 			failblock.classList.remove("section");
 			flatblock.classList.add("section");
 			carblock.classList.add("section");
-
 		}
 	});	
 
 	carInput.addEventListener("click", function() {
 		if (carInput.checked) {
-
 			failblock.classList.add("section");
 			flatblock.classList.add("section");
 			carblock.classList.remove("section");
@@ -436,13 +511,12 @@ function loanOffer() {
 
 	flatInput.addEventListener("click", function() {
 		if (flatInput.checked) {
-
 			failblock.classList.add("section");
 			flatblock.classList.remove("section");
 			carblock.classList.add("section");
+			showFlatBailNextBtn();
 		}
 	});		
-
 }		
 
 loanOffer();
