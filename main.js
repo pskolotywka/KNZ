@@ -1,6 +1,22 @@
-// бтн енеблет при инпут больше 0. 
+// Button enabled при значении инпут больше 0. 
 
-// function() {  // объявляем функцию 
+function enabledBtn() {
+	const input = document.querySelector(".js-object-address__address-input");
+	const btn = document.querySelector(".js-obj-addr-nextBtn");
+
+	for (let i = 0; i < input.length; i++) {
+		input.addEventListener("click", function() {
+			if (input.value.length > 0) {
+				btn.classList.add("section");
+			}
+		});
+	}
+}	
+
+enabledBtn();
+
+
+// function() {  
 // 			for (let i = 0; i < clearField.length; i++) {
 // 				clearField[i].addEventListener("click", function() {
 // 					inputs[i].value = "";
@@ -11,7 +27,7 @@
 // 					}
 
 
-// // Активация next button в блоке "готов оставить авто под залог".
+
 
 
 
