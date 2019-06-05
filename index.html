@@ -446,7 +446,7 @@
 						<div class="flat-bail__meeting js-flat-bail-block">
 							<div class="flat-bail__wrap">					
 								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-yes" class="flat-bail__meeting-yes-radio js-flat-bail-radio js-flat-bail__meeting-radio">
-								<label for="flat-bail__meeting-yes" class="radio__label">Готов встретиться по адресу</label>	.
+								<label for="flat-bail__meeting-yes" class="radio__label">Готов встретиться по адресу</label>
 							</div>		
 							<div class="flat-bail__wrap">		
 								<input type="radio" name="flat-bail__meeting" id="flat-bail__meeting-no" class="flat-bail__meeting-no-radio js-flat-bail-radio js-flat-bail__meeting-radio">
@@ -468,7 +468,7 @@
 					</div>
 					<div class="loan-offer__car-bail radio-margin js-loan-block section js-car-bail-radio-block" data-section="script__car">
 						<h4 class="form__subtitles">Причина отказа от КНЗ:</h4>
-						<div class="car-bail__refuse-reason">
+						<div class="car-bail__refuse-reason js-car-bail-block">
 							<div class="car-bail__refuse-reason_not-choosen">
 								<input type="radio" name="car-bail__refuse-reason_other" id="car-bail__not-choosen" class="car-bail__refuse-reason_not-choosen-radio">
 								<label for="car-bail__not-choosen" class="radio__label">Не выбрано</label>
@@ -505,7 +505,9 @@
 								<input type="radio" name="car-bail__refuse-reason_other" id="car-bail__other" class="car-bail__refuse-reason_other-radio">
 								<label for="car-bail__other" class="radio__label">Другое</label>
 							</div>
-							<h4 class="form__subtitles">Является ли клиент собственником автомобиля?</h4>
+						</div>	
+						<h4 class="form__subtitles">Является ли клиент собственником автомобиля?</h4>
+						<div class="car-bail__owner-or-not js-car-bail-block">
 							<div class="car-bail__refuse-reason_owner">
 								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__owner" class="car-bail__refuse-reason_owner-radio js-car-bail__refuse-reason_owner-radio">
 								<label for="car-bail__owner" class="radio__label">Собственник</label>
@@ -514,8 +516,8 @@
 								<input type="radio" name="car-bail__refuse-reason_owner" id="car-bail__not-owner" class="car-bail__refuse-reason_not-owner-radio js-car-bail__refuse-reason_owner-radio">
 								<label for="car-bail__not-owner" class="radio__label">Не является собственником</label>
 							</div>	
-						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail loan-offer__next-button" disabled>Далее</button>															
 						</div>
+						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail loan-offer__next-button" disabled>Далее</button>							
 					</div>
 				</div>
 			</div>	
