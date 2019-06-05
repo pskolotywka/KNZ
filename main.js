@@ -11,8 +11,13 @@
 // 					}
 
 
+// // Активация next button в блоке "готов оставить авто под залог".
 
-// // После radio button "является ли клиент собственников автомобиля" вызов информации об автомобиле.
+
+
+
+
+// После radio button "является ли клиент собственников автомобиля" вызов информации об автомобиле.
 
 function showCarInfo() {
 	const btn = document.querySelector(".js-nxtbtn-car-bail");
@@ -31,6 +36,53 @@ function showCarInfo() {
 
 showCarInfo();
 
+// function carBailNextBtn() {
+// 	const inputs = document.querySelectorAll(".js-car-bail__refuse-reason_owner-radio");
+// 	const nextBtn = document.querySelector(".js-nxtbtn-car-bail");
+
+// 	for (const input of inputs) {
+// 		input.addEventListener("click", function(){
+// 			if (input.checked) {
+// 				nextBtn.removeAttribute('disabled');
+// 				nextBtn.classList.add("button", "open-address");
+// 				nextBtn.classList.remove("loan-offer__next-button_disable");
+// 			}			
+// 		});
+// 	}
+// }
+
+// carBailNextBtn();
+
+// Снятие disable с button при нескольких radio button
+
+function showCarBailNextBtn() {
+	const blocks = document.querySelectorAll(".js-car-bail-block");
+	const container = document.querySelector(".js-car-bail-radio-block");
+	const radioInputs = container.querySelectorAll("[type=radio]");
+	const btn = document.querySelector(".js-nxtbtn-car-bail");
+
+	for (const radioInput of radioInputs) {
+		radioInput.addEventListener("click", function() {
+			const checkedBtns = container.querySelectorAll(":checked").length;
+
+			function enableBtn() {
+				btn.removeAttribute('disabled');
+				btn.classList.add("button");
+				btn.classList.remove("loan-offer__next-button_disable");
+			}
+
+			if (blocks.length == checkedBtns) {
+				enableBtn();
+			}
+		});
+	}
+}
+
+
+showCarBailNextBtn();
+
+
+// Снятие disable с button при нескольких radio button, учитывая возможное скрытие radio button.
 
 function showFlatBailNextBtn() {
 	const blocks = document.querySelectorAll(".js-flat-bail-block");
@@ -72,26 +124,6 @@ function showFlatBailNextBtn() {
 	}	
 }
 
-
-
-// Активация next button в блоке "готов оставить авто под залог".
-
-function carBailNextBtn() {
-	const inputs = document.querySelectorAll(".js-car-bail__refuse-reason_owner-radio");
-	const nextBtn = document.querySelector(".js-nxtbtn-car-bail");
-
-	for (const input of inputs) {
-		input.addEventListener("click", function(){
-			if (input.checked) {
-				nextBtn.removeAttribute('disabled');
-				nextBtn.classList.add("button", "open-address");
-				nextBtn.classList.remove("loan-offer__next-button_disable");
-			}			
-		});
-	}
-}
-
-carBailNextBtn();
 
 
 // Активация next button в блоке "адрес объекта", если input "адрес" не пустой. 
