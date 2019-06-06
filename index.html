@@ -4,14 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Тренажер КНЗ</title>
-	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 	<link href="styles.css" rel="stylesheet">
 </head>
 <body>
 	<main class="main">
 		<div class="tabs">
 			<ul class="tabs__list">
-				<li class="tabs__item tabs__item-represent selected-tab" data-tab="represent">Представление</li>  <!-- поправить названия классов с тегов li на item -->
+				<li class="tabs__item tabs__item-represent selected-tab" data-tab="represent">Представление</li>
 				<li class="tabs__item tabs__item-application" data-tab="application-forming">Оформление заявки</li>
 				<li class="tabs__item tabs__item-no-answer" data-tab="no-answer">Недозвон</li>
 				<li class="tabs__item tabs__item-negative" data-tab="negative">Отказ</li>
@@ -343,28 +342,28 @@
 				<div class="application-forming__script-titles">
 					<div class="application-forming__script-header wrap-fail">
 						<div class="application-forming__script-wrap">
-							<input type="radio" name="script-start" id="script-fail" class="application-forming__script application-forming__script-fail loan-reason selected-tab" data-tab="script__not-ready">
+							<input type="radio" name="script-start" id="script-fail" class="application-forming__script application-forming__script-fail selected-tab" data-tab="script__not-ready">
 							<label for="script-fail" class="script-header-label">Не готов</label>
 						</div>
 						<div class="application-forming__script-score">Баллы: 1</div>		
 					</div>			
 					<div class="application-forming__script-header wrap-flat">
 						<div class="application-forming__script-wrap">
-							<input type="radio" name="script-start" id="script-flat" class="application-forming__script application-forming__script-flat loan-reason" data-tab="script__flat">
+							<input type="radio" name="script-start" id="script-flat" class="application-forming__script application-forming__script-flat" data-tab="script__flat">
 							<label for="script-flat" class="script-header-label">Готов предоставить квартиру под залог</label>
 						</div>	
 						<div class="application-forming__script-score">Баллы: 7</div>
 					</div>
 					<div class="application-forming__script-header wrap-car">
 						<div class="application-forming__script-wrap">
-							<input type="radio" name="script-start" id="script-car" class="application-forming__script application-forming__script-car loan-reason" data-tab="script__car">
+							<input type="radio" name="script-start" id="script-car" class="application-forming__script application-forming__script-car" data-tab="script__car">
 							<label for="script-car" class="script-header-label">Готов предоставить автомобиль под залог</label>
 						</div>	
 						<div class="application-forming__script-score">Баллы: 2</div>
 					</div>
 				</div>
 				<div class="loan-offer" data-section="application-forming">
-					<div class="loan-offer__not-ready radio-margin js-loan-block section section--active" data-section="script__not-ready">
+					<div class="loan-offer__not-ready radio-margin section section--active" data-section="script__not-ready">
 						<h4>Причина отказа от КНЗ:</h4>
 						<div class="refuse-reason">
 							<div class="not-ready__refuse-reason_not-choosen">
@@ -404,9 +403,9 @@
 								<label for="not-ready__other" class="radio__label">Другое</label>
 							</div>																	
 						</div>
-						<button class="loan-offer__next-button_disable js-nxtbtn-not-ready open-form loan-offer__next-button" disabled>Далее</button>
+						<button class="loan-offer__next-button_disable js-nxtbtn-not-ready js-open-form" disabled>Далее</button>
 					</div>
-					<div class="loan-offer__flat-bail radio-margin js-loan-block js-flat-bail-container section" data-section="script__flat">
+					<div class="js-loan-offer__flat-bail radio-margin js-flat-bail-container section" data-section="script__flat">
 						<h4 class="form__subtitles">Является ли клиент собственником квартиры?</h4>
 						<div class="flat-bail__ownership js-flat-bail-block">		
 							<div class="flat-bail__wrap">
@@ -464,9 +463,9 @@
 								<label for="flat-bail__party-co-borrowers-no" class="radio__label">Не готов</label>	
 							</div>				
 						</div>
-						<button class="loan-offer__next-button_disable js-nxtbtn-flat-bail loan-offer__next-button open-address" disabled>Далее</button>
+						<button class="loan-offer__next-button_disable js-nxtbtn-flat-bail open-address" disabled>Далее</button>
 					</div>
-					<div class="loan-offer__car-bail radio-margin js-loan-block section js-car-bail-radio-block" data-section="script__car">
+					<div class="loan-offer__car-bail radio-margin section js-car-bail-radio-block" data-section="script__car">
 						<h4 class="form__subtitles">Причина отказа от КНЗ:</h4>
 						<div class="car-bail__refuse-reason js-car-bail-block">
 							<div class="car-bail__refuse-reason_not-choosen">
@@ -517,7 +516,7 @@
 								<label for="car-bail__not-owner" class="radio__label">Не является собственником</label>
 							</div>	
 						</div>
-						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail loan-offer__next-button" disabled>Далее</button>							
+						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail" disabled>Далее</button>							
 					</div>
 				</div>
 			</div>	
@@ -568,7 +567,7 @@
 						</div>	
 					</div>
 					<div class="auto-info__container-buttons">
-						<button class="auto-info__next-btn button">Далее</button>	
+						<button class="auto-info__next-btn">Далее</button>	
 											<!-- вернуть атрибут disabled и класс auto-info__next-btn_disable убрать класс button-->
 						<button class="auto-info__prev-btn">Назад</button>						
 					</div>	
