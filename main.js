@@ -1,6 +1,42 @@
-// бтн енеблет при инпут больше 0. 
+// Button enabled при значении инпут больше 0. 
+function enabledBtn() {
+	const input = document.querySelector(".js-object-address__address-input");
+	const btn = document.querySelector(".js-obj-addr-nextBtn");
 
-// function() {  // объявляем функцию 
+
+	for (let i = 0; i < input.length; i++) {
+		input[i].addEventListener("click", function() {
+			if (input[i].value.length > 0) {
+				btn.classList.add("section");
+			}
+		});
+	}
+}	
+
+
+enabledBtn();
+
+
+
+// // Активация next button в блоке "адрес объекта", если input "адрес" не пустой. 
+// function objectAddressNextBtn() {
+// 	const input = document.querySelector(".object-address__address-input");
+// 	const btn = document.querySelector(".next-button");
+// 	const errorText = document.querySelector(".js-object-address__address-error");
+	
+// 		input.addEventListener("blur", function() {
+// 			if (input.value.length == 0) {
+// 				errorText.style.display = "block";
+// 				input.classList.add("red-border-input");
+// 			}
+// 		});
+// 	}
+	
+
+// objectAddressNextBtn();
+
+
+// function() {  
 // 			for (let i = 0; i < clearField.length; i++) {
 // 				clearField[i].addEventListener("click", function() {
 // 					inputs[i].value = "";
@@ -11,14 +47,13 @@
 // 					}
 
 
-// // Активация next button в блоке "готов оставить авто под залог".
+
 
 
 
 
 
 // После radio button "является ли клиент собственников автомобиля" вызов информации об автомобиле.
-
 function showCarInfo() {
 	const btn = document.querySelector(".js-nxtbtn-car-bail");
 	const autoInfo = document.querySelector(".auto-info");
@@ -36,25 +71,8 @@ function showCarInfo() {
 
 showCarInfo();
 
-// function carBailNextBtn() {
-// 	const inputs = document.querySelectorAll(".js-car-bail__refuse-reason_owner-radio");
-// 	const nextBtn = document.querySelector(".js-nxtbtn-car-bail");
-
-// 	for (const input of inputs) {
-// 		input.addEventListener("click", function(){
-// 			if (input.checked) {
-// 				nextBtn.removeAttribute('disabled');
-// 				nextBtn.classList.add("button", "open-address");
-// 				nextBtn.classList.remove("loan-offer__next-button_disable");
-// 			}			
-// 		});
-// 	}
-// }
-
-// carBailNextBtn();
 
 // Снятие disable с button при нескольких radio button
-
 function showCarBailNextBtn() {
 	const blocks = document.querySelectorAll(".js-car-bail-block");
 	const container = document.querySelector(".js-car-bail-radio-block");
@@ -83,7 +101,6 @@ showCarBailNextBtn();
 
 
 // Снятие disable с button при нескольких radio button, учитывая возможное скрытие radio button.
-
 function showFlatBailNextBtn() {
 	const blocks = document.querySelectorAll(".js-flat-bail-block");
 	const container = document.querySelector(".js-flat-bail-container");
@@ -125,27 +142,6 @@ function showFlatBailNextBtn() {
 }
 
 
-
-// Активация next button в блоке "адрес объекта", если input "адрес" не пустой. 
-
-function objectAddressNextBtn() {
-	const input = document.querySelector(".object-address__address-input");
-	const btn = document.querySelector(".next-button");
-	const errorText = document.querySelector(".js-object-address__address-error");
-	
-		input.addEventListener("blur", function() {
-			if (input.value.length == 0) {
-				errorText.style.display = "block";
-				input.classList.add("red-border-input");
-			}
-		});
-	}
-
-	
-
-objectAddressNextBtn();
-
-
 function backToOffer(btn, thisStep, prevStep) {
 	const button = document.querySelector(btn);
 	const address = document.querySelector(thisStep);
@@ -158,27 +154,9 @@ function backToOffer(btn, thisStep, prevStep) {
 	});
 }
 
+
 backToOffer(".info-button", ".object-address__wrap", ".application-scenario");
 backToOffer(".auto-info__prev-btn", ".auto-info", ".application-scenario");
-
-
-// function enableFlatBailBitoon() {
-// 	const buttonsParty = document.querySelectorAll(".flat-bail__party-co-borrowers-radio");
-// 	const nextBtn = document.querySelector(".js-nxtbtn-flat-bail");
-
-
-// 	for (const buttonParty of buttonsParty) {
-// 		buttonParty.addEventListener("click", function() {
-// 			if (buttonParty.checked) {
-// 				nextBtn.removeAttribute('disabled');
-// 				nextBtn.classList.add("button", "open-address");
-// 				nextBtn.classList.remove("loan-offer__next-button_disable");
-// 			}
-// 		});
-// 	}
-// }
-
-// enableFlatBailBitoon();
 
 
 function hideOnlyOwner() {
@@ -223,6 +201,7 @@ function showTip() {
 	});	
 }
 
+
 showTip();
 
 
@@ -239,8 +218,9 @@ function showForm(btn, appear, hide) {
 	}
 }
 
+
 showForm(".next-button", ".form__wrap", ".object-address__wrap");
-showForm(".open-form", ".form__wrap", ".application-scenario");
+showForm(".js-open-form", ".form__wrap", ".application-scenario");
 showForm(".auto-info__next-btn", ".form__wrap", ".auto-info__container");
 
 
@@ -248,7 +228,7 @@ function showAddress() {
 	const btns = document.querySelectorAll(".open-address");
 	const address = document.querySelector(".object-address__wrap");
 	const scriptBlock = document.querySelector(".application-scenario");
-	const loanBlock = document.querySelector(".loan-offer__flat-bail");
+	const loanBlock = document.querySelector(".js-loan-offer__flat-bail");
 
 	for (const btn of btns) {
 		btn.addEventListener("click", function() {
@@ -258,6 +238,7 @@ function showAddress() {
 		});
 	}	
 }
+
 
 showAddress();
 
@@ -271,6 +252,7 @@ function showAdditionalFields() {
 	});
 }
 
+
 showAdditionalFields();
 
 
@@ -282,11 +264,12 @@ function enableButton() {
 	
 		input.addEventListener("click", function() {
 			btn.removeAttribute('disabled');
-			btn.classList.add("button", "open-form");
+			btn.classList.add("button", "js-open-form");
 			btn.classList.remove("loan-offer__next-button_disable");
 		});
 	}
 }
+
 
 enableButton();
 
@@ -306,6 +289,7 @@ function differentWorklessReason() {
 		});
 	}
 }
+
 
 differentWorklessReason();
 
@@ -345,8 +329,8 @@ function job() {
 	});
 }
 
-job();
 
+job();
 
 
 function currentAddressHide(check, hide) {
@@ -362,6 +346,7 @@ function currentAddressHide(check, hide) {
 		}
 	});	
 }
+
 
 currentAddressHide(".js-form-address-swicher-checkbox", ".js-current-address-wrap");
 currentAddressHide(".js-work-organization-own-business-address-switch-checkbox", ".js-work-organization-address-wrap");
@@ -381,6 +366,7 @@ function showManagerPhone() {
 	});	
 }
 
+
 showManagerPhone();
 
 
@@ -396,6 +382,7 @@ function disableInput(check, inp) {
 		}
 	});
 }	
+
 
 disableInput(".passport-snils-checkbox", ".form__passport-snils-input");
 disableInput(".form__index-remember-switch-checkbox", ".form__reg-address-manual-input");
@@ -484,45 +471,12 @@ function activeTab() {
 activeTab();
 
 
-// function loanOffer() {
-// 	const inputs = document.querySelectorAll(".loan-reason");
-// 	const sections = document.querySelectorAll(".section");
-// 	const inputActiveClass = "selected-input";
-// 	const sectionActiveClass = "section--active";
-
-// 	for (const input of inputs) {
-// 		input.addEventListener("click", function() {
-// 			if (!(this.classList.contains(inputActiveClass))) {
-// 				for (const iter of inputs) {
-// 					iter.classList.remove(inputActiveClass);
-// 				}
-// 				this.classList.add(inputActiveClass);
-// 			} 
-
-// 			const value = input.dataset.input;
-// 			const section = document.querySelector(`[data-section='${value}']`);
-// 			for (const item of sections) {
-// 				item.classList.remove(sectionActiveClass);
-// 			}
-// 			section.classList.add(sectionActiveClass);
-// 		});
-// 	}
-// }		
-
-// loanOffer();
-
-// // 
-
-
-
-
-
 function loanOffer() {
 	const failInput = document.querySelector(".application-forming__script-fail");
 	const carInput = document.querySelector(".application-forming__script-car");
 	const flatInput = document.querySelector(".application-forming__script-flat");
 	const failblock = document.querySelector(".loan-offer__not-ready");
-	const flatblock = document.querySelector(".loan-offer__flat-bail");
+	const flatblock = document.querySelector(".js-loan-offer__flat-bail");
 	const carblock = document.querySelector(".loan-offer__car-bail");
 
 	failInput.addEventListener("click", function() {
@@ -578,11 +532,6 @@ function popup() {
 }
 
 popup();
-
-
-
-
-
 
 
 function showRecallOptions() {

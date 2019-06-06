@@ -53,6 +53,18 @@ body {
     border-radius: 4px;
     outline: none;	
 	border-width: 1px;
+	margin-top: 30px;
+}
+
+.auto-info__next-btn {
+	background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+	color: white;
+	background-repeat: repeat-x;
+    border-color: #245580;
+    padding: 6px 12px 6px 12px;
+    border-radius: 4px;
+    outline: none;	
+	border-width: 1px;	
 }
 
 .button:hover {
@@ -111,7 +123,6 @@ body {
 .client-actions__panel {
 	padding: 15px;
 	border: 1px solid #ccc;
-
 }
 
 .input__client-name,
@@ -156,9 +167,7 @@ body {
 }
 
 .application-forming__script {
-	margin: 0;
-	margin-right: 3px;
-	
+	margin: 0 3px 0 0;	
 }
 
 input[type=radio],
@@ -219,6 +228,16 @@ label {
 .recall-options__datetime-input {
 	width: 180px;
 	margin-top: 10px;
+	outline: none;
+}
+
+.recall-options__datetime-input_time {
+	width: 70px;
+    margin-right: 30px;
+    position: relative;
+    right: 69px;
+    border-left: none;
+    outline: none;
 }
 
 .recall-options__datetime-options {
@@ -345,6 +364,7 @@ label {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 30px;
 }
 
 .form input {
@@ -376,7 +396,6 @@ label {
 	width: 150px;
 	margin-right: 30px;	
 }
-
 
 .form select {
 	width: 385px;
@@ -448,7 +467,6 @@ label {
 	width: 385px;
 	padding: 6px 12px;
 }
-
 
 .form__employment-type {
 	display: flex;
@@ -524,15 +542,15 @@ label {
 	margin-right: 287px;
 }
 
-
-
 .radio__label {
 	cursor: pointer;
 }
 
 .auto-info__container-buttons {
-	display: flex;
-	justify-content: center;
+    width: 170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
 }
 
 .auto-info__prev-btn {	
@@ -548,7 +566,6 @@ label {
     border-radius: 4px;
     background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
     color: #333;
-    margin-left: 30px;
 }
 
 .loan-offer__next-button_disable, 
@@ -563,6 +580,7 @@ label {
 	border-width: 1px;
 	cursor: not-allowed;
 	display: block;
+	margin-top: 30px;
 }
 
 .auto-info__next-btn_disable {
@@ -618,10 +636,6 @@ label {
 	line-height: 1.5;
 }
 
-.form__got-debit-card-checkbox {
-
-}
-
 .data-agreement {
 	margin-right: 3px;
 }
@@ -650,7 +664,6 @@ label {
 .tooltip-wrap_active {
 	display: flex;
 }
-
 
 .car-bail__refuse-reason {
 	line-height: 1.5;
@@ -689,7 +702,6 @@ label {
     color: red;
 }
 
-
 .object-address input[type="text"]{
 	width: 385px;
 	border: 1px solid;
@@ -697,7 +709,6 @@ label {
     font-size: 14px;
     line-height: 1.42857143;
     color: #555;
-    /*background-color: #fff;*/
     background-image: none;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -722,8 +733,7 @@ label {
 }
 
 .object-address__wrap-buttons {
-	width: 388px;
-	margin-top: 30px;
+	width: 382px;
 }
 
 .popup {
@@ -758,7 +768,6 @@ label {
 	margin: 0;
 }
 
-
 .popup__close-btn {
 	position: absolute;
 	right: 0px;
@@ -769,7 +778,6 @@ label {
 	cursor: pointer;
 }
 
-
 .popup__close-btn:before, 
 .popup__close-btn:after {
 	position: absolute;
@@ -779,9 +787,11 @@ label {
 	width: 2px;
 	background-color: #333;
 }
+
 .popup__close-btn:before {
 	transform: rotate(45deg);
 }
+
 .popup__close-btn:after {
 	transform: rotate(-45deg);
 }
