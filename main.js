@@ -3,9 +3,10 @@ function enabledBtn() {
 	const input = document.querySelector(".js-object-address__address-input");
 	const btn = document.querySelector(".js-obj-addr-nextBtn");
 
+
 	for (let i = 0; i < input.length; i++) {
-		input.addEventListener("click", function() {
-			if (input.value.length > 0) {
+		input[i].addEventListener("click", function() {
+			if (input[i].value.length > 0) {
 				btn.classList.add("section");
 			}
 		});
@@ -14,6 +15,25 @@ function enabledBtn() {
 
 
 enabledBtn();
+
+
+
+// // Активация next button в блоке "адрес объекта", если input "адрес" не пустой. 
+// function objectAddressNextBtn() {
+// 	const input = document.querySelector(".object-address__address-input");
+// 	const btn = document.querySelector(".next-button");
+// 	const errorText = document.querySelector(".js-object-address__address-error");
+	
+// 		input.addEventListener("blur", function() {
+// 			if (input.value.length == 0) {
+// 				errorText.style.display = "block";
+// 				input.classList.add("red-border-input");
+// 			}
+// 		});
+// 	}
+	
+
+// objectAddressNextBtn();
 
 
 // function() {  
@@ -122,24 +142,6 @@ function showFlatBailNextBtn() {
 }
 
 
-// Активация next button в блоке "адрес объекта", если input "адрес" не пустой. 
-function objectAddressNextBtn() {
-	const input = document.querySelector(".object-address__address-input");
-	const btn = document.querySelector(".next-button");
-	const errorText = document.querySelector(".js-object-address__address-error");
-	
-		input.addEventListener("blur", function() {
-			if (input.value.length == 0) {
-				errorText.style.display = "block";
-				input.classList.add("red-border-input");
-			}
-		});
-	}
-	
-
-objectAddressNextBtn();
-
-
 function backToOffer(btn, thisStep, prevStep) {
 	const button = document.querySelector(btn);
 	const address = document.querySelector(thisStep);
@@ -151,6 +153,7 @@ function backToOffer(btn, thisStep, prevStep) {
 		scriptBlock.classList.remove("section");	
 	});
 }
+
 
 backToOffer(".info-button", ".object-address__wrap", ".application-scenario");
 backToOffer(".auto-info__prev-btn", ".auto-info", ".application-scenario");

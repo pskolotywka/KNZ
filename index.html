@@ -527,7 +527,7 @@
 						<div class="object-address__address-wrap">
 							<div class="object-address__address">
 								<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
-								<input type="text" id="object-address" class="object-address__address-input js-object-address__address-input js-obj-addr" name="name">							
+								<input type="text" id="object-address" class="object-address__address-input js-object-address__address-input" name="name">							
 							</div>
 							<div class="object-address__address-error js-object-address__address-error">Поле не может быть пустым</div>
 						</div>
@@ -1575,8 +1575,10 @@
 			<div class="recall__task-keep section">
 				<div class="recall-options__datetime">
 					<label for="recall-options__datetime-input"><b>Дата и время перезвона</b></label>
-					<input type="text" id="recall-options__datetime-input" class="recall-options__datetime-input js-date">
-					<input type="text" class="recall-options__datetime-input js-time">
+					<div class="recall-options__datetime-input-wrap">
+						<input type="text" id="recall-options__datetime-input" class="recall-options__datetime-input js-date" placeholder="ДД.ММ.ГГГГ">
+						<input type="text" class="recall-options__datetime-input js-time recall-options__datetime-input_time"placeholder="ЧЧ:ММ">
+					</div>
 					<p class="recall-options__datetime-options">Перезвонить через:</p>
 					<div class="recall-options__datetime-quickset">
 						<button class="recall-options__datetime-interval js-datetime-btn" data-interval="minutes" data-time="10">10 минут, </button>
