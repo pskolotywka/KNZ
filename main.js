@@ -2,15 +2,23 @@
 function enabledBtn() {
 	const input = document.querySelector(".js-object-address__address-input");
 	const btn = document.querySelector(".js-obj-addr-nextBtn");
-
-
-	for (let i = 0; i < input.length; i++) {
-		input[i].addEventListener("click", function() {
-			if (input[i].value.length > 0) {
-				btn.classList.add("section");
-			}
-		});
-	}
+	const errorText = document.querySelector(".js-object-address__address-error");
+	
+	input.addEventListener("blur", function() {
+		if (input.value.length > 0) {
+			btn.classList.add("button");
+			btn.classList.remove("loan-offer__next-button_disable");
+			btn.removeAttribute('disabled');
+			errorText.style.display = "none";
+			input.style.border = "1px solid #ccc";
+		} else {
+			btn.classList.remove("button");
+			btn.classList.add("loan-offer__next-button_disable");
+			btn.setAttribute('disabled', '');
+			errorText.style.display = "block";
+			input.style.border = "1px solid red";
+		}
+	});	
 }	
 
 
@@ -373,12 +381,34 @@ showManagerPhone();
 function disableInput(check, inp) {
 	const checkbox = document.querySelector(check);
 	const input = document.querySelector(inp);
+	const newElem = document.createElement("div");
+	const parentInput = input.parentNode;
+	let flag = false;
+
+	newElem.classList.add("error");
+	newElem.innerHTML = "Поле не может быть пустым!";
 
 	checkbox.addEventListener("click", function() {
-		if (!(checkbox.checked)) {
-			input.removeAttribute('disabled');
-		} else {
+		if (checkbox.checked) {
 			input.setAttribute('disabled', 'disabled');
+			input.value = "";
+			if (flag) {
+				parentInput.removeChild(newElem); 
+				flag = false;
+			}
+		} else if (!(checkbox.checked) && (input.value.length == 0)) {
+			input.removeAttribute('disabled');
+			parentInput.appendChild(newElem);
+			flag = true;
+		}
+	});
+
+	input.addEventListener("blur", function() {
+		if (!(checkbox.checked) && (input.value.length > 0)) {
+			if (flag) {
+				parentInput.removeChild(newElem); 
+				flag = false;
+			}
 		}
 	});
 }	
@@ -388,7 +418,7 @@ disableInput(".passport-snils-checkbox", ".form__passport-snils-input");
 disableInput(".form__index-remember-switch-checkbox", ".form__reg-address-manual-input");
 disableInput(".reg-flat-auto-checkbox", ".reg-flat-auto-input");
 disableInput(".reg-phone-auto-checkbox", ".reg-phone-auto-input");
-disableInput(".form__current-flat-house-swicher-checkbox", ".form__flat-current-manual-input");
+// disableInput(".form__current-flat-house-swicher-checkbox", ".form__flat-current-manual-input");
 disableInput(".js-flat-reg-manual-checkbox", ".js-flat-reg-manual-input");
 disableInput(".js-phone-reg-manual-checkbox", ".js-phone-reg-manual-input");
 disableInput(".js-current-auto-address-flat-checkbox", ".js-current-address-auto-flat-input");

@@ -693,10 +693,10 @@ label {
 }
 
 .object-address__address-input {
-	width: 1900px !important;
+	width: 1900px !important;	
 }
 
-.object-address__address-error {
+.error {
 	margin: 0 auto;
     margin-left: 77px;
     color: red;
