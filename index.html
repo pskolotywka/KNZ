@@ -452,7 +452,7 @@
 								<label for="flat-bail__meeting-no" class="radio__label">Не готов</label>	
 							</div>				
 						</div>
-						<h4 class="form__subtitles">Клиент готов встретиться по адресу залога для подписания документов?</h4>
+						<h4 class="form__subtitles">Клиент готов собрать всех участников сделки по адресу залога для подписания документов?</h4>
 						<div class="flat-bail__party-co-borrowers js-flat-bail-block">			
 							<div class="flat-bail__wrap">			
 								<input type="radio" name="flat-bail__party-co-borrowers" id="flat-bail__party-co-borrowers-yes" class="flat-bail__party-co-borrowers-yes-radio js-flat-bail-radio flat-bail__party-co-borrowers-radio">
@@ -527,22 +527,28 @@
 						<div class="object-address__address-wrap">
 							<div class="object-address__address">
 								<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
-								<input type="text" id="object-address" class="object-address__address-input js-object-address__address-input" name="name">							
+								<div class="object-address__address-input-wrapper">
+									<input type="text" id="object-address" class="object-address__address-input js-object-address__address-input" name="name">
+								</div>							
 							</div>
 							<div class="object-address__address-error js-object-address__address-error">Поле не может быть пустым</div>
 						</div>
-						<div class="object-address__flat">
-							<label for="address__flat" class="form__label">Квартира<span class="span-red">*</span></label>
-							<input type="text" id="address__flat" class="object-address__flat-input js-obj-addr" name="name">
-							<div class="object-address__address-error js-object-address__address-error">Поле не может быть пустым</div>
-							<input type="checkbox" class="object-address__flat-checkbox" id="object-address__flat">
-							<label for="object-address__flat">Нет квартиры(частный дом)</label>					
+						<div class="object-address__flat-wrap">
+							<div class="object-address__flat">
+								<label for="address__flat" class="form__label-flat">Квартира<span class="span-red">*</span></label>
+								<div class="object-address__flat-input-wrapper">
+									<input type="text" id="address__flat" class="object-address__flat-input js-obj-addr" name="name">
+								</div>									
+								<input type="checkbox" class="object-address__flat-checkbox" id="object-address__flat">
+								<label for="object-address__flat">Нет квартиры(частный дом)</label>		
+							</div>
+							<div class="object-address__flat-error js-object-address__flat-error">Поле не может быть пустым</div>		
 						</div>		
 					</div>	
-					<div class="object-address__wrap-buttons">	
-						<button class="next-button button js-obj-addr-nextBtn">Далее</button>
+					<div class="object-address__wrap-buttons">							
+						<button class="next-button js-obj-addr-nextBtn loan-offer__next-button_disable" disabled>Далее</button>
 						<!-- вернуть класс loan-offer__next-button_disable и атрибут disabled-->
-						<button class="info-button">Назад к предложению</button>
+						<button class="info-button">Назад к предложению</button>						
 					</div>	
 				</div>	
 			</div>
@@ -735,6 +741,10 @@
 					</div>	
 					<h3 class="form__titles">Адрес по месту постоянной регистрации</h3>
 					<div class="form__block">
+						<div class="form__bail-address-swicher section">
+							<input type="checkbox" class="form__bail-address-swicher-checkbox" id="bail-address-swicher-checkbox">
+							<label for="bail-address-swicher-checkbox">Совпадает с адресом залога</label>					
+						</div>						
 						<div class="form__address-swicher form__block-input-block">
 							<input type="checkbox" class="form__address-filling-type-switch-checkbox" id="address-filling-type-switch">
 							<label for="address-filling-type-switch">Перейти к ручному заполнению адреса</label>					
@@ -865,6 +875,10 @@
 					</div>	
 					<h3 class="form__titles">Адрес фактического проживания</h3>
 					<div class="form__block">
+						<div class="form__bail-current-address-swicher section">
+							<input type="checkbox" class="form__bail-current-address-swicher-checkbox" id="bail-current-address-swicher-checkbox">
+							<label for="bail-current-address-swicher-checkbox">Совпадает с адресом залога</label>					
+						</div>							
 						<div class="form__same-address-swicher form__block-input-block">
 							<input type="checkbox" class="form__form-address-swicher-checkbox js-form-address-swicher-checkbox" id="form-address-swicher-switch">
 							<label for="form-address-swicher-switch">Совпадает с адресом регистрации</label>				

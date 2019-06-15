@@ -519,11 +519,11 @@ label {
 }
 
 .object-address {
-	width: 800px;
+	/* width: 800px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	box-sizing: content-box;	
+	box-sizing: content-box;	 */
 }
 
 .form__address-manual-filling, 
@@ -596,6 +596,7 @@ label {
     border-style: none;
     color: #74a3c7;
     cursor: pointer;
+    margin-top: 30px;	
 }
 
 .end-task-button {
@@ -607,6 +608,12 @@ label {
     margin-right: 20px;
     text-align: right;
     width: 300px;
+}
+
+.form__label-flat {
+    font-weight: 700;
+    margin-right: 20px;
+    text-align: right;
 }
 
 .additional-input {
@@ -687,16 +694,18 @@ label {
 	width: 70px 	
 }
 
-.object-address__address {
+.object-address__address, 
+.object-address__flat {
 	display: flex;
-	align-items: center;
+	align-items: center; 
+	margin-top: 20px;
 }
 
 .object-address__address-input {
-	width: 1900px !important;
+	/* width: 1900px !important;	 */
 }
 
-.object-address__address-error {
+.error {
 	margin: 0 auto;
     margin-left: 77px;
     color: red;
@@ -720,20 +729,28 @@ label {
 }
 
 .object-address__inputs {
-	width: 460px;
+	width: 463px;
+	margin: 0 auto;
 }
 
-.object-address__address-error {
+
+
+.object-address__address-error,
+.object-address__flat-error {
 	display: none;
+	color: red;
+	margin-left: 77px;
 }
 
 .object-address__flat {
-	margin-left: -22px;
-	margin-top: 15px;
+	/* margin-left: -22px;
+	margin-top: 15px; */
 }
 
 .object-address__wrap-buttons {
-	width: 382px;
+	width: 200px;
+	margin: 0 auto;
+	display: flex;
 }
 
 .popup {
