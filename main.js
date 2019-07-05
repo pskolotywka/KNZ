@@ -194,6 +194,7 @@ hideOnlyOwner();
 function showTip() {
 	const buttons = document.querySelectorAll(".form__tip");
 	const tooltips = document.querySelectorAll(".tooltip-wrap");
+	console.log(buttons);
 
 	for (const button of buttons) {
 		button.addEventListener("click", function() {

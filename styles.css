@@ -663,6 +663,10 @@ label {
     align-items: center;
 }
 
+.form-wrap__tip-empty {
+	width: 40px;
+}
+
 .tooltip-wrap {
     align-items: center;	
     display: none;
