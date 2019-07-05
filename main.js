@@ -1,3 +1,19 @@
+// появление чекбокса "совпадает с адресом залога в форме, при выборе кредитования в залог квартиры"
+
+function addressLoanMatch() {
+	const loanType = document.querySelector(".application-forming__script-flat");
+	const checkboxReg = document.querySelector(".form__bail-address-registration-matching-swicher");
+	const checkboxCur = document.querySelector(".form__bail-current-address-matching-swicher");
+
+	loanType.addEventListener("click", function() {
+		checkboxReg.classList.remove("section");
+		checkboxCur.classList.remove("section");
+	});
+}
+
+addressLoanMatch();
+
+
 // Button enabled при значении инпут больше 0. 
 function enabledBtn() {
 	const input = document.querySelector(".js-object-address__address-input");
@@ -194,7 +210,6 @@ hideOnlyOwner();
 function showTip() {
 	const buttons = document.querySelectorAll(".form__tip");
 	const tooltips = document.querySelectorAll(".tooltip-wrap");
-	console.log(buttons);
 
 	for (const button of buttons) {
 		button.addEventListener("click", function() {
@@ -257,9 +272,12 @@ showAddress();
 function showAdditionalFields() {
 	const btn = document.querySelector(".additional-info-button");
 	const field = document.querySelector(".additional-info-wrap");
+	const workAddress = document.querySelector(".job-place");
 
 	btn.addEventListener("click", function() {
 		field.style.display = "block";
+		workAddress.classList.remove("hidden");
+		btn.style.display = "none";
 	});
 }
 
