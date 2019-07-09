@@ -53,7 +53,6 @@ body {
     border-radius: 4px;
     outline: none;	
 	border-width: 1px;
-	margin-top: 30px;
 }
 
 .auto-info__next-btn {
@@ -357,7 +356,7 @@ label {
 }
 
 .auto-info__container {
-	width: 700px;
+	width: 750px;
 }
 
 .auto-info__info__container-inputs {
@@ -546,11 +545,16 @@ label {
 	cursor: pointer;
 }
 
-.auto-info__container-buttons {
+.button-container__centered {
     width: 170px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+    margin-top: 30px;
+}
+
+.button-container__left {
+    margin-top: 30px;
 }
 
 .auto-info__prev-btn {	
@@ -580,7 +584,6 @@ label {
 	border-width: 1px;
 	cursor: not-allowed;
 	display: block;
-	margin-top: 30px;
 }
 
 .auto-info__next-btn_disable {
@@ -595,8 +598,7 @@ label {
     background-color: white;
     border-style: none;
     color: #74a3c7;
-    cursor: pointer;
-    margin-top: 30px;	
+    cursor: pointer;	
 }
 
 .end-task-button {
