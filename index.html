@@ -403,7 +403,9 @@
 								<label for="not-ready__other" class="radio__label">Другое</label>
 							</div>																	
 						</div>
-						<button class="loan-offer__next-button_disable js-nxtbtn-not-ready js-open-form" disabled>Далее</button>
+						<div class="button-container__left">
+							<button class="loan-offer__next-button_disable js-nxtbtn-not-ready js-open-form" disabled>Далее</button>
+						</div>
 					</div>
 					<div class="js-loan-offer__flat-bail radio-margin js-flat-bail-container section" data-section="script__flat">
 						<h4 class="form__subtitles">Является ли клиент собственником квартиры?</h4>
@@ -463,7 +465,9 @@
 								<label for="flat-bail__party-co-borrowers-no" class="radio__label">Не готов</label>	
 							</div>				
 						</div>
-						<button class="loan-offer__next-button_disable js-nxtbtn-flat-bail open-address" disabled>Далее</button>
+						<div class="button-container__left">
+							<button class="loan-offer__next-button_disable js-nxtbtn-flat-bail open-address" disabled>Далее</button>
+						</div>
 					</div>
 					<div class="loan-offer__car-bail radio-margin section js-car-bail-radio-block" data-section="script__car">
 						<h4 class="form__subtitles">Причина отказа от КНЗ:</h4>
@@ -516,7 +520,9 @@
 								<label for="car-bail__not-owner" class="radio__label">Не является собственником</label>
 							</div>	
 						</div>
-						<button class="loan-offer__next-button_disable js-nxtbtn-car-bail" disabled>Далее</button>							
+						<div class="button-container__left">
+							<button class="loan-offer__next-button_disable js-nxtbtn-car-bail" disabled>Далее</button>							
+						</div>
 					</div>
 				</div>
 			</div>	
@@ -545,9 +551,8 @@
 							<div class="object-address__flat-error js-object-address__flat-error">Поле не может быть пустым</div>		
 						</div>		
 					</div>	
-					<div class="object-address__wrap-buttons">							
+					<div class="button-container__centered">							
 						<button class="next-button js-obj-addr-nextBtn loan-offer__next-button_disable" disabled>Далее</button>
-						<!-- вернуть класс loan-offer__next-button_disable и атрибут disabled-->
 						<button class="info-button">Назад к предложению</button>						
 					</div>	
 				</div>	
@@ -572,9 +577,8 @@
 							<div class="input-error js-error-vin"></div>				
 						</div>	
 					</div>
-					<div class="auto-info__container-buttons">
-						<button class="auto-info__next-btn">Далее</button>	
-											<!-- вернуть атрибут disabled и класс auto-info__next-btn_disable убрать класс button-->
+					<div class="button-container__centered">
+						<button class="loan-offer__next-button_disable js-auto-info-nextbtn-enable" disabled type="button">Далее</button>
 						<button class="auto-info__prev-btn">Назад</button>						
 					</div>	
 				</div>									
