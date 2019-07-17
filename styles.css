@@ -434,7 +434,9 @@ label {
 	margin-left: 50px;
 }
 
-.form__block {
+.form__block,
+.flat-bail-registration-block-matching,
+.flat-bail-current-block-matching {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;

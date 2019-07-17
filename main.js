@@ -1,3 +1,20 @@
+function checkboxHideShow(chbx, hideB) {
+	const chckbox = document.querySelector(chbx);
+	const hideBlock = document.querySelector(hideB);
+
+	chckbox.addEventListener("click", function() {
+		if (chckbox.checked) {
+			hideBlock.classList.add("hidden");
+		} else {
+			hideBlock.classList.remove("hidden");
+		}
+	});
+}
+
+checkboxHideShow(".form__bail-address-swicher-checkbox", ".flat-bail-registration-block-matching");
+checkboxHideShow(".form__bail-current-address-matching-swicher-checkbox", ".flat-bail-current-block-matching");
+
+
 // появление чекбокса "совпадает с адресом залога в форме, при выборе кредитования в залог квартиры"
 
 function addressLoanMatch() {
@@ -417,12 +434,10 @@ function disableInput(check, inp) {
 disableInput(".passport-snils-checkbox", ".form__passport-snils-input");
 disableInput(".form__index-remember-switch-checkbox", ".form__reg-address-manual-input");
 disableInput(".reg-flat-auto-checkbox", ".reg-flat-auto-input");
-disableInput(".reg-phone-auto-checkbox", ".reg-phone-auto-input");
 disableInput(".form__current-flat-house-swicher-checkbox", ".form__flat-current-manual-input");
 disableInput(".js-flat-reg-manual-checkbox", ".js-flat-reg-manual-input");
 disableInput(".js-phone-reg-manual-checkbox", ".js-phone-reg-manual-input");
 disableInput(".js-current-auto-address-flat-checkbox", ".js-current-address-auto-flat-input");
-disableInput(".js-current-phone-auto-checkbox", ".js-current-address-auto-phone-input");
 disableInput(".js-current-index-manual-checkbox", ".js-current-address-manual-input");
 disableInput(".js-current-flat-house-swicher-checkbox", ".js-form__flat-current-manual-input");
 disableInput(".js-current-phone-exist-switch-checkbox", ".js-current-home-phone-input");
@@ -618,6 +633,7 @@ function popup() {
 }
 
 popup();
+
 
 
 function showRecallOptions() {
