@@ -20,6 +20,12 @@ body {
 	margin: 0px;
 }
 
+.average-input-wrap__container {
+	display: flex;
+    justify-content: space-between;
+    width: 385px;
+}
+
 .tabs__item {
 	padding: 10px 15px 10px 15px;
 	list-style-type: none;	
@@ -393,7 +399,6 @@ label {
 
 .average-input-wrap input{
 	width: 150px;
-	margin-right: 30px;	
 }
 
 .form select {
@@ -737,7 +742,7 @@ label {
 }
 
 .object-address__inputs {
-	width: 463px;
+	width: 480px;
 	margin: 0 auto;
 }
 
