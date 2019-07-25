@@ -37,6 +37,16 @@ function enabledBtn() {
 	const btn = document.querySelector(".js-obj-addr-nextBtn");
 	const flatInput = document.querySelector(".js-obj-addr");
 	const inputs = document.querySelectorAll(".js-object-address-input");
+	const checkBox = document.querySelector(".object-address__flat-checkbox");
+
+
+	checkBox.addEventListener("click", function() {
+		if (checkBox.checked) {
+			flatInput.value = "Нет";
+		} else {
+			flatInput.value = "";
+		}
+	});
 
 	for (const input of inputs) {
 		input.addEventListener("blur" , function() {
@@ -56,50 +66,24 @@ function enabledBtn() {
 enabledBtn();
 
 
-function appearError(inpErr, inp) {
-	const inputError = document.querySelector(inpErr);
-	const inputs = document.querySelectorAll(inp);
+// Ошибки на инпутах, если они пустые
+function addressError(inp, err) {
+	const input = document.querySelector(inp);
+	const error = document.querySelector(err);
 
-	for (const input of inputs) {
-		input.addEventListener("blur", function() {
+	input.addEventListener("blur", function() {
 		if (input.value.length > 0) {
-				inputError.style.display = "none";
+				error.style.display = "none";
 				input.style.border = "1px solid #ccc";
-			} else {
-				inputError.style.display = "block";
-				input.style.border = "1px solid red";				
-			}			
-		});
-	}
+		} else {
+			error.style.display = "block";
+			input.style.border = "1px solid red";				
+		}	
+	});		
 }
 
-
-appearError(".js-object-address__address-error", ".js-object-address-input");
-appearError(".js-object-address__flat-error", ".js-obj-addr");
-
-
-// function appearError() {
-// 	const errorTextAddress = document.querySelector(".js-object-address__address-error");
-// 	const errorTextFlat = document.querySelector(".js-object-address__flat-error");	
-// 	const addressinput = document.querySelector(".js-object-address__address-input");
-// 	const flatInput = document.querySelector(".js-obj-addr");
-// 	const inputs = document.querySelectorAll(".js-object-address-input");
-
-// 	for (const input of inputs) {
-// 		input.addEventListener("blur", function() {
-// 			if (addressinput.value.length > 0) {
-// 				errorTextAddress.style.display = "none";
-// 				input.style.border = "1px solid #ccc";
-// 			} else {
-// 				errorTextAddress.style.display = "block";
-// 				input.style.border = "1px solid red";				
-// 			}
-// 		});
-// 	}
-// }
-
-// appearError();
-
+addressError(".js-object-address-input", ".js-object-address__address-error");	
+addressError(".js-obj-addr", ".js-object-address__flat-error");	
 
 
 // После radio button "является ли клиент собственников автомобиля" вызов информации об автомобиле.
@@ -266,7 +250,6 @@ function showForm(btn, appear, hide) {
 		});
 	}
 }
-
 
 showForm(".next-button", ".form__wrap", ".object-address__wrap");
 showForm(".js-open-form", ".form__wrap", ".application-scenario");
