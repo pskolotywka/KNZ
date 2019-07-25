@@ -534,7 +534,7 @@
 							<div class="object-address__address">
 								<label for="object-address" class="form__label">Адрес<span class="span-red">*</span></label>
 								<div class="object-address__address-input-wrapper">
-									<input type="text" id="object-address" class="object-address__address-input js-object-address__address-input" name="name">
+									<input type="text" id="object-address" class="object-address__address-input js-object-address__address-input js-object-address-input" name="name">
 								</div>							
 							</div>
 							<div class="object-address__address-error js-object-address__address-error">Поле не может быть пустым</div>
@@ -543,7 +543,7 @@
 							<div class="object-address__flat">
 								<label for="address__flat" class="form__label-flat">Квартира<span class="span-red">*</span></label>
 								<div class="object-address__flat-input-wrapper">
-									<input type="text" id="address__flat" class="object-address__flat-input js-obj-addr" name="name">
+									<input type="text" id="address__flat" class="object-address__flat-input js-obj-addr js-object-address-input" name="name">
 								</div>									
 								<input type="checkbox" class="object-address__flat-checkbox" id="object-address__flat">
 								<label for="object-address__flat">Нет квартиры(частный дом)</label>		
@@ -1083,11 +1083,13 @@
 								</div>	
 								<div class="form__work-phone form__block-input-block">
 									<label for="work-phone" class="form__label">Рабочий телефон<span class="span-red">*</span></label>
-									<div class="average-input-wrap">
-										<input type="text" id="work-phone" class="form__work-phone-input form__average" name="work-phone" placeholder="+7(___)___-__-__">
-									</div>		
-									<div class="average-input-wrap">					
-										<input type="text" id="work-phone-add" class="form__work-phone-input-add form__average" name="work-phone" placeholder="Добавочный">
+									<div class="average-input-wrap__container">
+										<div class="average-input-wrap">
+											<input type="text" id="work-phone" class="form__work-phone-input form__average" name="work-phone" placeholder="+7(___)___-__-__">
+										</div>		
+										<div class="average-input-wrap">					
+											<input type="text" id="work-phone-add" class="form__work-phone-input-add form__average" name="work-phone" placeholder="Добавочный">
+										</div>	
 									</div>					
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
