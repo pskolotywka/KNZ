@@ -33,66 +33,72 @@ addressLoanMatch();
 
 // Button enabled при значении инпут больше 0. 
 function enabledBtn() {
-	const input = document.querySelector(".js-object-address__address-input");
+	const addressinput = document.querySelector(".js-object-address__address-input");
 	const btn = document.querySelector(".js-obj-addr-nextBtn");
-	const errorText = document.querySelector(".js-object-address__address-error");
 	const flatInput = document.querySelector(".js-obj-addr");
-	
-	input.addEventListener("blur", function() {
-		if (input.value.length > 0) {
-			btn.classList.add("button");
-			btn.classList.remove("loan-offer__next-button_disable");
-			btn.removeAttribute('disabled');
-			errorText.style.display = "none";
-			input.style.border = "1px solid #ccc";
-			
-		} else {
-			btn.classList.remove("button");
-			btn.classList.add("loan-offer__next-button_disable");
-			btn.setAttribute('disabled', '');
-			errorText.style.display = "block";
-			input.style.border = "1px solid red";
-		}
-	});	
-}	
+	const inputs = document.querySelectorAll(".js-object-address-input");
 
+	for (const input of inputs) {
+		input.addEventListener("blur" , function() {
+			if (addressinput.value.length > 0 && flatInput.value.length > 0) {
+				btn.classList.add("button");
+				btn.classList.remove("loan-offer__next-button_disable");
+				btn.removeAttribute('disabled');								
+			} else {
+				btn.classList.remove("button");
+				btn.classList.add("loan-offer__next-button_disable");
+				btn.setAttribute('disabled', '');				
+			}
+		});	
+	}	
+}
 
 enabledBtn();
 
 
+function appearError(inpErr, inp) {
+	const inputError = document.querySelector(inpErr);
+	const inputs = document.querySelectorAll(inp);
 
-// // Активация next button в блоке "адрес объекта", если input "адрес" не пустой. 
-// function objectAddressNextBtn() {
-// 	const input = document.querySelector(".object-address__address-input");
-// 	const btn = document.querySelector(".next-button");
-// 	const errorText = document.querySelector(".js-object-address__address-error");
-	
+	for (const input of inputs) {
+		input.addEventListener("blur", function() {
+		if (input.value.length > 0) {
+				inputError.style.display = "none";
+				input.style.border = "1px solid #ccc";
+			} else {
+				inputError.style.display = "block";
+				input.style.border = "1px solid red";				
+			}			
+		});
+	}
+}
+
+
+appearError(".js-object-address__address-error", ".js-object-address-input");
+appearError(".js-object-address__flat-error", ".js-obj-addr");
+
+
+// function appearError() {
+// 	const errorTextAddress = document.querySelector(".js-object-address__address-error");
+// 	const errorTextFlat = document.querySelector(".js-object-address__flat-error");	
+// 	const addressinput = document.querySelector(".js-object-address__address-input");
+// 	const flatInput = document.querySelector(".js-obj-addr");
+// 	const inputs = document.querySelectorAll(".js-object-address-input");
+
+// 	for (const input of inputs) {
 // 		input.addEventListener("blur", function() {
-// 			if (input.value.length == 0) {
-// 				errorText.style.display = "block";
-// 				input.classList.add("red-border-input");
+// 			if (addressinput.value.length > 0) {
+// 				errorTextAddress.style.display = "none";
+// 				input.style.border = "1px solid #ccc";
+// 			} else {
+// 				errorTextAddress.style.display = "block";
+// 				input.style.border = "1px solid red";				
 // 			}
 // 		});
 // 	}
-	
+// }
 
-// objectAddressNextBtn();
-
-
-// function() {  
-// 			for (let i = 0; i < clearField.length; i++) {
-// 				clearField[i].addEventListener("click", function() {
-// 					inputs[i].value = "";
-// 					if (inputs[i].value.length > 0) {
-// 						inputs[i].classList.add("form__input-up");				
-// 					} else {
-// 						inputs[i].classList.remove("form__input-up");	
-// 					}
-
-
-
-
-
+// appearError();
 
 
 
