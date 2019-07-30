@@ -31,23 +31,37 @@ function addressLoanMatch() {
 addressLoanMatch();
 
 
-// Button enabled при значении инпут больше 0. 
-function enabledBtn() {
+// Button enabled при значении инпут больше 0 в блоке адреса квартиры. 
+function enabledAddressBtn() {
 	const addressinput = document.querySelector(".js-object-address__address-input");
 	const btn = document.querySelector(".js-obj-addr-nextBtn");
 	const flatInput = document.querySelector(".js-obj-addr");
 	const inputs = document.querySelectorAll(".js-object-address-input");
 	const checkBox = document.querySelector(".object-address__flat-checkbox");
+	const error = document.querySelector(".js-object-address__flat-error");
 
-
+// этот цикл дает возможность с помощью чекбокса раздизейблить кнопку. Этот и нижний цикл могут друг друга перебивать в плане дизейбла кнопки
+	for (const input of inputs) {
 	checkBox.addEventListener("click", function() {
-		if (checkBox.checked) {
-			flatInput.value = "Нет";
+		if (addressinput.value.length > 0 && checkBox.checked) {
+			flatInput.value = "";
+			btn.classList.add("button");
+			btn.classList.remove("loan-offer__next-button_disable");
+			btn.removeAttribute('disabled');
+			error.style.display = "none";
+			flatInput.style.border = "1px solid #ccc";
 		} else {
 			flatInput.value = "";
+			btn.classList.remove("button");
+			btn.classList.add("loan-offer__next-button_disable");
+			btn.setAttribute('disabled', '');	
+			error.style.display = "block";
+			flatInput.style.border = "1px solid red";			
 		}
 	});
+}	
 
+// этот цикл раздизейбливает кнопку только по инпутам. Этот и верхний цикл могут друг друга перебивать в плане дизейбла кнопки
 	for (const input of inputs) {
 		input.addEventListener("blur" , function() {
 			if (addressinput.value.length > 0 && flatInput.value.length > 0) {
@@ -63,7 +77,32 @@ function enabledBtn() {
 	}	
 }
 
-enabledBtn();
+enabledAddressBtn();
+
+// тоже самое только для блока данные по залоговому авто. 
+function enableCarBlockNextBtn() {
+	const inputs = document.querySelectorAll(".js-auto-info-input");
+	const btn = document.querySelector(".js-auto-info-nextbtn-enable");
+	const name = document.querySelector(".auto-info_model-input"); 
+	const number = document.querySelector(".auto-info_number-input");
+	const vin = document.querySelector(".auto-info_vin-input");
+
+	for (const input of inputs) {
+		input.addEventListener("blur" , function() {
+			if (name.value.length > 0 && number.value.length > 0 && vin.value.length > 0) {
+				btn.classList.add("button");
+				btn.classList.remove("loan-offer__next-button_disable");
+				btn.removeAttribute('disabled');											
+			} else {
+				btn.classList.remove("button");
+				btn.classList.add("loan-offer__next-button_disable");
+				btn.setAttribute('disabled', '');							
+			}
+		});	
+	}	
+}
+
+enableCarBlockNextBtn();
 
 
 // Ошибки на инпутах, если они пустые
@@ -72,6 +111,7 @@ function addressError(inp, err) {
 	const error = document.querySelector(err);
 
 	input.addEventListener("blur", function() {
+		
 		if (input.value.length > 0) {
 				error.style.display = "none";
 				input.style.border = "1px solid #ccc";
@@ -84,6 +124,9 @@ function addressError(inp, err) {
 
 addressError(".js-object-address-input", ".js-object-address__address-error");	
 addressError(".js-obj-addr", ".js-object-address__flat-error");	
+addressError(".auto-info_model-input", ".js-error-model");	
+addressError(".auto-info_number-input", ".js-error-number");	
+addressError(".auto-info_vin-input", ".js-error-vin");	
 
 
 // После radio button "является ли клиент собственников автомобиля" вызов информации об автомобиле.
@@ -253,7 +296,7 @@ function showForm(btn, appear, hide) {
 
 showForm(".next-button", ".form__wrap", ".object-address__wrap");
 showForm(".js-open-form", ".form__wrap", ".application-scenario");
-showForm(".auto-info__next-btn", ".form__wrap", ".auto-info__container");
+showForm(".js-auto-info-nextbtn-enable", ".form__wrap", ".auto-info__container");
 
 
 function showAddress() {
@@ -438,59 +481,6 @@ disableInput(".object-address__flat-checkbox", ".object-address__flat-input");
 
 
 
-// function disableInput(check, inp) {
-// 	const checkbox = document.querySelector(check);
-// 	const input = document.querySelector(inp);
-// 	const newElem = document.createElement("div");
-// 	const parentInput = input.parentNode;
-// 	let flag = false;
-
-// 	newElem.classList.add("error");
-// 	newElem.innerHTML = "Поле не может быть пустым!";
-
-// 	checkbox.addEventListener("click", function() {
-// 		if (checkbox.checked) {
-// 			input.setAttribute('disabled', 'disabled');
-// 			input.value = "";
-// 			if (flag) {
-// 				parentInput.removeChild(newElem); 
-// 				flag = false;
-// 			}
-// 		} else if (!(checkbox.checked) && (input.value.length == 0)) {
-// 			input.removeAttribute('disabled');
-// 			parentInput.appendChild(newElem);
-// 			flag = true;
-// 		}
-// 	});
-
-// 	input.addEventListener("blur", function() {
-// 		if (!(checkbox.checked) && (input.value.length > 0)) {
-// 			if (flag) {
-// 				parentInput.removeChild(newElem); 
-// 				flag = false;
-// 			}
-// 		}
-// 	});
-// }	
-
-
-// disableInput(".passport-snils-checkbox", ".form__passport-snils-input");
-// disableInput(".form__index-remember-switch-checkbox", ".form__reg-address-manual-input");
-// disableInput(".reg-flat-auto-checkbox", ".reg-flat-auto-input");
-// disableInput(".reg-phone-auto-checkbox", ".reg-phone-auto-input");
-// // disableInput(".form__current-flat-house-swicher-checkbox", ".form__flat-current-manual-input");
-// disableInput(".js-flat-reg-manual-checkbox", ".js-flat-reg-manual-input");
-// disableInput(".js-phone-reg-manual-checkbox", ".js-phone-reg-manual-input");
-// disableInput(".js-current-auto-address-flat-checkbox", ".js-current-address-auto-flat-input");
-// disableInput(".js-current-phone-auto-checkbox", ".js-current-address-auto-phone-input");
-// disableInput(".js-current-index-manual-checkbox", ".js-current-address-manual-input");
-// disableInput(".js-current-flat-house-swicher-checkbox", ".js-form__flat-current-manual-input");
-// disableInput(".js-current-phone-exist-switch-checkbox", ".js-current-home-phone-input");
-// disableInput(".js-work-phone-exist-switch-checkbox", ".form__work-phone-input");
-// disableInput(".js-work-organization-index-manual-checkbox", ".js-work-organization-address-manual-input");
-// disableInput(".js-work-organization-flat-house-swicher-checkbox", ".js-form__flat-work-organization-manual-input");
-// disableInput(".js-work-organization-phone-exist-switch-checkbox", ".js-work-organization-home-phone-input");
-// disableInput(".object-address__flat-checkbox", ".object-address__flat-input");
 
 
 function disableWorkPhone() {

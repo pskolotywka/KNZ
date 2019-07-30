@@ -358,7 +358,19 @@ label {
     border-radius: 4px;
     outline: none;    
     position: relative;
-    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.input-error {
+	color: red;
+	display: none;
+	margin-right: 200px;
+}
+
+.form-input-error {
+	color: red;	
+	margin-right: 240px;	
+	display: none;
 }
 
 .auto-info__container {
@@ -746,6 +758,9 @@ label {
 	margin: 0 auto;
 }
 
+.object-address__flat-input-wrapper {
+	margin-right: 10px;
+}
 
 
 .object-address__address-error,
