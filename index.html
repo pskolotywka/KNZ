@@ -546,7 +546,7 @@
 									<input type="text" id="address__flat" class="object-address__flat-input js-obj-addr js-object-address-input" name="name">
 								</div>									
 								<input type="checkbox" class="object-address__flat-checkbox" id="object-address__flat">
-								<label for="object-address__flat">Нет квартиры(частный дом)</label>		
+								<label for="object-address__flat">Нет квартиры (частный дом)</label>		
 							</div>
 							<div class="object-address__flat-error js-object-address__flat-error">Поле не может быть пустым</div>		
 						</div>		
@@ -563,19 +563,19 @@
 					<div class="auto-info__info__container-inputs">
 						<div class="auto-info_model auto-info_inputs">
 							<label for="model-bail-info" class="form__label">Марка, модель, год выпуска <span class="span-red">*</span></label>
-							<input type="text" name="model-bail-info" id="model-bail-info" class="auto-info_model-input">
-							<div class="input-error js-error-model"></div>				
+							<input type="text" name="model-bail-info" id="model-bail-info" class="auto-info_model-input js-auto-info-input">											
 						</div>	
+						<div class="input-error js-error-model">Поле не может быть пустым</div>
 						<div class="auto-info_number auto-info_inputs">
 							<label for="number-bail-info" class="form__label">Гос. номер <span class="span-red">*</span></label>
-							<input type="text" name="number-bail-info" id="number-bail-info" class="auto-info_number-input">
-							<div class="input-error js-error-number"></div>				
+							<input type="text" name="number-bail-info" id="number-bail-info" class="auto-info_number-input js-auto-info-input">											
 						</div>	
+						<div class="input-error js-error-number">Поле не может быть пустым</div>
 						<div class="auto-info_vin auto-info_inputs">
 							<label for="vin-bail-info" class="form__label">VIN номер автомобиля <span class="span-red">*</span></label>
-							<input type="text" name="vin-bail-info" id="vin-bail-info" class="auto-info_vin-input">
-							<div class="input-error js-error-vin"></div>				
+							<input type="text" name="vin-bail-info" id="vin-bail-info" class="auto-info_vin-input js-auto-info-input">										
 						</div>	
+						<div class="input-error js-error-vin">Поле не может быть пустым</div>	
 					</div>
 					<div class="button-container__centered">
 						<button class="loan-offer__next-button_disable js-auto-info-nextbtn-enable" disabled type="button">Далее</button>
@@ -596,13 +596,15 @@
 									<div class="triangle"></div>
 									<div class="tooltip">Необходимо обязательно сверять ФИО со слов Заявителя в соответствии с паспортом. <br> Если данные в ФИО поменялись, внесите новые данные, убедившись, что их диктует именно Заявитель.</div>
 								</div>	
-							</div>	
+							</div>								
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>	
 						<div class="form__block-input-block form__birth">
 							<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
 							<input type="text" id="birth" class="form__birth-input" name="name">
 							<div class="form-wrap__tip-empty"></div>
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__block-input-block form__phone">
 							<label for="phone" class="form__label">Мобильный телефон<span class="span-red">*</span></label>
 							<input type="text" id="phone" class="form__phone-input" name="name">
@@ -613,7 +615,8 @@
 									<div class="tooltip">Необходимо обязательно сверять номер мобильного со слов Заявителя. <br> Вносите только личный контактный мобильный телефон Заявителя.</div>
 								</div>	
 							</div>
-						</div>				
+						</div>	
+						<div class="form-input-error">Поле не может быть пустым</div>			
 						<div class="form__block-input-block form__email">
 							<label for="email" class="form__label">Электронная почта</label>
 							<input type="text" id="email" class="form__email-input" name="name">
@@ -639,6 +642,7 @@
 								</div>	
 							</div>					
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__loan-period form__block-input-block">
 							<label for="loan-period" class="form__label">Срок кредита (кол-во месяцев)<span class="span-red">*</span></label>
 							<input type="text" id="loan-period" class="form__loan-period-input" name="name">
@@ -650,6 +654,7 @@
 								</div>	
 							</div>				
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__loan-purpose form__block-input-block">
 							<label for="loan-purpose" class="form__label">Цель кредита<span class="span-red">*</span></label>
 							<select name="name" id="loan-purpose" class="form__loan-purpose-input">
@@ -676,6 +681,7 @@
 							<input type="text" id="passport-number" class="form__passport-number-input" name="name">
 							<div class="form-wrap__tip-empty"></div>
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__passport-date form__block-input-block">
 							<label for="passport-passport-date" class="form__label">Дата выдачи<span class="span-red">*</span></label>
 							<input type="text" id="passport-passport-date" class="form__passport-date-input" name="name">				
@@ -687,11 +693,13 @@
 								</div>	
 							</div>	
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__passport-code form__block-input-block">
 							<label for="passport-code" class="form__label">Код подразделения<span class="span-red">*</span></label>
 							<input type="text" id="passport-code" class="form__passport-code-input" name="name">
 							<div class="form-wrap__tip-empty"></div>
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__passport-issue form__block-input-block">
 							<label for="passport-issue" class="form__label">Кем выдан<span class="span-red">*</span></label>
 							<input type="text" id="passport-issue" class="form__passport-issue-input" name="name">				
@@ -703,6 +711,7 @@
 								</div>	
 							</div>	
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__passport-birth-place form__block-input-block">
 							<label for="passport-birth-place" class="form__label">Место рождения<span class="span-red">*</span></label>
 							<input type="text" id="passport-birth-place" class="form__passport-birth-place-input" name="name">				
@@ -714,6 +723,7 @@
 								</div>	
 							</div>	
 						</div>
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__passport-snils form__block-input-block">
 							<label for="passport-snils" class="form__label">СНИЛС<span class="span-red">*</span></label>
 							<input type="text" id="passport-snils" class="form__passport-snils-input" name="name">				
@@ -725,6 +735,7 @@
 								</div>	
 							</div>	
 						</div>	
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__passport-snils_checkbox form__line-checkbox form__block-input-block">
 							<input type="checkbox" class="passport-snils-checkbox" id="passport-snils">
 							<label for="passport-snils">Не может предоставить</label>
@@ -760,6 +771,7 @@
 									<input type="text" id="address" class="form__reg-address-auto-input" name="name">
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>
 								<div class="form__flat form__block-input-block">
 									<label for="flat" class="form__label">Квартира</label>
 									<div class="small-input-wrap">
@@ -782,6 +794,7 @@
 										</div>	
 									</div>	
 								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>
 								<div class="form__index-swicher form__block-input-block">
 									<input type="checkbox" class="form__index-remember-switch-checkbox" id="form-index-remember-switch">
 									<label for="form-index-remember-switch">Не помню</label>				
@@ -790,7 +803,8 @@
 									<label for="address" class="form__label">Регион<span class="span-red">*</span></label>
 									<input type="text" id="region-address" class="form__address-input" name="name">					
 									<div class="form-wrap__tip-empty"></div>
-								</div>		
+								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>	
 								<div class="form__district form__block-input-block">
 									<label for="district" class="form__label">Район или город<span class="span-red">*</span></label>
 									<input type="text" id="district" class="form__district-input" name="name">					
@@ -801,12 +815,14 @@
 											<div class="tooltip">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская </div>
 										</div>	
 									</div>	
-								</div>					
+								</div>		
+								<div class="form-input-error">Поле не может быть пустым</div>			
 								<div class="form__settlement form__block-input-block">
 									<label for="settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
 									<input type="text" id="settlement" class="form__settlement-input" name="name">					
 									<div class="form-wrap__tip-empty"></div>
-								</div>		
+								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>	
 								<div class="form__street form__block-input-block">
 									<label for="street" class="form__label">Улица<span class="span-red">*</span></label>
 									<input type="text" id="street" class="form__street-input" name="name">					
@@ -818,6 +834,7 @@
 										</div>
 									</div>	
 								</div>		
+								<div class="form-input-error">Поле не может быть пустым</div>
 								<div class="form__house form__block-input-block">
 									<label for="house-manual-filling" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
 									<div class="smallest-input-wrap">
@@ -837,6 +854,7 @@
 										</div>	
 									</div>	
 								</div>	
+								<div class="form-input-error">Поля не могут быть пустыми</div>
 								<div class="form__flat form__block-input-block">
 									<label for="flat-manual-filling" class="form__label">Квартира<span class="span-red">*</span></label>
 									<div class="small-input-wrap">
@@ -845,7 +863,8 @@
 									<div class="form-wrap__tip-empty"></div>
 									<input type="checkbox" class="form__flat-house-swicher-checkbox js-flat-reg-manual-checkbox" id="flat-house-swicher-manual-filling">
 									<label for="flat-house-swicher-manual-filling" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
-								</div>																				
+								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>																			
 							</div>
 						</div>
 						<div class="form__home-phone form__block-input-block">
@@ -888,6 +907,7 @@
 										<input type="text" id="current-address" class="form__current-address-input" name="name">
 										<div class="form-wrap__tip-empty"></div>
 									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>
 									<div class="form__current-flat form__block-input-block">						
 										<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>						
 										<div class="small-input-wrap">
@@ -897,6 +917,7 @@
 										<input type="checkbox" class="form__current-flat-house-swicher-checkbox js-current-auto-address-flat-checkbox" id="current-flat-house-swicher">
 										<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
 									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>
 								</div>	
 								<div class="form__block form__current-address-manual-filling js-current-address-manual-filling">
 									<div class="form__current-index form__block-input-block">
@@ -910,6 +931,7 @@
 											</div>	
 										</div>	
 									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>
 									<div class="form__current-index-swicher form__block-input-block">
 										<input type="checkbox" class="form__current-index-remember-switch-checkbox js-current-index-manual-checkbox" id="form-current-index-remember-switch">
 										<label for="form-current-index-remember-switch">Не помню</label>				
@@ -918,7 +940,8 @@
 										<label for="current-region" class="form__label">Регион<span class="span-red">*</span></label>
 										<input type="text" id="current-region" class="form__current-region-input" name="name">					
 										<div class="form-wrap__tip-empty"></div>
-									</div>		
+									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>	
 									<div class="form__current-district form__block-input-block">
 										<label for="current-district" class="form__label">Район или город<span class="span-red">*</span></label>
 										<input type="text" id="current-district" class="form__current-district-input" name="name">					
@@ -929,12 +952,14 @@
 												<div class="tooltip">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская</div>
 											</div>	
 										</div>	
-									</div>					
+									</div>		
+									<div class="form-input-error">Поле не может быть пустым</div>			
 									<div class="form__current-settlement form__block-input-block">
 										<label for="current-settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
 										<input type="text" id="current-settlement" class="form__current-settlement-input" name="name">					
 										<div class="form-wrap__tip-empty"></div>
-									</div>		
+									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>	
 									<div class="form__current-street form__block-input-block">
 										<label for="current-street" class="form__label">Улица<span class="span-red">*</span></label>
 										<input type="text" id="current-street" class="form__current-street-input" name="name">					
@@ -945,7 +970,8 @@
 												<div class="tooltip">Если в адресе нет улицы, поставьте «НЕТ»</div>
 											</div>	
 										</div>	
-									</div>		
+									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>	
 									<div class="form__current-house form__block-input-block">
 										<label for="current-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
 										<div class="smallest-input-wrap">
@@ -965,6 +991,7 @@
 											</div>	
 										</div>	
 									</div>	
+									<div class="form-input-error">Поля не могут быть пустыми</div>
 									<div class="form__current-flat-manual-filling form__block-input-block">
 										<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
 										<div class="small-input-wrap">
@@ -973,7 +1000,8 @@
 										<div class="form-wrap__tip-empty"></div>
 										<input type="checkbox" class="form__current-flat-house-swicher-checkbox js-current-flat-house-swicher-checkbox" id="current-flat-house-swicher-manual-filling">
 										<label for="current-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
-									</div>																					
+									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>																				
 								</div>
 							</div>	
 						</div>			
@@ -988,6 +1016,7 @@
 								</div>	
 							</div>	
 						</div>	
+						<div class="form-input-error">Поле не может быть пустым</div>
 						<div class="form__current-phone-swicher form__block-input-block">
 							<input type="checkbox" class="form__current-phone-exist-switch-checkbox js-current-phone-exist-switch-checkbox" id="current-form-phone-exist-switch">
 							<label for="current-form-phone-exist-switch">Нет стационарного телефона</label>				
@@ -1066,6 +1095,7 @@
 									<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>
 								<div class="form__work-experience form__block-input-block">
 									<label for="work-experience" class="form__label">Срок работы в организации</label>		
 									<select name="name" id="work-experience" class="form__work-experience-select">
@@ -1090,7 +1120,7 @@
 										<div class="average-input-wrap">					
 											<input type="text" id="work-phone-add" class="form__work-phone-input-add form__average" name="work-phone" placeholder="Добавочный">
 										</div>	
-									</div>					
+									</div>													
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
 										<div class="tooltip-wrap">
@@ -1099,6 +1129,7 @@
 										</div>	
 									</div>	
 								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>	
 								<div class="form__work-phone-swicher form__block-input-block">
 									<input type="checkbox" class="form__work-phone-exist-switch-checkbox js-work-phone-exist-switch-checkbox" id="work-form-phone-exist-switch">
 									<label for="work-form-phone-exist-switch">Нет стационарного рабочего телефона</label>				
@@ -1109,11 +1140,13 @@
 										<input type="phone" id="manager" class="form__manager-phone-input js-form__manager-phone-input" name="name">					
 										<div class="form-wrap__tip-empty"></div>
 									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>
 									<div class="form__manager-name form__block-input-block">
 										<label for="manager-name" class="form__label">ФИО начальника<span class="span-red">*</span></label>
 										<input type="text" id="manager-name" class="form__manager-name-input js-form__manager-phone-input" name="name">					
 										<div class="form-wrap__tip-empty"></div>
-									</div>								
+									</div>	
+									<div class="form-input-error">Поле не может быть пустым</div>							
 								</div>
 								<div class="form__duty-type form__block-input-block">
 									<label for="duty-type" class="form__label">Категория занимаемой должности<span class="span-red">*</span></label>
@@ -1150,6 +1183,7 @@
 									<textarea class="form__organization-input" name="name" id="organization" cols="51" rows="2"></textarea>				
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
+								<div class="form-input-error">Поле не может быть пустым</div>
 								<div class="form__own-business-work-phone form__block-input-block">
 									<label for="own-business-work-phone" class="form__label">Рабочий телефон</label>
 									<div class="average-input-wrap">
@@ -1189,7 +1223,8 @@
 												<label for="work-organization-address" class="form__label">Адрес<span class="span-red">*</span></label>
 												<input type="text" id="work-organization-address" class="form__work-organization-address-input" name="name">
 												<div class="form-wrap__tip-empty"></div>
-											</div>	
+											</div>
+											<div class="form-input-error">Поле не может быть пустым</div>	
 											<div class="form__work-organization-flat form__block-input-block">						
 												<label for="work-organization-flat" class="form__label">Номер офиса</label>						
 												<div class="small-input-wrap work-organization">
@@ -1210,6 +1245,7 @@
 													</div>	
 												</div>	
 											</div>	
+											<div class="form-input-error">Поле не может быть пустым</div>
 											<div class="form__work-organization-index-swicher form__block-input-block">
 												<input type="checkbox" class="form__work-organization-index-remember-switch-checkbox js-work-organization-index-manual-checkbox" id="form-work-organization-index-remember-switch">
 												<label for="form-work-organization-index-remember-switch">Не помню</label>				
@@ -1218,7 +1254,8 @@
 												<label for="work-organization-region" class="form__label">Регион<span class="span-red">*</span></label>
 												<input type="text" id="work-organization-region" class="form__work-organization-region-input" name="name">					
 												<div class="form-wrap__tip-empty"></div>
-											</div>		
+											</div>	
+											<div class="form-input-error">Поле не может быть пустым</div>	
 											<div class="form__work-organization-district form__block-input-block">
 												<label for="work-organization-district" class="form__label">Район или город<span class="span-red">*</span></label>
 												<input type="text" id="work-organization-district" class="form__work-organization-district-input" name="name">					
@@ -1229,12 +1266,14 @@
 														<div class="tooltip">Если нужного названия в выпадающем списке нет, внесите данные в формате: <br> обл ростовская; р-н ростовский; п ростов; ул ростовская</div>
 													</div>	
 												</div>	
-											</div>					
+											</div>	
+											<div class="form-input-error">Поле не может быть пустым</div>				
 											<div class="form__work-organization-settlement form__block-input-block">
 												<label for="work-organization-settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
 												<input type="text" id="work-organization-settlement" class="form__work-organization-settlement-input" name="name">					
 												<div class="form-wrap__tip-empty"></div>
 											</div>		
+											<div class="form-input-error">Поле не может быть пустым</div>
 											<div class="form__work-organization-street form__block-input-block">
 												<label for="work-organization-street" class="form__label">Улица<span class="span-red">*</span></label>
 												<input type="text" id="work-organization-street" class="form__work-organization-street-input" name="name">					
@@ -1245,7 +1284,8 @@
 														<div class="tooltip">Если в адресе нет улицы, поставьте «НЕТ»</div>
 													</div>	
 												</div>	
-											</div>		
+											</div>	
+											<div class="form-input-error">Поле не может быть пустым</div>	
 											<div class="form__work-organization-house form__block-input-block">
 												<label for="work-organization-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
 												<div class="smallest-input-wrap">
@@ -1265,6 +1305,7 @@
 													</div>	
 												</div>	
 											</div>	
+											<div class="form-input-error">Поля не могут быть пустыми</div>
 											<div class="form__work-organization-flat-manual-filling form__block-input-block">
 												<label for="work-organization-flat" class="form__label">Номер офиса<span class="span-red">*</span></label>
 												<div class="small-input-wrap">
@@ -1274,6 +1315,7 @@
 												<input type="checkbox" class="form__work-organization-flat-house-swicher-checkbox js-work-organization-flat-house-swicher-checkbox" id="work-organization-flat-house-swicher-manual-filling">
 												<label for="work-organization-flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
 											</div>	
+											<div class="form-input-error">Поле не может быть пустым</div>
 											<div class="form__work-organization-home-phone form__block-input-block">
 												<label for="work-organization-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
 												<input type="text" id="work-organization-home-phone-manual-filling" class="form__work-organization-home-phone-input js-work-organization-home-phone-input" name="name">					
@@ -1285,6 +1327,7 @@
 													</div>	
 												</div>	
 											</div>	
+											<div class="form-input-error">Поле не может быть пустым</div>
 											<div class="form__work-organization-phone-swicher form__block-input-block">
 												<input type="checkbox" class="form__work-organization-phone-exist-switch-checkbox js-work-organization-phone-exist-switch-checkbox" id="work-organization-form-phone-exist-switch">
 												<label for="work-organization-form-phone-exist-switch">Нет стационарного телефона</label>				
@@ -1341,6 +1384,7 @@
 									</div>	
 								</div>	
 							</div>	
+							<div class="form-input-error">Поле не может быть пустым</div>
 							<div class="form__family-phone_comment form__block-input-block">
 								<label for="family-phone_comment" class="form__label">Комментарий<span class="span-red">*</span></label>
 								<input type="text" id="family-phone_comment" class="form__family-phone_comment-input" name="name">				
@@ -1352,6 +1396,7 @@
 									</div>	
 								</div>	
 							</div>	
+							<div class="form-input-error">Поле не может быть пустым</div>
 							<div class="form__income form__block-input-block">
 								<label for="family-income" class="form__label">Персональный доход<span class="span-red">*</span></label>
 								<input type="number" id="income" class="form__income-input additional-input" name="name">				
@@ -1364,6 +1409,7 @@
 									</div>
 								</div>	
 							</div>	
+							<div class="form-input-error">Поле не может быть пустым</div>
 							<div class="form__flat-rent form__block-input-block">
 								<label for="flat-rent" class="form__label">Сумма аренды квартиры<span class="span-red">*</span></label>
 								<input type="number" id="flat-rent" class="form__flat-rent-input additional-input" name="name">				
@@ -1376,6 +1422,7 @@
 									</div>	
 								</div>	
 							</div>	
+							<div class="form-input-error">Поле не может быть пустым</div>
 						</div>
 					</div>
 					<h3 class="form__titles">Дополнительная информация о заемщике</h3>	
@@ -1400,6 +1447,7 @@
 							<label for="data-agreement">Согласен с передачей данных</label>(<p class="info-button info-button_conditions">подробная информация</p>)
 						</div>						
 					</div>
+					<div class="form-input-error">Поле не может быть пустым</div>
 					<button class="end-task-button button" type="submit">Оформить заявку</button>		
 				</form>
 			</div>	
