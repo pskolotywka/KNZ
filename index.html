@@ -1448,7 +1448,7 @@
 						</div>						
 					</div>
 					<div class="form-input-error">Поле не может быть пустым</div>
-					<button class="end-task-button button" type="submit">Оформить заявку</button>		
+					<button class="end-task-button button" type="button">Оформить заявку</button>		
 				</form>
 			</div>	
 			<div class="popup section"  data-section="application-forming">		
@@ -1664,7 +1664,7 @@
 					</table>
 				</div>
 			</div>		
-			<button class="recall-button button">Завершить работу с заданием</button>
+			<button class="recall-button button" type="button">Завершить работу с заданием</button>
 		</div>
 		<div class="dialing-fail section" data-section="dialing-fail">
 			<div class="dialing-fail-comments">
@@ -1673,31 +1673,26 @@
 			</div>
 			<button class="dialing-fail-button button">Завершить работу с заданием</button>
 		</div>
-		<div class="modal conditions__step hidden">
-			<div class="modal__dialog">
-				<p class="modal__message">
-					Ориентировочный срок принятия решения по Вашей заявке и сумме кредита составляет 1-2 календарных дня. 
-					О результате рассмотрения заявки Вы будете проинформированы по SMS. 
-					Если у Вас нет ко мне вопросов, то я с Вами прощаюсь. Всего доброго, до свидания!
-				</p>
-				<div class="modal__points-for-task">
-					<b>Баллов за задание: 1,00</b>
-				</div>
-				<div class="modal__check">
-					<label>
-						<input type="checkbox" checked>
-					Продолжить работу
-					</label>
-					<input type="checkbox" checked>
-					Продолжить работу
-				</div>
+		<div class="end-task-modal">
+			<div class="modal__body">
+				<div class="modal__dialog">
+					<p class="modal__message">
+						Ориентировочный срок принятия решения по Вашей заявке и сумме кредита составляет 1-2 календарных дня. 
+						О результате рассмотрения заявки Вы будете проинформированы по SMS. 
+						Если у Вас нет ко мне вопросов, то я с Вами прощаюсь. Всего доброго, до свидания!
+					</p>
+					<div class="modal__points-for-task">
+						<b>Баллов за задание: 1,00</b>
+					</div>
+					<div class="modal__check">
+						<label><input type="checkbox" class="modal__check-checkbox" checked>Продолжить работу <br> <span class="span-grey checkbox-text-break-row">Получить задание из очереди</span></label>
+					</div>
+				</div>	
 				<div class="modal__buttons-wrap">
-					<button class="btn btn_blue" type="submit" data-click="reload">
-						Подтвердить
-					</button>
-					<button class="btn btn_gray" type="submit" data-click="modal_cancel">
-						Отменить
-					</button>
+					<div class="modal__buttons-container">
+						<button class="button end-task-modal__end-task-button" type="button">Подтвердить</button>
+						<button class="modal__cancel-btn" type="button">Отменить</button>
+					</div>
 				</div>
 			</div>
 		</div>

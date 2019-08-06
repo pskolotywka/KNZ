@@ -2,6 +2,86 @@
 	box-sizing: border-box;
 }
 
+.end-task-modal {
+	opacity: 1;
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    outline: 0;    
+    background: #000000a8;
+    display: none;
+}
+
+.modal__body {
+	width: 600px;
+	margin: 80px auto;
+	background: #fff;
+	border-radius: 5px;
+	padding: 15px;
+	line-height: 1.5;
+	font-size: 16px;
+	font-weight: 550;
+	border: 1px solid black;
+}
+
+.modal__message {
+	border-left: 2px solid #d6d6d6;
+	padding-left: 15px;
+}
+
+.modal__points-for-task {
+    line-height: 1.42857143;
+    box-sizing: border-box;
+    color: #31708f;
+    padding: 15px;
+    border: 1px solid #9acfea;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px auto;
+    background-image: linear-gradient(to bottom, #d9edf7 0, #b9def0 100%);
+    background-repeat: repeat-x;
+    border-color: #9acfea;	
+	font-weight: 100;
+    font-size: 15px;    
+}
+
+.span-grey {
+	color: grey;
+}
+
+.modal__buttons-wrap {
+	border-top: 1px solid #dcdcdc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.modal__buttons-container {
+	display: flex;
+	justify-content: space-between;
+	width: 200px;
+}
+
+.checkbox-text-break-row {
+	margin-left: 27px;
+    font-size: 12px;
+}
+
+
+.modal__check-checkbox {
+	margin-right: 10px;
+}
+
+.modal__check {
+	font-weight: 100;
+    font-size: 15px;
+}
+
 body {
 	font-family: helvetica;
 	font-weight: 100;
@@ -576,7 +656,8 @@ label {
     margin-top: 30px;
 }
 
-.auto-info__prev-btn {	
+.auto-info__prev-btn,
+.modal__cancel-btn {	
     padding: 6px 12px;
     margin-bottom: 0;
     text-align: center;
@@ -589,6 +670,27 @@ label {
     border-radius: 4px;
     background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
     color: #333;
+    outline: none;
+}
+
+.modal__cancel-btn:hover,
+.auto-info__prev-btn:hover {
+	background-color: #e0e0e0;
+    background-position: 0 -15px;
+    border-color: #adadad;
+    color: #333;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    background-repeat: repeat-x;
+}
+
+.modal__cancel-btn:active,
+.auto-info__prev-btn:active {
+	background-color: #e0e0e0;
+    border-color: #dbdbdb;
+    background-image: none;
+    outline: none;
+    text-shadow: 0 1px 0 #fff;
 }
 
 .loan-offer__next-button_disable, 
