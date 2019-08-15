@@ -1,3 +1,36 @@
+function endTask() {
+	const btn = document.querySelector(".end-task-modal__end-task-button");
+
+	btn.addEventListener("click", function() {
+		location.reload()
+	});
+}
+
+endTask();
+
+function closeEndTaskModal() {
+	const btn = document.querySelector(".modal__cancel-btn");
+	const modal = document.querySelector(".end-task-modal");
+
+	btn.addEventListener("click", function() {
+		modal.style.display = "none";
+	});
+}
+
+closeEndTaskModal();
+
+function openEndTaskModal() {
+	const btn = document.querySelector(".end-task-button");
+	const modal = document.querySelector(".end-task-modal");
+
+	btn.addEventListener("click", function() {
+		modal.style.display = "block";
+	});
+}
+
+openEndTaskModal();
+
+
 function checkboxHideShow(chbx, hideB) {
 	const chckbox = document.querySelector(chbx);
 	const hideBlock = document.querySelector(hideB);
