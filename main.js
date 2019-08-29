@@ -74,7 +74,7 @@ function enabledAddressBtn() {
 	const error = document.querySelector(".js-object-address__flat-error");
 
 // этот цикл дает возможность с помощью чекбокса раздизейблить кнопку. Этот и нижний цикл могут друг друга перебивать в плане дизейбла кнопки
-	for (const input of inputs) {
+for (const input of inputs) {
 	checkBox.addEventListener("click", function() {
 		if (addressinput.value.length > 0 && checkBox.checked) {
 			flatInput.value = "";
@@ -95,19 +95,19 @@ function enabledAddressBtn() {
 }	
 
 // этот цикл раздизейбливает кнопку только по инпутам. Этот и верхний цикл могут друг друга перебивать в плане дизейбла кнопки
-	for (const input of inputs) {
-		input.addEventListener("blur" , function() {
-			if (addressinput.value.length > 0 && flatInput.value.length > 0) {
-				btn.classList.add("button");
-				btn.classList.remove("loan-offer__next-button_disable");
-				btn.removeAttribute('disabled');								
-			} else {
-				btn.classList.remove("button");
-				btn.classList.add("loan-offer__next-button_disable");
-				btn.setAttribute('disabled', '');				
-			}
-		});	
-	}	
+for (const input of inputs) {
+	input.addEventListener("blur" , function() {
+		if (addressinput.value.length > 0 && flatInput.value.length > 0) {
+			btn.classList.add("button");
+			btn.classList.remove("loan-offer__next-button_disable");
+			btn.removeAttribute('disabled');								
+		} else {
+			btn.classList.remove("button");
+			btn.classList.add("loan-offer__next-button_disable");
+			btn.setAttribute('disabled', '');				
+		}
+	});	
+}	
 }
 
 enabledAddressBtn();
@@ -146,8 +146,8 @@ function addressError(inp, err) {
 	input.addEventListener("blur", function() {
 		
 		if (input.value.length > 0) {
-				error.style.display = "none";
-				input.style.border = "1px solid #ccc";
+			error.style.display = "none";
+			input.style.border = "1px solid #ccc";
 		} else {
 			error.style.display = "block";
 			input.style.border = "1px solid red";				
@@ -219,33 +219,33 @@ function showFlatBailNextBtn() {
 
 	for (const radioInput of radioInputs) {
 		radioInput.addEventListener("click", function() {			
-		const checkedBtns = container.querySelectorAll(":checked").length;	
+			const checkedBtns = container.querySelectorAll(":checked").length;	
 
-		function disableBtn() {
-			btn.setAttribute('disabled', '');
-			btn.classList.remove("button", "open-address");
-			btn.classList.add("loan-offer__next-button_disable");
-		}
-
-		function enableBtn() {
-			btn.removeAttribute('disabled');
-			btn.classList.add("button", "open-address");
-			btn.classList.remove("loan-offer__next-button_disable");			
-		}
-
-		if (notOnlyBtn.style.display == "block") {
-			if (blocks.length == checkedBtns) {
-				enableBtn();
-			} else {
-				disableBtn();
+			function disableBtn() {
+				btn.setAttribute('disabled', '');
+				btn.classList.remove("button", "open-address");
+				btn.classList.add("loan-offer__next-button_disable");
 			}
-		} else if (notOnlyBtn.style.display == "none") {
-			if ((blocks.length - 1) == checkedBtns) {
-				enableBtn();
-			} else {
-				disableBtn();
-			}	
-		}
+
+			function enableBtn() {
+				btn.removeAttribute('disabled');
+				btn.classList.add("button", "open-address");
+				btn.classList.remove("loan-offer__next-button_disable");			
+			}
+
+			if (notOnlyBtn.style.display == "block") {
+				if (blocks.length == checkedBtns) {
+					enableBtn();
+				} else {
+					disableBtn();
+				}
+			} else if (notOnlyBtn.style.display == "none") {
+				if ((blocks.length - 1) == checkedBtns) {
+					enableBtn();
+				} else {
+					disableBtn();
+				}	
+			}
 		});	
 	}	
 }
@@ -372,7 +372,7 @@ function enableButton() {
 	const inputs = document.querySelectorAll(".js-not-ready-label-radio");
 
 	for (const input of inputs) {
-	
+
 		input.addEventListener("click", function() {
 			btn.removeAttribute('disabled');
 			btn.classList.add("button", "js-open-form");
@@ -540,15 +540,15 @@ function showRegFactAddress(check, hidden, show) {
 	const autoFilling = document.querySelector(hidden);
 	const manualFilling = document.querySelector(show);
 
-		fillingCheckbox.addEventListener("click", function() {
-			if (fillingCheckbox.checked) {
-				manualFilling.style.display = "flex";
-				autoFilling.style.display = "none";
-			} else {
-				manualFilling.style.display = "none";
-				autoFilling.style.display = "flex";
-			}
-		});
+	fillingCheckbox.addEventListener("click", function() {
+		if (fillingCheckbox.checked) {
+			manualFilling.style.display = "flex";
+			autoFilling.style.display = "none";
+		} else {
+			manualFilling.style.display = "none";
+			autoFilling.style.display = "flex";
+		}
+	});
 }
 
 showRegFactAddress(".form__address-filling-type-switch-checkbox", ".form__address-auto-filling", ".form__address-manual-filling");
@@ -677,19 +677,19 @@ function setRecall() {
 			const date = new Date();
 			const intervalAttr = button.dataset.interval;
 			const timeAttr = +button.dataset.time;
-      
-      date.setMonth(date.getMonth() + 1);
+
+			date.setMonth(date.getMonth() + 1);
 
 			if (intervalAttr == "minutes") {
 				currentDate = date.getDate().toString().replace( /^([0-9])$/, '0$1') + "." + (date.getMonth().toString().replace( /^([00])$/, '12')).toString().replace( /^([0-9])$/, '0$1') + "." + date.getFullYear();
-        date.setMinutes(date.getMinutes() + timeAttr);
+				date.setMinutes(date.getMinutes() + timeAttr);
 				currentTime = date.getHours().toString().replace( /^([0-9])$/, '0$1') + ":" + date.getMinutes().toString().replace( /^([0-9])$/, '0$1');
 			} else if (intervalAttr == "hours") {
 				currentDate = date.getDate().toString().replace( /^([0-9])$/, '0$1') + "." +(date.getMonth().toString().replace( /^([00])$/, '12')).toString().replace( /^([0-9])$/, '0$1') + "." + date.getFullYear();
-        date.setHours(date.getHours() + timeAttr);
+				date.setHours(date.getHours() + timeAttr);
 				currentTime = date.getHours().toString().replace( /^([0-9])$/, '0$1') + ":" + date.getMinutes().toString().replace( /^([0-9])$/, '0$1');
 			} else if (intervalAttr == "days") {
-        date.setDate(date.getDate() + timeAttr);
+				date.setDate(date.getDate() + timeAttr);
 				currentDate = date.getDate().toString().replace( /^([0-9])$/, '0$1') + "." + (date.getMonth().toString().replace( /^([00])$/, '12')).toString().replace( /^([0-9])$/, '0$1') + "." + date.getFullYear();
 				currentTime = date.getHours().toString().replace( /^([0-9])$/, '0$1') + ":" + date.getMinutes().toString().replace( /^([0-9])$/, '0$1');
 			}
@@ -702,5 +702,19 @@ function setRecall() {
 
 setRecall();
 
+//Валидация форм
+
+function valid() {
+	let form = document.getElementsByClassName('form');
+	let fields = document.getElementsByClassName('required-form-field');
+
+	form[0].addEventListener ('submit', function (event) {
+		event.preventDefault()
+		if(!fields[0].value){
+			fields[0].style.border = '2px solid red'
+		}
+	})
+}
+valid()
 
 
