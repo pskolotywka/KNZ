@@ -702,19 +702,33 @@ function setRecall() {
 
 setRecall();
 
-//Валидация форм
+//Валидация форм на пустоту
 
-function valid() {
-	let form = document.getElementsByClassName('form');
-	let fields = document.getElementsByClassName('required-form-field');
-
-	form[0].addEventListener ('submit', function (event) {
-		event.preventDefault()
-		if(!fields[0].value){
-			fields[0].style.border = '2px solid red'
-		}
-	})
+function validateEmptyForm() {
+	const inputs = document.querySelectorAll(".required-form-field");
+	const btn = document.querySelector(".end-task-button");
+	const name = document.querySelector(".form__name-input");
+	const birth = document.querySelector(".form__birth-input");
+	const phone = document.querySelector(".form__phone-input");
+	
+	for (const input of inputs) {
+		input.addEventListener("blur" , function() {
+			if (name.value.length > 0 && birth.value.length > 0 && phone.value.length > 0) {
+				btn.classList.add("button");
+				btn.classList.remove("loan-offer__next-button_disable");
+				btn.removeAttribute('disabled');								
+			} else {
+				btn.classList.remove("button");
+				btn.classList.add("loan-offer__next-button_disable");
+				btn.setAttribute('disabled', '');
+			}
+		});	
+	}	
 }
-valid()
+validateEmptyForm()
+
+addressError(".form__name-input", ".js-error-name");
+addressError(".form__birth-input", ".js-error-birth");
+addressError(".form__phone-input", ".js-error-phone");
 
 
