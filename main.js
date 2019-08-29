@@ -710,10 +710,44 @@ function validateEmptyForm() {
 	const name = document.querySelector(".form__name-input");
 	const birth = document.querySelector(".form__birth-input");
 	const phone = document.querySelector(".form__phone-input");
-	
+
+	const amount = document.querySelector(".form__loan-amount-input");
+	const period = document.querySelector(".form__loan-period-input");
+	//const purpose = document.querySelector(".form__loan-purpose-input");
+
+	const number = document.querySelector(".form__passport-number-input");
+	const date = document.querySelector(".form__passport-date-input");
+	const code = document.querySelector(".form__passport-code-input");
+	const issue = document.querySelector(".form__passport-issue-input");
+	const birthPlace = document.querySelector(".form__passport-birth-place-input");
+	const snils = document.querySelector(".form__passport-snils-input");
+
+	const regAddress = document.querySelector(".form__reg-address-auto-input");
+	const regAddressManual = document.querySelector(".form__reg-address-manual-input");
+	const address = document.querySelector(".form__address-input");
+	const district = document.querySelector(".form__district-input");
+	const settlement = document.querySelector(".form__settlement-input");
+	const street = document.querySelector(".form__street-input");
+	const building = document.querySelector(".form__building-input");
+	const flat = document.querySelector(".form__flat-input");
+
+	const currentAddressManual = document.querySelector(".form__current-address-manual-input");
+	const currentRegion = document.querySelector(".form__current-region-input");
+	const currentDistrict = document.querySelector(".form__current-district-input");
+	const currentSettlement = document.querySelector(".form__current-settlement-input");
+	const currentStreet = document.querySelector(".form__current-street-input");
+	const currentHouse = document.querySelector(".form__current-house-input");
+	const currentFlat = document.querySelector(".js-form__flat-current-manual-input");
+	const currentHomePhone = document.querySelector(".form__current-home-phone-input");
+
+	const organizathionName = document.querySelector(".form__organization-input");
+	const workPhone = document.querySelector(".form__work-phone-input");
+
+
+
 	for (const input of inputs) {
 		input.addEventListener("blur" , function() {
-			if (name.value.length > 0 && birth.value.length > 0 && phone.value.length > 0) {
+			if (name.value.length > 0) {
 				btn.classList.add("button");
 				btn.classList.remove("loan-offer__next-button_disable");
 				btn.removeAttribute('disabled');								
@@ -725,10 +759,44 @@ function validateEmptyForm() {
 		});	
 	}	
 }
+
 validateEmptyForm()
 
 addressError(".form__name-input", ".js-error-name");
 addressError(".form__birth-input", ".js-error-birth");
 addressError(".form__phone-input", ".js-error-phone");
+
+addressError(".form__loan-amount-input", ".js-error-amount");
+addressError(".form__loan-period-input", ".js-error-period");
+//addressError(".form__loan-purpose-input", ".js-error-purpose");
+
+addressError(".form__passport-number-input", ".js-error-passport-number");
+addressError(".form__passport-date-input", ".js-error-passport-date");
+addressError(".form__passport-code-input", ".js-error-passport-code");
+addressError(".form__passport-issue-input", ".js-error-passport-issue");
+addressError(".form__passport-birth-place-input", ".js-error-passport-birth-place");
+addressError(".form__passport-snils-input", ".js-error-passport-snils");
+
+addressError(".form__reg-address-auto-input", ".js-error-reg-address");
+addressError(".form__reg-address-manual-input", ".js-error-reg-address-manual");
+addressError(".form__address-input", ".js-error-address");
+addressError(".form__district-input", ".js-error-district");
+
+addressError(".form__settlement-input", ".js-error-settlement");
+addressError(".form__street-input", ".js-error-street");
+addressError(".form__building-input", ".js-error-building");
+addressError(".form__flat-input", ".js-error-flat");
+
+addressError(".form__current-address-manual-input", ".js-error-current-address-manual");
+addressError(".form__current-region-input", ".js-error-current-region");
+addressError(".form__current-district-input", ".js-error-current-district");
+addressError(".form__current-settlement-input", ".js-error-current-settlement");
+addressError(".form__current-street-input", ".js-error-current-street");
+addressError(".form__current-house-input", ".js-error-current-house");
+addressError(".js-form__flat-current-manual-input", ".js-error-flat-current-manual");
+addressError(".form__current-home-phone-input", ".js-error-current-home-phone");
+
+addressError(".form__organization-input", ".js-error-organization-name");
+addressError(".form__work-phone-input", ".js-error-work-phone");
 
 
