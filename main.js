@@ -704,17 +704,29 @@ setRecall();
 
 //Валидация форм
 
-function valid() {
-	let form = document.getElementsByClassName('form');
-	let fields = document.getElementsByClassName('required-form-field');
+function validateEmptyForm() {
+	const inputs = document.querySelectorAll(".required-form-field");
+	const btn = document.querySelector(".end-task-button");
+	const name = document.querySelector(".form__name-input");
+	const birth = document.querySelector(".form__birth-input");
+	const phone = document.querySelector(".form__phone-input");
+	const error = document.querySelectorAll(".form-input-error");
 
-	form[0].addEventListener ('submit', function (event) {
-		event.preventDefault()
-		if(!fields[0].value){
-			fields[0].style.border = '2px solid red'
-		}
-	})
+	
+	for (const input of inputs) {
+		input.addEventListener("blur" , function() {
+			if (name.value.length > 0 && birth.value.length > 0 && phone.value.length > 0) {
+				btn.classList.add("button");
+				btn.classList.remove("loan-offer__next-button_disable");
+				btn.removeAttribute('disabled');								
+			} else {
+				btn.classList.remove("button");
+				btn.classList.add("loan-offer__next-button_disable");
+				btn.setAttribute('disabled', '');
+			}
+		});	
+	}	
 }
-valid()
+validateEmptyForm()
 
 
