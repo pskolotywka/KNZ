@@ -702,7 +702,7 @@ function setRecall() {
 
 setRecall();
 
-//Валидация форм
+//Валидация форм на пустоту
 
 function validateEmptyForm() {
 	const inputs = document.querySelectorAll(".required-form-field");
@@ -710,8 +710,6 @@ function validateEmptyForm() {
 	const name = document.querySelector(".form__name-input");
 	const birth = document.querySelector(".form__birth-input");
 	const phone = document.querySelector(".form__phone-input");
-	const error = document.querySelectorAll(".form-input-error");
-
 	
 	for (const input of inputs) {
 		input.addEventListener("blur" , function() {
@@ -728,5 +726,9 @@ function validateEmptyForm() {
 	}	
 }
 validateEmptyForm()
+
+addressError(".form__name-input", ".js-error-name");
+addressError(".form__birth-input", ".js-error-birth");
+addressError(".form__phone-input", ".js-error-phone");
 
 
