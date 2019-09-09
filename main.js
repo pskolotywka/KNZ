@@ -712,6 +712,9 @@ function inputsValidate(){
 	let check = {
 		number: {err: 'Введите цифры!', reg: /^\d+$/},
 		string: {err: 'Введите буквы!', reg: /^[a-zа-яё]+$/i},
+		date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/},
+		tel:    {err: 'Код региона или оператора связи не существует', reg: /^((8|\+7)[\-]?)?(\(?\d{3}\)?[\-]?)?[\d\-]{7,10}$/},
+		email:  {err: 'Не правильный формат email', reg: /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i},
 	}
 
 	function checkInputs() {
@@ -734,7 +737,7 @@ function inputsValidate(){
 
 			inputs[i].addEventListener('blur', function() {
 				if( !this.value ) {
-					result[i].innerText = "Поле не может быть пустымм!";
+					result[i].innerText = "Это поле обязательно для заполнения!";
 					this.style.border = "1px solid red";
 				}
 			});
