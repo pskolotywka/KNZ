@@ -702,10 +702,7 @@ function setRecall() {
 
 setRecall();
 
-//Валидация форм на пустоту
-
-// data-rule="string"
-// data-rule="number"
+//Валидация форм 
 
 function inputsValidate(){
 
@@ -715,6 +712,7 @@ function inputsValidate(){
 		date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/},
 		tel:    {err: 'Код региона или оператора связи не существует', reg: /^((8|\+7)[\-]?)?(\(?\d{3}\)?[\-]?)?[\d\-]{7,10}$/},
 		email:  {err: 'Не правильный формат email', reg: /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i},
+		sum: 	{err: '123!', reg: /^\d+$/},
 	}
 
 	function checkInputs() {
@@ -736,7 +734,7 @@ function inputsValidate(){
 			});
 
 			inputs[i].addEventListener('blur', function() {
-				if( !this.value ) {
+				if( !this.value && this.dataset.required !== '0') {
 					result[i].innerText = "Это поле обязательно для заполнения!";
 					this.style.border = "1px solid red";
 				}
