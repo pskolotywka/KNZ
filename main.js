@@ -702,47 +702,74 @@ function setRecall() {
 
 setRecall();
 
-//Валидация форм 
+// Валидация форм 
 
 function inputsValidate(){
 
-	let check = {
-		number: {err: 'Введите цифры!', reg: /^\d+$/},
-		string: {err: 'Введите буквы!', reg: /^[a-zа-яё]+$/i},
-		date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/},
-		tel:    {err: 'Код региона или оператора связи не существует', reg: /^((8|\+7)[\-]?)?(\(?\d{3}\)?[\-]?)?[\d\-]{7,10}$/},
-		email:  {err: 'Не правильный формат email', reg: /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i},
-		sum: 	{err: '123!', reg: /^\d+$/},
+// Правила проверки полей сделано через присвоение data-rule
+
+let check = {
+	number: {err: 'Введите цифры!', reg: /^\d+$/},
+	string: {err: 'Введите буквы!', reg: /^[a-zа-яё]+$/i},
+	date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/},
+	tel:    {err: 'Код региона или оператора связи не существует', reg: /^((8|\+7)[\-]?)?(\(?\d{3}\)?[\-]?)?[\d\-]{7,10}$/},
+	email:  {err: 'Не правильный формат email', reg: /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i},
+	sum: 	{err: '123!', reg: /^\d+$/},
+}
+
+// Общая функция проверки
+
+function checkInputs() {
+	let inputs = document.querySelectorAll('input[data-rule]');
+	let result = document.querySelectorAll('.form-input-error');
+
+	for ( let i = 0; i < inputs.length; i++ ) {
+		inputs[i].addEventListener('input', function() {
+			let rule = this.dataset.rule;
+			let value = this.value;
+
+			if( check[rule].reg.test( value ) && value ){
+				this.style.border = "1px solid green";
+				result[i].innerText = "";       
+			} else {
+				this.style.border = "1px solid red";
+				result[i].innerText = check[rule].err;
+			}
+		});
+
+// Добавление ошибки если после расфукусировки поле осталось пустым
+
+inputs[i].addEventListener('blur', function() {
+	if( !this.value && this.dataset.required !== '0') {
+		result[i].innerText = "Это поле обязательно для заполнения!";
+		this.style.border = "1px solid red";
 	}
+});
 
-	function checkInputs() {
-		let inputs = document.querySelectorAll('input[data-rule]');
-		let result = document.querySelectorAll('.form-input-error');
+// Проверка селектов
 
-		for ( let i = 0; i < inputs.length; i++ ) {
-			inputs[i].addEventListener('input', function() {
-				let rule = this.dataset.rule;
-				let value = this.value;
+function checkSelect () {
+	const allSel = document.querySelectorAll('.select-required');
+	
+	allSel.forEach((sel) => {
+		sel.addEventListener('blur', function (){     
+			const selNum = sel.selectedIndex;
+			if(selNum === 0){
+				sel.style.border = '1px solid red'
+			}
+			else{
+				sel.style.border = '1px solid green'
+			}
+		});
+	})
+}
 
-				if( check[rule].reg.test( value ) && value ){
-					this.style.border = "1px solid green";
-					result[i].innerText = "";       
-				} else {
-					this.style.border = "1px solid red";
-					result[i].innerText = check[rule].err;
-				}
-			});
 
-			inputs[i].addEventListener('blur', function() {
-				if( !this.value && this.dataset.required !== '0') {
-					result[i].innerText = "Это поле обязательно для заполнения!";
-					this.style.border = "1px solid red";
-				}
-			});
-		}
-	}
+checkSelect();
+}
+}
 
-	checkInputs();
+checkInputs();
 
 }
 
