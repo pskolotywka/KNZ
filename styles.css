@@ -1,19 +1,7 @@
 * {
 	box-sizing: border-box;
 }
-.more__field {
-	display: flex;
-    flex-direction: column;
-}
-.inputs__block {
-	display: flex;
-    flex-direction: column;
-}
-.form__name-row {
-	width: 100%;
-    display: flex;
-	align-items: center;
-}
+
 .form__name-row:nth-child(2),
 .form__name-row:nth-child(3),
 .form__name-row:nth-child(5),
