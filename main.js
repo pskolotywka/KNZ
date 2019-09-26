@@ -708,41 +708,118 @@ function inputsValidate(){
 
 // Правила проверки полей сделано через присвоение data-rule
 
+/* reg: /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i} */
+
 let check = {
-	number: {err: 'Введите цифры!', reg: /^\d+$/},
-	string: {err: 'Введите буквы!', reg: /^[a-zа-яё]+$/i},
-	date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/},
-	tel:    {err: 'Код региона или оператора связи не существует', reg: /^((8|\+7)[\-]?)?(\(?\d{3}\)?[\-]?)?[\d\-]{7,10}$/},
+	number: {err: '', reg: /[^0-9]/g},
+	string: {err: 'Необходимо так же указать фамилию!', reg: /[^а-яА-Яa-zA-Z ,+]/g},
+	date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /[^0-9.]/g},
+	tel:    {err: 'Код региона или оператора связи не существует', reg: /[^0-9,+()-]/g},
 	email:  {err: 'Не правильный формат email', reg: /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i},
 	sum: 	{err: '123!', reg: /^\d+$/},
-}
+};
+
+
+var mapKeyRu = {
+	'q' : 'й', 'w' : 'ц', 'e' : 'у', 'r' : 'к', 't' : 'е', 'y' : 'н', 'u' : 'г', 'i' : 'ш', 'o' : 'щ', 'p' : 'з', '[' : 'х', ']' : 'ъ', 'a' : 'ф',
+	 's' : 'ы', 'd' : 'в', 'f' : 'а', 'g' : 'п', 'h' : 'р', 'j' : 'о', 'k' : 'л', 'l' : 'д', ';' : 'ж', '\'' : 'э', 'z' : 'я', 'x' : 'ч', 'c' : 'с',
+	  'v' : 'м', 'b' : 'и', 'n' : 'т', 'm' : 'ь', ',' : 'б', '.' : 'ю','Q' : 'Й', 'W' : 'Ц', 'E' : 'У', 'R' : 'К', 'T' : 'Е', 'Y' : 'Н', 'U' : 'Г',
+	   'I' : 'Ш', 'O' : 'Щ', 'P' : 'З', '{' : 'Х', '}' : 'Ъ', 'A' : 'Ф', 'S' : 'Ы', 'D' : 'В', 'F' : 'А', 'G' : 'П', 'H' : 'Р', 'J' : 'О', 'K' : 'Л',
+	    'L' : 'Д', ':' : 'Ж', '\"' : 'Э', 'Z' : '?', 'X' : 'ч', 'C' : 'С', 'V' : 'М', 'B' : 'И', 'N' : 'Т', 'M' : 'Ь', '<' : 'Б', '>' : 'Ю',
+};
+var mapKeyEn = {
+	'й' : 'q', 'ц' : 'w', 'у' : 'e', 'к' : 'r', 'е' : 't', 'н' : 'y', 'г' : 'u', 'ш' : 'i', 'щ' : 'o', 'з' : 'p', 'ф' : 'a',
+	 'ы' : 's', 'в' : 'd', 'а' : 'f', 'п' : 'g', 'р' : 'h', 'о' : 'j', 'л' : 'k', 'д' : 'l', 'я' : 'z', 'ч' : 'x', 'с' : 'c',
+	  'м' : 'v', 'и' : 'b', 'т' : 'n', 'ь' : 'm', 'Й' : 'Q', 'Ц' : 'W', 'У' : 'E', 'К' : 'R', 'Е' : 'T', 'Н' : 'Y', 'Г' : 'U',
+	   'Ш' : 'I', 'Щ' : 'O', 'З' : 'P', 'Ф' : 'A', 'Ы' : 'S', 'В' : 'D', 'А' : 'F', 'П' : 'G', 'Р' : 'H', 'О' : 'J', 'Л' : 'K',
+	    'Д' : 'L', 'Я' : 'Z', 'Ч' : 'X', 'С' : 'C', 'М' : 'V', 'И' : 'B', 'Т' : 'N', 'Ь' : 'M'
+};
 
 // Общая функция проверки
+
 
 function checkInputs() {
 	let inputs = document.querySelectorAll('input[data-rule]');
 	let result = document.querySelectorAll('.form-input-error');
 
+	function countWords(str) {
+		return str.trim().split(/\s+/).length;
+	}
+
+	function changedLetter(array, arg) {
+		let writedText = arg.value;
+		let r = '';
+		for (let i = 0; i < writedText.length; i++) {
+			r += array[writedText.charAt(i)] || writedText.charAt(i);
+		}
+		arg.value = r;
+	}
+
+	function switchMapKey(value, arg) {
+		switch(value) {
+			case 'string':
+				changedLetter(mapKeyRu, arg);
+				break;
+			case 'email':
+				changedLetter(mapKeyEn, arg)
+		}
+	}
+
+	let flagName = false;
+	
 	for ( let i = 0; i < inputs.length; i++ ) {
 		inputs[i].addEventListener('input', function() {
-			let rule = this.dataset.rule;
-			let value = this.value;
+			let thisField = inputs[i];
+			let regx = thisField.dataset.rule;
+			thisField.value = thisField.value.replace(check[regx].reg, '')
+			switchMapKey(inputs[i].dataset.rule, inputs[i]);
+			
+			let countWord = countWords(inputs[i].value)
 
-			if( check[rule].reg.test( value ) && value ){
+			if (inputs[i].name === 'name' && flagName === false) {
+				if (countWord <= 1) {
+					this.style.border = "1px solid red";
+					result[i].innerHTML = check[regx].err;
+				}
+				if (countWord >= 2) {
+					inputs[i].setAttribute('placeholder', 'Фамилия');
+					inputs[i].value = '';
+					document.querySelector('.addinp').classList.remove('hidden');
+					result[i].innerHTML = '';
+					this.style.border = "1px solid #ccc";
+					check.string.reg = /[^а-яА-Яa-zA-Z,+]/g;
+					check.string.err = 'Корректно заполните форму!'
+					flagName = true;
+				}
+			}
+
+			let pattern = check[regx].reg;
+
+			if(pattern.test(thisField.value.trim())) {
 				this.style.border = "1px solid green";
 				result[i].innerText = "";       
 			} else {
 				this.style.border = "1px solid red";
-				result[i].innerText = check[rule].err;
+				result[i].innerText = check[regx].err;
 			}
 		});
 
 // Добавление ошибки если после расфукусировки поле осталось пустым
 
 inputs[i].addEventListener('blur', function() {
-	if( !this.value && this.dataset.required !== '0') {
+
+	let inpLength = inputs[i].value.length;
+
+	if(inpLength <= 4 || inputs[i].value === '') {
 		result[i].innerText = "Это поле обязательно для заполнения!";
 		this.style.border = "1px solid red";
+		if (inputs[i].name === 'name' && flagName === false && inpLength >= 1) {
+			result[i].innerText = check[inputs[i].dataset.rule].err;
+		}
+	}
+	else {
+		inputs[i].style.border = '1px solid green'
+		result[i].innerText = "";
 	}
 });
 
@@ -750,7 +827,6 @@ inputs[i].addEventListener('blur', function() {
 
 function checkSelect () {
 	const allSel = document.querySelectorAll('.select-required');
-	
 	allSel.forEach((sel) => {
 		sel.addEventListener('blur', function (){     
 			const selNum = sel.selectedIndex;
@@ -763,7 +839,6 @@ function checkSelect () {
 		});
 	})
 }
-
 
 checkSelect();
 }

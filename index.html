@@ -588,8 +588,10 @@
 					<h3 class="form__titles">Контактные данные</h3>
 					<div class="form__block">
 						<div class="form__block-input-block form__name">
-							<label for="name" class="form__label">ФИО<span class="span-red">*</span></label>
-							<input type="text" id="name" class="form__name-input normal-input required-form-field" name="name" data-rule="string" placeholder="Фамилия Имя Отчество" required>
+							<div class="form__name-first">
+								<label for="name" class="form__label">ФИО<span class="span-red">*</span></label>
+								<input type="text" id="name" class="form__name-input normal-input required-form-field" name="name" data-rule="string" placeholder="Фамилия Имя Отчество" required>
+							</div>
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -598,7 +600,18 @@
 								</div>	
 							</div>								
 						</div>
-						<div class="form-input-error"></div>	
+						<div class="form-input-error"></div>
+						<div class="form__block-input-second addinp hidden">
+							<div class="form__block-input-block">
+									<input type="text" id="name" class="form__name-input normal-input required-form-field" name="firstname" data-rule="string" placeholder="Имя" required>
+							</div>
+							<div class="form-input-error"></div>
+							<div class="form__block-input-block">
+									<input type="text" id="name" class="form__name-input normal-input required-form-field" name="secondname" data-rule="string" placeholder="Отчество" required>
+							</div>
+							<div class="form-input-error"></div>
+						</div>
+							
 						<div class="form__block-input-block form__birth">
 							<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
 							<input type="text" id="birth" class="form__birth-input required-form-field" name="name" data-rule="date" placeholder="__.__.____" required>
@@ -634,7 +647,7 @@
 					<div class="form__block">
 						<div class="form__loan-amount form__block-input-block">
 							<label for="loan-amount" class="form__label">Сумма кредита<span class="span-red">*</span></label>
-							<input type="number" min="50000" max="2000000" step="1000" id="loan-amount" class="form__loan-amount-input required-form-field" name="name" data-rule="sum" required>
+							<input type="number" min="50000" max="2000000" step="1000" id="loan-amount" class="form__loan-amount-input required-form-field" name="name" data-rule="number" required>
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>								
 								<div class="tooltip-wrap">	
