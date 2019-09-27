@@ -603,24 +603,27 @@
 						<div class="form-input-error"></div>
 						<div class="form__block-input-second addinp hidden">
 							<div class="form__block-input-block">
-									<input type="text" id="name" class="form__name-input normal-input required-form-field" name="firstname" data-rule="string" placeholder="Имя" required>
+								<input type="text" id="name" class="form__name-input normal-input required-form-field" name="firstname" data-rule="string" placeholder="Имя" required>
 							</div>
 							<div class="form-input-error"></div>
 							<div class="form__block-input-block">
-									<input type="text" id="name" class="form__name-input normal-input required-form-field" name="secondname" data-rule="string" placeholder="Отчество" required>
+								<input type="text" id="name" class="form__name-input normal-input required-form-field" name="secondname" data-rule="string" placeholder="Отчество" required>
 							</div>
 							<div class="form-input-error"></div>
+							<div class="form__block-input-block">
+								<input type="checkbox" id="checkfaq" class="checkfaq" name="checkfaq" required>Проверено
+							</div>
 						</div>
 							
 						<div class="form__block-input-block form__birth">
 							<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
-							<input type="text" id="birth" class="form__birth-input required-form-field" name="name" data-rule="date" placeholder="__.__.____" required>
+							<input type="text" id="birth" class="form__birth-input required-form-field" name="databirth" data-rule="date" placeholder="__.__.____" required>
 							<div class="form-wrap__tip-empty"></div>
 						</div>
 						<div class="form-input-error"></div>
 						<div class="form__block-input-block form__phone">
 							<label for="phone" class="form__label">Мобильный телефон<span class="span-red">*</span></label>
-							<input type="tel"  id="phone" class="form__phone-input required-form-field" name="name" data-rule="tel"  maxlength="12" placeholder="+7(___)___-__-__" required>
+							<input type="tel"  id="phone" class="form__phone-input required-form-field" name="mobile" data-rule="tel"  maxlength="16" placeholder="+7(___)___-__-__" required>
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -632,7 +635,7 @@
 						<div class="form-input-error"></div>			
 						<div class="form__block-input-block form__email">
 							<label for="email" class="form__label">Электронная почта</label>
-							<input type="text" id="email" class="form__email-input" name="name" data-rule="email" data-required="0">
+							<input type="text" id="email" class="form__email-input" name="email" data-rule="email" data-required="0">
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -647,7 +650,7 @@
 					<div class="form__block">
 						<div class="form__loan-amount form__block-input-block">
 							<label for="loan-amount" class="form__label">Сумма кредита<span class="span-red">*</span></label>
-							<input type="number" min="50000" max="2000000" step="1000" id="loan-amount" class="form__loan-amount-input required-form-field" name="name" data-rule="number" required>
+							<input type="number" min="50000" max="2000000" step="1000" id="loan-amount" class="form__loan-amount-input required-form-field" name="sumcredit" data-rule="sum" required>
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>								
 								<div class="tooltip-wrap">	
@@ -659,7 +662,7 @@
 						<div class="form-input-error"></div>
 						<div class="form__loan-period form__block-input-block">
 							<label for="loan-period" class="form__label">Срок кредита (кол-во месяцев)<span class="span-red">*</span></label>
-							<input type="number" min="3" max="36" id="loan-period" class="form__loan-period-input required-form-field" name="name" data-rule="sum" required>
+							<input type="number" min="3" max="36" id="loan-period" class="form__loan-period-input required-form-field" name="timecredit" data-rule="number" required>
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -692,13 +695,13 @@
 					<div class="form__block">
 						<div class="form__passport-number form__block-input-block">
 							<label for="passport-number" class="form__label">Серия - номер<span class="span-red">*</span></label>
-							<input type="text" id="passport-number" class="form__passport-number-input required-form-field" name="name" data-rule="number" placeholder="____.____">
+							<input type="text" id="passport-number" class="form__passport-number-input required-form-field" maxlength="11" name="serialnumb" data-rule="pasport" placeholder="____.____">
 							<div class="form-wrap__tip-empty"></div>
 						</div>
 						<div class="form-input-error"></div>
 						<div class="form__passport-date form__block-input-block">
 							<label for="passport-passport-date" class="form__label">Дата выдачи<span class="span-red">*</span></label>
-							<input type="text" id="passport-passport-date" class="form__passport-date-input required-form-field" name="name" data-rule="date" placeholder="__.__.____">				
+							<input type="text" id="passport-passport-date" class="form__passport-date-input required-form-field" name="dategot" data-rule="date" placeholder="__.__.____">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -710,19 +713,19 @@
 						<div class="form-input-error"></div>
 						<div class="form__passport-code form__block-input-block">
 							<label for="passport-code" class="form__label">Код подразделения<span class="span-red">*</span></label>
-							<input type="text" id="passport-code" class="form__passport-code-input required-form-field" name="name" data-rule="number" placeholder="___.___">
+							<input type="text" id="passport-code" class="form__passport-code-input required-form-field" name="codebuild" data-rule="number" placeholder="___.___">
 							<div class="form-wrap__tip-empty"></div>
 						</div>
 						<div class="form-input-error"></div>
 						<div class="form__passport-issue form__block-input-block">
 							<label for="passport-issue" class="form__label">Кем выдан<span class="span-red">*</span></label>
-							<input type="text" id="passport-issue" class="form__passport-issue-input required-form-field" name="name" data-rule="number">				
+							<input type="text" id="passport-issue" class="form__passport-issue-input required-form-field" name="whogot" data-rule="string">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
 									<div class="triangle"></div>
 									<div class="tooltip">Данные вносятся так же, как написано в паспорте. Необходимо соблюдать все сокращения в написании слов, подробно уточняя их у Заявителя.</div>
-								</div>	
+								</div>
 							</div>	
 						</div>
 						<div class="form-input-error"></div>
@@ -732,7 +735,7 @@
 						</div>
 						<div class="form__passport-birth-place form__block-input-block">
 							<label for="passport-birth-place" class="form__label">Место рождения<span class="span-red">*</span></label>
-							<input type="text" id="passport-birth-place" class="form__passport-birth-place-input required-form-field" name="name" data-rule="string">				
+							<input type="text" id="passport-birth-place" class="form__passport-birth-place-input required-form-field" name="placebirth" data-rule="string">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -744,7 +747,7 @@
 						<div class="form-input-error"></div>
 						<div class="form__passport-snils form__block-input-block">
 							<label for="passport-snils" class="form__label">СНИЛС<span class="span-red">*</span></label>
-							<input type="text" id="passport-snils" class="form__passport-snils-input required-form-field" name="name" data-rule="number" placeholder="___.___.___.__">				
+							<input type="text" id="passport-snils" class="form__passport-snils-input required-form-field" name="sneals" data-rule="number" placeholder="___.___.___.__">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -763,7 +766,7 @@
 					<div class="form__block">
 						<div class="form__additional-documents form__block-input-block">
 							<label for="additional-documents" class="form__label">Заграничный паспорт<span class="span-red">*</span></label>
-							<select id="additional-documents" class="form__additional-documents-select select-required" name="name">
+							<select id="additional-documents" class="form__additional-documents-select select-required" name="abroadpasport">
 								<option value="Не выбрано" selected="">Не выбрано</option>
 								<option value="Да">Да</option>
 								<option value="Нет">Нет</option>
@@ -786,14 +789,14 @@
 							<div class="form__address-auto-filling form__block">
 								<div class="form__address form__block-input-block">
 									<label for="address" class="form__label">Адрес<span class="span-red">*</span></label>
-									<input type="text" id="address" class="form__reg-address-auto-input required-form-field" name="name" data-rule="string">
+									<input type="text" id="address" class="form__reg-address-auto-input required-form-field" name="adress" data-rule="string">
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
 								<div class="form-input-error"></div>
 								<div class="form__flat form__block-input-block">
 									<label for="flat" class="form__label">Квартира</label>
 									<div class="small-input-wrap">
-										<input type="text" id="flat" class="form__flat-input reg-flat-auto-input" name="name">
+										<input type="text" id="flat" class="form__flat-input reg-flat-auto-input" name="flat">
 									</div>
 									<div class="form-wrap__tip-empty"></div>
 									<input type="checkbox" class="form__flat-house-swicher-checkbox reg-flat-auto-checkbox" id="flat-house-swicher">
@@ -803,7 +806,7 @@
 							<div class="form__address-manual-filling form__block">
 								<div class="form__index form__block-input-block">
 									<label for="address" class="form__label">Индекс<span class="span-red">*</span></label>
-									<input type="text" id="address-index" class="form__reg-address-manual-input required-form-field" name="name" data-rule="number">					
+									<input type="text" id="address-index" class="form__reg-address-manual-input required-form-field" name="index" data-rule="number">					
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
 										<div class="tooltip-wrap">
@@ -819,7 +822,7 @@
 								</div>
 								<div class="form__region form__block-input-block">
 									<label for="address" class="form__label">Регион<span class="span-red">*</span></label>
-									<input type="text" id="region-address" class="form__address-input" name="name" data-rule="string">					
+									<input type="text" id="region-address" class="form__address-input" name="region" data-rule="string">					
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
 								<div class="form-input-error"></div>	
@@ -1717,7 +1720,22 @@
 			</div>
 		</div>
 	</main>
+	<template id="faqtemp">
+		<div class="form__block-input-block">
+			<input type="text" id="name" class="form__name-input normal-input required-form-field" name="firstname" data-rule="string" placeholder="Имя" required>
+		</div>
+		<div class="form-input-error"></div>
+		<div class="form__block-input-block">
+			<input type="text" id="name" class="form__name-input normal-input required-form-field" name="secondname" data-rule="string" placeholder="Отчество" required>
+		</div>
+		<div class="form-input-error"></div>
+		<div class="form__block-input-block">
+			<input type="checkbox" id="name" class="checkfaq" name="checkfaq" data-rule="string" required>Проверено
+		</div>
+	</template>
+	
 	<script src="main.js"></script>
+	
 <!-- 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
