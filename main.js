@@ -708,20 +708,20 @@ function inputsValidate(){
 
 // Правила проверки полей сделано через присвоение data-rule
 
-/* reg: /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i} */
-
-
-function sum() {
-
-}
 
 let check = {
-	number: {err: '', reg: /[^0-9]/g},
+	number: {err: 'Поле заполнено не корректно!', reg: /[^0-9]/g},
 	string: {err: 'Корректно заполните форму!', reg: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u},
+	adress: {err: 'Не корректно заполнено поле!', reg: /[0-9a-zA-Zа-яА-Я- ]/g},
 	date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/},
 	tel:    {err: 'Код региона или оператора связи не существует', reg: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/},
 	email:  {err: 'Не правильный формат email', reg: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/},
-	sum: 	{err: '123!', reg: /[^0-9]/g},
+	sneals: {err: 'Поле заполнено не корректно!', reg: /^\d{3}-\d{3}-\d{3}-\d{2}$/},
+	flat: {err: 'Номер заполнен не корректно!', reg: /[^0-9]/g},
+	codebuild: {err: 'Не корректный код подразделения!', reg: /\d{3}[-]\d{3}/},
+	sum: 	{err: '', reg: /[^0-9]/g},
+	sums: {err: '', reg: /[^0-9-]/g},
+	index: {err: 'Не корректно заполнен индекс!', reg: /\d{6}/},
 	pasport: {err: 'Некоректно заполнена серия номера!', reg: /\d{4}[- ]\d{6}/},
 };
 
@@ -730,7 +730,8 @@ let numbOrLetter = {
 	date: /[^0-9- /.]/g,
 	let: /[^а-яА-Яa-zA-Z ,+]/g,
 	mobile: /[^0-9-)(+)]/g,
-	seria: /[^0-9- ]/g
+	seria: /[^0-9- ]/g,
+	sneals: /[^0-9-]/g
 }
 
 var mapKeyRu = {
@@ -755,6 +756,7 @@ function checkInputs() {
 	let inputs = document.querySelectorAll('input[data-rule]');
 	let result = document.querySelectorAll('.form-input-error');
 	
+	
 	function countWords(str) {
 		return str.trim().split(/\s+/).length;
 	};
@@ -773,8 +775,24 @@ function checkInputs() {
 			case 'string':
 				changedLetter(mapKeyRu, arg);
 				break;
+			case 'whogave':
+				changedLetter(mapKeyRu, arg);
+				break;
+			case 'placebirth':
+				changedLetter(mapKeyRu, arg);
+				break;
+			case 'adress':
+				changedLetter(mapKeyRu, arg);
+				break;
+			case 'faqchief':
+				changedLetter(mapKeyRu, arg);
+				break;
+			case 'comment':
+				changedLetter(mapKeyRu, arg);
+				break;
 			case 'email':
 				changedLetter(mapKeyEn, arg);
+				break;
 		};
 	};
 
@@ -784,6 +802,12 @@ function checkInputs() {
 
 	function numbOrLet(arg) {
 		switch(arg.name) {
+			case 'personalsalary':
+				replaceValue(arg, numbOrLetter.numb);
+				break;	
+			case 'sumarend':
+				replaceValue(arg, numbOrLetter.numb);
+				break;			
 			case 'databirth':
 				replaceValue(arg, numbOrLetter.date);
 				break;
@@ -794,10 +818,29 @@ function checkInputs() {
 				replaceValue(arg, numbOrLetter.let);
 				break;
 			case 'mobile':
-				replaceValue(arg, numbOrLetter.mobile)
+				replaceValue(arg, numbOrLetter.mobile);
 				break;
 			case 'serialnumb':
-				replaceValue(arg, numbOrLetter.seria)
+				replaceValue(arg, numbOrLetter.seria);
+				break;
+			case 'whogave': 
+				replaceValue(arg, numbOrLetter.let);
+				break;
+			case 'sneals':
+				replaceValue(arg, numbOrLetter.sneals);
+				break;
+			case 'flat':
+				replaceValue(arg, numbOrLetter.numb);
+				break;
+			case 'statephone': 
+				replaceValue(arg, numbOrLetter.mobile);
+				break;
+			case 'index':
+				replaceValue(arg, numbOrLetter.numb);
+				break;
+			case 'numbhouse':
+				replaceValue(arg, numbOrLetter.numb);
+				break;
 		};
 	};
 
@@ -829,16 +872,56 @@ function checkInputs() {
 					res.innerHTML = 'Максимальный срок 36 месяца!';
 				};
 				break;
+			case 'flat':
+				if (arg.value.length === 0) {
+					arg.style.border = "1px solid red";
+					res.innerHTML = 'Заполните номер корректно!';
+				} else {
+					arg.style.border = '1px solid green';
+					res.innerHTML = '';
+				};
+				break;
+			case 'faqchief':
+				let countWord = countWords(arg.value);
+
+				if (countWord < 3) {
+					arg.style.border = "1px solid red";
+					res.innerHTML = "Необходимо ввести Фамилию Имя Отчество!";
+				} else {
+					arg.style.border = "1px solid green";
+					res.innerHTML = "";
+				};
+				break;
+			case 'personalsalary':
+				if (arg.value.length <= 3) {
+					arg.style.border = "1px solid red";
+					res.innerHTML = "Персональный доход введён не корректно!";
+				} else {
+					arg.style.border = "1px solid green";
+					res.innerHTML = "";
+				}
+				break;
+			case 'sumarend':
+				if (arg.value.length <= 3) {
+					arg.style.border = "1px solid red";
+					res.innerHTML = "Сумма аренды введена не корректно!";
+				} else {
+					arg.style.border = "1px solid green";
+					res.innerHTML = "";
+				}
+				break;
 		};
 	};
-
+	
 	let flagName = false;
+
 	
 	for ( let i = 0; i < inputs.length; i++ ) {
 		inputs[i].addEventListener('input', function() {
 			
 			let thisField = inputs[i];
-			let thisResult = result[i];
+			/* let thisResult = result[i]; */
+			let thisResult = inputs[i].closest('.form__block-input-block').nextElementSibling;
 
 			/* let regx = thisField.dataset.rule; */
 
@@ -851,25 +934,36 @@ function checkInputs() {
 			if (inputs[i].name === 'name' && flagName === false && inputs[i].value.length >= 2) {
 				if (countWord <= 1) {
 					this.style.border = "1px solid red";
-					result[i].innerHTML = "Необходимо ввести фамилию!";
+					thisResult.innerHTML = "Необходимо ввести фамилию!";
 				}
 				if (countWord >= 2) {
 					inputs[i].setAttribute('placeholder', 'Фамилия');
 					inputs[i].value = '';
 					document.querySelector('.addinp').classList.remove('hidden');
-					result[i].innerHTML = '';
+					thisResult.innerHTML = '';
 					this.style.border = "1px solid #ccc";
 					flagName = true;
 				};
 			};
+			if (inputs[i].name === 'faqchief' && inputs[i].value.length > 1) {
+				if (countWord < 3) {
+					this.style.border = "1px solid red";
+					thisResult.innerHTML = "Необходимо ввести Фамилию Имя Отчество!";
+				} else {
+					this.style.border = "1px solid green";
+					thisResult.innerHTML = '';
+				}
+			}
 		});
 
 // Добавление ошибки если после расфукусировки поле осталось пустым
 
 inputs[i].addEventListener('blur', function() {
 	let thisField = inputs[i];
-	let thisResult = result[i];
-	
+	let thisResult = inputs[i].closest('.form__block-input-block').nextElementSibling;
+
+	let countWord = countWords(inputs[i].value);
+
 	let regx = thisField.dataset.rule;
 	let pattern = check[regx].reg;
 	let	fieldValue = thisField.value;
@@ -884,7 +978,6 @@ inputs[i].addEventListener('blur', function() {
 		thisResult.innerHTML = check[regx].err;
 	};
 
-	textError(thisField, thisResult);
 
 	if(inpLength === 0) {
 		thisResult.innerText = "Это поле обязательно для заполнения!";
@@ -894,6 +987,9 @@ inputs[i].addEventListener('blur', function() {
 		thisResult.innerText = "Необходимо ввести фамилию!";
 		thisField.style.border = "1px solid red";
 	};
+	
+
+	textError(thisField, thisResult);
 });
 
 // Проверка селектов

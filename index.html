@@ -614,7 +614,6 @@
 								<input type="checkbox" id="checkfaq" class="checkfaq" name="checkfaq" required>Проверено
 							</div>
 						</div>
-							
 						<div class="form__block-input-block form__birth">
 							<label for="birth" class="form__label">Дата рождения<span class="span-red">*</span></label>
 							<input type="text" id="birth" class="form__birth-input required-form-field" name="databirth" data-rule="date" placeholder="__.__.____" required>
@@ -701,7 +700,7 @@
 						<div class="form-input-error"></div>
 						<div class="form__passport-date form__block-input-block">
 							<label for="passport-passport-date" class="form__label">Дата выдачи<span class="span-red">*</span></label>
-							<input type="text" id="passport-passport-date" class="form__passport-date-input required-form-field" name="dategot" data-rule="date" placeholder="__.__.____">				
+							<input type="text" id="passport-passport-date" class="form__passport-date-input required-form-field" maxlength="10" name="dategot" data-rule="date" placeholder="__.__.____">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -713,13 +712,13 @@
 						<div class="form-input-error"></div>
 						<div class="form__passport-code form__block-input-block">
 							<label for="passport-code" class="form__label">Код подразделения<span class="span-red">*</span></label>
-							<input type="text" id="passport-code" class="form__passport-code-input required-form-field" name="codebuild" data-rule="number" placeholder="___.___">
+							<input type="text" id="passport-code" class="form__passport-code-input required-form-field" maxlength="7" name="codebuild" data-rule="codebuild" placeholder="___.___">
 							<div class="form-wrap__tip-empty"></div>
 						</div>
 						<div class="form-input-error"></div>
 						<div class="form__passport-issue form__block-input-block">
 							<label for="passport-issue" class="form__label">Кем выдан<span class="span-red">*</span></label>
-							<input type="text" id="passport-issue" class="form__passport-issue-input required-form-field" name="whogot" data-rule="string">				
+							<input type="text" id="passport-issue" class="form__passport-issue-input required-form-field" name="whogave" data-rule="string">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -747,7 +746,7 @@
 						<div class="form-input-error"></div>
 						<div class="form__passport-snils form__block-input-block">
 							<label for="passport-snils" class="form__label">СНИЛС<span class="span-red">*</span></label>
-							<input type="text" id="passport-snils" class="form__passport-snils-input required-form-field" name="sneals" data-rule="number" placeholder="___.___.___.__">				
+							<input type="text" id="passport-snils" class="form__passport-snils-input required-form-field" maxlength="14" name="sneals" data-rule="sneals" placeholder="___.___.___.__">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -789,14 +788,14 @@
 							<div class="form__address-auto-filling form__block">
 								<div class="form__address form__block-input-block">
 									<label for="address" class="form__label">Адрес<span class="span-red">*</span></label>
-									<input type="text" id="address" class="form__reg-address-auto-input required-form-field" name="adress" data-rule="string">
+									<input type="text" id="address" class="form__reg-address-auto-input required-form-field" name="adress" data-rule="adress">
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
 								<div class="form-input-error"></div>
 								<div class="form__flat form__block-input-block">
 									<label for="flat" class="form__label">Квартира</label>
 									<div class="small-input-wrap">
-										<input type="text" id="flat" class="form__flat-input reg-flat-auto-input" name="flat">
+										<input type="text" id="flat" class="form__flat-input reg-flat-auto-input" maxlength="5" name="flat">
 									</div>
 									<div class="form-wrap__tip-empty"></div>
 									<input type="checkbox" class="form__flat-house-swicher-checkbox reg-flat-auto-checkbox" id="flat-house-swicher">
@@ -806,7 +805,7 @@
 							<div class="form__address-manual-filling form__block">
 								<div class="form__index form__block-input-block">
 									<label for="address" class="form__label">Индекс<span class="span-red">*</span></label>
-									<input type="text" id="address-index" class="form__reg-address-manual-input required-form-field" name="index" data-rule="number">					
+									<input type="text" id="address-index" class="form__reg-address-manual-input required-form-field" maxlength="6" name="index" data-rule="index">					
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
 										<div class="tooltip-wrap">
@@ -822,13 +821,13 @@
 								</div>
 								<div class="form__region form__block-input-block">
 									<label for="address" class="form__label">Регион<span class="span-red">*</span></label>
-									<input type="text" id="region-address" class="form__address-input" name="region" data-rule="string">					
+									<input type="text" id="region-address" class="form__address-input" name="region" data-rule="adress">					
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
 								<div class="form-input-error"></div>	
 								<div class="form__district form__block-input-block">
 									<label for="district" class="form__label">Район или город<span class="span-red">*</span></label>
-									<input type="text" id="district" class="form__district-input required-form-field" name="name" data-rule="string">					
+									<input type="text" id="district" class="form__district-input required-form-field" name="cityor" data-rule="string">					
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
 										<div class="tooltip-wrap">
@@ -840,13 +839,13 @@
 								<div class="form-input-error"></div>			
 								<div class="form__settlement form__block-input-block">
 									<label for="settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
-									<input type="text" id="settlement" class="form__settlement-input required-form-field" name="name" data-rule="string">					
+									<input type="text" id="settlement" class="form__settlement-input required-form-field" name="locality" data-rule="string">					
 									<div class="form-wrap__tip-empty"></div>
 								</div>	
 								<div class="form-input-error"></div>	
 								<div class="form__street form__block-input-block">
 									<label for="street" class="form__label">Улица<span class="span-red">*</span></label>
-									<input type="text" id="street" class="form__street-input required-form-field" name="name" data-rule="string">					
+									<input type="text" id="street" class="form__street-input required-form-field" name="street" data-rule="adress">					
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
 										<div class="tooltip-wrap">
@@ -859,13 +858,13 @@
 								<div class="form__house form__block-input-block">
 									<label for="house-manual-filling" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
 									<div class="smallest-input-wrap">
-										<input type="text" id="house-manual-filling" class="form__house-input required-form-field" name="name" placeholder="Дом" data-rule="number">
+										<input type="text" id="house-manual-filling" class="form__house-input required-form-field" maxlength="4" name="flat" placeholder="Дом" data-rule="flat">
 									</div>			
 									<div class="smallest-input-wrap">				
-										<input type="text" id="house-building" class="form__block-input required-form-field" name="name" placeholder="Корпус" data-rule="number">	
+										<input type="text" id="house-building" class="form__block-input required-form-field" maxlength="4" name="flat" placeholder="Корпус" data-rule="flat">	
 									</div>		
 									<div class="smallest-input-wrap">				
-										<input type="text" id="house-block" class="form__building-input required-form-field" name="name" placeholder="Строение" data-rule="number">	
+										<input type="text" id="house-block" class="form__building-input required-form-field" maxlength="4" name="flat" placeholder="Строение" data-rule="flat">	
 									</div>					
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
@@ -879,7 +878,7 @@
 								<div class="form__flat form__block-input-block">
 									<label for="flat-manual-filling" class="form__label">Квартира<span class="span-red">*</span></label>
 									<div class="small-input-wrap">
-										<input type="text" id="flat-manual-filling" class="form__flat-input js-flat-reg-manual-input required-form-field" name="name" data-rule="number">	
+										<input type="text" id="flat-manual-filling" class="form__flat-input js-flat-reg-manual-input required-form-field" maxlength="5" name="flat" data-rule="flat">	
 									</div>					
 									<div class="form-wrap__tip-empty"></div>
 									<input type="checkbox" class="form__flat-house-swicher-checkbox js-flat-reg-manual-checkbox required-form-field" id="flat-house-swicher-manual-filling">
@@ -890,7 +889,7 @@
 						</div>
 						<div class="form__home-phone form__block-input-block">
 							<label for="home-phone-manual-filling" class="form__label">Стационарный телефон</label>
-							<input type="text" id="home-phone-manual-filling" class="form__home-phone-input js-phone-reg-manual-input required-form-field" name="name" data-rule="number">					
+							<input type="text" id="home-phone-manual-filling" class="form__home-phone-input js-phone-reg-manual-input required-form-field" name="statephone">					
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -926,14 +925,14 @@
 								<div class="form__block form__current-address-auto-filling js-current-address-auto-filling">
 									<div class="form__current-address form__block-input-block">
 										<label for="current-address" class="form__label">Адрес<span class="span-red">*</span></label>
-										<input type="text" id="current-address" class="form__current-address-input required-form-field" name="name" data-rule="string">
+										<input type="text" id="current-address" class="form__current-address-input required-form-field" name="adress" data-rule="adress">
 										<div class="form-wrap__tip-empty"></div>
 									</div>	
 									<div class="form-input-error"></div>
 									<div class="form__current-flat form__block-input-block">						
 										<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>						
 										<div class="small-input-wrap">
-											<input type="text" id="current-flat" class="form__flat-input js-current-address-auto-flat-input required-form-field" name="name" data-rule="number">		
+											<input type="text" id="current-flat" class="form__flat-input js-current-address-auto-flat-input required-form-field" name="flat" data-rule="flat">		
 										</div>					
 										<div class="form-wrap__tip-empty"></div>
 										<input type="checkbox" class="form__current-flat-house-swicher-checkbox js-current-auto-address-flat-checkbox required-form-field" id="current-flat-house-swicher">
@@ -944,7 +943,7 @@
 								<div class="form__block form__current-address-manual-filling js-current-address-manual-filling">
 									<div class="form__current-index form__block-input-block">
 										<label for="current-index" class="form__label">Индекс<span class="span-red">*</span></label>
-										<input type="text" id="current-index" class="form__current-address-manual-input js-current-address-manual-input required-form-field" name="name" data-rule="number">					
+										<input type="text" id="current-index" class="form__current-address-manual-input js-current-address-manual-input required-form-field" maxlength="6" name="index" data-rule="index">					
 										<div class="form-wrap__tip">
 											<span class="form__tip">?</span>
 											<div class="tooltip-wrap">
@@ -960,13 +959,13 @@
 									</div>
 									<div class="form__current-region form__block-input-block">
 										<label for="current-region" class="form__label">Регион<span class="span-red">*</span></label>
-										<input type="text" id="current-region" class="form__current-region-input required-form-field" name="name" data-rule="string">					
+										<input type="text" id="current-region" class="form__current-region-input required-form-field" name="region" data-rule="adress">					
 										<div class="form-wrap__tip-empty"></div>
 									</div>	
 									<div class="form-input-error"></div>	
 									<div class="form__current-district form__block-input-block">
 										<label for="current-district" class="form__label">Район или город<span class="span-red">*</span></label>
-										<input type="text" id="current-district" class="form__current-district-input required-form-field" name="name" data-rule="string">					
+										<input type="text" id="current-district" class="form__current-district-input required-form-field" name="cityor" data-rule="string">					
 										<div class="form-wrap__tip">
 											<span class="form__tip">?</span>
 											<div class="tooltip-wrap">
@@ -978,13 +977,13 @@
 									<div class="form-input-error"></div>			
 									<div class="form__current-settlement form__block-input-block">
 										<label for="current-settlement" class="form__label">Населенный пункт<span class="span-red">*</span></label>
-										<input type="text" id="current-settlement" class="form__current-settlement-input required-form-field" name="name" data-rule="string">					
+										<input type="text" id="current-settlement" class="form__current-settlement-input required-form-field" name="locality" data-rule="string">					
 										<div class="form-wrap__tip-empty"></div>
 									</div>	
 									<div class="form-input-error"></div>	
 									<div class="form__current-street form__block-input-block">
 										<label for="current-street" class="form__label">Улица<span class="span-red">*</span></label>
-										<input type="text" id="current-street" class="form__current-street-input required-form-field" name="name" data-rule="string">					
+										<input type="text" id="current-street" class="form__current-street-input required-form-field" name="street" data-rule="adress">					
 										<div class="form-wrap__tip">
 											<span class="form__tip">?</span>
 											<div class="tooltip-wrap">
@@ -997,13 +996,13 @@
 									<div class="form__current-house form__block-input-block">
 										<label for="current-house" class="form__label">Дом, корпус, строение<span class="span-red">*</span></label>
 										<div class="smallest-input-wrap">
-											<input type="text" id="current-house" class="form__current-house-input form__small required-form-field" name="name" placeholder="Дом" data-rule="number">
+											<input type="text" id="current-house" class="form__current-house-input form__small required-form-field" maxlength="4" name="flat" placeholder="Дом" data-rule="flat">
 										</div>		
 										<div class="smallest-input-wrap">					
-											<input type="text" id="current-block" class="form__current-house-input form__small required-form-field" name="name" placeholder="Корпус" data-rule="number">
+											<input type="text" id="current-block" class="form__current-house-input form__small required-form-field" maxlength="4" name="flat" placeholder="Корпус" data-rule="flat">
 										</div>	
 										<div class="smallest-input-wrap">						
-											<input type="text" id="current-building" class="form__current-house-input form__small required-form-field" name="name" placeholder="Строение" data-rule="number">	
+											<input type="text" id="current-building" class="form__current-house-input form__small required-form-field" maxlength="4" name="flat" placeholder="Строение" data-rule="flat">	
 										</div>					
 										<div class="form-wrap__tip">
 											<span class="form__tip">?</span>
@@ -1017,7 +1016,7 @@
 									<div class="form__current-flat-manual-filling form__block-input-block">
 										<label for="current-flat" class="form__label">Квартира<span class="span-red">*</span></label>
 										<div class="small-input-wrap">
-											<input type="text" id="current-flat-manual-filling" class="form__flat-input js-form__flat-current-manual-input required-form-field" name="name" data-rule="number">	
+											<input type="text" id="current-flat-manual-filling" class="form__flat-input js-form__flat-current-manual-input required-form-field" maxlength="5" name="flat" data-rule="flat">	
 										</div>					
 										<div class="form-wrap__tip-empty"></div>
 										<input type="checkbox" class="form__current-flat-house-swicher-checkbox js-current-flat-house-swicher-checkbox" id="current-flat-house-swicher-manual-filling">
@@ -1029,7 +1028,7 @@
 						</div>			
 						<div class="form__current-home-phone form__block-input-block">
 							<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-							<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input js-current-home-phone-input required-form-field" name="name" data-rule="number">					
+							<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input js-current-home-phone-input required-form-field" name="statephone" data-rule="tel">					
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -1137,7 +1136,7 @@
 									<label for="work-phone" class="form__label">Рабочий телефон<span class="span-red">*</span></label>
 									<div class="average-input-wrap__container">
 										<div class="average-input-wrap">
-											<input type="text" id="work-phone" class="form__work-phone-input form__average required-form-field" name="work-phone" placeholder="+7(___)___-__-__" data-rule="number">
+											<input type="text" id="work-phone" class="form__work-phone-input form__average required-form-field" name="mobile" placeholder="+7(___)___-__-__" data-rule="tel">
 										</div>		
 										<div class="average-input-wrap">					
 											<input type="text" id="work-phone-add" class="form__work-phone-input-add form__average" name="work-phone" placeholder="Добавочный">
@@ -1159,13 +1158,13 @@
 								<div class="form__block js-manager-phone-wrap">
 									<div class="form__manager-phone form__block-input-block">
 										<label for="manager-phone" class="form__label">Мобильный телефон начальника<span class="span-red">*</span></label>
-										<input type="phone" id="manager" class="form__manager-phone-input js-form__manager-phone-input required-form-field" name="name" data-rule="number">					
+										<input type="phone" id="manager" class="form__manager-phone-input js-form__manager-phone-input required-form-field" name="mobile" data-rule="tel">					
 										<div class="form-wrap__tip-empty"></div>
 									</div>	
 									<div class="form-input-error"></div>
 									<div class="form__manager-name form__block-input-block">
 										<label for="manager-name" class="form__label">ФИО начальника<span class="span-red">*</span></label>
-										<input type="text" id="manager-name" class="form__manager-name-input js-form__manager-phone-input required-form-field" name="name" data-rule="string">					
+										<input type="text" id="manager-name" class="form__manager-name-input js-form__manager-phone-input required-form-field" name="faqchief" data-rule="string">					
 										<div class="form-wrap__tip-empty"></div>
 									</div>	
 									<div class="form-input-error"></div>							
@@ -1244,22 +1243,23 @@
 										<div class="form__block form__work-organization-address-auto-filling js-work-organization-address-auto-filling">
 											<div class="form__work-organization-address form__block-input-block">
 												<label for="work-organization-address" class="form__label">Адрес<span class="span-red">*</span></label>
-												<input type="text" id="work-organization-address" class="form__work-organization-address-input required-form-field" name="name" data-rule="string">
+												<input type="text" id="work-organization-address" class="form__work-organization-address-input required-form-field" name="adress" data-rule="adress">
 												<div class="form-wrap__tip-empty"></div>
 											</div>
 											<div class="form-input-error"></div>	
 											<div class="form__work-organization-flat form__block-input-block">						
-												<label for="work-organization-flat" class="form__label">Номер офиса</label>						
+												<label for="work-organization-flat" class="form__label">Номер офиса<span class="span-red">*</span></label>						
 												<div class="small-input-wrap work-organization">
-													<input type="text" id="work-organization-flat" class="form__flat-input js-work-organization-address-auto-flat-input required-form-field" name="name" data-rule="number">		
+													<input type="text" id="work-organization-flat" class="form__flat-input js-work-organization-address-auto-flat-input required-form-field" maxlength="5" name="flat" data-rule="number">		
 												</div>					
 												<div class="form-wrap__tip-empty"></div>
 											</div>	
+											<div class="form-input-error"></div>
 										</div>	
 										<div class="form__block form__work-organization-address-manual-filling js-work-organization-address-manual-filling">
 											<div class="form__work-organization-index form__block-input-block">
 												<label for="work-organization-index" class="form__label">Индекс<span class="span-red">*</span></label>
-												<input type="text" id="work-organization-index" class="form__work-organization-address-manual-input js-work-organization-address-manual-input required-form-field" name="name" data-rule="number">					
+												<input type="text" id="work-organization-index" class="form__work-organization-address-manual-input js-work-organization-address-manual-input required-form-field" name="index" data-rule="number">					
 												<div class="form-wrap__tip">
 													<span class="form__tip">?</span>
 													<div class="tooltip-wrap">
@@ -1341,7 +1341,7 @@
 											<div class="form-input-error"></div>
 											<div class="form__work-organization-home-phone form__block-input-block">
 												<label for="work-organization-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-												<input type="text" id="work-organization-home-phone-manual-filling" class="form__work-organization-home-phone-input js-work-organization-home-phone-input required-form-field" name="name" data-rule="number">					
+												<input type="text" id="work-organization-home-phone-manual-filling" class="form__work-organization-home-phone-input js-work-organization-home-phone-input required-form-field" name="statename" data-rule="number">					
 												<div class="form-wrap__tip">
 													<span class="form__tip">?</span>
 													<div class="tooltip-wrap">
@@ -1398,7 +1398,7 @@
 						<div class="form__block form__block-additional-info">
 							<div class="form__family-phone form__block-input-block">
 								<label for="family-phone" class="form__label">Стационарный телефон родственников или знакомых<span class="span-red">*</span></label>
-								<input type="phone" id="family-phone" class="form__family-phone-input required-form-field" name="name" data-rule="number">				
+								<input type="phone" id="family-phone" class="form__family-phone-input required-form-field" name="statephone" data-rule="tel">				
 								<div class="form-wrap__tip">
 									<span class="form__tip">?</span>
 									<div class="tooltip-wrap">
@@ -1410,7 +1410,7 @@
 							<div class="form-input-error"></div>
 							<div class="form__family-phone_comment form__block-input-block">
 								<label for="family-phone_comment" class="form__label">Комментарий<span class="span-red">*</span></label>
-								<input type="text" id="family-phone_comment" class="form__family-phone_comment-input required-form-field" name="name" data-rule="string">				
+								<input type="text" id="family-phone_comment" class="form__family-phone_comment-input required-form-field" name="comment" data-rule="string">				
 								<div class="form-wrap__tip">
 									<span class="form__tip">?</span>
 									<div class="tooltip-wrap">
@@ -1422,7 +1422,7 @@
 							<div class="form-input-error"></div>
 							<div class="form__income form__block-input-block">
 								<label for="family-income" class="form__label">Персональный доход<span class="span-red">*</span></label>
-								<input type="number" id="income" class="form__income-input additional-input required-form-field" name="name" data-rule="number">				
+								<input type="number" id="income" class="form__income-input additional-input required-form-field" name="personalsalary" data-rule="number">				
 								<p class="form__text">руб./месяц</p>				
 								<div class="form-wrap__tip">
 									<span class="form__tip">?</span>
@@ -1435,7 +1435,7 @@
 							<div class="form-input-error"></div>
 							<div class="form__flat-rent form__block-input-block">
 								<label for="flat-rent" class="form__label">Сумма аренды квартиры<span class="span-red">*</span></label>
-								<input type="number" id="flat-rent" class="form__flat-rent-input additional-input required-form-field" name="name" data-rule="number">				
+								<input type="number" id="flat-rent" class="form__flat-rent-input additional-input required-form-field" name="sumarend" data-rule="number">				
 								<p class="form__text">руб./месяц</p>				
 								<div class="form-wrap__tip">
 									<span class="form__tip">?</span>
@@ -1452,7 +1452,7 @@
 					<div class="form__block form__password">
 						<div class="form__password form__block-input-block">
 							<label for="password" class="form__label">Кодовое слово<span class="span-red">*</span></label>
-							<input type="text" id="password" class="form__password-input required-form-field" name="name" data-rule="string">				
+							<input type="text" id="password" class="form__password-input required-form-field" name="codeword" data-rule="string">				
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -1461,6 +1461,7 @@
 								</div>	
 							</div>	
 						</div>
+						<div class="form-input-error"></div>
 						<div class="form__got-debit-card form__block-input-block">
 							<input type="checkbox" class="form__got-debit-card-checkbox" id="got-debit-card">
 							<label for="got-debit-card">Есть дебетовая карта Тинькофф банка</label>	
@@ -1720,19 +1721,6 @@
 			</div>
 		</div>
 	</main>
-	<template id="faqtemp">
-		<div class="form__block-input-block">
-			<input type="text" id="name" class="form__name-input normal-input required-form-field" name="firstname" data-rule="string" placeholder="Имя" required>
-		</div>
-		<div class="form-input-error"></div>
-		<div class="form__block-input-block">
-			<input type="text" id="name" class="form__name-input normal-input required-form-field" name="secondname" data-rule="string" placeholder="Отчество" required>
-		</div>
-		<div class="form-input-error"></div>
-		<div class="form__block-input-block">
-			<input type="checkbox" id="name" class="checkfaq" name="checkfaq" data-rule="string" required>Проверено
-		</div>
-	</template>
 	
 	<script src="main.js"></script>
 	
