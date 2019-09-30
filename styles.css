@@ -2,6 +2,29 @@
 	box-sizing: border-box;
 }
 
+.area{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.wrap{
+    width: 120px;
+    height: 120px;
+    pointer-events: all;
+
+}
+
+.wrap__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+}
 .form__name-row:nth-child(2),
 .form__name-row:nth-child(3),
 .form__name-row:nth-child(5),

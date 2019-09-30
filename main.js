@@ -1016,3 +1016,15 @@ checkInputs();
 }
 inputsValidate()
 
+
+
+const element = document.getElementById('id');
+const options = {
+    limit: document.querySelector('.area'),
+};
+
+window.drag = new Draggable (element, options);
+drag.set(830, 500);
+
+
+
