@@ -17,6 +17,30 @@
     pointer-events: all;
 
 }
+.wrap__help{
+    width: 400px;
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 0;
+    padding: 15px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.wrap__help:after, .wrap__help:before{
+    content:'';
+    position: absolute;
+    left: 80px;
+    bottom: -18px;
+    border: 8px solid transparent;
+    border-top: 10px solid #000;
+}
+
+.wrap__help:after{
+    border-top: 10px solid #eeeeee;
+    bottom: -17px;
+}
 
 .wrap__img{
     display: block;

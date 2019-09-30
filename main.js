@@ -206,6 +206,12 @@ function showCarBailNextBtn() {
 }
 
 
+
+
+
+
+
+
 showCarBailNextBtn();
 
 
@@ -216,6 +222,15 @@ function showFlatBailNextBtn() {
 	const radioInputs = container.querySelectorAll("[type=radio]");
 	const btn = document.querySelector(".js-nxtbtn-flat-bail");
 	const notOnlyBtn = document.querySelector(".js-flat-only-owner");
+	const tabstip = document.querySelectorAll('.tabs__item');
+
+	btn.addEventListener('click', function() {
+		for (let i = 0; i < tabstip.length; i++) {
+			let tabData = tabstip[i].dataset.tab;
+			tabsTextTooltip(tabData)
+		}
+	})
+
 
 	for (const radioInput of radioInputs) {
 		radioInput.addEventListener("click", function() {			
@@ -286,6 +301,40 @@ function hideOnlyOwner() {
 	}
 }	
 
+
+
+	const flatBtnAll = document.querySelectorAll('.js-flat-bail-radio');
+
+	for (const btn of flatBtnAll) {
+		btn.addEventListener('click', function() {
+			const himName = btn.name;
+
+
+			textTip(himName)
+		})
+	}
+
+
+function textTip(arg) {
+	switch(arg) {
+		case 'flat-bail__only-ownership':
+			tip.classList.remove('hidden');
+			tip.innerHTML = "Задавай вопрос, если клиент самостоятельно интересуется или просит внести данные по созаемщику.";
+			break;
+		case 'flat-bail__co-borrowers':
+			tip.classList.add('hidden');
+			tip.innerHTML = "";
+			break;
+		case 'flat-bail__meeting':
+			tip.classList.remove('hidden');
+			tip.innerHTML = "Не надо спрашивать у клиента, сможет ли он собрать всех участников на встрече. Просто в утвердительной форме предупреди клиента, что ВСЕ участники сделки должны быть в одном месте для подписания документов. Если клиент сам сообщает, что не сможет всех собрать - выбери Нет.В любом другом случае (молчит / подтверждает, что сможет) – отметь Да, сможет";
+			break;
+		case 'flat-bail__party-co-borrowers':
+			tip.classList.add('hidden');
+			tip.innerHTML = "";
+			break;
+	}
+}
 
 hideOnlyOwner();
 
@@ -545,6 +594,8 @@ function showRegFactAddress(check, hidden, show) {
 			manualFilling.style.display = "flex";
 			autoFilling.style.display = "none";
 		} else {
+			tip.classList.add('hidden');
+			tip.innerHTML = ''
 			manualFilling.style.display = "none";
 			autoFilling.style.display = "flex";
 		}
@@ -570,7 +621,7 @@ function activeTab() {
 				}
 				this.classList.add(tabActiveClass);
 			} 
-
+			
 			const value = tab.dataset.tab;
 			const section = document.querySelector(`[data-section='${value}']`);
 			for (const item of sections) {
@@ -583,6 +634,13 @@ function activeTab() {
 
 activeTab();
 
+function tabsTextTooltip(arg) {
+	switch(arg) {
+		case 'application-forming':
+			tip.classList.remove('hidden');
+			tip.innerHTML = '<ИО>, продиктуйте адрес квартиры, которую предоставляете в качестве залога начиная с региона'
+	}
+}
 
 function loanOffer() {
 	const failInput = document.querySelector(".application-forming__script-fail");
@@ -755,7 +813,7 @@ var mapKeyEn = {
 function checkInputs() {
 	let inputs = document.querySelectorAll('input[data-rule]');
 	let result = document.querySelectorAll('.form-input-error');
-	
+	let textareas = document.querySelectorAll('.form__organization-input');
 	
 	function countWords(str) {
 		return str.trim().split(/\s+/).length;
@@ -773,20 +831,10 @@ function checkInputs() {
 	function switchMapKey(value, arg) {
 		switch(value) {
 			case 'string':
-				changedLetter(mapKeyRu, arg);
-				break;
 			case 'whogave':
-				changedLetter(mapKeyRu, arg);
-				break;
 			case 'placebirth':
-				changedLetter(mapKeyRu, arg);
-				break;
 			case 'adress':
-				changedLetter(mapKeyRu, arg);
-				break;
 			case 'faqchief':
-				changedLetter(mapKeyRu, arg);
-				break;
 			case 'comment':
 				changedLetter(mapKeyRu, arg);
 				break;
@@ -802,61 +850,51 @@ function checkInputs() {
 
 	function numbOrLet(arg) {
 		switch(arg.name) {
-			case 'personalsalary':
-				replaceValue(arg, numbOrLetter.numb);
-				break;	
+			case'personalsalary':
 			case 'sumarend':
+			case 'sumcredit':
+			case 'flat':
+			case 'index':
+			case 'numbhouse':
+			case 'codebuild':
+			case 'dategot':
 				replaceValue(arg, numbOrLetter.numb);
-				break;			
+				break;
 			case 'databirth':
 				replaceValue(arg, numbOrLetter.date);
 				break;
-			case 'sumcredit':
-				replaceValue(arg, numbOrLetter.numb);
-				break;
-			case 'name':
-				replaceValue(arg, numbOrLetter.let);
-				break;
+			case 'mobiletool':
 			case 'mobile':
-				replaceValue(arg, numbOrLetter.mobile);
-				break;
-			case 'serialnumb':
-				replaceValue(arg, numbOrLetter.seria);
-				break;
-			case 'whogave': 
-				replaceValue(arg, numbOrLetter.let);
-				break;
-			case 'sneals':
-				replaceValue(arg, numbOrLetter.sneals);
-				break;
-			case 'flat':
-				replaceValue(arg, numbOrLetter.numb);
-				break;
 			case 'statephone': 
 				replaceValue(arg, numbOrLetter.mobile);
 				break;
-			case 'index':
-				replaceValue(arg, numbOrLetter.numb);
-				break;
-			case 'numbhouse':
-				replaceValue(arg, numbOrLetter.numb);
-				break;
+			case 'name':
+			case 'whogave':
+			case 'locality':
+			case 'cityor':
+			case 'codeword':
+					replaceValue(arg, numbOrLetter.let);
+					break;
+			case 'sneals':
+			case 'serialnumb':
+					replaceValue(arg, numbOrLetter.sneals);
+					break;
 		};
 	};
 
 	function textError(arg, res) {
 		switch(arg.name) {
 			case 'sumcredit':
-				if (arg.value < 50000) {
+				if (arg.value < 200000) {
 					arg.style.border = "1px solid red";
-					res.innerHTML = 'Сумма кредита минимум 50000!';
+					res.innerHTML = 'Сумма кредита минимум 200000!';
 				} else {
 					arg.style.border = '1px solid green';
 					res.innerHTML = '';
 				};
-				if (arg.value > 2000000) {
+				if (arg.value > 15000000) {
 					arg.style.border = "1px solid red";
-					res.innerHTML = 'Сумма кредита максимум 2000000!';
+					res.innerHTML = 'Сумма кредита максимум 15000000!';
 				};
 				break;
 			case 'timecredit':
@@ -867,9 +905,9 @@ function checkInputs() {
 					arg.style.border = '1px solid green';
 					res.innerHTML = '';
 				};
-				if (arg.value > 36) {
+				if (arg.value > 540) {
 					arg.style.border = "1px solid red";
-					res.innerHTML = 'Максимальный срок 36 месяца!';
+					res.innerHTML = 'Максимальный срок 15 лет!';
 				};
 				break;
 			case 'flat':
@@ -915,15 +953,76 @@ function checkInputs() {
 	
 	let flagName = false;
 
-	
+	for (let i = 0; i < inputs.length; i++) {
+		inputs[i].addEventListener('focus', function() {
+			const himName = inputs[i].name;
+			tooltipFocus(himName)
+		})
+	}
+
+	for (let i = 0; i < textareas.length; i++ ) {
+		textareas[i].addEventListener('focus', function() {
+			let himName = textareas[i].name;
+			tooltipFocus(himName);
+		})
+	}
+	for (let i = 0; i < textareas.length; i++ ) {
+		textareas[i].addEventListener('blur', function() {
+			tip.classList.add('hidden');
+			tip.innerHTML = '';
+		})
+	}
+
+	function tooltipFocus(arg) {
+		switch(arg) {
+			case 'abroadpasport':
+				tip.classList.remove('hidden')
+				tip.innerHTML = 'Готовы ли вы предоставить заграничный паспорт в качестве дополнительного документа?'
+				break;
+			case 'comment':
+				tip.classList.remove('hidden')
+				tip.innerHTML = '<ИО>, продиктуйте полное наименование организации с правовой формой(ООО, ЗАО, ИП и т.д).'
+				break;
+			case 'mobiletool':
+				tip.classList.remove('hidden')
+				tip.innerHTML = 'Продиктуйте, пожалуйста, ваш стационарный рабочий телефон.'
+				break;
+			case 'adresstool':
+				tip.classList.remove('hidden')
+				tip.innerHTML = 'Если фактический адрес работы отличается от юридического, то укажи фактический адрес.'
+				break;
+			case 'personalsalary':
+				tip.classList.remove('hidden')
+				tip.innerHTML = '<ИО>, назовите, пожалуйста, ваш персональный ежемесячный доход, учитывая официальные и дополнительные источники дохода.'
+				break;
+			case 'sumarend':
+				tip.classList.remove('hidden')
+				tip.innerHTML = 'Вы арендуете жильё?'
+				break;
+			case 'codeword':
+				tip.classList.remove('hidden')
+				tip.innerHTML = 'У Вас есть действующий (или активный) продукт Тинькофф Банка?». Если есть, проставь галочку в чекбокс Есть дебетовая карта Тинькофф Банка.'
+				break;
+		}
+	}
+
+	for (let i = 0; i < inputs.length; i++) {
+		inputs[i].addEventListener('mouseover', function() {
+			let input = inputs[i];
+			let himName = input.name;
+			tooltipFocus(himName)
+		})
+	}
+	for (let i = 0; i < inputs.length; i++) {
+		inputs[i].addEventListener('mouseout', function() {
+			tip.classList.add('hidden');
+			tip.innerHTML = '';
+		})
+	}
 	for ( let i = 0; i < inputs.length; i++ ) {
 		inputs[i].addEventListener('input', function() {
-			
 			let thisField = inputs[i];
-			/* let thisResult = result[i]; */
 			let thisResult = inputs[i].closest('.form__block-input-block').nextElementSibling;
-
-			/* let regx = thisField.dataset.rule; */
 
 			numbOrLet(thisField);
 			textError(thisField, thisResult);
@@ -961,8 +1060,9 @@ function checkInputs() {
 inputs[i].addEventListener('blur', function() {
 	let thisField = inputs[i];
 	let thisResult = inputs[i].closest('.form__block-input-block').nextElementSibling;
-
-	let countWord = countWords(inputs[i].value);
+	tip.classList.add('hidden');
+	tip.innerHTML = '';
+	/* let countWord = countWords(inputs[i].value); */
 
 	let regx = thisField.dataset.rule;
 	let pattern = check[regx].reg;
@@ -977,7 +1077,6 @@ inputs[i].addEventListener('blur', function() {
 		thisField.style.border = "1px solid red";
 		thisResult.innerHTML = check[regx].err;
 	};
-
 
 	if(inpLength === 0) {
 		thisResult.innerText = "Это поле обязательно для заполнения!";
@@ -996,17 +1095,34 @@ inputs[i].addEventListener('blur', function() {
 
 function checkSelect () {
 	const allSel = document.querySelectorAll('.select-required');
-	allSel.forEach((sel) => {
-		sel.addEventListener('blur', function (){     
+
+	for (let i = 0; i < allSel.length; i++) {
+		allSel[i].addEventListener('focus', function() {
+			let sel = allSel[i];
+			let himName = sel.name;
+			tooltipFocus(himName)
+		})
+	}
+
+	for (let i = 0; i < allSel.length; i++) {
+		allSel[i].addEventListener('blur', function() {
+			const sel = allSel[i];
 			const selNum = sel.selectedIndex;
+			tip.classList.add('hidden');
+			tip.innerHTML = '';
+			console.log(sel.name)
+			if (sel.name === 'abroadpasport') {
+				tip.classList.remove('hidden');
+				tip.innerHTML = 'Вводи регион, город, улицу, номер дома и следуй подсказкам формы. Адрес регистрации нужно вносить тот, который указан у клиента в паспорте. Если подсказки формы противоречат данным из паспорта, используй режим ручного ввода адреса.'
+			}
 			if(selNum === 0){
 				sel.style.border = '1px solid red'
 			}
 			else{
 				sel.style.border = '1px solid green'
 			}
-		});
-	})
+		})
+	}
 }
 
 checkSelect();
@@ -1016,15 +1132,13 @@ checkInputs();
 }
 inputsValidate()
 
-
-
 const element = document.getElementById('id');
 const options = {
     limit: document.querySelector('.area'),
 };
 
 window.drag = new Draggable (element, options);
-drag.set(830, 500);
+drag.set(1030, 500);
 
-
+const tip = document.querySelector('.wrap__help');
 
