@@ -802,12 +802,13 @@
 								<div class="form__flat form__block-input-block">
 									<label for="flat" class="form__label">Квартира</label>
 									<div class="small-input-wrap">
-										<input type="text" id="flat" class="form__flat-input reg-flat-auto-input" maxlength="5" name="flat">
+										<input type="text" id="flat" class="form__flat-input reg-flat-auto-input" maxlength="5" name="flat" data-rule="flat" data-required="0">
 									</div>
 									<div class="form-wrap__tip-empty"></div>
 									<input type="checkbox" class="form__flat-house-swicher-checkbox reg-flat-auto-checkbox" id="flat-house-swicher">
 									<label for="flat-house-swicher" class="form__flat-house-swicher-label">Нет квартиры(частный дом)</label>
-								</div>	
+								</div>
+								<div class="form-input-error"></div>	
 							</div>	
 							<div class="form__address-manual-filling form__block">
 								<div class="form__index form__block-input-block">
@@ -896,7 +897,7 @@
 						</div>
 						<div class="form__home-phone form__block-input-block">
 							<label for="home-phone-manual-filling" class="form__label">Стационарный телефон</label>
-							<input type="text" id="home-phone-manual-filling" class="form__home-phone-input js-phone-reg-manual-input required-form-field" name="statephone">					
+							<input type="text" id="home-phone-manual-filling" class="form__home-phone-input js-phone-reg-manual-input" data-rule="tel" data-required="0" name="statephone">					
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -905,6 +906,7 @@
 								</div>	
 							</div>	
 						</div>	
+						<div class="form-input-error"></div>
 						<div class="form__phone-swicher form__block-input-block">
 							<input type="checkbox" class="form__phone-exist-switch-checkbox js-phone-reg-manual-checkbox" id="form-phone-exist-switch-manual-filling">
 							<label for="form-phone-exist-switch-manual-filling">Нет стационарного телефона</label>				
@@ -1035,7 +1037,7 @@
 						</div>			
 						<div class="form__current-home-phone form__block-input-block">
 							<label for="current-home-phone" class="form__label">Стационарный телефон<span class="span-red">*</span></label>
-							<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input js-current-home-phone-input required-form-field" name="statephone" data-rule="tel">					
+							<input type="text" id="current-home-phone-manual-filling" class="form__current-home-phone-input js-current-home-phone-input required-form-field" placeholder="+7(___)___-__-__" name="statephone" data-rule="tel">					
 							<div class="form-wrap__tip">
 								<span class="form__tip">?</span>
 								<div class="tooltip-wrap">
@@ -1146,7 +1148,7 @@
 											<input type="text" id="work-phone" class="form__work-phone-input form__average required-form-field" name="mobiletool" name="mobile" placeholder="+7(___)___-__-__" data-rule="tel">
 										</div>		
 										<div class="average-input-wrap">					
-											<input type="text" id="work-phone-add" class="form__work-phone-input-add form__average" name="work-phone" placeholder="Добавочный">
+											<input type="text" id="work-phone-add" class="form__work-phone-input-add form__average"  name="work-phone" placeholder="Добавочный">
 										</div>	
 									</div>													
 									<div class="form-wrap__tip">
@@ -1219,8 +1221,7 @@
 									</div>		
 									<div class="average-input-wrap">					
 										<input type="text" id="own-business-work-phone-add" class="form__own-business-work-phone-input-add form__average required-form-field" name="work-phone" placeholder="Добавочный" data-rule="number">
-									</div>
-									<div class="form-input-error"></div>					
+									</div>			
 									<div class="form-wrap__tip">
 										<span class="form__tip">?</span>
 										<div class="tooltip-wrap">
@@ -1228,7 +1229,8 @@
 											<div class="tooltip">Стационарный телефон отдела кадров, бухгалтерии, ресепшн или руководителя. Если нет стационарного телефона - мобильный номер руководителя. <br> Предоставление рабочего стационарного телефона очень важно и 	может повлиять на принятие кредитного решения. <br> Если Заявитель не помнит телефонный код города, уточните его на <a href="https://moscow.old.rt.ru/service/srvhometel/tel_dictionary/codes">сайте.</a></div>
 										</div>	
 									</div>	
-								</div>							
+								</div>
+								<div class="form-input-error"></div>									
 							</div>
 							<div class="additional-info-button button">Перейти к оформлению дополнительных данных</div>
 							<div class="job-place form__block hidden">		
@@ -1735,9 +1737,10 @@
 			<div class="wrap__help hidden">тут будет подсказка</div>
 		</div>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="draggable.js"></script>
 	<script src="main.js"></script>
-	
+	<script src="./jquery.maskedinput.min.js"></script>
 <!-- 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->

@@ -164,6 +164,8 @@ body {
     width: 385px;
 }
 
+
+
 .tabs__item {
 	padding: 10px 15px 10px 15px;
 	list-style-type: none;	
@@ -1061,4 +1063,8 @@ input:disabled {
 
 .red-border-input {
 	border: red;
+}
+
+#own-business-work-phone {
+	margin-right: 86px;
 }

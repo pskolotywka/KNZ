@@ -538,8 +538,15 @@ function disableInput(check, inp) {
 	checkbox.addEventListener("click", function() {
 		if (!(checkbox.checked)) {
 			input.removeAttribute('disabled');
+			
 		} else {
 			input.setAttribute('disabled', 'disabled');
+			input.value = '';
+			if (input.classList.contains('required-form-field') || input.dataset.required === '0') {
+				input.style.border = '1px solid #ccc'
+				$(input).unmask()
+				input.closest('.form__block-input-block').nextElementSibling.innerHTML = '';
+			}
 		}
 	});
 }	
@@ -850,13 +857,12 @@ function checkInputs() {
 
 	function numbOrLet(arg) {
 		switch(arg.name) {
-			case'personalsalary':
+			case 'personalsalary':
 			case 'sumarend':
 			case 'sumcredit':
 			case 'flat':
 			case 'index':
 			case 'numbhouse':
-			case 'codebuild':
 			case 'dategot':
 				replaceValue(arg, numbOrLetter.numb);
 				break;
@@ -873,14 +879,48 @@ function checkInputs() {
 			case 'locality':
 			case 'cityor':
 			case 'codeword':
+			case 'placebirth':
 					replaceValue(arg, numbOrLetter.let);
 					break;
 			case 'sneals':
 			case 'serialnumb':
+			case 'codebuild':
 					replaceValue(arg, numbOrLetter.sneals);
 					break;
 		};
 	};
+
+	function maskInputs(arg) {
+		switch(arg.id) {
+			case 'phone':
+				$('#phone').mask("+7(999)-99-99-999");
+				break;
+			case 'birth':
+				$('#birth').mask("99.99.9999");
+				break;
+			case 'passport-passport-date':
+				$('#passport-passport-date').mask("99.99.9999");
+				break;
+			case 'passport-number':
+				$('#passport-number').mask('9999-999999');
+				break;
+			case 'passport-code':
+				$('#passport-code').mask('999-999');
+				break;
+			case 'passport-snils':
+				$('#passport-snils').mask('999-999-999-99')
+				break;
+			case 'current-home-phone-manual-filling':
+				$('#current-home-phone-manual-filling').mask("+7(999)-99-99-999");
+				break;
+			case 'home-phone-manual-filling':
+				$('#home-phone-manual-filling').mask("+7(999)-99-99-999");
+				break;
+			case 'family-phone':
+				$('#family-phone').mask("+7(999)-99-99-999");
+				break;
+		}
+	}
 
 	function textError(arg, res) {
 		switch(arg.name) {
@@ -957,6 +997,9 @@ function checkInputs() {
 		inputs[i].addEventListener('focus', function() {
 			const himName = inputs[i].name;
 			tooltipFocus(himName)
+			/* if (inputs[i].dataset.required === '0') {
+				inputs[i].value = '';
+			} */
 		})
 	}
 
@@ -1024,6 +1067,7 @@ function checkInputs() {
 			let thisField = inputs[i];
 			let thisResult = inputs[i].closest('.form__block-input-block').nextElementSibling;
 
+			maskInputs(thisField)
 			numbOrLet(thisField);
 			textError(thisField, thisResult);
 			switchMapKey(inputs[i].dataset.rule, inputs[i]);
@@ -1058,11 +1102,14 @@ function checkInputs() {
 // Добавление ошибки если после расфукусировки поле осталось пустым
 
 inputs[i].addEventListener('blur', function() {
+
 	let thisField = inputs[i];
 	let thisResult = inputs[i].closest('.form__block-input-block').nextElementSibling;
+
+	$(thisField).unmask()
+
 	tip.classList.add('hidden');
 	tip.innerHTML = '';
-	/* let countWord = countWords(inputs[i].value); */
 
 	let regx = thisField.dataset.rule;
 	let pattern = check[regx].reg;
@@ -1076,19 +1123,30 @@ inputs[i].addEventListener('blur', function() {
 	} else {
 		thisField.style.border = "1px solid red";
 		thisResult.innerHTML = check[regx].err;
+		
 	};
 
+		
 	if(inpLength === 0) {
 		thisResult.innerText = "Это поле обязательно для заполнения!";
 		thisField.style.border = "1px solid red";
+/* 		if (thisField.dataset.required === '0') {
+			thisResult.innerText = '';
+			thisField.style.border = "1px solid #ccc";
+		} */
 	};
 	if (thisField.name === 'name' && flagName === false && thisField.value.length >= 1) {
 		thisResult.innerText = "Необходимо ввести фамилию!";
 		thisField.style.border = "1px solid red";
 	};
 	
-
 	textError(thisField, thisResult);
+
+	if (inpLength === 0 && thisField.dataset.required === '0') {
+		console.log('123')
+		thisResult.innerText = '';
+		thisField.style.border = "1px solid #ccc";
+	}
 });
 
 // Проверка селектов
