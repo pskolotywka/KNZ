@@ -514,6 +514,7 @@ label {
 .addinp {
 	padding-left: 320px;
 	width: 100%;
+	display: none;
 }
 
 .form-input-error {
@@ -630,10 +631,12 @@ label {
 
 .form__organization-input {
 	border-radius: 5px;
-	margin-bottom: 15px;
+	/* margin-bottom: 15px; */
 	width: 385px;
 	padding: 6px 12px;
 	resize: none;
+	outline: none; 
+	border: 1px solid #ccc;
 }
 
 .form__employment-type {
@@ -761,6 +764,10 @@ label {
     background-image: none;
     outline: none;
     text-shadow: 0 1px 0 #fff;
+}
+
+.job-place {
+	display: none;
 }
 
 .loan-offer__next-button_disable, 

@@ -2,6 +2,9 @@ function endTask() {
 	const btn = document.querySelector(".end-task-modal__end-task-button");
 
 	btn.addEventListener("click", function() {
+
+		
+
 		location.reload()
 	});
 }
@@ -17,14 +20,153 @@ function closeEndTaskModal() {
 	});
 }
 
-closeEndTaskModal();
 
+let check = {
+	number: {err: 'Поле заполнено не корректно!', reg: /[^0-9]/g},
+	string: {err: 'Корректно заполните форму!', reg: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u},
+	adress: {err: 'Не корректно заполнено поле!', reg: /^[а-яА-Я0-9,\.\s]+$/},
+	date:   {err: 'Укажите верную дату в формате ДД.ММ.ГГГГ', reg: /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/},
+	tel:    {err: 'Код региона или оператора связи не существует', reg: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/},
+	email:  {err: 'Не правильный формат email', reg: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/},
+	sneals: {err: 'Поле заполнено не корректно!', reg: /^\d{3}-\d{3}-\d{3}-\d{2}$/},
+	flat: {err: 'Номер заполнен не корректно!', reg: /[^0-9]/g},
+	codebuild: {err: 'Не корректный код подразделения!', reg: /\d{3}[-]\d{3}/},
+	sum: 	{err: '', reg: /^\d+$/},
+	sums: {err: '', reg: /[^0-9-]/g},
+	index: {err: 'Не корректно заполнен индекс!', reg: /\d{6}/},
+	pasport: {err: 'Некоректно заполнена серия номера!', reg: /\d{4}[- ]\d{6}/},
+};
+
+closeEndTaskModal();
+let func;
 function openEndTaskModal() {
 	const btn = document.querySelector(".end-task-button");
 	const modal = document.querySelector(".end-task-modal");
+	const inputs = document.querySelectorAll('[data-rule]');
+	const allSel = document.querySelectorAll('.select-required');
+	const checkedsReason = document.querySelectorAll('.workless-reasons');
 
-	btn.addEventListener("click", function() {
-		modal.style.display = "block";
+
+	btn.addEventListener("click", function(e) {
+		e.preventDefault;
+
+		let letModal = true;
+		let errorPosEl;
+		let errorPosFlag = true;
+		let position = '';
+
+			// создаём функцию на видимые поля, что бы вешать ошибку только на те поля которые буду видны на странцие.
+		function isVisible(elem) {
+			return elem.offsetWidth > 0 || elem.offsetHeight > 0;
+		}
+
+		// создаём функцию для скрола к ошибке
+		function scrollToError(arg) {
+			position = arg.offsetTop - 25;
+			$('html, body').stop(true).animate({
+				scrollTop: (position)
+		   }, 600);
+		}
+		
+		// здесь делаем выбор причины "почему не работает" - обязательным, проверяя на то что хотя бы 1 пункт выбран, иначе пишем ошибку
+
+		if (document.querySelector('#employment-type').value === 'Не работаю') {
+			let errorText = document.querySelector('.form__workless').lastElementChild;
+			function checked(){
+				for (let i = 0; i < checkedsReason.length; i++) {
+					if (checkedsReason[i].checked) {
+						return true;
+					}
+				}
+				return false;
+			}
+			if (checked() !== true) {
+				errorText.innerHTML = 'Обязательно нужно выбрать причину!';
+				letModal = false;
+				if (errorPosFlag) {
+					errorPosEl = document.querySelector('.form__workless');
+					errorPosFlag = false;
+				}
+			} else {
+				errorText.innerHTML = '';
+			}
+			for (let btn of checkedsReason) {
+				btn.addEventListener('click', function() {
+					errorText.innerHTML = '';
+				})
+			}
+		}
+
+		// здесь по нажатию кнопки мы проверяем валидацию всех полей меняя флаг на фолс в случае не корректного заполнения
+		let selectFlag = true;
+		for (let i = 0; i < inputs.length; i++) {
+			let thisField = inputs[i];
+			let thisResult = inputs[i].closest('.form__block-input-block').nextElementSibling; 
+
+			if (isVisible(thisField)) {
+				let regx = thisField.dataset.rule;
+				let pattern = check[regx].reg;
+				let	fieldValue = thisField.value;
+				let inpLength = thisField.value.length;
+		
+				if (pattern.test(fieldValue.trim()) ) {
+					thisField.style.border = '1px solid green';
+					thisResult.innerHTML = '';
+				} else {
+					if (thisField.dataset.required === undefined) {
+						thisField.style.border = "1px solid red";
+						thisResult.innerHTML = check[regx].err;
+						letModal = false;
+						if (errorPosFlag) {
+							errorPosEl = thisField;
+							errorPosFlag = false;
+						}
+						selectFlag = false;
+					}
+				};
+				if(inpLength === 0) {
+					thisResult.innerText = "Это поле обязательно для заполнения!";
+					thisField.style.border = "1px solid red";
+				};
+				if (inpLength === 0 && thisField.dataset.required === '0') {
+					thisResult.innerText = '';
+					thisField.style.border = "1px solid #ccc";
+				};
+			}
+		}
+
+		// здесь в самую последнюю очередь проверяем селекты на обязательный выбор, выводя ошибки если выбор не был произведён
+
+		if (selectFlag) {
+			for (let i = 0; i < allSel.length; i++) {
+				let sel = allSel[i];
+				let selNum = sel.selectedIndex;
+	
+				if(selNum === 0){
+					sel.style.border = '1px solid red'
+					letModal = false;
+					if (errorPosFlag) {
+						errorPosEl = sel;
+						errorPosFlag = false;
+					}
+				}
+				else {
+					sel.style.border = '1px solid green'
+				}
+			}
+		}
+
+		// здесь исходя из флага, если ошибки видимые на странице остались, мы пролистываем к ним, если нет то игнорируем данный пункт
+
+		if (letModal === false) {
+			scrollToError(errorPosEl)
+		}
+		
+		// здесь исходя из флага, если ошибок нет и все поля и селекты заполнены и выбраны, мы разрешаем кнопке открыть модальное окно, если ошибки есть то запрещаем
+
+		if (letModal) {
+			modal.style.display = "block";
+		}
 	});
 }
 
@@ -407,7 +549,8 @@ function showAdditionalFields() {
 
 	btn.addEventListener("click", function() {
 		field.style.display = "block";
-		workAddress.classList.remove("hidden");
+		/* workAddress.classList.remove("hidden"); */
+		workAddress.style.display = 'flex';
 		btn.style.display = "none";
 	});
 }
@@ -774,7 +917,7 @@ function inputsValidate(){
 // Правила проверки полей сделано через присвоение data-rule
 
 
-let check = {
+/* let check = {
 	number: {err: 'Поле заполнено не корректно!', reg: /[^0-9]/g},
 	string: {err: 'Корректно заполните форму!', reg: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u},
 	adress: {err: 'Не корректно заполнено поле!', reg: /[0-9a-zA-Zа-яА-Я- ]/g},
@@ -788,7 +931,7 @@ let check = {
 	sums: {err: '', reg: /[^0-9-]/g},
 	index: {err: 'Не корректно заполнен индекс!', reg: /\d{6}/},
 	pasport: {err: 'Некоректно заполнена серия номера!', reg: /\d{4}[- ]\d{6}/},
-};
+}; */
 
 let numbOrLetter = {
 	numb: /[^0-9]/g,
@@ -818,7 +961,7 @@ var mapKeyEn = {
 
 
 function checkInputs() {
-	let inputs = document.querySelectorAll('input[data-rule]');
+	let inputs = document.querySelectorAll('[data-rule]');
 	let result = document.querySelectorAll('.form-input-error');
 	let textareas = document.querySelectorAll('.form__organization-input');
 	
@@ -919,9 +1062,24 @@ function checkInputs() {
 			case 'family-phone':
 				$('#family-phone').mask("+7(999)-99-99-999");
 				break;
+			case 'work-phone':
+				$('#work-phone').mask("+7(999)-99-99-999");
+				break;
+			case 'work-organization-home-phone-manual-filling':
+				$('#work-organization-home-phone-manual-filling').mask("+7(999)-99-99-999");
+				break;
+			case 'manager':
+				$('#manager').mask("+7(999)-99-99-999");
+				break;	
+			case 'own-business-work-phone-add':
+				$('#own-business-work-phone-add').mask("+7(999)-99-99-999");
+				break;		
+			case 'own-business-work-phone': 
+				$('#own-business-work-phone').mask("+7(999)-99-99-999");
+				break;	
 		}
 	}
-
+	
 	function textError(arg, res) {
 		switch(arg.name) {
 			case 'sumcredit':
@@ -992,6 +1150,7 @@ function checkInputs() {
 	};
 	
 	let flagName = false;
+
 
 	for (let i = 0; i < inputs.length; i++) {
 		inputs[i].addEventListener('focus', function() {
@@ -1082,7 +1241,7 @@ function checkInputs() {
 				if (countWord >= 2) {
 					inputs[i].setAttribute('placeholder', 'Фамилия');
 					inputs[i].value = '';
-					document.querySelector('.addinp').classList.remove('hidden');
+					document.querySelector('.addinp').style.display = 'block';
 					thisResult.innerHTML = '';
 					this.style.border = "1px solid #ccc";
 					flagName = true;
@@ -1123,7 +1282,6 @@ inputs[i].addEventListener('blur', function() {
 	} else {
 		thisField.style.border = "1px solid red";
 		thisResult.innerHTML = check[regx].err;
-		
 	};
 
 		
@@ -1143,7 +1301,6 @@ inputs[i].addEventListener('blur', function() {
 	textError(thisField, thisResult);
 
 	if (inpLength === 0 && thisField.dataset.required === '0') {
-		console.log('123')
 		thisResult.innerText = '';
 		thisField.style.border = "1px solid #ccc";
 	}
@@ -1168,7 +1325,7 @@ function checkSelect () {
 			const selNum = sel.selectedIndex;
 			tip.classList.add('hidden');
 			tip.innerHTML = '';
-			console.log(sel.name)
+
 			if (sel.name === 'abroadpasport') {
 				tip.classList.remove('hidden');
 				tip.innerHTML = 'Вводи регион, город, улицу, номер дома и следуй подсказкам формы. Адрес регистрации нужно вносить тот, который указан у клиента в паспорте. Если подсказки формы противоречат данным из паспорта, используй режим ручного ввода адреса.'
