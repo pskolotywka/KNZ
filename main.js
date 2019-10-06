@@ -1073,7 +1073,10 @@ function checkInputs() {
 				break;	
 			case 'own-business-work-phone-add':
 				$('#own-business-work-phone-add').mask("+7(999)-99-99-999");
-				break;		
+				break;	
+			case 'work-phone-add':
+				$('#work-phone-add').mask("+7(999)-99-99-999");
+				break;	
 			case 'own-business-work-phone': 
 				$('#own-business-work-phone').mask("+7(999)-99-99-999");
 				break;	
